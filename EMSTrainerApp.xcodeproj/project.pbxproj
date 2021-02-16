@@ -15,6 +15,14 @@
 		A45BAE0525DC2C6D00F51D5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45BAE0325DC2C6D00F51D5E /* LaunchScreen.storyboard */; };
 		A45BAE1025DC2C6D00F51D5E /* EMSTrainerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE0F25DC2C6D00F51D5E /* EMSTrainerAppTests.swift */; };
 		A45BAE1B25DC2C6D00F51D5E /* EMSTrainerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE1A25DC2C6D00F51D5E /* EMSTrainerAppUITests.swift */; };
+		A45BAE3925DC2DB600F51D5E /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE3825DC2DB600F51D5E /* Api.swift */; };
+		A45BAE4125DC35F400F51D5E /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE4025DC35F400F51D5E /* NetworkRequest.swift */; };
+		A45BAE4725DC3DF600F51D5E /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE4625DC3DF600F51D5E /* ApiRequest.swift */; };
+		A45BAE4C25DC3E1B00F51D5E /* ApiResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE4B25DC3E1B00F51D5E /* ApiResource.swift */; };
+		A45BAE5125DC3F4900F51D5E /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE5025DC3F4900F51D5E /* ApiResponse.swift */; };
+		A4A495A825DC50E800636B66 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A495A725DC50E800636B66 /* User.swift */; };
+		A4A495BF25DC71C400636B66 /* MeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A495BE25DC71C400636B66 /* MeResource.swift */; };
+		A4A495C425DC71D300636B66 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A495C325DC71D300636B66 /* UserResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		A45BAE1625DC2C6D00F51D5E /* EMSTrainerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EMSTrainerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45BAE1A25DC2C6D00F51D5E /* EMSTrainerAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSTrainerAppUITests.swift; sourceTree = "<group>"; };
 		A45BAE1C25DC2C6D00F51D5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A45BAE3825DC2DB600F51D5E /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		A45BAE4025DC35F400F51D5E /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		A45BAE4625DC3DF600F51D5E /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		A45BAE4B25DC3E1B00F51D5E /* ApiResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResource.swift; sourceTree = "<group>"; };
+		A45BAE5025DC3F4900F51D5E /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		A4A495A725DC50E800636B66 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A4A495BE25DC71C400636B66 /* MeResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeResource.swift; sourceTree = "<group>"; };
+		A4A495C325DC71D300636B66 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +115,9 @@
 		A45BADF725DC2C6B00F51D5E /* EMSTrainerApp */ = {
 			isa = PBXGroup;
 			children = (
-				A45BADF825DC2C6B00F51D5E /* AppDelegate.swift */,
-				A45BADFA25DC2C6B00F51D5E /* SceneDelegate.swift */,
-				A45BADFC25DC2C6B00F51D5E /* ViewController.swift */,
-				A45BADFE25DC2C6B00F51D5E /* Main.storyboard */,
-				A45BAE0125DC2C6D00F51D5E /* Assets.xcassets */,
-				A45BAE0325DC2C6D00F51D5E /* LaunchScreen.storyboard */,
-				A45BAE0625DC2C6D00F51D5E /* Info.plist */,
+				A45BAE3525DC2D5600F51D5E /* Core */,
+				A45BAE3625DC2D6500F51D5E /* ViewControllers */,
+				A45BAE2E25DC2C7700F51D5E /* Supporting Files */,
 			);
 			path = EMSTrainerApp;
 			sourceTree = "<group>";
@@ -126,6 +138,82 @@
 				A45BAE1C25DC2C6D00F51D5E /* Info.plist */,
 			);
 			path = EMSTrainerAppUITests;
+			sourceTree = "<group>";
+		};
+		A45BAE2E25DC2C7700F51D5E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A45BADF825DC2C6B00F51D5E /* AppDelegate.swift */,
+				A45BADFA25DC2C6B00F51D5E /* SceneDelegate.swift */,
+				A45BADFC25DC2C6B00F51D5E /* ViewController.swift */,
+				A45BADFE25DC2C6B00F51D5E /* Main.storyboard */,
+				A45BAE0125DC2C6D00F51D5E /* Assets.xcassets */,
+				A45BAE0325DC2C6D00F51D5E /* LaunchScreen.storyboard */,
+				A45BAE0625DC2C6D00F51D5E /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A45BAE3525DC2D5600F51D5E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A45BAE3725DC2DA000F51D5E /* Api */,
+				A4A495A625DC50D500636B66 /* Models */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A45BAE3625DC2D6500F51D5E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A45BAE3725DC2DA000F51D5E /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				A4A495BD25DC719800636B66 /* Requests */,
+				A4A495BC25DC718A00636B66 /* Responses */,
+				A4A495BB25DC714000636B66 /* Resources */,
+				A45BAE3825DC2DB600F51D5E /* Api.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		A4A495A625DC50D500636B66 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A4A495A725DC50E800636B66 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4A495BB25DC714000636B66 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A45BAE4B25DC3E1B00F51D5E /* ApiResource.swift */,
+				A4A495BE25DC71C400636B66 /* MeResource.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A4A495BC25DC718A00636B66 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				A45BAE5025DC3F4900F51D5E /* ApiResponse.swift */,
+				A4A495C325DC71D300636B66 /* UserResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		A4A495BD25DC719800636B66 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				A45BAE4025DC35F400F51D5E /* NetworkRequest.swift */,
+				A45BAE4625DC3DF600F51D5E /* ApiRequest.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +346,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A45BAE4C25DC3E1B00F51D5E /* ApiResource.swift in Sources */,
 				A45BADFD25DC2C6B00F51D5E /* ViewController.swift in Sources */,
 				A45BADF925DC2C6B00F51D5E /* AppDelegate.swift in Sources */,
+				A45BAE4725DC3DF600F51D5E /* ApiRequest.swift in Sources */,
+				A45BAE3925DC2DB600F51D5E /* Api.swift in Sources */,
+				A4A495A825DC50E800636B66 /* User.swift in Sources */,
+				A45BAE5125DC3F4900F51D5E /* ApiResponse.swift in Sources */,
 				A45BADFB25DC2C6B00F51D5E /* SceneDelegate.swift in Sources */,
+				A45BAE4125DC35F400F51D5E /* NetworkRequest.swift in Sources */,
+				A4A495BF25DC71C400636B66 /* MeResource.swift in Sources */,
+				A4A495C425DC71D300636B66 /* UserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,16 +533,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QPW35WEPP7;
-				INFOPLIST_FILE = EMSTrainerApp/Info.plist;
+				INFOPLIST_FILE = "EMSTrainerApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eclickmobile.EMSTrainerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -456,16 +554,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QPW35WEPP7;
-				INFOPLIST_FILE = EMSTrainerApp/Info.plist;
+				INFOPLIST_FILE = "EMSTrainerApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eclickmobile.EMSTrainerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
