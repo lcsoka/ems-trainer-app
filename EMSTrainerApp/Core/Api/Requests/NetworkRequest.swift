@@ -18,8 +18,17 @@ extension NetworkRequest {
         var urlRequest = URLRequest(url:url)
         urlRequest.httpMethod = httpMethod
         urlRequest.httpBody = body
-        urlRequest.allHTTPHeaderFields = httpFields
+        urlRequest.allHTTPHeaderFields = httpHeaders
         let task = session.dataTask(with: urlRequest, completionHandler: {(data: Data?, response: URLResponse?, error: Error?) -> Void in
+            
+            if let data = data, let response = response as? HTTPURLResponse {
+                    switch response.statusCode {
+                    case 500...599:
+                        let yourErrorResponseString = String(data: data, encoding: .utf8)
+                    default:
+                        break
+                    }
+            }
             
             guard let data = data else {
                 completion(nil)

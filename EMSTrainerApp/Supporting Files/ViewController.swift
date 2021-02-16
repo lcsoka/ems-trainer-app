@@ -12,7 +12,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        Api.shared.get(MeResource(), params: nil) { response in
+        let loginData = LoginData(email: "lcsoka@inf.elte.hu", password: "eclick1122")
+        Api.shared.post(LoginResource(), data: loginData) { response in
             print(response)
         }
     }
