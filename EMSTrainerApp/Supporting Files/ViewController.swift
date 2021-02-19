@@ -8,16 +8,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let loginData = LoginData(email: "lcsoka@inf.elte.hu", password: "eclick1122")
-        Api.shared.post(LoginResource(), data: loginData) { response in
-            print(response)
+        let loginData = LoginData(email: "lcsoka@inf.elte.hu", password: "eclick11222")
+        Api.shared.post(LoginResource(), data: loginData, onSuccess: {
+            print($0)
+        }) {
+            print($0)
         }
+        
+//        Api.shared.get(MeResource(), params: nil, onSuccess: {
+//            print($0)
+//        }) {
+//            print($0)
+//        }
     }
-
-
 }
 

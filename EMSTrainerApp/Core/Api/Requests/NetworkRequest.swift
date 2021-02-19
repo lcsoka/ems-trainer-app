@@ -8,33 +8,60 @@ import Foundation
 
 protocol NetworkRequest: AnyObject {
     associatedtype ModelType
+    associatedtype ModelError
     func decode(_ data: Data) -> ModelType?
-    func load(withCompletion completion: @escaping (ModelType?) -> Void)
+    func decodeError(_ error: Data) -> ModelError?
+    func load(onSuccess handleSuccess: @escaping (ModelType?) -> Void, onError handleFailure: @escaping (AppError?) -> Void)
 }
 
 extension NetworkRequest {
-    func load(_ url: URL, httpMethod: String, body: Data?, httpHeaders: [String:String]?, withCompletion completion: @escaping (ModelType?) -> Void) {
+    func load(_ url: URL, httpMethod: String, body: Data?, httpHeaders: [String:String]?, onSuccess handleSuccess: @escaping (ModelType?) -> Void,onError handleFailure: @escaping (AppError?) -> Void) {
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
         var urlRequest = URLRequest(url:url)
         urlRequest.httpMethod = httpMethod
         urlRequest.httpBody = body
         urlRequest.allHTTPHeaderFields = httpHeaders
+        urlRequest.timeoutInterval = 10
         let task = session.dataTask(with: urlRequest, completionHandler: {(data: Data?, response: URLResponse?, error: Error?) -> Void in
-            
             if let data = data, let response = response as? HTTPURLResponse {
                     switch response.statusCode {
-                    case 500...599:
-                        let yourErrorResponseString = String(data: data, encoding: .utf8)
+                    case 200...299:
+                        handleSuccess(self.decode(data))
+                    case 400:
+                        // Bad api request
+                        handleFailure(AppError(code: .api, messages: self.decodeError(data) as! [Any]))
+                        break
+                    case 401:
+                        // Unauthorized
+                        handleFailure(AppError(code: .unauthorized, messages: self.decodeError(data) as! [Any]))
+                        break
+                    case 422:
+                        // Unauthorized
+                        handleFailure(AppError(code: .validation, messages: self.decodeError(data) as! [Any]))
+                        break
+                    case 500:
+                        // Server error
+                        handleFailure(AppError(code: .server, messages: ["Server error."]))
+                        break
+                    case 501...5999:
+                        // Unknown error
+                        handleFailure(AppError(code: .unknown, messages: ["Unknown server error."]))
+                        break
                     default:
                         break
                     }
             }
-            
+            if let error = error as NSError?  {
+                if error.code == NSURLErrorTimedOut {
+                    handleFailure(AppError(code: .timeout, messages: ["Timeout has occoured."]))
+                } else {
+                    handleFailure(AppError(code: .unknown, messages: ["Unknown error."]))
+                }
+            }
             guard let data = data else {
-                completion(nil)
+                handleFailure(nil)
                 return
             }
-            completion(self.decode(data))
         })
         task.resume()
     }
