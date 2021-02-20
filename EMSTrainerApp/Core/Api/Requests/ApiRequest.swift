@@ -10,14 +10,16 @@ import Foundation
 class ApiRequest<Resource: ApiResource> {
     
     let resource: Resource
+    private let engine: NetworkEngine
 
     var httpHeaders: [String:String] = [
         "Accept":"application/json",
         "Content-Type":"application/json",
     ]
     
-    init(resource: Resource) {
+    init(resource: Resource, engine: NetworkEngine = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)) {
         self.resource = resource
+        self.engine = engine
         
         if let token = Auth.shared.getToken() {
             httpHeaders["Authorization"] = "Bearer \(token)"
@@ -27,6 +29,10 @@ class ApiRequest<Resource: ApiResource> {
 }
 
 extension ApiRequest: NetworkRequest {
+    
+    func getEngine() -> NetworkEngine {
+        return engine
+    }
     
     func decode(_ data: Data) -> Resource.ModelType? {
         let response = try? JSONDecoder().decode(ApiResponse<Resource.ModelType>.self, from: data)

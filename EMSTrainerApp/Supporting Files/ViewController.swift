@@ -25,9 +25,8 @@ class ViewController: UIViewController {
     }
     
     private func setButtonVisibility(loggedIn: Bool) {
-        btnLogin.isHidden = loggedIn
-        btnLogout.isHidden = !loggedIn
-        
+        self.btnLogin.isHidden = loggedIn
+        self.btnLogout.isHidden = !loggedIn
     }
     
     @IBAction func login(_ sender: Any) {

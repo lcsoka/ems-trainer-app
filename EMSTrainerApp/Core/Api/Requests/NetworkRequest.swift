@@ -11,18 +11,19 @@ protocol NetworkRequest: AnyObject {
     associatedtype ModelError
     func decode(_ data: Data) -> ModelType?
     func decodeError(_ error: Data) -> ModelError?
+    func getEngine() -> NetworkEngine
     func load(onSuccess handleSuccess: @escaping (ModelType?) -> Void, onError handleFailure: @escaping (AppError?) -> Void)
 }
 
 extension NetworkRequest {
     func load(_ url: URL, httpMethod: String, body: Data?, httpHeaders: [String:String]?, onSuccess handleSuccess: @escaping (ModelType?) -> Void,onError handleFailure: @escaping (AppError?) -> Void) {
-        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
         var urlRequest = URLRequest(url:url)
         urlRequest.httpMethod = httpMethod
         urlRequest.httpBody = body
         urlRequest.allHTTPHeaderFields = httpHeaders
         urlRequest.timeoutInterval = 10
-        let task = session.dataTask(with: urlRequest, completionHandler: {(data: Data?, response: URLResponse?, error: Error?) -> Void in
+        
+        getEngine().performRequest(with: urlRequest, completionHandler: {(data: Data?, response: URLResponse?, error: Error?) ->  Void in
             if let data = data, let response = response as? HTTPURLResponse {
                     switch response.statusCode {
                     case 200...299:
@@ -44,7 +45,7 @@ extension NetworkRequest {
                         // Server error
                         handleFailure(AppError(code: .server, messages: ["Server error."]))
                         break
-                    case 501...5999:
+                    case 501...599:
                         // Unknown error
                         handleFailure(AppError(code: .unknown, messages: ["Unknown server error."]))
                         break
@@ -64,6 +65,5 @@ extension NetworkRequest {
                 return
             }
         })
-        task.resume()
     }
 }

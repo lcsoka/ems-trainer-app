@@ -26,6 +26,10 @@
 		A46337AD25E08811000B51F7 /* RegisterResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337AC25E08811000B51F7 /* RegisterResource.swift */; };
 		A46337B225E08A58000B51F7 /* LogoutResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337B125E08A58000B51F7 /* LogoutResource.swift */; };
 		A46337B725E08ADB000B51F7 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337B625E08ADB000B51F7 /* EmptyResponse.swift */; };
+		A46337BC25E113BE000B51F7 /* ApiRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337BB25E113BD000B51F7 /* ApiRequestTests.swift */; };
+		A46337CE25E11563000B51F7 /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337CD25E11563000B51F7 /* MockSession.swift */; };
+		A46337D325E115E3000B51F7 /* MockTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337D225E115E3000B51F7 /* MockTask.swift */; };
+		A46337D825E12246000B51F7 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337D725E12246000B51F7 /* NetworkEngine.swift */; };
 		A495800F25E04C6500923B7F /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A495800E25E04C6500923B7F /* ErrorType.swift */; };
 		A495801425E051B400923B7F /* ApiErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A495801325E051B400923B7F /* ApiErrorResponse.swift */; };
 		A4A495A825DC50E800636B66 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A495A725DC50E800636B66 /* User.swift */; };
@@ -79,6 +83,10 @@
 		A46337AC25E08811000B51F7 /* RegisterResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResource.swift; sourceTree = "<group>"; };
 		A46337B125E08A58000B51F7 /* LogoutResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResource.swift; sourceTree = "<group>"; };
 		A46337B625E08ADB000B51F7 /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
+		A46337BB25E113BD000B51F7 /* ApiRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestTests.swift; sourceTree = "<group>"; };
+		A46337CD25E11563000B51F7 /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
+		A46337D225E115E3000B51F7 /* MockTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTask.swift; sourceTree = "<group>"; };
+		A46337D725E12246000B51F7 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		A495800E25E04C6500923B7F /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		A495801325E051B400923B7F /* ApiErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorResponse.swift; sourceTree = "<group>"; };
 		A4A495A725DC50E800636B66 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -147,6 +155,8 @@
 		A45BAE0E25DC2C6D00F51D5E /* EMSTrainerAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				A46337C025E1150E000B51F7 /* Api */,
+				A46337BB25E113BD000B51F7 /* ApiRequestTests.swift */,
 				A45BAE0F25DC2C6D00F51D5E /* EMSTrainerAppTests.swift */,
 				A45BAE1125DC2C6D00F51D5E /* Info.plist */,
 			);
@@ -182,6 +192,7 @@
 				A463379A25E07E45000B51F7 /* Auth */,
 				A45BAE3725DC2DA000F51D5E /* Api */,
 				A4FCAED125DDA5C700C9849C /* ErrorHandling */,
+				A46337DC25E12253000B51F7 /* Extensions */,
 				A4A495A625DC50D500636B66 /* Models */,
 				A46337A025E083DE000B51F7 /* Services */,
 			);
@@ -222,6 +233,30 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		A46337C025E1150E000B51F7 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				A46337C125E11536000B51F7 /* Network */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		A46337C125E11536000B51F7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A46337CD25E11563000B51F7 /* MockSession.swift */,
+				A46337D225E115E3000B51F7 /* MockTask.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A46337DC25E12253000B51F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A4A495A625DC50D500636B66 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +292,7 @@
 			children = (
 				A45BAE4025DC35F400F51D5E /* NetworkRequest.swift */,
 				A45BAE4625DC3DF600F51D5E /* ApiRequest.swift */,
+				A46337D725E12246000B51F7 /* NetworkEngine.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -443,6 +479,7 @@
 				A4FCAEB225DC8AE000C9849C /* LoginData.swift in Sources */,
 				A46337A825E087A4000B51F7 /* RegisterData.swift in Sources */,
 				A4A495A825DC50E800636B66 /* User.swift in Sources */,
+				A46337D825E12246000B51F7 /* NetworkEngine.swift in Sources */,
 				A46337B725E08ADB000B51F7 /* EmptyResponse.swift in Sources */,
 				A45BAE5125DC3F4900F51D5E /* ApiResponse.swift in Sources */,
 				A45BADFB25DC2C6B00F51D5E /* SceneDelegate.swift in Sources */,
@@ -456,6 +493,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A46337CE25E11563000B51F7 /* MockSession.swift in Sources */,
+				A46337BC25E113BE000B51F7 /* ApiRequestTests.swift in Sources */,
+				A46337D325E115E3000B51F7 /* MockTask.swift in Sources */,
 				A45BAE1025DC2C6D00F51D5E /* EMSTrainerAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
