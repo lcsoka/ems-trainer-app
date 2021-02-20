@@ -9,4 +9,10 @@ import Foundation
 
 struct UserResponse: Codable {
     var user: User
+    var accessToken: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case user
+        case accessToken = "access_token"
+    }
 }

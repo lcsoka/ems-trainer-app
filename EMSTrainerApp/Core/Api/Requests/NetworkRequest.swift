@@ -34,6 +34,7 @@ extension NetworkRequest {
                     case 401:
                         // Unauthorized
                         handleFailure(AppError(code: .unauthorized, messages: self.decodeError(data) as! [Any]))
+                        Auth.shared.onLogout(true)
                         break
                     case 422:
                         // Unauthorized

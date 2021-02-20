@@ -11,14 +11,17 @@ class ApiRequest<Resource: ApiResource> {
     
     let resource: Resource
 
-    let httpHeaders: [String:String] = [
+    var httpHeaders: [String:String] = [
         "Accept":"application/json",
         "Content-Type":"application/json",
-//        "Authorization":"Bearer 5|Ay9ShYY2h44EHCu4eDnjRnIqN5OP1Jjdzl5B5tOn"
     ]
     
     init(resource: Resource) {
         self.resource = resource
+        
+        if let token = Auth.shared.getToken() {
+            httpHeaders["Authorization"] = "Bearer \(token)"
+        }
     }
     
 }

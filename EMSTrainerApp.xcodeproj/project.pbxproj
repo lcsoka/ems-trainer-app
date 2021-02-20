@@ -20,6 +20,12 @@
 		A45BAE4725DC3DF600F51D5E /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE4625DC3DF600F51D5E /* ApiRequest.swift */; };
 		A45BAE4C25DC3E1B00F51D5E /* ApiResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE4B25DC3E1B00F51D5E /* ApiResource.swift */; };
 		A45BAE5125DC3F4900F51D5E /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE5025DC3F4900F51D5E /* ApiResponse.swift */; };
+		A463379C25E07E53000B51F7 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A463379B25E07E53000B51F7 /* Auth.swift */; };
+		A46337A325E083F6000B51F7 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337A225E083F6000B51F7 /* UserService.swift */; };
+		A46337A825E087A4000B51F7 /* RegisterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337A725E087A4000B51F7 /* RegisterData.swift */; };
+		A46337AD25E08811000B51F7 /* RegisterResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337AC25E08811000B51F7 /* RegisterResource.swift */; };
+		A46337B225E08A58000B51F7 /* LogoutResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337B125E08A58000B51F7 /* LogoutResource.swift */; };
+		A46337B725E08ADB000B51F7 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337B625E08ADB000B51F7 /* EmptyResponse.swift */; };
 		A495800F25E04C6500923B7F /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A495800E25E04C6500923B7F /* ErrorType.swift */; };
 		A495801425E051B400923B7F /* ApiErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A495801325E051B400923B7F /* ApiErrorResponse.swift */; };
 		A4A495A825DC50E800636B66 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A495A725DC50E800636B66 /* User.swift */; };
@@ -67,6 +73,12 @@
 		A45BAE4625DC3DF600F51D5E /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		A45BAE4B25DC3E1B00F51D5E /* ApiResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResource.swift; sourceTree = "<group>"; };
 		A45BAE5025DC3F4900F51D5E /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		A463379B25E07E53000B51F7 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		A46337A225E083F6000B51F7 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		A46337A725E087A4000B51F7 /* RegisterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterData.swift; sourceTree = "<group>"; };
+		A46337AC25E08811000B51F7 /* RegisterResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResource.swift; sourceTree = "<group>"; };
+		A46337B125E08A58000B51F7 /* LogoutResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResource.swift; sourceTree = "<group>"; };
+		A46337B625E08ADB000B51F7 /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
 		A495800E25E04C6500923B7F /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		A495801325E051B400923B7F /* ApiErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorResponse.swift; sourceTree = "<group>"; };
 		A4A495A725DC50E800636B66 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -167,9 +179,11 @@
 		A45BAE3525DC2D5600F51D5E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A463379A25E07E45000B51F7 /* Auth */,
 				A45BAE3725DC2DA000F51D5E /* Api */,
 				A4FCAED125DDA5C700C9849C /* ErrorHandling */,
 				A4A495A625DC50D500636B66 /* Models */,
+				A46337A025E083DE000B51F7 /* Services */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -190,6 +204,22 @@
 				A45BAE3825DC2DB600F51D5E /* Api.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		A463379A25E07E45000B51F7 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				A463379B25E07E53000B51F7 /* Auth.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		A46337A025E083DE000B51F7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A46337A225E083F6000B51F7 /* UserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A4A495A625DC50D500636B66 /* Models */ = {
@@ -217,6 +247,7 @@
 				A45BAE5025DC3F4900F51D5E /* ApiResponse.swift */,
 				A4A495C325DC71D300636B66 /* UserResponse.swift */,
 				A495801325E051B400923B7F /* ApiErrorResponse.swift */,
+				A46337B625E08ADB000B51F7 /* EmptyResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -234,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				A4FCAEB125DC8AE000C9849C /* LoginData.swift */,
+				A46337A725E087A4000B51F7 /* RegisterData.swift */,
 			);
 			path = RequestData;
 			sourceTree = "<group>";
@@ -242,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				A4A495BE25DC71C400636B66 /* MeResource.swift */,
+				A46337B125E08A58000B51F7 /* LogoutResource.swift */,
 			);
 			path = Get;
 			sourceTree = "<group>";
@@ -250,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				A4FCAEB825DC8B4500C9849C /* LoginResource.swift */,
+				A46337AC25E08811000B51F7 /* RegisterResource.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -395,15 +429,21 @@
 			files = (
 				A4FCAEB925DC8B4500C9849C /* LoginResource.swift in Sources */,
 				A45BAE4C25DC3E1B00F51D5E /* ApiResource.swift in Sources */,
+				A46337A325E083F6000B51F7 /* UserService.swift in Sources */,
 				A45BADFD25DC2C6B00F51D5E /* ViewController.swift in Sources */,
 				A45BADF925DC2C6B00F51D5E /* AppDelegate.swift in Sources */,
 				A495801425E051B400923B7F /* ApiErrorResponse.swift in Sources */,
+				A46337AD25E08811000B51F7 /* RegisterResource.swift in Sources */,
 				A45BAE4725DC3DF600F51D5E /* ApiRequest.swift in Sources */,
 				A45BAE3925DC2DB600F51D5E /* Api.swift in Sources */,
+				A463379C25E07E53000B51F7 /* Auth.swift in Sources */,
 				A495800F25E04C6500923B7F /* ErrorType.swift in Sources */,
+				A46337B225E08A58000B51F7 /* LogoutResource.swift in Sources */,
 				A4FCAED325DDA7F500C9849C /* AppError.swift in Sources */,
 				A4FCAEB225DC8AE000C9849C /* LoginData.swift in Sources */,
+				A46337A825E087A4000B51F7 /* RegisterData.swift in Sources */,
 				A4A495A825DC50E800636B66 /* User.swift in Sources */,
+				A46337B725E08ADB000B51F7 /* EmptyResponse.swift in Sources */,
 				A45BAE5125DC3F4900F51D5E /* ApiResponse.swift in Sources */,
 				A45BADFB25DC2C6B00F51D5E /* SceneDelegate.swift in Sources */,
 				A45BAE4125DC35F400F51D5E /* NetworkRequest.swift in Sources */,
