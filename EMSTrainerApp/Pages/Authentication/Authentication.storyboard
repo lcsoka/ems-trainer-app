@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="ijx-WV-6Gu">
+            <objects>
+                <viewController storyboardIdentifier="Login" id="haj-Qm-k7N" customClass="LoginViewController" customModule="EMSTrainerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tde-uS-S4R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWG-Qg-1dK">
+                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="098-43-V6p">
+                                <rect key="frame" x="128" y="468.5" width="158" height="30"/>
+                                <state key="normal" title="Don't have an account."/>
+                                <connections>
+                                    <action selector="onRegistrationButtonTap:" destination="haj-Qm-k7N" eventType="touchUpInside" id="2tb-AG-eT8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AoJ-ig-enU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="098-43-V6p" firstAttribute="centerX" secondItem="Tde-uS-S4R" secondAttribute="centerX" id="IWm-Kc-2ph"/>
+                            <constraint firstItem="098-43-V6p" firstAttribute="top" secondItem="WWG-Qg-1dK" secondAttribute="bottom" constant="10" id="LHC-e8-SZU"/>
+                            <constraint firstItem="WWG-Qg-1dK" firstAttribute="centerY" secondItem="Tde-uS-S4R" secondAttribute="centerY" id="Y73-b9-UR9"/>
+                            <constraint firstItem="WWG-Qg-1dK" firstAttribute="centerX" secondItem="Tde-uS-S4R" secondAttribute="centerX" id="hv8-W3-TDC"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vrS-EK-ZQD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-325" y="177"/>
+        </scene>
+        <!--Registration View Controller-->
+        <scene sceneID="JXa-Vs-Afl">
+            <objects>
+                <viewController storyboardIdentifier="Registration" id="FbP-ax-RQd" customClass="RegistrationViewController" customModule="EMSTrainerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JlJ-1T-UYK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfM-ru-erK">
+                                <rect key="frame" x="161.5" y="437.5" width="91.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EZA-wx-RjR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UfM-ru-erK" firstAttribute="centerX" secondItem="JlJ-1T-UYK" secondAttribute="centerX" id="ZEe-Ma-bzO"/>
+                            <constraint firstItem="UfM-ru-erK" firstAttribute="centerY" secondItem="JlJ-1T-UYK" secondAttribute="centerY" id="psD-b3-4CP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wgc-cd-8hO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="357" y="177"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
