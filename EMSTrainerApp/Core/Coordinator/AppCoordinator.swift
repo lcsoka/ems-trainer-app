@@ -16,34 +16,29 @@ enum AppChildCoordinator {
 final class AppCoordinator: Coordinator {
     private let window: UIWindow
     let container: Container
+    private var auth: AuthenticationService!
     private var childCoordinators = [AppChildCoordinator: Coordinator]()
     private let navigationController: UINavigationController
-    
-    
-    // TODO: Services
     
     init(window: UIWindow, container: Container) {
         self.window = window
         self.container = container
-        
-        // TODO: Load services from container
-        
+        auth = container.resolve(AuthenticationService.self)
         navigationController = UINavigationController()
-        
-        
         self.window.rootViewController = navigationController
     }
     
     func start() {
-        // TODO: Check auth data
+        if auth.loggedIn() {
+            showHome()
+            return
+        }
         showAuthentication()
-//        showHome()
     }
     
     private func showAuthentication() {
         let authenticationCoordinator = AuthenticationCoordinator(container: container, navigationController: navigationController)
         childCoordinators[.authentication] = authenticationCoordinator
-        // TODO: Delegation
         authenticationCoordinator.delegate = self
         authenticationCoordinator.start()
     }

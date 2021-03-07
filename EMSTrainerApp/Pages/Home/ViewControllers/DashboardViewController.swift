@@ -11,6 +11,8 @@ class DashboardViewController: UIViewController, HomeStoryboardLodable {
     
     weak var authDelegate: AuthenticationDelegate?
     
+    var auth: AuthenticationService!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +21,7 @@ class DashboardViewController: UIViewController, HomeStoryboardLodable {
     
 
     @IBAction func onLogoutTap(_ sender: Any) {
+        auth.logout()
         authDelegate?.onAuthenticationStateChanged(loggedIn: false)
     }
     /*

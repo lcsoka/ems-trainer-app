@@ -24,6 +24,10 @@ class Auth: AuthenticationService {
         tokenService?.token = response.accessToken
     }
     
+    func loggedIn() -> Bool {
+        return self.tokenService?.token != nil
+    }
+    
     func login(email:String,password:String, withCompletion completion:@escaping (AppError?)->Void) {
         api.post(LoginResource(), data: LoginData(email: email, password: password), onSuccess: {
             self.processUserResponse(response: $0!)
@@ -45,5 +49,6 @@ class Auth: AuthenticationService {
     func logout() {
         api.get(LogoutResource(), params: nil,onSuccess: { _ in }){ _ in}
         tokenService?.token = nil
+        userService?.currentUser = nil
     }
 }
