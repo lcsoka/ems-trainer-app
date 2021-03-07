@@ -40,6 +40,11 @@ extension AppDelegate {
         // services
         container.autoregister(UserService.self, initializer: UserDefaultsUserService.init).inObjectScope(ObjectScope.container)
         container.autoregister(TokenService.self, initializer: UserDefaultsTokenService.init).inObjectScope(ObjectScope.container)
+        container.register(ApiService.self) { r in
+            let api = Api(engine: URLSession(configuration: .default, delegate: nil, delegateQueue: .main), tokenService: r.resolve(TokenService.self)!)
+            return api
+        }.inObjectScope(ObjectScope.container)
+        container.autoregister(AuthenticationService.self, initializer: Auth.init).inObjectScope(ObjectScope.container)
     
         // viewmodels
         

@@ -60,10 +60,10 @@ extension NetworkRequest {
                     handleFailure(AppError(code: .unknown, messages: ["Unknown error."]))
                 }
             }
-            guard data != nil else {
-                handleFailure(nil)
-                return
-            }
+//            guard data != nil else {
+//                handleFailure(nil)
+//                return
+//            }
         })
     }
 }

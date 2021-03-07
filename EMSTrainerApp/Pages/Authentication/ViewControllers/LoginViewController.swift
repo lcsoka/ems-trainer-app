@@ -17,6 +17,8 @@ final class LoginViewController: UIViewController, AuthenticationStoryboardLodab
     
     weak var delegate: LoginViewControllerDelegate?
     
+    var auth: AuthenticationService!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +40,12 @@ final class LoginViewController: UIViewController, AuthenticationStoryboardLodab
     }
     
     @IBAction func onTestLoginTap(_ sender: Any) {
-        authDelegate?.onAuthenticationStateChanged(loggedIn: true)
+        let loginData = LoginData(email: "lcsoka@inf.elte.hu", password: "eclick1122")
+        auth.login(email: loginData.email, password: loginData.password) { error in
+            if error != nil {
+                return
+            }
+            self.authDelegate?.onAuthenticationStateChanged(loggedIn: true)
+        }
     }
 }

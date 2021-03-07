@@ -33,6 +33,7 @@ final class AuthenticationCoordinator: NavigationCoordinator {
     func start() {
         let isNavigationStackEmpty = navigationController.viewControllers.isEmpty
         let vc = container.resolve(LoginViewController.self)!
+        vc.auth = container.resolve(AuthenticationService.self)!
         vc.delegate = self
         vc.authDelegate = self
         vc.navigationItem.hidesBackButton = true
