@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		01D23F4F54F8232C7BCB9286 /* Pods_EMSTrainerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC52599F908E9687880578C /* Pods_EMSTrainerAppTests.framework */; };
+		A406E48825F533790044E284 /* UserDefaultsUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A406E48725F533790044E284 /* UserDefaultsUserService.swift */; };
+		A406E49925F533AC0044E284 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A406E49825F533AC0044E284 /* UserService.swift */; };
 		A421544225F503210094C1CB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421544125F503210094C1CB /* AppCoordinator.swift */; };
 		A421544C25F506850094C1CB /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421544B25F506850094C1CB /* AuthenticationCoordinator.swift */; };
 		A421545625F514D70094C1CB /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421545525F514D70094C1CB /* Container.swift */; };
@@ -33,7 +35,6 @@
 		A45BAE4C25DC3E1B00F51D5E /* ApiResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE4B25DC3E1B00F51D5E /* ApiResource.swift */; };
 		A45BAE5125DC3F4900F51D5E /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE5025DC3F4900F51D5E /* ApiResponse.swift */; };
 		A463379C25E07E53000B51F7 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A463379B25E07E53000B51F7 /* Auth.swift */; };
-		A46337A325E083F6000B51F7 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337A225E083F6000B51F7 /* UserService.swift */; };
 		A46337A825E087A4000B51F7 /* RegisterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337A725E087A4000B51F7 /* RegisterData.swift */; };
 		A46337AD25E08811000B51F7 /* RegisterResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337AC25E08811000B51F7 /* RegisterResource.swift */; };
 		A46337B225E08A58000B51F7 /* LogoutResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337B125E08A58000B51F7 /* LogoutResource.swift */; };
@@ -43,6 +44,11 @@
 		A46337D325E115E3000B51F7 /* MockTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337D225E115E3000B51F7 /* MockTask.swift */; };
 		A46337D825E12246000B51F7 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337D725E12246000B51F7 /* NetworkEngine.swift */; };
 		A47BB12F25E1B63B0065023F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47BB12E25E1B63B0065023F /* Coordinator.swift */; };
+		A48B64D525F536E7009D6CCD /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B64D425F536E7009D6CCD /* AuthenticationService.swift */; };
+		A48B64E925F53A43009D6CCD /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B64E825F53A43009D6CCD /* ApiService.swift */; };
+		A48B64FE25F53FB7009D6CCD /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B64FD25F53FB7009D6CCD /* TokenService.swift */; };
+		A48B650325F53FEA009D6CCD /* UserDefaultsTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B650225F53FEA009D6CCD /* UserDefaultsTokenService.swift */; };
+		A48B650925F541B4009D6CCD /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B650825F541B4009D6CCD /* AppConfig.swift */; };
 		A495800F25E04C6500923B7F /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A495800E25E04C6500923B7F /* ErrorType.swift */; };
 		A495801425E051B400923B7F /* ApiErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A495801325E051B400923B7F /* ApiErrorResponse.swift */; };
 		A4A495A825DC50E800636B66 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A495A725DC50E800636B66 /* User.swift */; };
@@ -79,6 +85,8 @@
 		347DD9DE40E30F645A0E81AA /* Pods_EMSTrainerApp_EMSTrainerAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EMSTrainerApp_EMSTrainerAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F13A48375935F1CDACC4024 /* Pods-EMSTrainerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EMSTrainerApp.debug.xcconfig"; path = "Target Support Files/Pods-EMSTrainerApp/Pods-EMSTrainerApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8D652B352D4A608E1D5E6DD0 /* Pods-EMSTrainerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EMSTrainerAppTests.release.xcconfig"; path = "Target Support Files/Pods-EMSTrainerAppTests/Pods-EMSTrainerAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		A406E48725F533790044E284 /* UserDefaultsUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUserService.swift; sourceTree = "<group>"; };
+		A406E49825F533AC0044E284 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A421544125F503210094C1CB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A421544B25F506850094C1CB /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		A421545525F514D70094C1CB /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
@@ -110,7 +118,6 @@
 		A45BAE4B25DC3E1B00F51D5E /* ApiResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResource.swift; sourceTree = "<group>"; };
 		A45BAE5025DC3F4900F51D5E /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		A463379B25E07E53000B51F7 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
-		A46337A225E083F6000B51F7 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A46337A725E087A4000B51F7 /* RegisterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterData.swift; sourceTree = "<group>"; };
 		A46337AC25E08811000B51F7 /* RegisterResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResource.swift; sourceTree = "<group>"; };
 		A46337B125E08A58000B51F7 /* LogoutResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResource.swift; sourceTree = "<group>"; };
@@ -120,6 +127,11 @@
 		A46337D225E115E3000B51F7 /* MockTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTask.swift; sourceTree = "<group>"; };
 		A46337D725E12246000B51F7 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		A47BB12E25E1B63B0065023F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A48B64D425F536E7009D6CCD /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		A48B64E825F53A43009D6CCD /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		A48B64FD25F53FB7009D6CCD /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
+		A48B650225F53FEA009D6CCD /* UserDefaultsTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTokenService.swift; sourceTree = "<group>"; };
+		A48B650825F541B4009D6CCD /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		A495800E25E04C6500923B7F /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		A495801325E051B400923B7F /* ApiErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorResponse.swift; sourceTree = "<group>"; };
 		A4A495A725DC50E800636B66 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -182,6 +194,15 @@
 				8D652B352D4A608E1D5E6DD0 /* Pods-EMSTrainerAppTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A406E49425F5339D0044E284 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A406E49825F533AC0044E284 /* UserService.swift */,
+				A48B64FD25F53FB7009D6CCD /* TokenService.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		A421544025F502D10094C1CB /* Extensions */ = {
@@ -307,6 +328,7 @@
 			children = (
 				A463379A25E07E45000B51F7 /* Auth */,
 				A45BAE3725DC2DA000F51D5E /* Api */,
+				A48B650725F5419D009D6CCD /* Config */,
 				A47BB12D25E1B6250065023F /* Coordinator */,
 				A4FCAED125DDA5C700C9849C /* ErrorHandling */,
 				A421544025F502D10094C1CB /* Extensions */,
@@ -328,6 +350,7 @@
 		A45BAE3725DC2DA000F51D5E /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				A48B64D925F53A1A009D6CCD /* Protocols */,
 				A4A495BD25DC719800636B66 /* Requests */,
 				A4A495BC25DC718A00636B66 /* Responses */,
 				A4A495BB25DC714000636B66 /* Resources */,
@@ -339,8 +362,8 @@
 		A463379A25E07E45000B51F7 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				A48B64D325F53681009D6CCD /* Protocols */,
 				A463379B25E07E53000B51F7 /* Auth.swift */,
-				A421548925F522500094C1CB /* AuthenticationDelegate.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -348,7 +371,9 @@
 		A46337A025E083DE000B51F7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				A46337A225E083F6000B51F7 /* UserService.swift */,
+				A406E49425F5339D0044E284 /* Protocols */,
+				A406E48725F533790044E284 /* UserDefaultsUserService.swift */,
+				A48B650225F53FEA009D6CCD /* UserDefaultsTokenService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -387,6 +412,31 @@
 				A421544125F503210094C1CB /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A48B64D325F53681009D6CCD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A421548925F522500094C1CB /* AuthenticationDelegate.swift */,
+				A48B64D425F536E7009D6CCD /* AuthenticationService.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A48B64D925F53A1A009D6CCD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A48B64E825F53A43009D6CCD /* ApiService.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A48B650725F5419D009D6CCD /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				A48B650825F541B4009D6CCD /* AppConfig.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		A4A495A625DC50D500636B66 /* Models */ = {
@@ -705,10 +755,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A48B64FE25F53FB7009D6CCD /* TokenService.swift in Sources */,
 				A4FCAEB925DC8B4500C9849C /* LoginResource.swift in Sources */,
 				A45BAE4C25DC3E1B00F51D5E /* ApiResource.swift in Sources */,
 				A421544225F503210094C1CB /* AppCoordinator.swift in Sources */,
-				A46337A325E083F6000B51F7 /* UserService.swift in Sources */,
 				A45BADFD25DC2C6B00F51D5E /* ViewController.swift in Sources */,
 				A421548A25F522500094C1CB /* AuthenticationDelegate.swift in Sources */,
 				A421546625F516E40094C1CB /* LoginViewController.swift in Sources */,
@@ -720,11 +770,14 @@
 				A45BAE3925DC2DB600F51D5E /* Api.swift in Sources */,
 				A463379C25E07E53000B51F7 /* Auth.swift in Sources */,
 				A495800F25E04C6500923B7F /* ErrorType.swift in Sources */,
+				A48B64E925F53A43009D6CCD /* ApiService.swift in Sources */,
 				A46337B225E08A58000B51F7 /* LogoutResource.swift in Sources */,
 				A4FCAED325DDA7F500C9849C /* AppError.swift in Sources */,
 				A4FCAEB225DC8AE000C9849C /* LoginData.swift in Sources */,
+				A406E48825F533790044E284 /* UserDefaultsUserService.swift in Sources */,
 				A421545625F514D70094C1CB /* Container.swift in Sources */,
 				A46337A825E087A4000B51F7 /* RegisterData.swift in Sources */,
+				A406E49925F533AC0044E284 /* UserService.swift in Sources */,
 				A4A495A825DC50E800636B66 /* User.swift in Sources */,
 				A46337D825E12246000B51F7 /* NetworkEngine.swift in Sources */,
 				A46337B725E08ADB000B51F7 /* EmptyResponse.swift in Sources */,
@@ -732,12 +785,15 @@
 				A421545B25F515630094C1CB /* StoryboardLodable.swift in Sources */,
 				A421547325F51AB40094C1CB /* RegistrationViewController.swift in Sources */,
 				A45BAE5125DC3F4900F51D5E /* ApiResponse.swift in Sources */,
+				A48B650325F53FEA009D6CCD /* UserDefaultsTokenService.swift in Sources */,
 				A45BADFB25DC2C6B00F51D5E /* SceneDelegate.swift in Sources */,
 				A421547925F51F760094C1CB /* HomeCoordinator.swift in Sources */,
 				A45BAE4125DC35F400F51D5E /* NetworkRequest.swift in Sources */,
 				A4A495BF25DC71C400636B66 /* MeResource.swift in Sources */,
 				A4A495C425DC71D300636B66 /* UserResponse.swift in Sources */,
+				A48B650925F541B4009D6CCD /* AppConfig.swift in Sources */,
 				A421548425F5206A0094C1CB /* DashboardViewController.swift in Sources */,
+				A48B64D525F536E7009D6CCD /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,7 @@ protocol ApiResource {
  
 extension ApiResource {
     var url: URL {
-        var components = URLComponents(string: Api.url)!
+        var components = URLComponents(string: AppConfig.API_URL)!
         components.path += methodPath
         return components.url!
     }

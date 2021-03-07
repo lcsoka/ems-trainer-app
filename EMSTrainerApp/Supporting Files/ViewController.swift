@@ -15,12 +15,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let token = Auth.shared.getToken() {
-            // Logged in
-            setButtonVisibility(loggedIn: true)
-        } else {
-            setButtonVisibility(loggedIn: false)
-        }
+//        if let token = Auth.shared.getToken() {
+//            // Logged in
+//            setButtonVisibility(loggedIn: true)
+//        } else {
+//            setButtonVisibility(loggedIn: false)
+//        }
         
     }
     
@@ -31,18 +31,18 @@ class ViewController: UIViewController {
     
     @IBAction func login(_ sender: Any) {
         let loginData = LoginData(email: "lcsoka@inf.elte.hu", password: "eclick1122")
-        Auth.shared.login(email: loginData.email, password: loginData.password) { error in
-            if error != nil {
-                return
-            }
-            
-            self.setButtonVisibility(loggedIn: true)
-        }
+//        Auth.shared.login(email: loginData.email, password: loginData.password) { error in
+//            if error != nil {
+//                return
+//            }
+//
+//            self.setButtonVisibility(loggedIn: true)
+//        }
     }
     
     @IBAction func logout(_ sender: Any) {
-        Auth.shared.logout()
-        setButtonVisibility(loggedIn: false)
+//        Auth.shared.logout()
+//        setButtonVisibility(loggedIn: false)
     }
 }
 

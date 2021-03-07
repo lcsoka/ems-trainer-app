@@ -7,41 +7,25 @@
 
 import Foundation
 
-protocol AuthDelegate {
-    func onLogout(_ force: Bool)
-}
-
-class Auth {
-    static let shared = Auth()
+class Auth: AuthenticationService {
     
-    private var token: String?
+    private var userService: UserService?
+    private var tokenService: TokenService?
+    private var api: ApiService
     
-    public var delegate: AuthDelegate?
-    
-    init() {
-        if let savedToken = UserDefaults.standard.string(forKey: "Token") {
-            token = savedToken
-        }
-    }
-    
-    private func setToken(_ token: String?) {
-        self.token = token
-        UserDefaults.standard.set(token, forKey: "Token")
+    init(userService: UserService, tokenService: TokenService, api: ApiService) {
+        self.userService = userService
+        self.tokenService = tokenService
+        self.api = api
     }
     
     private func processUserResponse(response: UserResponse) {
-        UserService.shared.setUser(response.user)
-        if let token = response.accessToken {
-            self.setToken(token)
-        }
-    }
-    
-    func getToken() -> String? {
-        return self.token
+        userService?.currentUser = response.user
+        tokenService?.token = response.accessToken
     }
     
     func login(email:String,password:String, withCompletion completion:@escaping (AppError?)->Void) {
-        Api.shared.post(LoginResource(), data: LoginData(email: email, password: password), onSuccess: {
+        api.post(LoginResource(), data: LoginData(email: email, password: password), onSuccess: {
             self.processUserResponse(response: $0!)
             completion(nil)
         }){
@@ -50,7 +34,7 @@ class Auth {
     }
     
     func register(name: String, email: String, password: String, passwordConfirmation: String, withCompletion completion:@escaping (AppError?)->Void) {
-        Api.shared.post(RegisterResource(), data: RegisterData(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation), onSuccess: {
+        api.post(RegisterResource(), data: RegisterData(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation), onSuccess: {
             self.processUserResponse(response: $0!)
             completion(nil)
         }){
@@ -59,13 +43,7 @@ class Auth {
     }
     
     func logout() {
-        Api.shared.get(LogoutResource(), params: nil,onSuccess: { _ in }){ _ in}
-        self.onLogout()
-    }
-    
-    func onLogout(_ force: Bool = false) {
-        self.setToken(nil)
-        UserService.shared.setUser(nil)
-        self.delegate?.onLogout(force)
+        api.get(LogoutResource(), params: nil,onSuccess: { _ in }){ _ in}
+        tokenService?.token = nil
     }
 }

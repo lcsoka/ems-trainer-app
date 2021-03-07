@@ -35,7 +35,7 @@ extension NetworkRequest {
                     case 401:
                         // Unauthorized
                         handleFailure(AppError(code: .unauthorized, messages: self.decodeError(data) as! [Any]))
-                        Auth.shared.onLogout(true)
+//                        Auth.shared.onLogout(true)
                         break
                     case 422:
                         // Unauthorized
@@ -60,7 +60,7 @@ extension NetworkRequest {
                     handleFailure(AppError(code: .unknown, messages: ["Unknown error."]))
                 }
             }
-            guard let data = data else {
+            guard data != nil else {
                 handleFailure(nil)
                 return
             }

@@ -7,9 +7,10 @@
 
 import UIKit
 import Swinject
+import SwinjectAutoregistration
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, AuthDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     internal let container = Container()
@@ -29,22 +30,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AuthDelegate {
         
         window?.makeKeyAndVisible()
         
-        // Set Auth delegate to app delegate, to catch the logout event
-        Auth.shared.delegate = self
-        
         return true
     }
-    
-    func onLogout(_ force: Bool) {
-        print("Logged out")
-    }    
 }
 
 
 extension AppDelegate {
     func setupDependencies() {
         // services
-        
+        container.autoregister(UserService.self, initializer: UserDefaultsUserService.init).inObjectScope(ObjectScope.container)
+        container.autoregister(TokenService.self, initializer: UserDefaultsTokenService.init).inObjectScope(ObjectScope.container)
+    
         // viewmodels
         
         // view controllers

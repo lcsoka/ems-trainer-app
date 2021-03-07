@@ -17,15 +17,14 @@ class ApiRequest<Resource: ApiResource> {
         "Content-Type":"application/json",
     ]
     
-    init(resource: Resource, engine: NetworkEngine = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)) {
+    init(resource: Resource, tokenService: TokenService, engine: NetworkEngine = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)) {
         self.resource = resource
         self.engine = engine
         
-        if let token = Auth.shared.getToken() {
+        if let token = tokenService.token {
             httpHeaders["Authorization"] = "Bearer \(token)"
         }
-    }
-    
+    }    
 }
 
 extension ApiRequest: NetworkRequest {
