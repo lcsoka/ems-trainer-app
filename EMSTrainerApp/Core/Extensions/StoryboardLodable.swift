@@ -13,11 +13,22 @@ protocol StoryboardLodable {
 }
 
 protocol AuthenticationStoryboardLodable: StoryboardLodable {
+    var authDelegate: AuthenticationDelegate? { get set }
+}
+
+
+protocol HomeStoryboardLodable: StoryboardLodable {
     
 }
 
 extension AuthenticationStoryboardLodable where Self: UIViewController {
     @nonobjc static var storyboardName: String {
         return "Authentication"
+    }
+}
+
+extension HomeStoryboardLodable where Self: UIViewController {
+    @nonobjc static var storyboardName: String {
+        return "Home"
     }
 }

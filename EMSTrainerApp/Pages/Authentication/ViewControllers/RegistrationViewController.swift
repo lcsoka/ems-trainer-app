@@ -9,6 +9,8 @@ import UIKit
 
 class RegistrationViewController: UIViewController, AuthenticationStoryboardLodable {
 
+    weak var authDelegate: AuthenticationDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,6 +18,9 @@ class RegistrationViewController: UIViewController, AuthenticationStoryboardLoda
     }
     
 
+    @IBAction func onTestRegTap(_ sender: Any) {
+        authDelegate?.onAuthenticationStateChanged(loggedIn: true)
+    }
     /*
     // MARK: - Navigation
 

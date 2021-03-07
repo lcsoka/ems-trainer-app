@@ -29,14 +29,23 @@
                                     <action selector="onRegistrationButtonTap:" destination="haj-Qm-k7N" eventType="touchUpInside" id="2tb-AG-eT8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vS-gc-a2g">
+                                <rect key="frame" x="171.5" y="407.5" width="71" height="30"/>
+                                <state key="normal" title="Test Login"/>
+                                <connections>
+                                    <action selector="onTestLoginTap:" destination="haj-Qm-k7N" eventType="touchUpInside" id="ejA-P4-hPM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AoJ-ig-enU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="098-43-V6p" firstAttribute="centerX" secondItem="Tde-uS-S4R" secondAttribute="centerX" id="IWm-Kc-2ph"/>
                             <constraint firstItem="098-43-V6p" firstAttribute="top" secondItem="WWG-Qg-1dK" secondAttribute="bottom" constant="10" id="LHC-e8-SZU"/>
+                            <constraint firstItem="WWG-Qg-1dK" firstAttribute="top" secondItem="3vS-gc-a2g" secondAttribute="bottom" id="Xlq-4N-t4A"/>
                             <constraint firstItem="WWG-Qg-1dK" firstAttribute="centerY" secondItem="Tde-uS-S4R" secondAttribute="centerY" id="Y73-b9-UR9"/>
                             <constraint firstItem="WWG-Qg-1dK" firstAttribute="centerX" secondItem="Tde-uS-S4R" secondAttribute="centerX" id="hv8-W3-TDC"/>
+                            <constraint firstItem="3vS-gc-a2g" firstAttribute="centerX" secondItem="Tde-uS-S4R" secondAttribute="centerX" id="wya-0O-47t"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -58,11 +67,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9R-9n-HdA">
+                                <rect key="frame" x="154" y="458.5" width="106" height="30"/>
+                                <state key="normal" title="Successful Reg"/>
+                                <connections>
+                                    <action selector="onTestRegTap:" destination="FbP-ax-RQd" eventType="touchUpInside" id="rod-Zt-lAN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EZA-wx-RjR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Y9R-9n-HdA" firstAttribute="top" secondItem="UfM-ru-erK" secondAttribute="bottom" id="RmE-lt-c62"/>
                             <constraint firstItem="UfM-ru-erK" firstAttribute="centerX" secondItem="JlJ-1T-UYK" secondAttribute="centerX" id="ZEe-Ma-bzO"/>
+                            <constraint firstItem="Y9R-9n-HdA" firstAttribute="centerX" secondItem="JlJ-1T-UYK" secondAttribute="centerX" id="ogk-Zp-8dE"/>
                             <constraint firstItem="UfM-ru-erK" firstAttribute="centerY" secondItem="JlJ-1T-UYK" secondAttribute="centerY" id="psD-b3-4CP"/>
                         </constraints>
                     </view>

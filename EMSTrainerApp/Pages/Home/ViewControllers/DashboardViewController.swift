@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  DashboardViewController.swift
 //  EMSTrainerApp
 //
 //  Created by Laszlo Csoka on 2021. 03. 07..
@@ -7,15 +7,9 @@
 
 import UIKit
 
-protocol LoginViewControllerDelegate: class {
-    func userDidRequestRegistration()
-}
-
-final class LoginViewController: UIViewController, AuthenticationStoryboardLodable {
-
-    weak var authDelegate: AuthenticationDelegate?
+class DashboardViewController: UIViewController, HomeStoryboardLodable {
     
-    weak var delegate: LoginViewControllerDelegate?
+    weak var authDelegate: AuthenticationDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +18,9 @@ final class LoginViewController: UIViewController, AuthenticationStoryboardLodab
     }
     
 
+    @IBAction func onLogoutTap(_ sender: Any) {
+        authDelegate?.onAuthenticationStateChanged(loggedIn: false)
+    }
     /*
     // MARK: - Navigation
 
@@ -33,11 +30,5 @@ final class LoginViewController: UIViewController, AuthenticationStoryboardLodab
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func onRegistrationButtonTap(_ sender: Any) {
-        delegate?.userDidRequestRegistration()
-    }
-    
-    @IBAction func onTestLoginTap(_ sender: Any) {
-        authDelegate?.onAuthenticationStateChanged(loggedIn: true)
-    }
+
 }

@@ -56,5 +56,9 @@ extension AppDelegate {
             
         }
         
+        container.registerViewController(DashboardViewController.self) {r, c in
+            
+        }
+        
     }
 }

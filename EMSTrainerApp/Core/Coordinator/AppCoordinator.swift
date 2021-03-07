@@ -37,17 +37,37 @@ final class AppCoordinator: Coordinator {
     func start() {
         // TODO: Check auth data
         showAuthentication()
+//        showHome()
     }
     
     private func showAuthentication() {
         let authenticationCoordinator = AuthenticationCoordinator(container: container, navigationController: navigationController)
         childCoordinators[.authentication] = authenticationCoordinator
         // TODO: Delegation
+        authenticationCoordinator.delegate = self
         authenticationCoordinator.start()
     }
     
     private func showHome() {
-        
+        let homeCoordinator = HomeCoordinator(container: container, navigationController: navigationController)
+        childCoordinators[.home] = homeCoordinator
+        homeCoordinator.delegate = self
+        homeCoordinator.start()
     }
     
 }
+
+extension AppCoordinator: AuthenticationCoordinatorDelegate {
+    func authenticationCoordinatorFinish() {
+        childCoordinators[.authentication] = nil
+        showHome()
+    }
+}
+
+extension AppCoordinator: HomeCoordinatorDelegate {
+    func homeCoordinatorFinish() {
+        childCoordinators[.home] = nil
+        showAuthentication()
+    }
+}
+
