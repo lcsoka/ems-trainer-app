@@ -25,6 +25,12 @@ final class AppCoordinator: Coordinator {
         self.container = container
         auth = container.resolve(AuthenticationService.self)
         navigationController = UINavigationController()
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.backgroundColor = UIColor(named: "Gray800")
+        navigationController.navigationBar.barTintColor = UIColor(named: "Gray800")
+        navigationController.navigationBar.tintColor = UIColor(named: "Green500")
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController.navigationBar.shadowImage = UIImage()
         self.window.rootViewController = navigationController
     }
     

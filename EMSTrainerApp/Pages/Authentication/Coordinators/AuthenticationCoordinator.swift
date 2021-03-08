@@ -37,6 +37,7 @@ final class AuthenticationCoordinator: NavigationCoordinator {
         vc.delegate = self
         vc.authDelegate = self
         vc.navigationItem.hidesBackButton = true
+//        navigationController.setNavigationBarHidden(true, animated: true)
         navigationController.pushViewController(vc, animated: true)
         
         if !isNavigationStackEmpty {
@@ -51,6 +52,7 @@ final class AuthenticationCoordinator: NavigationCoordinator {
     private func showRegistrationScreen() {
         let vc = container.resolve(RegistrationViewController.self)!
         vc.authDelegate = self
+//        navigationController.setNavigationBarHidden(false, animated: true)
         navigationController.pushViewController(vc, animated: true)
     }
 }
