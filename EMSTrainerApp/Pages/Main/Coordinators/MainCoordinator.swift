@@ -9,6 +9,12 @@ import Foundation
 import UIKit
 import Swinject
 
+enum MainChildCoordinator {
+    case dashboard
+    case account
+    case workouts
+}
+
 protocol MainCoordinatorDelegate: class {
     func mainCoordinatorFinish()
 }
@@ -17,22 +23,35 @@ final class MainCoordinator: NavigationCoordinator {
     let container: Container
     var navigationController: UINavigationController
     var auth: AuthenticationService!
+    var userService: UserService!
     weak var delegate: MainCoordinatorDelegate?
+    private var childCoordinators = [MainChildCoordinator: Coordinator]()
+    
     init(container: Container, navigationController: UINavigationController) {
         self.container = container
         self.navigationController = navigationController
         self.auth = container.resolve(AuthenticationService.self)
+        self.userService = container.resolve(UserService.self)
     }
     
     func start() {
         let vc = container.resolve(DashboardViewController.self)!
         vc.authDelegate = self
+        vc.delegate = self
         vc.auth = auth
         vc.navigationItem.hidesBackButton = true
 
         // Remove previous view controllers from the stack
         navigationController.setViewControllers([vc], animated: true)
     }
+    
+    private func showAccount() {
+        let vc = container.resolve(AccountViewController.self)!
+        vc.userService = self.userService
+//        vc.modalPresentationStyle = .overCurrentContext
+        navigationController.present(vc, animated: true)
+    }
+    
 }
 
 extension MainCoordinator: AuthenticationDelegate {
@@ -40,5 +59,11 @@ extension MainCoordinator: AuthenticationDelegate {
         if !loggedIn {
             delegate?.mainCoordinatorFinish()
         }
+    }
+}
+
+extension MainCoordinator: DashboardViewControllerDelegate {
+    func userDidRequestAccountPage() {
+        showAccount()
     }
 }

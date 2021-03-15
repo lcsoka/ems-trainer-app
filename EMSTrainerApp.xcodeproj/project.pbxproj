@@ -13,6 +13,7 @@
 		A41C8F8925FFF7B600192BDD /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8F8825FFF7B600192BDD /* StatisticsView.swift */; };
 		A41C8F8E25FFF7C600192BDD /* StatisticsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41C8F8D25FFF7C600192BDD /* StatisticsView.xib */; };
 		A41C8F9325FFFA2700192BDD /* CustomViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8F9225FFFA2700192BDD /* CustomViewProtocol.swift */; };
+		A41C8F982600060800192BDD /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8F972600060800192BDD /* AccountViewController.swift */; };
 		A421544225F503210094C1CB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421544125F503210094C1CB /* AppCoordinator.swift */; };
 		A421544C25F506850094C1CB /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421544B25F506850094C1CB /* AuthenticationCoordinator.swift */; };
 		A421545625F514D70094C1CB /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421545525F514D70094C1CB /* Container.swift */; };
@@ -102,6 +103,7 @@
 		A41C8F8825FFF7B600192BDD /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		A41C8F8D25FFF7C600192BDD /* StatisticsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticsView.xib; sourceTree = "<group>"; };
 		A41C8F9225FFFA2700192BDD /* CustomViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewProtocol.swift; sourceTree = "<group>"; };
+		A41C8F972600060800192BDD /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		A421544125F503210094C1CB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A421544B25F506850094C1CB /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		A421545525F514D70094C1CB /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				A421548325F5206A0094C1CB /* DashboardViewController.swift */,
+				A41C8F972600060800192BDD /* AccountViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -858,6 +861,7 @@
 				A477972125FFDD86006AF564 /* Router.swift in Sources */,
 				A406E48825F533790044E284 /* UserDefaultsUserService.swift in Sources */,
 				A421545625F514D70094C1CB /* Container.swift in Sources */,
+				A41C8F982600060800192BDD /* AccountViewController.swift in Sources */,
 				A477972F25FFDE38006AF564 /* Presentable.swift in Sources */,
 				A46337A825E087A4000B51F7 /* RegisterData.swift in Sources */,
 				A406E49925F533AC0044E284 /* UserService.swift in Sources */,

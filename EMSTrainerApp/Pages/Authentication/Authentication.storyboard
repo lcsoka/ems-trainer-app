@@ -107,7 +107,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 <state key="normal" title="Login">
-                                                    <color key="titleColor" name="Gray300"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -205,13 +205,13 @@
     </scenes>
     <designables>
         <designable name="2nI-YK-EtK">
-            <size key="intrinsicContentSize" width="33" height="34"/>
+            <size key="intrinsicContentSize" width="320" height="41"/>
         </designable>
         <designable name="XOc-ww-NEb">
             <size key="intrinsicContentSize" width="62" height="41"/>
         </designable>
         <designable name="z3f-Vi-Rt7">
-            <size key="intrinsicContentSize" width="33" height="34"/>
+            <size key="intrinsicContentSize" width="320" height="41"/>
         </designable>
     </designables>
     <color key="tintColor" name="Green500"/>

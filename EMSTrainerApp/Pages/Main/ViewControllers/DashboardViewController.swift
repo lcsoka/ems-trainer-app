@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol DashboardViewControllerDelegate: class {
+    func userDidRequestAccountPage()
+}
+
 class DashboardViewController: UIViewController, MainStoryboardLodable {
     
     weak var authDelegate: AuthenticationDelegate?
+    
+    weak var delegate: DashboardViewControllerDelegate?
     
     var auth: AuthenticationService!
     
@@ -23,8 +29,8 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
     func setupUI() {
         title = "Dashboard"
         self.extendedLayoutIncludesOpaqueBars = true
-        let btn = UIBarButtonItem(title: "Test", style: .done, target: nil, action: #selector(self.test))
-        self.navigationItem.setRightBarButtonItems([btn], animated: true)
+        let statBtn = UIBarButtonItem(title: "Account", style: .plain, target: self, action: #selector(self.test))
+        navigationItem.rightBarButtonItems = [statBtn]
 //        self.navigationBar.add
     }
     
@@ -34,7 +40,7 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
     }
     
     @objc func test() {
-        
+        self.delegate?.userDidRequestAccountPage()
     }
     
     /*

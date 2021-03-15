@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQv-Co-rG2">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="764"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h6P-3G-KKa">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1087"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="859"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QiP-Gn-uI2" customClass="StatisticsView" customModule="EMSTrainerApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="135"/>
@@ -30,7 +31,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wjq-2C-pit">
-                                                <rect key="frame" x="0.0" y="145" width="414" height="482"/>
+                                                <rect key="frame" x="0.0" y="145" width="414" height="352"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workouts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U15-HW-IuC">
                                                         <rect key="frame" x="20" y="0.0" width="90.5" height="24"/>
@@ -39,10 +40,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEk-YQ-5uZ" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
-                                                        <rect key="frame" x="20" y="32" width="374" height="450"/>
+                                                        <rect key="frame" x="20" y="32" width="374" height="100"/>
                                                         <color key="backgroundColor" name="Gray700"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="450" id="DKU-DB-FXh"/>
+                                                            <constraint firstAttribute="height" constant="100" id="DKU-DB-FXh"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -56,26 +57,23 @@
                                                             <color key="titleColor" name="Green500"/>
                                                         </state>
                                                     </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="fEk-YQ-5uZ" firstAttribute="top" secondItem="Nqi-sD-QZX" secondAttribute="bottom" constant="5" id="5Jz-aU-IGy"/>
-                                                    <constraint firstAttribute="trailing" secondItem="fEk-YQ-5uZ" secondAttribute="trailing" constant="20" id="8aE-Xz-TSH"/>
-                                                    <constraint firstAttribute="bottom" secondItem="fEk-YQ-5uZ" secondAttribute="bottom" id="8qH-Db-kJR"/>
-                                                    <constraint firstItem="fEk-YQ-5uZ" firstAttribute="top" secondItem="U15-HW-IuC" secondAttribute="bottom" constant="8" symbolic="YES" id="Aop-jX-2tG"/>
-                                                    <constraint firstItem="fEk-YQ-5uZ" firstAttribute="leading" secondItem="Wjq-2C-pit" secondAttribute="leading" constant="20" id="TJn-kz-0dq"/>
-                                                    <constraint firstItem="U15-HW-IuC" firstAttribute="leading" secondItem="Wjq-2C-pit" secondAttribute="leading" constant="20" id="TjA-ON-prd"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Nqi-sD-QZX" secondAttribute="trailing" constant="20" id="wzt-cw-qE6"/>
-                                                    <constraint firstItem="U15-HW-IuC" firstAttribute="top" secondItem="Wjq-2C-pit" secondAttribute="top" id="xo9-Lf-AyW"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcX-Fe-t1g">
-                                                <rect key="frame" x="0.0" y="637" width="414" height="450"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nqD-Ki-mHq" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
-                                                        <rect key="frame" x="20" y="0.0" width="374" height="450"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9Z-u9-7kr" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="142" width="374" height="100"/>
                                                         <color key="backgroundColor" name="Gray700"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="450" id="W0S-Hz-gKa"/>
+                                                            <constraint firstAttribute="height" constant="100" id="PrS-p1-YOs"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Sf-vL-BnA" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="252" width="374" height="100"/>
+                                                        <color key="backgroundColor" name="Gray700"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="oqK-t1-Cnb"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -85,10 +83,59 @@
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="nqD-Ki-mHq" firstAttribute="leading" secondItem="rcX-Fe-t1g" secondAttribute="leading" constant="20" id="Q4D-r8-eJN"/>
-                                                    <constraint firstAttribute="trailing" secondItem="nqD-Ki-mHq" secondAttribute="trailing" constant="20" id="SSv-W9-BW4"/>
-                                                    <constraint firstItem="nqD-Ki-mHq" firstAttribute="top" secondItem="rcX-Fe-t1g" secondAttribute="top" id="bAJ-XJ-Jvu"/>
-                                                    <constraint firstAttribute="bottom" secondItem="nqD-Ki-mHq" secondAttribute="bottom" id="iSb-vE-DXl"/>
+                                                    <constraint firstAttribute="trailing" secondItem="c9Z-u9-7kr" secondAttribute="trailing" constant="20" symbolic="YES" id="0Wc-Bf-HVN"/>
+                                                    <constraint firstItem="fEk-YQ-5uZ" firstAttribute="top" secondItem="Nqi-sD-QZX" secondAttribute="bottom" constant="5" id="5Jz-aU-IGy"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fEk-YQ-5uZ" secondAttribute="trailing" constant="20" id="8aE-Xz-TSH"/>
+                                                    <constraint firstItem="fEk-YQ-5uZ" firstAttribute="top" secondItem="U15-HW-IuC" secondAttribute="bottom" constant="8" symbolic="YES" id="Aop-jX-2tG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="7Sf-vL-BnA" secondAttribute="bottom" id="F2z-Mj-1Tz"/>
+                                                    <constraint firstItem="c9Z-u9-7kr" firstAttribute="top" secondItem="fEk-YQ-5uZ" secondAttribute="bottom" constant="10" id="NCP-b8-k1X"/>
+                                                    <constraint firstItem="fEk-YQ-5uZ" firstAttribute="leading" secondItem="Wjq-2C-pit" secondAttribute="leading" constant="20" id="TJn-kz-0dq"/>
+                                                    <constraint firstItem="U15-HW-IuC" firstAttribute="leading" secondItem="Wjq-2C-pit" secondAttribute="leading" constant="20" id="TjA-ON-prd"/>
+                                                    <constraint firstItem="c9Z-u9-7kr" firstAttribute="leading" secondItem="Wjq-2C-pit" secondAttribute="leading" constant="20" symbolic="YES" id="WV7-Sv-md1"/>
+                                                    <constraint firstItem="7Sf-vL-BnA" firstAttribute="top" secondItem="c9Z-u9-7kr" secondAttribute="bottom" constant="10" id="enT-BJ-6qb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7Sf-vL-BnA" secondAttribute="trailing" constant="20" symbolic="YES" id="mzh-n2-Cmd"/>
+                                                    <constraint firstItem="7Sf-vL-BnA" firstAttribute="leading" secondItem="Wjq-2C-pit" secondAttribute="leading" constant="20" symbolic="YES" id="rTV-cW-2Gv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Nqi-sD-QZX" secondAttribute="trailing" constant="20" id="wzt-cw-qE6"/>
+                                                    <constraint firstItem="U15-HW-IuC" firstAttribute="top" secondItem="Wjq-2C-pit" secondAttribute="top" id="xo9-Lf-AyW"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OXZ-rs-z3O">
+                                                <rect key="frame" x="0.0" y="507" width="414" height="352"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjM-Pl-TtR">
+                                                        <rect key="frame" x="20" y="0.0" width="70.5" height="94"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RzV-Cb-pDo" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="102" width="374" height="250"/>
+                                                        <color key="backgroundColor" name="Gray700"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="250" id="LPP-BR-QAS"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMP-Zx-LxI">
+                                                        <rect key="frame" x="317" y="67" width="77" height="30"/>
+                                                        <state key="normal" title="Show More">
+                                                            <color key="titleColor" name="Green500"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="RzV-Cb-pDo" firstAttribute="leading" secondItem="OXZ-rs-z3O" secondAttribute="leading" constant="20" id="AVv-j6-aie"/>
+                                                    <constraint firstAttribute="trailing" secondItem="RzV-Cb-pDo" secondAttribute="trailing" constant="20" id="F33-hc-SEy"/>
+                                                    <constraint firstItem="PjM-Pl-TtR" firstAttribute="top" secondItem="OXZ-rs-z3O" secondAttribute="top" id="HOd-qX-Pzp"/>
+                                                    <constraint firstItem="RzV-Cb-pDo" firstAttribute="top" secondItem="MMP-Zx-LxI" secondAttribute="bottom" constant="5" id="bn6-RM-irE"/>
+                                                    <constraint firstAttribute="bottom" secondItem="RzV-Cb-pDo" secondAttribute="bottom" id="eCq-tV-FwC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="MMP-Zx-LxI" secondAttribute="trailing" constant="20" id="jaN-p9-oyt"/>
+                                                    <constraint firstItem="RzV-Cb-pDo" firstAttribute="top" secondItem="PjM-Pl-TtR" secondAttribute="bottom" constant="8" symbolic="YES" id="n6z-96-vZd"/>
+                                                    <constraint firstItem="PjM-Pl-TtR" firstAttribute="leading" secondItem="OXZ-rs-z3O" secondAttribute="leading" constant="20" id="tbH-7a-btF"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -104,14 +151,31 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="rJY-In-6j3"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="hAA-sP-Ibx"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7my-ky-RkS" customClass="RoundedButton" customModule="EMSTrainerApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="818" width="374" height="44"/>
+                                <color key="backgroundColor" name="Green500"/>
+                                <color key="tintColor" name="Green500"/>
+                                <state key="normal" title="New workout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u9O-Up-E2M"/>
                         <color key="backgroundColor" name="Gray800"/>
                         <constraints>
-                            <constraint firstItem="u9O-Up-E2M" firstAttribute="bottom" secondItem="kQv-Co-rG2" secondAttribute="bottom" id="2An-0g-s7M"/>
+                            <constraint firstItem="u9O-Up-E2M" firstAttribute="bottom" secondItem="kQv-Co-rG2" secondAttribute="bottom" constant="54" id="2An-0g-s7M"/>
+                            <constraint firstItem="7my-ky-RkS" firstAttribute="top" secondItem="kQv-Co-rG2" secondAttribute="bottom" constant="10" id="9Tk-YO-jjt"/>
+                            <constraint firstItem="u9O-Up-E2M" firstAttribute="trailing" secondItem="7my-ky-RkS" secondAttribute="trailing" constant="20" id="Lbn-MN-b4I"/>
                             <constraint firstItem="u9O-Up-E2M" firstAttribute="trailing" secondItem="kQv-Co-rG2" secondAttribute="trailing" id="UJ5-7Y-mAN"/>
+                            <constraint firstItem="7my-ky-RkS" firstAttribute="bottom" secondItem="u9O-Up-E2M" secondAttribute="bottom" id="gHO-DH-dHc"/>
                             <constraint firstItem="kQv-Co-rG2" firstAttribute="leading" secondItem="u9O-Up-E2M" secondAttribute="leading" id="kbL-pi-00q"/>
                             <constraint firstItem="kQv-Co-rG2" firstAttribute="top" secondItem="u9O-Up-E2M" secondAttribute="top" id="lmq-Cr-caS"/>
+                            <constraint firstItem="7my-ky-RkS" firstAttribute="leading" secondItem="u9O-Up-E2M" secondAttribute="leading" constant="20" id="v4c-2C-8J3"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -119,7 +183,108 @@
             </objects>
             <point key="canvasLocation" x="-426.08695652173918" y="115.84821428571428"/>
         </scene>
+        <!--Account View Controller-->
+        <scene sceneID="2GR-A4-g4r">
+            <objects>
+                <viewController storyboardIdentifier="Account" id="tlZ-XO-Noe" customClass="AccountViewController" customModule="EMSTrainerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D2c-Gc-4DL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YIc-sS-TM1" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                <rect key="frame" x="157" y="108" width="100" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="bo1-8L-6E2"/>
+                                    <constraint firstAttribute="height" constant="100" id="ijz-gE-dQs"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="Gray700"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vt6-aa-i1d">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" name="Gray700"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Account" largeTitleDisplayMode="always" id="iEJ-ZL-pP6">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="uy7-7c-6sG">
+                                            <color key="tintColor" name="Green500"/>
+                                            <connections>
+                                                <action selector="onDoneTap:" destination="tlZ-XO-Noe" id="nnK-92-EnQ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XpD-Bl-cgf">
+                                <rect key="frame" x="172.5" y="228" width="69" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YS9-WU-2e1">
+                                <rect key="frame" x="186" y="269" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NFX-Lb-uxF"/>
+                        <color key="backgroundColor" name="Gray800"/>
+                        <constraints>
+                            <constraint firstItem="YS9-WU-2e1" firstAttribute="centerX" secondItem="D2c-Gc-4DL" secondAttribute="centerX" id="4js-HH-kQ0"/>
+                            <constraint firstItem="YS9-WU-2e1" firstAttribute="top" secondItem="XpD-Bl-cgf" secondAttribute="bottom" constant="8" symbolic="YES" id="AZh-Xu-dR1"/>
+                            <constraint firstItem="YIc-sS-TM1" firstAttribute="centerX" secondItem="D2c-Gc-4DL" secondAttribute="centerX" id="Gha-LO-Nk8"/>
+                            <constraint firstItem="Vt6-aa-i1d" firstAttribute="leading" secondItem="NFX-Lb-uxF" secondAttribute="leading" id="Ruv-jj-h4F"/>
+                            <constraint firstItem="YIc-sS-TM1" firstAttribute="top" secondItem="Vt6-aa-i1d" secondAttribute="bottom" constant="20" id="UuA-cL-vEN"/>
+                            <constraint firstItem="XpD-Bl-cgf" firstAttribute="top" secondItem="YIc-sS-TM1" secondAttribute="bottom" constant="20" id="Zsz-vw-jGr"/>
+                            <constraint firstItem="Vt6-aa-i1d" firstAttribute="trailing" secondItem="NFX-Lb-uxF" secondAttribute="trailing" id="jqI-yL-AFF"/>
+                            <constraint firstItem="XpD-Bl-cgf" firstAttribute="centerX" secondItem="D2c-Gc-4DL" secondAttribute="centerX" id="oy9-oE-ZKw"/>
+                            <constraint firstItem="Vt6-aa-i1d" firstAttribute="top" secondItem="NFX-Lb-uxF" secondAttribute="top" id="sVY-MA-7ph"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblEmail" destination="YS9-WU-2e1" id="k3C-bz-dvP"/>
+                        <outlet property="lblName" destination="XpD-Bl-cgf" id="yTC-fn-M3Y"/>
+                        <outlet property="navigationBar" destination="Vt6-aa-i1d" id="AKY-mb-Pum"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DjZ-PI-DTC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="216" y="116"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WGd-tk-LKI">
+            <objects>
+                <viewController id="zKl-i6-YXQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3FV-Hf-boM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="SpS-v6-IkW"/>
+                        <color key="backgroundColor" name="Gray800"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L6q-UM-O34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="116"/>
+        </scene>
     </scenes>
+    <designables>
+        <designable name="7my-ky-RkS">
+            <size key="intrinsicContentSize" width="90" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="Gray700">
             <color red="0.22400000691413879" green="0.25400000810623169" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -130,5 +295,8 @@
         <namedColor name="Green500">
             <color red="0.33300000429153442" green="0.7160000205039978" blue="0.5220000147819519" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

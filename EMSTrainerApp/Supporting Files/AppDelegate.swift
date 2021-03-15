@@ -61,5 +61,9 @@ extension AppDelegate {
             
         }
         
+        container.registerViewController(AccountViewController.self) {r, c in
+            
+        }
+        
     }
 }
