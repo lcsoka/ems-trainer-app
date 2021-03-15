@@ -1,5 +1,5 @@
 //
-//  HomeCoordinator.swift
+//  MainCoordinator.swift
 //  EMSTrainerApp
 //
 //  Created by Laszlo Csoka on 2021. 03. 07..
@@ -9,15 +9,15 @@ import Foundation
 import UIKit
 import Swinject
 
-protocol HomeCoordinatorDelegate: class {
-    func homeCoordinatorFinish()
+protocol MainCoordinatorDelegate: class {
+    func mainCoordinatorFinish()
 }
 
-final class HomeCoordinator: NavigationCoordinator {
+final class MainCoordinator: NavigationCoordinator {
     let container: Container
     var navigationController: UINavigationController
     var auth: AuthenticationService!
-    weak var delegate: HomeCoordinatorDelegate?
+    weak var delegate: MainCoordinatorDelegate?
     init(container: Container, navigationController: UINavigationController) {
         self.container = container
         self.navigationController = navigationController
@@ -25,24 +25,20 @@ final class HomeCoordinator: NavigationCoordinator {
     }
     
     func start() {
-        let isNavigationStackEmpty = navigationController.viewControllers.isEmpty
         let vc = container.resolve(DashboardViewController.self)!
-//        vc.delegate = self
         vc.authDelegate = self
         vc.auth = auth
         vc.navigationItem.hidesBackButton = true
-        navigationController.pushViewController(vc, animated: true)
-        
-        if !isNavigationStackEmpty {
-            navigationController.viewControllers.remove(at: 0)
-        }
+
+        // Remove previous view controllers from the stack
+        navigationController.setViewControllers([vc], animated: true)
     }
 }
 
-extension HomeCoordinator: AuthenticationDelegate {
+extension MainCoordinator: AuthenticationDelegate {
     func onAuthenticationStateChanged(loggedIn: Bool) {
         if !loggedIn {
-            delegate?.homeCoordinatorFinish()
+            delegate?.mainCoordinatorFinish()
         }
     }
 }

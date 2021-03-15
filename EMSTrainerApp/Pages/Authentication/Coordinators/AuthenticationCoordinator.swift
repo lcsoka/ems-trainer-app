@@ -31,6 +31,8 @@ final class AuthenticationCoordinator: NavigationCoordinator {
     }
     
     func start() {
+        print("Before \(navigationController.viewControllers)")
+        
         let isNavigationStackEmpty = navigationController.viewControllers.isEmpty
         let vc = container.resolve(LoginViewController.self)!
         vc.auth = container.resolve(AuthenticationService.self)!
@@ -41,8 +43,9 @@ final class AuthenticationCoordinator: NavigationCoordinator {
         navigationController.pushViewController(vc, animated: true)
         
         if !isNavigationStackEmpty {
-            navigationController.viewControllers.remove(at: 0)
+            let removed = navigationController.viewControllers.remove(at: 0)
         }
+        print("After \(navigationController.viewControllers)")
     }
     
     private func showLoginScreen() {
@@ -54,6 +57,7 @@ final class AuthenticationCoordinator: NavigationCoordinator {
         vc.authDelegate = self
 //        navigationController.setNavigationBarHidden(false, animated: true)
         navigationController.pushViewController(vc, animated: true)
+        print(navigationController.viewControllers)
     }
 }
 

@@ -51,13 +51,13 @@ final class LoginViewController: UIViewController, AuthenticationStoryboardLodab
             self.authDelegate?.onAuthenticationStateChanged(loggedIn: true)
         }
     }
-    @IBAction func sliderChanged(_ sender: Any) {
-        waveView.frequency =  CGFloat(slider.value)
-        let delta = 1 - (CGFloat(slider.value) - 4) / 2
-        let acc = 0.05 * delta
-        waveView.speed = 0.1 - acc
-    }
-    @IBAction func ampChanged(_ sender: Any) {
-        waveView.master = CGFloat(ampSlider.value)
-    }
+//    @IBAction func sliderChanged(_ sender: Any) {
+//        waveView.frequency =  CGFloat(slider.value)
+//        let delta = 1 - (CGFloat(slider.value) - 4) / 2
+//        let acc = 0.05 * delta
+//        waveView.speed = 0.1 - acc
+//    }
+//    @IBAction func ampChanged(_ sender: Any) {
+//        waveView.master = CGFloat(ampSlider.value)
+//    }
 }

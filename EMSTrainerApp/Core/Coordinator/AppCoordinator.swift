@@ -10,7 +10,7 @@ import Swinject
 
 enum AppChildCoordinator {
     case authentication
-    case home
+    case main
 }
 
 final class AppCoordinator: Coordinator {
@@ -19,6 +19,7 @@ final class AppCoordinator: Coordinator {
     private var auth: AuthenticationService!
     private var childCoordinators = [AppChildCoordinator: Coordinator]()
     private let navigationController: UINavigationController
+//    private var router: RouterProtocol
     
     init(window: UIWindow, container: Container) {
         self.window = window
@@ -31,12 +32,16 @@ final class AppCoordinator: Coordinator {
         navigationController.navigationBar.tintColor = UIColor(named: "Green500")
         navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        navigationController.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+//        router = Router(navigationController: navigationController)
         self.window.rootViewController = navigationController
     }
     
     func start() {
         if auth.loggedIn() {
-            showHome()
+            showMain()
             return
         }
         showAuthentication()
@@ -49,11 +54,11 @@ final class AppCoordinator: Coordinator {
         authenticationCoordinator.start()
     }
     
-    private func showHome() {
-        let homeCoordinator = HomeCoordinator(container: container, navigationController: navigationController)
-        childCoordinators[.home] = homeCoordinator
-        homeCoordinator.delegate = self
-        homeCoordinator.start()
+    private func showMain() {
+        let mainCoordinator = MainCoordinator(container: container, navigationController: navigationController)
+        childCoordinators[.main] = mainCoordinator
+        mainCoordinator.delegate = self
+        mainCoordinator.start()
     }
     
 }
@@ -61,13 +66,13 @@ final class AppCoordinator: Coordinator {
 extension AppCoordinator: AuthenticationCoordinatorDelegate {
     func authenticationCoordinatorFinish() {
         childCoordinators[.authentication] = nil
-        showHome()
+        showMain()
     }
 }
 
-extension AppCoordinator: HomeCoordinatorDelegate {
-    func homeCoordinatorFinish() {
-        childCoordinators[.home] = nil
+extension AppCoordinator: MainCoordinatorDelegate {
+    func mainCoordinatorFinish() {
+        childCoordinators[.main] = nil
         showAuthentication()
     }
 }

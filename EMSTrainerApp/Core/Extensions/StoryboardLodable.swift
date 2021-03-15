@@ -17,7 +17,7 @@ protocol AuthenticationStoryboardLodable: StoryboardLodable {
 }
 
 
-protocol HomeStoryboardLodable: StoryboardLodable {
+protocol MainStoryboardLodable: StoryboardLodable {
     
 }
 
@@ -27,8 +27,8 @@ extension AuthenticationStoryboardLodable where Self: UIViewController {
     }
 }
 
-extension HomeStoryboardLodable where Self: UIViewController {
+extension MainStoryboardLodable where Self: UIViewController {
     @nonobjc static var storyboardName: String {
-        return "Home"
+        return "Main"
     }
 }

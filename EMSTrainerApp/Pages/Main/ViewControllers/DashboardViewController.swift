@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController, HomeStoryboardLodable {
+class DashboardViewController: UIViewController, MainStoryboardLodable {
     
     weak var authDelegate: AuthenticationDelegate?
     
@@ -17,13 +17,26 @@ class DashboardViewController: UIViewController, HomeStoryboardLodable {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupUI()
     }
     
-
+    func setupUI() {
+        title = "Dashboard"
+        self.extendedLayoutIncludesOpaqueBars = true
+        let btn = UIBarButtonItem(title: "Test", style: .done, target: nil, action: #selector(self.test))
+        self.navigationItem.setRightBarButtonItems([btn], animated: true)
+//        self.navigationBar.add
+    }
+    
     @IBAction func onLogoutTap(_ sender: Any) {
         auth.logout()
         authDelegate?.onAuthenticationStateChanged(loggedIn: false)
     }
+    
+    @objc func test() {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
