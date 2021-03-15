@@ -163,6 +163,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onWorkoutSetupTap:" destination="1px-so-qOy" eventType="touchUpInside" id="vD0-44-3io"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u9O-Up-E2M"/>
@@ -264,10 +267,10 @@
             </objects>
             <point key="canvasLocation" x="216" y="116"/>
         </scene>
-        <!--View Controller-->
+        <!--Workout Setup View Controller-->
         <scene sceneID="WGd-tk-LKI">
             <objects>
-                <viewController id="zKl-i6-YXQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WorkoutSetup" id="zKl-i6-YXQ" customClass="WorkoutSetupViewController" customModule="EMSTrainerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3FV-Hf-boM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

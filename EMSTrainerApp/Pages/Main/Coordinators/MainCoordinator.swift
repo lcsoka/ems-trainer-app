@@ -13,6 +13,7 @@ enum MainChildCoordinator {
     case dashboard
     case account
     case workouts
+    case workoutSetup
 }
 
 protocol MainCoordinatorDelegate: class {
@@ -52,6 +53,12 @@ final class MainCoordinator: NavigationCoordinator {
         navigationController.present(vc, animated: true)
     }
     
+    
+    private func showWorkoutSetup() {
+        let vc = container.resolve(WorkoutSetupViewController.self)!
+        
+        navigationController.pushViewController(vc, animated: true)
+    }
 }
 
 extension MainCoordinator: AuthenticationDelegate {
@@ -65,5 +72,9 @@ extension MainCoordinator: AuthenticationDelegate {
 extension MainCoordinator: DashboardViewControllerDelegate {
     func userDidRequestAccountPage() {
         showAccount()
+    }
+    
+    func userDidRequestWorkoutSetupPage() {
+        showWorkoutSetup()
     }
 }

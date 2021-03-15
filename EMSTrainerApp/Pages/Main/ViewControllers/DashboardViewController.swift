@@ -9,6 +9,7 @@ import UIKit
 
 protocol DashboardViewControllerDelegate: class {
     func userDidRequestAccountPage()
+    func userDidRequestWorkoutSetupPage()
 }
 
 class DashboardViewController: UIViewController, MainStoryboardLodable {
@@ -29,28 +30,22 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
     func setupUI() {
         title = "Dashboard"
         self.extendedLayoutIncludesOpaqueBars = true
-        let statBtn = UIBarButtonItem(title: "Account", style: .plain, target: self, action: #selector(self.test))
+        let statBtn = UIBarButtonItem(title: "Account", style: .plain, target: self, action: #selector(self.showAccount))
         navigationItem.rightBarButtonItems = [statBtn]
-//        self.navigationBar.add
+    }
+    
+    
+    @objc func showAccount() {
+        self.delegate?.userDidRequestAccountPage()
     }
     
     @IBAction func onLogoutTap(_ sender: Any) {
         auth.logout()
         authDelegate?.onAuthenticationStateChanged(loggedIn: false)
     }
-    
-    @objc func test() {
-        self.delegate?.userDidRequestAccountPage()
+
+    @IBAction func onWorkoutSetupTap(_ sender: Any) {
+        self.delegate?.userDidRequestWorkoutSetupPage()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

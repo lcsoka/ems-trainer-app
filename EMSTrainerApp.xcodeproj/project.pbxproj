@@ -14,6 +14,7 @@
 		A41C8F8E25FFF7C600192BDD /* StatisticsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41C8F8D25FFF7C600192BDD /* StatisticsView.xib */; };
 		A41C8F9325FFFA2700192BDD /* CustomViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8F9225FFFA2700192BDD /* CustomViewProtocol.swift */; };
 		A41C8F982600060800192BDD /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8F972600060800192BDD /* AccountViewController.swift */; };
+		A41C8FAE260011B600192BDD /* WorkoutSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FAD260011B600192BDD /* WorkoutSetupViewController.swift */; };
 		A421544225F503210094C1CB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421544125F503210094C1CB /* AppCoordinator.swift */; };
 		A421544C25F506850094C1CB /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421544B25F506850094C1CB /* AuthenticationCoordinator.swift */; };
 		A421545625F514D70094C1CB /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421545525F514D70094C1CB /* Container.swift */; };
@@ -104,6 +105,7 @@
 		A41C8F8D25FFF7C600192BDD /* StatisticsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticsView.xib; sourceTree = "<group>"; };
 		A41C8F9225FFFA2700192BDD /* CustomViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewProtocol.swift; sourceTree = "<group>"; };
 		A41C8F972600060800192BDD /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		A41C8FAD260011B600192BDD /* WorkoutSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSetupViewController.swift; sourceTree = "<group>"; };
 		A421544125F503210094C1CB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A421544B25F506850094C1CB /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		A421545525F514D70094C1CB /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 			children = (
 				A421548325F5206A0094C1CB /* DashboardViewController.swift */,
 				A41C8F972600060800192BDD /* AccountViewController.swift */,
+				A41C8FAD260011B600192BDD /* WorkoutSetupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -871,6 +874,7 @@
 				A46337B725E08ADB000B51F7 /* EmptyResponse.swift in Sources */,
 				A421544C25F506850094C1CB /* AuthenticationCoordinator.swift in Sources */,
 				A421545B25F515630094C1CB /* StoryboardLodable.swift in Sources */,
+				A41C8FAE260011B600192BDD /* WorkoutSetupViewController.swift in Sources */,
 				A421547325F51AB40094C1CB /* RegistrationViewController.swift in Sources */,
 				A48B659425F6DB0E009D6CCD /* BorderTextField.swift in Sources */,
 				A41C8F8925FFF7B600192BDD /* StatisticsView.swift in Sources */,

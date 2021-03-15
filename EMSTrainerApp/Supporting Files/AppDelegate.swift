@@ -64,6 +64,10 @@ extension AppDelegate {
         container.registerViewController(AccountViewController.self) {r, c in
             
         }
+
+        container.registerViewController(WorkoutSetupViewController.self) {r, c in
+            
+        }
         
     }
 }
