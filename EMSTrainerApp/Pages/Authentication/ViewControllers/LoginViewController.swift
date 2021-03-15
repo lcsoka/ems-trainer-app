@@ -19,6 +19,9 @@ final class LoginViewController: UIViewController, AuthenticationStoryboardLodab
     
     var auth: AuthenticationService!
     
+    @IBOutlet var waveView: WaveView!
+    @IBOutlet var slider: UISlider!
+    @IBOutlet var ampSlider: UISlider!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,7 +42,7 @@ final class LoginViewController: UIViewController, AuthenticationStoryboardLodab
         delegate?.userDidRequestRegistration()
     }
     
-    @IBAction func onTestLoginTap(_ sender: Any) {
+    @IBAction func onLoginTap(_ sender: Any) {
         let loginData = LoginData(email: "lcsoka@inf.elte.hu", password: "eclick1122")
         auth.login(email: loginData.email, password: loginData.password) { error in
             if error != nil {
@@ -47,5 +50,14 @@ final class LoginViewController: UIViewController, AuthenticationStoryboardLodab
             }
             self.authDelegate?.onAuthenticationStateChanged(loggedIn: true)
         }
+    }
+    @IBAction func sliderChanged(_ sender: Any) {
+        waveView.frequency =  CGFloat(slider.value)
+        let delta = 1 - (CGFloat(slider.value) - 4) / 2
+        let acc = 0.05 * delta
+        waveView.speed = 0.1 - acc
+    }
+    @IBAction func ampChanged(_ sender: Any) {
+        waveView.master = CGFloat(ampSlider.value)
     }
 }

@@ -1,0 +1,21 @@
+PODS:
+  - Swinject (2.7.0)
+  - SwinjectAutoregistration (2.7.0):
+    - Swinject (~> 2.7)
+
+DEPENDENCIES:
+  - Swinject (= 2.7.0)
+  - SwinjectAutoregistration (= 2.7.0)
+
+SPEC REPOS:
+  trunk:
+    - Swinject
+    - SwinjectAutoregistration
+
+SPEC CHECKSUMS:
+  Swinject: 18195e17ad6140f994e95e11c7b04b21410598e8
+  SwinjectAutoregistration: 330f5012642a8b5c89a8a4adb0c5e52df07382c0
+
+PODFILE CHECKSUM: a2cca7bc799394dc4ae2759a391400010273a209
+
+COCOAPODS: 1.10.1

@@ -37,7 +37,7 @@
                                                         <color key="tintColor" name="Green500"/>
                                                         <color key="textColor" name="Gray300"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" textContentType="email"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="backgroundViewColor">
                                                                 <color key="value" name="Gray600"/>
@@ -76,7 +76,7 @@
                                                         <color key="tintColor" name="Green500"/>
                                                         <color key="textColor" name="Gray300"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="send" secureTextEntry="YES" textContentType="password"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="backgroundViewColor">
                                                                 <color key="value" name="Gray600"/>
@@ -114,6 +114,9 @@
                                                         <real key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onLoginTap:" destination="haj-Qm-k7N" eventType="touchUpInside" id="YgW-y1-4kv"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="098-43-V6p">
                                                 <rect key="frame" x="0.0" y="274" width="320" height="30"/>
@@ -148,20 +151,75 @@
                                     <constraint firstAttribute="width" constant="340" id="sln-N7-6SZ"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7d-AI-5iw" customClass="WaveView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                <rect key="frame" x="37" y="604" width="340" height="128"/>
+                                <color key="backgroundColor" name="Gray700"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="a9l-Rm-Ifu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layerCount">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="amplitude">
+                                        <real key="value" value="0.90000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" name="Green500"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="frequency">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minValue="4" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="pxp-XX-xAB">
+                                <rect key="frame" x="35" y="754" width="344" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="340" id="yAy-XN-we9"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="haj-Qm-k7N" eventType="valueChanged" id="A5i-Yg-G49"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nkc-ea-xmk">
+                                <rect key="frame" x="35" y="797" width="344" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="340" id="vfK-Zq-h0K"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="ampChanged:" destination="haj-Qm-k7N" eventType="valueChanged" id="9zW-Pu-YQ3"/>
+                                    <action selector="sliderChanged:" destination="haj-Qm-k7N" eventType="valueChanged" id="nUO-NQ-mUe"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AoJ-ig-enU"/>
                         <color key="backgroundColor" name="Gray800"/>
                         <constraints>
+                            <constraint firstItem="nkc-ea-xmk" firstAttribute="centerX" secondItem="Tde-uS-S4R" secondAttribute="centerX" id="3vr-tt-jT1"/>
+                            <constraint firstItem="d7d-AI-5iw" firstAttribute="top" secondItem="GoR-m8-gPk" secondAttribute="bottom" constant="8" symbolic="YES" id="Ae3-X7-MYj"/>
+                            <constraint firstItem="pxp-XX-xAB" firstAttribute="top" secondItem="d7d-AI-5iw" secondAttribute="bottom" constant="22" id="Ax3-yy-KII"/>
+                            <constraint firstItem="d7d-AI-5iw" firstAttribute="width" secondItem="GoR-m8-gPk" secondAttribute="width" id="HvS-uG-UNP"/>
+                            <constraint firstItem="d7d-AI-5iw" firstAttribute="centerX" secondItem="Tde-uS-S4R" secondAttribute="centerX" id="cnZ-lV-FBW"/>
                             <constraint firstItem="GoR-m8-gPk" firstAttribute="centerX" secondItem="Tde-uS-S4R" secondAttribute="centerX" id="n6Q-nq-QpZ"/>
+                            <constraint firstItem="pxp-XX-xAB" firstAttribute="centerX" secondItem="Tde-uS-S4R" secondAttribute="centerX" id="oiG-tF-k2v"/>
                             <constraint firstItem="fet-RS-bT8" firstAttribute="centerX" secondItem="Tde-uS-S4R" secondAttribute="centerX" id="tR0-pd-x1H"/>
                             <constraint firstItem="fet-RS-bT8" firstAttribute="top" secondItem="AoJ-ig-enU" secondAttribute="top" constant="50" id="vab-sR-n4C"/>
                             <constraint firstItem="GoR-m8-gPk" firstAttribute="top" secondItem="fet-RS-bT8" secondAttribute="bottom" constant="50" id="wx6-un-ZWf"/>
+                            <constraint firstItem="nkc-ea-xmk" firstAttribute="top" secondItem="pxp-XX-xAB" secondAttribute="bottom" constant="13" id="xFo-cV-CCF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ampSlider" destination="nkc-ea-xmk" id="rpd-TG-n8D"/>
+                        <outlet property="slider" destination="pxp-XX-xAB" id="4E6-2x-lMf"/>
+                        <outlet property="waveView" destination="d7d-AI-5iw" id="E7K-0Q-mok"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrS-EK-ZQD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-325" y="177"/>
+            <point key="canvasLocation" x="-326.08695652173918" y="176.78571428571428"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="JXa-Vs-Afl">
