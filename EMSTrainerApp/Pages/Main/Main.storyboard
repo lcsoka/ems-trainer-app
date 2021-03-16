@@ -389,6 +389,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="onStarWorkoutTap:" destination="zKl-i6-YXQ" eventType="touchUpInside" id="daK-uf-TU0"/>
                                     <action selector="onWorkoutSetupTap:" destination="1px-so-qOy" eventType="touchUpInside" id="vBB-Bl-luq"/>
                                 </connections>
                             </button>

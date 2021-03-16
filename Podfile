@@ -8,6 +8,7 @@ target 'EMSTrainerApp' do
   # Pods for EMSTrainerApp
   pod 'Swinject', '2.7.0'
   pod 'SwinjectAutoregistration', '2.7.0'
+  pod 'Starscream'
 
   target 'EMSTrainerAppTests' do
     inherit! :search_paths

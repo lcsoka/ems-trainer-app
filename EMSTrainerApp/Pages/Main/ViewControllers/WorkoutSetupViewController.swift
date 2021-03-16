@@ -30,6 +30,9 @@ class WorkoutSetupViewController: UIViewController, MainStoryboardLodable {
     @IBOutlet var collectionView: UICollectionView!
     
     @IBOutlet var btnStart: RoundedButton!
+    
+    var client: EMSClient?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,6 +80,12 @@ class WorkoutSetupViewController: UIViewController, MainStoryboardLodable {
     
     func canStartWorkout() -> Bool {
         return selectedMode != nil && selectedDevice != nil
+    }
+    
+    @IBAction func onStarWorkoutTap(_ sender: Any) {
+        client = WebsocketClient(selectedDevice!)
+        client!.setAllChannelData(selectedMode!.values)
+        client!.connect()
     }
 }
 

@@ -12,5 +12,5 @@ struct TrainingMode: Codable {
     var description: String
     var image: String
     var length: Int
-    var values: ChannelData
+    var values: EMSValues
 }

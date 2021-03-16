@@ -10,6 +10,13 @@
 		01D23F4F54F8232C7BCB9286 /* Pods_EMSTrainerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC52599F908E9687880578C /* Pods_EMSTrainerAppTests.framework */; };
 		A406E48825F533790044E284 /* UserDefaultsUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A406E48725F533790044E284 /* UserDefaultsUserService.swift */; };
 		A406E49925F533AC0044E284 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A406E49825F533AC0044E284 /* UserService.swift */; };
+		A40EE4BF26015BBD002E422B /* EMSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4BE26015BBD002E422B /* EMSClient.swift */; };
+		A40EE4CA26015D45002E422B /* EMSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4C926015D45002E422B /* EMSDelegate.swift */; };
+		A40EE4D026015EAA002E422B /* WebsocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4CF26015EAA002E422B /* WebsocketClient.swift */; };
+		A40EE4D526016075002E422B /* EMSChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4D426016075002E422B /* EMSChannel.swift */; };
+		A40EE4DD26016103002E422B /* ChannelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4DC26016103002E422B /* ChannelData.swift */; };
+		A40EE4EB260165A5002E422B /* EMSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4EA260165A5002E422B /* EMSConfig.swift */; };
+		A40EE4F0260173A5002E422B /* EMSMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4EF260173A5002E422B /* EMSMessage.swift */; };
 		A41C8F8925FFF7B600192BDD /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8F8825FFF7B600192BDD /* StatisticsView.swift */; };
 		A41C8F8E25FFF7C600192BDD /* StatisticsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41C8F8D25FFF7C600192BDD /* StatisticsView.xib */; };
 		A41C8F9325FFFA2700192BDD /* CustomViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8F9225FFFA2700192BDD /* CustomViewProtocol.swift */; };
@@ -26,7 +33,7 @@
 		A41C8FF226002B9300192BDD /* DeviceHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FF126002B9300192BDD /* DeviceHost.swift */; };
 		A41C8FF726002C5300192BDD /* EMSDeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FF626002C5300192BDD /* EMSDeviceType.swift */; };
 		A41C8FFD2600A56C00192BDD /* TrainingModes.json in Resources */ = {isa = PBXBuildFile; fileRef = A41C8FFC2600A56C00192BDD /* TrainingModes.json */; };
-		A41C90052600A87600192BDD /* ChannelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C90042600A87600192BDD /* ChannelData.swift */; };
+		A41C90052600A87600192BDD /* EMSValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C90042600A87600192BDD /* EMSValues.swift */; };
 		A41C900B2600A8D100192BDD /* TrainingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C900A2600A8D100192BDD /* TrainingMode.swift */; };
 		A41C90112600A9D100192BDD /* WorkoutSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C90102600A9D100192BDD /* WorkoutSetupViewModel.swift */; };
 		A41C90162600AA4500192BDD /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C90152600AA4500192BDD /* Bundle.swift */; };
@@ -122,6 +129,13 @@
 		8D652B352D4A608E1D5E6DD0 /* Pods-EMSTrainerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EMSTrainerAppTests.release.xcconfig"; path = "Target Support Files/Pods-EMSTrainerAppTests/Pods-EMSTrainerAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A406E48725F533790044E284 /* UserDefaultsUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUserService.swift; sourceTree = "<group>"; };
 		A406E49825F533AC0044E284 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		A40EE4BE26015BBD002E422B /* EMSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSClient.swift; sourceTree = "<group>"; };
+		A40EE4C926015D45002E422B /* EMSDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSDelegate.swift; sourceTree = "<group>"; };
+		A40EE4CF26015EAA002E422B /* WebsocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketClient.swift; sourceTree = "<group>"; };
+		A40EE4D426016075002E422B /* EMSChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSChannel.swift; sourceTree = "<group>"; };
+		A40EE4DC26016103002E422B /* ChannelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelData.swift; sourceTree = "<group>"; };
+		A40EE4EA260165A5002E422B /* EMSConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSConfig.swift; sourceTree = "<group>"; };
+		A40EE4EF260173A5002E422B /* EMSMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSMessage.swift; sourceTree = "<group>"; };
 		A41C8F8825FFF7B600192BDD /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		A41C8F8D25FFF7C600192BDD /* StatisticsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticsView.xib; sourceTree = "<group>"; };
 		A41C8F9225FFFA2700192BDD /* CustomViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewProtocol.swift; sourceTree = "<group>"; };
@@ -138,7 +152,7 @@
 		A41C8FF126002B9300192BDD /* DeviceHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHost.swift; sourceTree = "<group>"; };
 		A41C8FF626002C5300192BDD /* EMSDeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSDeviceType.swift; sourceTree = "<group>"; };
 		A41C8FFC2600A56C00192BDD /* TrainingModes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TrainingModes.json; sourceTree = "<group>"; };
-		A41C90042600A87600192BDD /* ChannelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelData.swift; sourceTree = "<group>"; };
+		A41C90042600A87600192BDD /* EMSValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSValues.swift; sourceTree = "<group>"; };
 		A41C900A2600A8D100192BDD /* TrainingMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingMode.swift; sourceTree = "<group>"; };
 		A41C90102600A9D100192BDD /* WorkoutSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSetupViewModel.swift; sourceTree = "<group>"; };
 		A41C90152600AA4500192BDD /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
@@ -275,6 +289,23 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		A40EE4BD26015BAE002E422B /* EMS */ = {
+			isa = PBXGroup;
+			children = (
+				A40EE4BE26015BBD002E422B /* EMSClient.swift */,
+				A40EE4C926015D45002E422B /* EMSDelegate.swift */,
+			);
+			path = EMS;
+			sourceTree = "<group>";
+		};
+		A40EE4CE26015E89002E422B /* Websocket */ = {
+			isa = PBXGroup;
+			children = (
+				A40EE4CF26015EAA002E422B /* WebsocketClient.swift */,
+			);
+			path = Websocket;
+			sourceTree = "<group>";
+		};
 		A41C8F8625FFF76400192BDD /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,8 +326,9 @@
 		A41C8FB22600135600192BDD /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				A40EE4BD26015BAE002E422B /* EMS */,
 				A41C8FC1260014FA00192BDD /* Finder */,
-				A41C8FBB260014A200192BDD /* Protocols */,
+				A40EE4CE26015E89002E422B /* Websocket */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -313,6 +345,7 @@
 		A41C8FC1260014FA00192BDD /* Finder */ = {
 			isa = PBXGroup;
 			children = (
+				A41C8FBB260014A200192BDD /* Protocols */,
 				A41C8FC22600150B00192BDD /* MDNSFinder.swift */,
 			);
 			path = Finder;
@@ -323,7 +356,10 @@
 			children = (
 				A41C8FF126002B9300192BDD /* DeviceHost.swift */,
 				A41C8FF626002C5300192BDD /* EMSDeviceType.swift */,
-				A41C90042600A87600192BDD /* ChannelData.swift */,
+				A41C90042600A87600192BDD /* EMSValues.swift */,
+				A40EE4D426016075002E422B /* EMSChannel.swift */,
+				A40EE4DC26016103002E422B /* ChannelData.swift */,
+				A40EE4EF260173A5002E422B /* EMSMessage.swift */,
 			);
 			path = EMS;
 			sourceTree = "<group>";
@@ -623,6 +659,7 @@
 			isa = PBXGroup;
 			children = (
 				A48B650825F541B4009D6CCD /* AppConfig.swift */,
+				A40EE4EA260165A5002E422B /* EMSConfig.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -977,6 +1014,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A40EE4DD26016103002E422B /* ChannelData.swift in Sources */,
 				A4335EBD260119D00098E79C /* DeviceRowCollectionViewCell.swift in Sources */,
 				A48B64FE25F53FB7009D6CCD /* TokenService.swift in Sources */,
 				A4FCAEB925DC8B4500C9849C /* LoginResource.swift in Sources */,
@@ -990,16 +1028,18 @@
 				A421546625F516E40094C1CB /* LoginViewController.swift in Sources */,
 				A41C8FC32600150B00192BDD /* MDNSFinder.swift in Sources */,
 				A41C900B2600A8D100192BDD /* TrainingMode.swift in Sources */,
-				A41C90052600A87600192BDD /* ChannelData.swift in Sources */,
+				A41C90052600A87600192BDD /* EMSValues.swift in Sources */,
 				A45BADF925DC2C6B00F51D5E /* AppDelegate.swift in Sources */,
 				A41C90112600A9D100192BDD /* WorkoutSetupViewModel.swift in Sources */,
 				A48B658F25F6D897009D6CCD /* RoundedView.swift in Sources */,
+				A40EE4D026015EAA002E422B /* WebsocketClient.swift in Sources */,
 				A495801425E051B400923B7F /* ApiErrorResponse.swift in Sources */,
 				A4A3A37025FD1FAF000323CF /* WaveView.swift in Sources */,
 				A46337AD25E08811000B51F7 /* RegisterResource.swift in Sources */,
 				A477973725FFDE65006AF564 /* UIViewController.swift in Sources */,
 				A45BAE4725DC3DF600F51D5E /* ApiRequest.swift in Sources */,
 				A41C8FE2260026F200192BDD /* DeviceApiRequest.swift in Sources */,
+				A40EE4F0260173A5002E422B /* EMSMessage.swift in Sources */,
 				A47BB12F25E1B63B0065023F /* Coordinator.swift in Sources */,
 				A45BAE3925DC2DB600F51D5E /* Api.swift in Sources */,
 				A463379C25E07E53000B51F7 /* Auth.swift in Sources */,
@@ -1007,6 +1047,7 @@
 				A48B64E925F53A43009D6CCD /* ApiService.swift in Sources */,
 				A46337B225E08A58000B51F7 /* LogoutResource.swift in Sources */,
 				A4FCAED325DDA7F500C9849C /* AppError.swift in Sources */,
+				A40EE4BF26015BBD002E422B /* EMSClient.swift in Sources */,
 				A4FCAEB225DC8AE000C9849C /* LoginData.swift in Sources */,
 				A477972125FFDD86006AF564 /* Router.swift in Sources */,
 				A41C8FF726002C5300192BDD /* EMSDeviceType.swift in Sources */,
@@ -1016,6 +1057,7 @@
 				A477972F25FFDE38006AF564 /* Presentable.swift in Sources */,
 				A46337A825E087A4000B51F7 /* RegisterData.swift in Sources */,
 				A406E49925F533AC0044E284 /* UserService.swift in Sources */,
+				A40EE4D526016075002E422B /* EMSChannel.swift in Sources */,
 				A41C8FCD2600208C00192BDD /* DeviceStatusResource.swift in Sources */,
 				A41C90242600F11700192BDD /* TrainingModeSelectorView.swift in Sources */,
 				A4A495A825DC50E800636B66 /* User.swift in Sources */,
@@ -1042,9 +1084,11 @@
 				A4A495BF25DC71C400636B66 /* MeResource.swift in Sources */,
 				A4A495C425DC71D300636B66 /* UserResponse.swift in Sources */,
 				A41C8FD2260020F600192BDD /* DeviceStatusResponse.swift in Sources */,
+				A40EE4CA26015D45002E422B /* EMSDelegate.swift in Sources */,
 				A48B650925F541B4009D6CCD /* AppConfig.swift in Sources */,
 				A421548425F5206A0094C1CB /* DashboardViewController.swift in Sources */,
 				A48B64D525F536E7009D6CCD /* AuthenticationService.swift in Sources */,
+				A40EE4EB260165A5002E422B /* EMSConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
