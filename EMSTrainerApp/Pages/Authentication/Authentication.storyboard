@@ -205,13 +205,13 @@
     </scenes>
     <designables>
         <designable name="2nI-YK-EtK">
-            <size key="intrinsicContentSize" width="320" height="41"/>
+            <size key="intrinsicContentSize" width="33" height="34"/>
         </designable>
         <designable name="XOc-ww-NEb">
             <size key="intrinsicContentSize" width="62" height="41"/>
         </designable>
         <designable name="z3f-Vi-Rt7">
-            <size key="intrinsicContentSize" width="320" height="41"/>
+            <size key="intrinsicContentSize" width="33" height="34"/>
         </designable>
     </designables>
     <color key="tintColor" name="Green500"/>

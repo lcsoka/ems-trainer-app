@@ -1,0 +1,35 @@
+[
+    {
+        "name":"Cardio",
+        "description":"Text 1",
+        "length": 1800,
+        "values": {
+            "value": 50,
+            "freq": 40,
+            "time": 5,
+            "pause": 0
+        }
+    },
+    {
+        "name":"Strength",
+        "description":"Text 2",
+        "length": 1800,
+        "values": {
+            "value": 30,
+            "freq": 100,
+            "time": 5,
+            "pause": 2
+        }
+    },
+    {
+        "name":"Massage",
+        "description":"Text 3",
+        "length": 600,
+        "values": {
+            "value": 20,
+            "freq": 80,
+            "time": 1,
+            "pause": 1
+        }
+    }
+]

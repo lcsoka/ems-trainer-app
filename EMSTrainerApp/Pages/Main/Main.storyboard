@@ -274,18 +274,77 @@
                     <view key="view" contentMode="scaleToFill" id="3FV-Hf-boM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OI4-pU-1wL">
+                                <rect key="frame" x="0.0" y="44" width="414" height="764"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KCj-3i-aya">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGj-Be-Ch1" customClass="TrainingModeSelectorView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="280" id="uxG-Ye-e4C"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KCj-3i-aya" firstAttribute="leading" secondItem="ACo-GK-oao" secondAttribute="leading" id="7Oc-Nn-8xd"/>
+                                    <constraint firstItem="KCj-3i-aya" firstAttribute="top" secondItem="ACo-GK-oao" secondAttribute="top" id="ANS-jG-K9e"/>
+                                    <constraint firstItem="KCj-3i-aya" firstAttribute="width" secondItem="vgO-8i-tLc" secondAttribute="width" id="Lx3-hp-fKd"/>
+                                    <constraint firstItem="KCj-3i-aya" firstAttribute="bottom" secondItem="ACo-GK-oao" secondAttribute="bottom" id="sbj-LB-DBG"/>
+                                    <constraint firstItem="KCj-3i-aya" firstAttribute="trailing" secondItem="ACo-GK-oao" secondAttribute="trailing" id="xix-5X-gnL"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="ACo-GK-oao"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="vgO-8i-tLc"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AF-8j-KYI" customClass="RoundedButton" customModule="EMSTrainerApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="818" width="374" height="44"/>
+                                <color key="backgroundColor" name="Green500"/>
+                                <color key="tintColor" name="Green500"/>
+                                <state key="normal" title="Start workout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onWorkoutSetupTap:" destination="1px-so-qOy" eventType="touchUpInside" id="vBB-Bl-luq"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="SpS-v6-IkW"/>
                         <color key="backgroundColor" name="Gray800"/>
+                        <constraints>
+                            <constraint firstItem="SpS-v6-IkW" firstAttribute="trailing" secondItem="8AF-8j-KYI" secondAttribute="trailing" constant="20" id="3He-es-rTm"/>
+                            <constraint firstItem="8AF-8j-KYI" firstAttribute="leading" secondItem="SpS-v6-IkW" secondAttribute="leading" constant="20" id="5X5-SM-dio"/>
+                            <constraint firstItem="8AF-8j-KYI" firstAttribute="top" secondItem="OI4-pU-1wL" secondAttribute="bottom" constant="10" id="Ck9-bB-ZfP"/>
+                            <constraint firstItem="OI4-pU-1wL" firstAttribute="top" secondItem="SpS-v6-IkW" secondAttribute="top" id="DKA-1y-uP5"/>
+                            <constraint firstItem="SpS-v6-IkW" firstAttribute="bottom" secondItem="OI4-pU-1wL" secondAttribute="bottom" constant="54" id="RRU-Uc-uGr"/>
+                            <constraint firstItem="8AF-8j-KYI" firstAttribute="bottom" secondItem="SpS-v6-IkW" secondAttribute="bottom" id="UMp-Lq-fM7"/>
+                            <constraint firstItem="OI4-pU-1wL" firstAttribute="leading" secondItem="SpS-v6-IkW" secondAttribute="leading" id="m2J-cC-irw"/>
+                            <constraint firstItem="OI4-pU-1wL" firstAttribute="trailing" secondItem="SpS-v6-IkW" secondAttribute="trailing" id="y3a-YA-eus"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="trainingModeSelector" destination="BGj-Be-Ch1" id="J2F-Gt-CwK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6q-UM-O34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868" y="116"/>
+            <point key="canvasLocation" x="866.66666666666674" y="115.84821428571428"/>
         </scene>
     </scenes>
     <designables>
         <designable name="7my-ky-RkS">
             <size key="intrinsicContentSize" width="90" height="30"/>
+        </designable>
+        <designable name="8AF-8j-KYI">
+            <size key="intrinsicContentSize" width="93" height="30"/>
         </designable>
     </designables>
     <resources>

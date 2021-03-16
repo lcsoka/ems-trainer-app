@@ -25,6 +25,15 @@
 		A41C8FEC260028A000192BDD /* DeviceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FEB260028A000192BDD /* DeviceApi.swift */; };
 		A41C8FF226002B9300192BDD /* DeviceHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FF126002B9300192BDD /* DeviceHost.swift */; };
 		A41C8FF726002C5300192BDD /* EMSDeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FF626002C5300192BDD /* EMSDeviceType.swift */; };
+		A41C8FFD2600A56C00192BDD /* TrainingModes.json in Resources */ = {isa = PBXBuildFile; fileRef = A41C8FFC2600A56C00192BDD /* TrainingModes.json */; };
+		A41C90052600A87600192BDD /* ChannelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C90042600A87600192BDD /* ChannelData.swift */; };
+		A41C900B2600A8D100192BDD /* TrainingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C900A2600A8D100192BDD /* TrainingMode.swift */; };
+		A41C90112600A9D100192BDD /* WorkoutSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C90102600A9D100192BDD /* WorkoutSetupViewModel.swift */; };
+		A41C90162600AA4500192BDD /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C90152600AA4500192BDD /* Bundle.swift */; };
+		A41C90242600F11700192BDD /* TrainingModeSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C90232600F11700192BDD /* TrainingModeSelectorView.swift */; };
+		A41C902C2600F14600192BDD /* TrainingModeSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41C902B2600F14600192BDD /* TrainingModeSelectorView.xib */; };
+		A41C90312600F7B000192BDD /* TrainingModeOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C90302600F7B000192BDD /* TrainingModeOptionView.swift */; };
+		A41C90362600F7BA00192BDD /* TrainingModeOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41C90352600F7BA00192BDD /* TrainingModeOptionView.xib */; };
 		A421544225F503210094C1CB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421544125F503210094C1CB /* AppCoordinator.swift */; };
 		A421544C25F506850094C1CB /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421544B25F506850094C1CB /* AuthenticationCoordinator.swift */; };
 		A421545625F514D70094C1CB /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421545525F514D70094C1CB /* Container.swift */; };
@@ -126,6 +135,15 @@
 		A41C8FEB260028A000192BDD /* DeviceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceApi.swift; sourceTree = "<group>"; };
 		A41C8FF126002B9300192BDD /* DeviceHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHost.swift; sourceTree = "<group>"; };
 		A41C8FF626002C5300192BDD /* EMSDeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSDeviceType.swift; sourceTree = "<group>"; };
+		A41C8FFC2600A56C00192BDD /* TrainingModes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TrainingModes.json; sourceTree = "<group>"; };
+		A41C90042600A87600192BDD /* ChannelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelData.swift; sourceTree = "<group>"; };
+		A41C900A2600A8D100192BDD /* TrainingMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingMode.swift; sourceTree = "<group>"; };
+		A41C90102600A9D100192BDD /* WorkoutSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSetupViewModel.swift; sourceTree = "<group>"; };
+		A41C90152600AA4500192BDD /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		A41C90232600F11700192BDD /* TrainingModeSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingModeSelectorView.swift; sourceTree = "<group>"; };
+		A41C902B2600F14600192BDD /* TrainingModeSelectorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainingModeSelectorView.xib; sourceTree = "<group>"; };
+		A41C90302600F7B000192BDD /* TrainingModeOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingModeOptionView.swift; sourceTree = "<group>"; };
+		A41C90352600F7BA00192BDD /* TrainingModeOptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainingModeOptionView.xib; sourceTree = "<group>"; };
 		A421544125F503210094C1CB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A421544B25F506850094C1CB /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		A421545525F514D70094C1CB /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
@@ -301,8 +319,44 @@
 			children = (
 				A41C8FF126002B9300192BDD /* DeviceHost.swift */,
 				A41C8FF626002C5300192BDD /* EMSDeviceType.swift */,
+				A41C90042600A87600192BDD /* ChannelData.swift */,
 			);
 			path = EMS;
+			sourceTree = "<group>";
+		};
+		A41C8FFB2600A4D100192BDD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A41C8FFC2600A56C00192BDD /* TrainingModes.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A41C90092600A8C400192BDD /* Training */ = {
+			isa = PBXGroup;
+			children = (
+				A41C900A2600A8D100192BDD /* TrainingMode.swift */,
+			);
+			path = Training;
+			sourceTree = "<group>";
+		};
+		A41C900F2600A9B000192BDD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A41C90102600A9D100192BDD /* WorkoutSetupViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A41C901A2600F0DD00192BDD /* WorkoutSetup */ = {
+			isa = PBXGroup;
+			children = (
+				A41C90232600F11700192BDD /* TrainingModeSelectorView.swift */,
+				A41C902B2600F14600192BDD /* TrainingModeSelectorView.xib */,
+				A41C90302600F7B000192BDD /* TrainingModeOptionView.swift */,
+				A41C90352600F7BA00192BDD /* TrainingModeOptionView.xib */,
+			);
+			path = WorkoutSetup;
 			sourceTree = "<group>";
 		};
 		A421544025F502D10094C1CB /* Extensions */ = {
@@ -311,6 +365,7 @@
 				A421545525F514D70094C1CB /* Container.swift */,
 				A421545A25F515630094C1CB /* StoryboardLodable.swift */,
 				A477973625FFDE64006AF564 /* UIViewController.swift */,
+				A41C90152600AA4500192BDD /* Bundle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -385,6 +440,7 @@
 		A45BADF725DC2C6B00F51D5E /* EMSTrainerApp */ = {
 			isa = PBXGroup;
 			children = (
+				A41C8FFB2600A4D100192BDD /* Data */,
 				A45BAE3525DC2D5600F51D5E /* Core */,
 				A45BAE3625DC2D6500F51D5E /* Pages */,
 				A48B658C25F6D877009D6CCD /* Views */,
@@ -518,6 +574,7 @@
 			children = (
 				A421547725F51F680094C1CB /* Coordinators */,
 				A421547D25F520340094C1CB /* ViewControllers */,
+				A41C900F2600A9B000192BDD /* ViewModels */,
 				A421547E25F520430094C1CB /* Main.storyboard */,
 			);
 			path = Main;
@@ -560,6 +617,7 @@
 		A48B658C25F6D877009D6CCD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A41C901A2600F0DD00192BDD /* WorkoutSetup */,
 				A41C8F8625FFF76400192BDD /* Dashboard */,
 				A48B658D25F6D87F009D6CCD /* Shared */,
 				A41C8F9225FFFA2700192BDD /* CustomViewProtocol.swift */,
@@ -581,6 +639,7 @@
 		A4A495A625DC50D500636B66 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A41C90092600A8C400192BDD /* Training */,
 				A41C8FF026002B7800192BDD /* EMS */,
 				A4FCAEB025DC8ACE00C9849C /* RequestData */,
 				A4A495A725DC50E800636B66 /* User.swift */,
@@ -769,6 +828,9 @@
 			files = (
 				A421546025F516710094C1CB /* Authentication.storyboard in Resources */,
 				A421547F25F520430094C1CB /* Main.storyboard in Resources */,
+				A41C902C2600F14600192BDD /* TrainingModeSelectorView.xib in Resources */,
+				A41C90362600F7BA00192BDD /* TrainingModeOptionView.xib in Resources */,
+				A41C8FFD2600A56C00192BDD /* TrainingModes.json in Resources */,
 				A45BAE0525DC2C6D00F51D5E /* LaunchScreen.storyboard in Resources */,
 				A41C8F8E25FFF7C600192BDD /* StatisticsView.xib in Resources */,
 				A45BAE0225DC2C6D00F51D5E /* Assets.xcassets in Resources */,
@@ -911,7 +973,10 @@
 				A421548A25F522500094C1CB /* AuthenticationDelegate.swift in Sources */,
 				A421546625F516E40094C1CB /* LoginViewController.swift in Sources */,
 				A41C8FC32600150B00192BDD /* MDNSFinder.swift in Sources */,
+				A41C900B2600A8D100192BDD /* TrainingMode.swift in Sources */,
+				A41C90052600A87600192BDD /* ChannelData.swift in Sources */,
 				A45BADF925DC2C6B00F51D5E /* AppDelegate.swift in Sources */,
+				A41C90112600A9D100192BDD /* WorkoutSetupViewModel.swift in Sources */,
 				A48B658F25F6D897009D6CCD /* RoundedView.swift in Sources */,
 				A495801425E051B400923B7F /* ApiErrorResponse.swift in Sources */,
 				A4A3A37025FD1FAF000323CF /* WaveView.swift in Sources */,
@@ -936,6 +1001,7 @@
 				A46337A825E087A4000B51F7 /* RegisterData.swift in Sources */,
 				A406E49925F533AC0044E284 /* UserService.swift in Sources */,
 				A41C8FCD2600208C00192BDD /* DeviceStatusResource.swift in Sources */,
+				A41C90242600F11700192BDD /* TrainingModeSelectorView.swift in Sources */,
 				A4A495A825DC50E800636B66 /* User.swift in Sources */,
 				A48B659925F6E4C9009D6CCD /* RoundedButton.swift in Sources */,
 				A46337D825E12246000B51F7 /* NetworkEngine.swift in Sources */,
@@ -944,12 +1010,14 @@
 				A421544C25F506850094C1CB /* AuthenticationCoordinator.swift in Sources */,
 				A421545B25F515630094C1CB /* StoryboardLodable.swift in Sources */,
 				A41C8FAE260011B600192BDD /* WorkoutSetupViewController.swift in Sources */,
+				A41C90312600F7B000192BDD /* TrainingModeOptionView.swift in Sources */,
 				A421547325F51AB40094C1CB /* RegistrationViewController.swift in Sources */,
 				A48B659425F6DB0E009D6CCD /* BorderTextField.swift in Sources */,
 				A41C8FF226002B9300192BDD /* DeviceHost.swift in Sources */,
 				A41C8FBD260014DE00192BDD /* FinderDelegate.swift in Sources */,
 				A41C8F8925FFF7B600192BDD /* StatisticsView.swift in Sources */,
 				A45BAE5125DC3F4900F51D5E /* ApiResponse.swift in Sources */,
+				A41C90162600AA4500192BDD /* Bundle.swift in Sources */,
 				A48B650325F53FEA009D6CCD /* UserDefaultsTokenService.swift in Sources */,
 				A45BADFB25DC2C6B00F51D5E /* SceneDelegate.swift in Sources */,
 				A41C8F9325FFFA2700192BDD /* CustomViewProtocol.swift in Sources */,
