@@ -45,6 +45,8 @@
 		A421547F25F520430094C1CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A421547E25F520430094C1CB /* Main.storyboard */; };
 		A421548425F5206A0094C1CB /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421548325F5206A0094C1CB /* DashboardViewController.swift */; };
 		A421548A25F522500094C1CB /* AuthenticationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421548925F522500094C1CB /* AuthenticationDelegate.swift */; };
+		A4335EBD260119D00098E79C /* DeviceRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4335EBB260119D00098E79C /* DeviceRowCollectionViewCell.swift */; };
+		A4335EBE260119D00098E79C /* DeviceRowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4335EBC260119D00098E79C /* DeviceRowCollectionViewCell.xib */; };
 		A45BADF925DC2C6B00F51D5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BADF825DC2C6B00F51D5E /* AppDelegate.swift */; };
 		A45BADFB25DC2C6B00F51D5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BADFA25DC2C6B00F51D5E /* SceneDelegate.swift */; };
 		A45BADFD25DC2C6B00F51D5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BADFC25DC2C6B00F51D5E /* ViewController.swift */; };
@@ -155,6 +157,8 @@
 		A421547E25F520430094C1CB /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A421548325F5206A0094C1CB /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		A421548925F522500094C1CB /* AuthenticationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDelegate.swift; sourceTree = "<group>"; };
+		A4335EBB260119D00098E79C /* DeviceRowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRowCollectionViewCell.swift; sourceTree = "<group>"; };
+		A4335EBC260119D00098E79C /* DeviceRowCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceRowCollectionViewCell.xib; sourceTree = "<group>"; };
 		A45BADF525DC2C6B00F51D5E /* EMSTrainerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMSTrainerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45BADF825DC2C6B00F51D5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A45BADFA25DC2C6B00F51D5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -415,6 +419,15 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		A4335EB026010C8B0098E79C /* DeviceRow */ = {
+			isa = PBXGroup;
+			children = (
+				A4335EBB260119D00098E79C /* DeviceRowCollectionViewCell.swift */,
+				A4335EBC260119D00098E79C /* DeviceRowCollectionViewCell.xib */,
+			);
+			path = DeviceRow;
+			sourceTree = "<group>";
+		};
 		A45BADEC25DC2C6B00F51D5E = {
 			isa = PBXGroup;
 			children = (
@@ -628,6 +641,7 @@
 		A48B658D25F6D87F009D6CCD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A4335EB026010C8B0098E79C /* DeviceRow */,
 				A48B658E25F6D897009D6CCD /* RoundedView.swift */,
 				A48B659325F6DB0E009D6CCD /* BorderTextField.swift */,
 				A48B659825F6E4C9009D6CCD /* RoundedButton.swift */,
@@ -830,6 +844,7 @@
 				A421547F25F520430094C1CB /* Main.storyboard in Resources */,
 				A41C902C2600F14600192BDD /* TrainingModeSelectorView.xib in Resources */,
 				A41C90362600F7BA00192BDD /* TrainingModeOptionView.xib in Resources */,
+				A4335EBE260119D00098E79C /* DeviceRowCollectionViewCell.xib in Resources */,
 				A41C8FFD2600A56C00192BDD /* TrainingModes.json in Resources */,
 				A45BAE0525DC2C6D00F51D5E /* LaunchScreen.storyboard in Resources */,
 				A41C8F8E25FFF7C600192BDD /* StatisticsView.xib in Resources */,
@@ -962,6 +977,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4335EBD260119D00098E79C /* DeviceRowCollectionViewCell.swift in Sources */,
 				A48B64FE25F53FB7009D6CCD /* TokenService.swift in Sources */,
 				A4FCAEB925DC8B4500C9849C /* LoginResource.swift in Sources */,
 				A45BAE4C25DC3E1B00F51D5E /* ApiResource.swift in Sources */,

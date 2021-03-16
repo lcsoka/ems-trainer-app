@@ -16,6 +16,7 @@ class TrainingModeOptionView: UIView, CustomViewProtocol {
     @IBOutlet var contentView: UIView!
     @IBOutlet var imageContainer: RoundedView!
     @IBOutlet var lblName: UILabel!
+    @IBOutlet var icon: UIImageView!
     
     var delegate: TrainingModeOptionDelegate?
     
@@ -24,9 +25,11 @@ class TrainingModeOptionView: UIView, CustomViewProtocol {
             if selected {
                 imageContainer.borderColor = UIColor(named: "Green500")!
                 imageContainer.borderWidth = 2
+                icon.tintColor = UIColor(named: "Green500")!
             } else {
                 imageContainer.borderColor = .clear
                 imageContainer.borderWidth = 0
+                icon.tintColor = .white
             }
         }
     }
@@ -34,6 +37,8 @@ class TrainingModeOptionView: UIView, CustomViewProtocol {
     var mode: TrainingMode? {
         didSet {
             lblName.text = mode!.name
+            icon.image = UIImage(imageLiteralResourceName: mode!.image).withRenderingMode(.alwaysTemplate)
+            icon.tintColor = .white
         }
     }
     

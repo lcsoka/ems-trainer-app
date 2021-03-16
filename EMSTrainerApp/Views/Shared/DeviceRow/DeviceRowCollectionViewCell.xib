@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DeviceRowCollectionViewCell" customModule="EMSTrainerApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="370" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Etg-Qf-nq4" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="370" height="100"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0Q-GV-jsU">
+                                <rect key="frame" x="0.0" y="49.5" width="370" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="AjL-DE-4re"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fx-Dt-D5H">
+                                <rect key="frame" x="10" y="24" width="54" height="25.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPC-tH-Exd">
+                                <rect key="frame" x="10" y="50.5" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="battery.100" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6oR-65-L6H">
+                                <rect key="frame" x="333" y="8" width="29" height="14"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqo-ZJ-w6G">
+                                <rect key="frame" x="291.5" y="6.5" width="36.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="Gray600"/>
+                        <constraints>
+                            <constraint firstItem="3fx-Dt-D5H" firstAttribute="leading" secondItem="Etg-Qf-nq4" secondAttribute="leading" constant="10" id="2q8-Ys-Dpv"/>
+                            <constraint firstAttribute="trailing" secondItem="T0Q-GV-jsU" secondAttribute="trailing" id="Czu-E8-DDR"/>
+                            <constraint firstItem="6oR-65-L6H" firstAttribute="leading" secondItem="Pqo-ZJ-w6G" secondAttribute="trailing" constant="5" id="QD4-8f-Grn"/>
+                            <constraint firstItem="T0Q-GV-jsU" firstAttribute="centerX" secondItem="Etg-Qf-nq4" secondAttribute="centerX" id="UJH-ba-UWT"/>
+                            <constraint firstItem="T0Q-GV-jsU" firstAttribute="centerY" secondItem="Etg-Qf-nq4" secondAttribute="centerY" id="ZYC-51-taS"/>
+                            <constraint firstItem="T0Q-GV-jsU" firstAttribute="top" secondItem="3fx-Dt-D5H" secondAttribute="bottom" id="aGU-wt-TYa"/>
+                            <constraint firstItem="6oR-65-L6H" firstAttribute="top" secondItem="Etg-Qf-nq4" secondAttribute="top" constant="5" id="cg3-iA-73x"/>
+                            <constraint firstItem="gPC-tH-Exd" firstAttribute="leading" secondItem="Etg-Qf-nq4" secondAttribute="leading" constant="10" id="ggz-Ia-Ja4"/>
+                            <constraint firstItem="Pqo-ZJ-w6G" firstAttribute="centerY" secondItem="6oR-65-L6H" secondAttribute="centerY" id="h4t-0t-nDf"/>
+                            <constraint firstItem="gPC-tH-Exd" firstAttribute="top" secondItem="T0Q-GV-jsU" secondAttribute="bottom" id="ta4-xp-2Go"/>
+                            <constraint firstAttribute="trailing" secondItem="6oR-65-L6H" secondAttribute="trailing" constant="8" id="vVc-cJ-fxg"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Etg-Qf-nq4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6zo-OZ-lcw"/>
+                <constraint firstItem="Etg-Qf-nq4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7Rv-hr-eEY"/>
+                <constraint firstAttribute="trailing" secondItem="Etg-Qf-nq4" secondAttribute="trailing" id="l3v-H3-B91"/>
+                <constraint firstAttribute="bottom" secondItem="Etg-Qf-nq4" secondAttribute="bottom" id="xWr-Vd-c6h"/>
+            </constraints>
+            <size key="customSize" width="370" height="100"/>
+            <connections>
+                <outlet property="lblAddress" destination="gPC-tH-Exd" id="zMe-HH-ehb"/>
+                <outlet property="lblBattery" destination="Pqo-ZJ-w6G" id="F2s-vY-bKi"/>
+                <outlet property="lblSerial" destination="3fx-Dt-D5H" id="Nbe-AO-lAR"/>
+                <outlet property="roundedView" destination="Etg-Qf-nq4" id="gYg-bp-f62"/>
+            </connections>
+            <point key="canvasLocation" x="334.78260869565219" y="145.98214285714286"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="battery.100" catalog="system" width="128" height="61"/>
+        <namedColor name="Gray600">
+            <color red="0.30300000309944153" green="0.33300000429153442" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

@@ -10,6 +10,7 @@ import Foundation
 struct TrainingMode: Codable {
     var name: String
     var description: String
+    var image: String
     var length: Int
     var values: ChannelData
 }

@@ -29,5 +29,16 @@ class RoundedButton: UIButton {
         }
     }
     
+    public var disabled: Bool = false {
+        didSet {
+            if disabled {
+                alpha = 0.5
+                self.isUserInteractionEnabled = false
+            } else {
+                alpha = 1
+                self.isUserInteractionEnabled = true
+            }
+        }
+    }
    
 }

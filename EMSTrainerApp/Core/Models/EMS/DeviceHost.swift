@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DeviceHost: EMSDeviceType {
+class DeviceHost: EMSDeviceType, Equatable {
     var serial: String
     
     var battery: Int
@@ -27,5 +27,9 @@ class DeviceHost: EMSDeviceType {
         self.connected = deviceStatus.connected
         self.elapsed = deviceStatus.elapsed
         self.version = deviceStatus.version
+    }
+    
+    static func == (lhs: DeviceHost, rhs: DeviceHost) -> Bool {
+        return lhs.address == rhs.address
     }
 }
