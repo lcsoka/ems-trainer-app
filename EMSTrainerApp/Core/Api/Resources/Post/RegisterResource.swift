@@ -8,6 +8,8 @@
 import Foundation
 
 struct RegisterResource: ApiResource {
+    var customUrl: String?
+    
     typealias ModelType = UserResponse
     let methodPath = "/auth/register"
 }

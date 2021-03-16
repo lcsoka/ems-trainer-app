@@ -8,6 +8,8 @@
 import Foundation
 
 struct LogoutResource: ApiResource {
+    var customUrl: String?
+    
     typealias ModelType = EmptyResponse
     let methodPath = "/logout"
 }

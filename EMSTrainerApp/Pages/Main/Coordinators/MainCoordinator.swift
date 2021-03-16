@@ -23,6 +23,7 @@ protocol MainCoordinatorDelegate: class {
 final class MainCoordinator: NavigationCoordinator {
     let container: Container
     var navigationController: UINavigationController
+    var api: ApiService!
     var auth: AuthenticationService!
     var userService: UserService!
     weak var delegate: MainCoordinatorDelegate?
@@ -31,6 +32,7 @@ final class MainCoordinator: NavigationCoordinator {
     init(container: Container, navigationController: UINavigationController) {
         self.container = container
         self.navigationController = navigationController
+        self.api =  container.resolve(DeviceApi.self)
         self.auth = container.resolve(AuthenticationService.self)
         self.userService = container.resolve(UserService.self)
     }
@@ -56,7 +58,8 @@ final class MainCoordinator: NavigationCoordinator {
     
     private func showWorkoutSetup() {
         let vc = container.resolve(WorkoutSetupViewController.self)!
-        
+        let mdnsFinder = MDNSFinder(api: api)
+        vc.finder = mdnsFinder
         navigationController.pushViewController(vc, animated: true)
     }
 }

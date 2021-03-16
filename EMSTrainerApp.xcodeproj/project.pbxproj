@@ -15,6 +15,16 @@
 		A41C8F9325FFFA2700192BDD /* CustomViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8F9225FFFA2700192BDD /* CustomViewProtocol.swift */; };
 		A41C8F982600060800192BDD /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8F972600060800192BDD /* AccountViewController.swift */; };
 		A41C8FAE260011B600192BDD /* WorkoutSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FAD260011B600192BDD /* WorkoutSetupViewController.swift */; };
+		A41C8FB42600144900192BDD /* FinderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FB32600144900192BDD /* FinderProtocol.swift */; };
+		A41C8FBD260014DE00192BDD /* FinderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FBC260014DE00192BDD /* FinderDelegate.swift */; };
+		A41C8FC32600150B00192BDD /* MDNSFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FC22600150B00192BDD /* MDNSFinder.swift */; };
+		A41C8FCD2600208C00192BDD /* DeviceStatusResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FCC2600208C00192BDD /* DeviceStatusResource.swift */; };
+		A41C8FD2260020F600192BDD /* DeviceStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FD1260020F600192BDD /* DeviceStatusResponse.swift */; };
+		A41C8FE2260026F200192BDD /* DeviceApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FE1260026F200192BDD /* DeviceApiRequest.swift */; };
+		A41C8FE72600270800192BDD /* DeviceApiResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FE62600270800192BDD /* DeviceApiResource.swift */; };
+		A41C8FEC260028A000192BDD /* DeviceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FEB260028A000192BDD /* DeviceApi.swift */; };
+		A41C8FF226002B9300192BDD /* DeviceHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FF126002B9300192BDD /* DeviceHost.swift */; };
+		A41C8FF726002C5300192BDD /* EMSDeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FF626002C5300192BDD /* EMSDeviceType.swift */; };
 		A421544225F503210094C1CB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421544125F503210094C1CB /* AppCoordinator.swift */; };
 		A421544C25F506850094C1CB /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421544B25F506850094C1CB /* AuthenticationCoordinator.swift */; };
 		A421545625F514D70094C1CB /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421545525F514D70094C1CB /* Container.swift */; };
@@ -106,6 +116,16 @@
 		A41C8F9225FFFA2700192BDD /* CustomViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewProtocol.swift; sourceTree = "<group>"; };
 		A41C8F972600060800192BDD /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		A41C8FAD260011B600192BDD /* WorkoutSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSetupViewController.swift; sourceTree = "<group>"; };
+		A41C8FB32600144900192BDD /* FinderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderProtocol.swift; sourceTree = "<group>"; };
+		A41C8FBC260014DE00192BDD /* FinderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderDelegate.swift; sourceTree = "<group>"; };
+		A41C8FC22600150B00192BDD /* MDNSFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDNSFinder.swift; sourceTree = "<group>"; };
+		A41C8FCC2600208C00192BDD /* DeviceStatusResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStatusResource.swift; sourceTree = "<group>"; };
+		A41C8FD1260020F600192BDD /* DeviceStatusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStatusResponse.swift; sourceTree = "<group>"; };
+		A41C8FE1260026F200192BDD /* DeviceApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceApiRequest.swift; sourceTree = "<group>"; };
+		A41C8FE62600270800192BDD /* DeviceApiResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceApiResource.swift; sourceTree = "<group>"; };
+		A41C8FEB260028A000192BDD /* DeviceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceApi.swift; sourceTree = "<group>"; };
+		A41C8FF126002B9300192BDD /* DeviceHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHost.swift; sourceTree = "<group>"; };
+		A41C8FF626002C5300192BDD /* EMSDeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSDeviceType.swift; sourceTree = "<group>"; };
 		A421544125F503210094C1CB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A421544B25F506850094C1CB /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		A421545525F514D70094C1CB /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
@@ -250,6 +270,41 @@
 			path = Statistics;
 			sourceTree = "<group>";
 		};
+		A41C8FB22600135600192BDD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A41C8FC1260014FA00192BDD /* Finder */,
+				A41C8FBB260014A200192BDD /* Protocols */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A41C8FBB260014A200192BDD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A41C8FB32600144900192BDD /* FinderProtocol.swift */,
+				A41C8FBC260014DE00192BDD /* FinderDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A41C8FC1260014FA00192BDD /* Finder */ = {
+			isa = PBXGroup;
+			children = (
+				A41C8FC22600150B00192BDD /* MDNSFinder.swift */,
+			);
+			path = Finder;
+			sourceTree = "<group>";
+		};
+		A41C8FF026002B7800192BDD /* EMS */ = {
+			isa = PBXGroup;
+			children = (
+				A41C8FF126002B9300192BDD /* DeviceHost.swift */,
+				A41C8FF626002C5300192BDD /* EMSDeviceType.swift */,
+			);
+			path = EMS;
+			sourceTree = "<group>";
+		};
 		A421544025F502D10094C1CB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +436,7 @@
 				A47BB12D25E1B6250065023F /* Coordinator */,
 				A4FCAED125DDA5C700C9849C /* ErrorHandling */,
 				A421544025F502D10094C1CB /* Extensions */,
+				A41C8FB22600135600192BDD /* Network */,
 				A4A495A625DC50D500636B66 /* Models */,
 				A477971F25FFDD75006AF564 /* Router */,
 				A46337A025E083DE000B51F7 /* Services */,
@@ -405,6 +461,7 @@
 				A4A495BC25DC718A00636B66 /* Responses */,
 				A4A495BB25DC714000636B66 /* Resources */,
 				A45BAE3825DC2DB600F51D5E /* Api.swift */,
+				A41C8FEB260028A000192BDD /* DeviceApi.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -524,6 +581,7 @@
 		A4A495A625DC50D500636B66 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A41C8FF026002B7800192BDD /* EMS */,
 				A4FCAEB025DC8ACE00C9849C /* RequestData */,
 				A4A495A725DC50E800636B66 /* User.swift */,
 			);
@@ -534,6 +592,7 @@
 			isa = PBXGroup;
 			children = (
 				A45BAE4B25DC3E1B00F51D5E /* ApiResource.swift */,
+				A41C8FE62600270800192BDD /* DeviceApiResource.swift */,
 				A4FCAEB625DC8B2300C9849C /* Get */,
 				A4FCAEB725DC8B3700C9849C /* Post */,
 			);
@@ -547,6 +606,7 @@
 				A4A495C325DC71D300636B66 /* UserResponse.swift */,
 				A495801325E051B400923B7F /* ApiErrorResponse.swift */,
 				A46337B625E08ADB000B51F7 /* EmptyResponse.swift */,
+				A41C8FD1260020F600192BDD /* DeviceStatusResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -557,6 +617,7 @@
 				A45BAE4025DC35F400F51D5E /* NetworkRequest.swift */,
 				A45BAE4625DC3DF600F51D5E /* ApiRequest.swift */,
 				A46337D725E12246000B51F7 /* NetworkEngine.swift */,
+				A41C8FE1260026F200192BDD /* DeviceApiRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -575,6 +636,7 @@
 			children = (
 				A4A495BE25DC71C400636B66 /* MeResource.swift */,
 				A46337B125E08A58000B51F7 /* LogoutResource.swift */,
+				A41C8FCC2600208C00192BDD /* DeviceStatusResource.swift */,
 			);
 			path = Get;
 			sourceTree = "<group>";
@@ -843,9 +905,12 @@
 				A45BAE4C25DC3E1B00F51D5E /* ApiResource.swift in Sources */,
 				A421544225F503210094C1CB /* AppCoordinator.swift in Sources */,
 				A45BADFD25DC2C6B00F51D5E /* ViewController.swift in Sources */,
+				A41C8FEC260028A000192BDD /* DeviceApi.swift in Sources */,
+				A41C8FB42600144900192BDD /* FinderProtocol.swift in Sources */,
 				A477972925FFDD9D006AF564 /* RouterProtocol.swift in Sources */,
 				A421548A25F522500094C1CB /* AuthenticationDelegate.swift in Sources */,
 				A421546625F516E40094C1CB /* LoginViewController.swift in Sources */,
+				A41C8FC32600150B00192BDD /* MDNSFinder.swift in Sources */,
 				A45BADF925DC2C6B00F51D5E /* AppDelegate.swift in Sources */,
 				A48B658F25F6D897009D6CCD /* RoundedView.swift in Sources */,
 				A495801425E051B400923B7F /* ApiErrorResponse.swift in Sources */,
@@ -853,6 +918,7 @@
 				A46337AD25E08811000B51F7 /* RegisterResource.swift in Sources */,
 				A477973725FFDE65006AF564 /* UIViewController.swift in Sources */,
 				A45BAE4725DC3DF600F51D5E /* ApiRequest.swift in Sources */,
+				A41C8FE2260026F200192BDD /* DeviceApiRequest.swift in Sources */,
 				A47BB12F25E1B63B0065023F /* Coordinator.swift in Sources */,
 				A45BAE3925DC2DB600F51D5E /* Api.swift in Sources */,
 				A463379C25E07E53000B51F7 /* Auth.swift in Sources */,
@@ -862,21 +928,26 @@
 				A4FCAED325DDA7F500C9849C /* AppError.swift in Sources */,
 				A4FCAEB225DC8AE000C9849C /* LoginData.swift in Sources */,
 				A477972125FFDD86006AF564 /* Router.swift in Sources */,
+				A41C8FF726002C5300192BDD /* EMSDeviceType.swift in Sources */,
 				A406E48825F533790044E284 /* UserDefaultsUserService.swift in Sources */,
 				A421545625F514D70094C1CB /* Container.swift in Sources */,
 				A41C8F982600060800192BDD /* AccountViewController.swift in Sources */,
 				A477972F25FFDE38006AF564 /* Presentable.swift in Sources */,
 				A46337A825E087A4000B51F7 /* RegisterData.swift in Sources */,
 				A406E49925F533AC0044E284 /* UserService.swift in Sources */,
+				A41C8FCD2600208C00192BDD /* DeviceStatusResource.swift in Sources */,
 				A4A495A825DC50E800636B66 /* User.swift in Sources */,
 				A48B659925F6E4C9009D6CCD /* RoundedButton.swift in Sources */,
 				A46337D825E12246000B51F7 /* NetworkEngine.swift in Sources */,
 				A46337B725E08ADB000B51F7 /* EmptyResponse.swift in Sources */,
+				A41C8FE72600270800192BDD /* DeviceApiResource.swift in Sources */,
 				A421544C25F506850094C1CB /* AuthenticationCoordinator.swift in Sources */,
 				A421545B25F515630094C1CB /* StoryboardLodable.swift in Sources */,
 				A41C8FAE260011B600192BDD /* WorkoutSetupViewController.swift in Sources */,
 				A421547325F51AB40094C1CB /* RegistrationViewController.swift in Sources */,
 				A48B659425F6DB0E009D6CCD /* BorderTextField.swift in Sources */,
+				A41C8FF226002B9300192BDD /* DeviceHost.swift in Sources */,
+				A41C8FBD260014DE00192BDD /* FinderDelegate.swift in Sources */,
 				A41C8F8925FFF7B600192BDD /* StatisticsView.swift in Sources */,
 				A45BAE5125DC3F4900F51D5E /* ApiResponse.swift in Sources */,
 				A48B650325F53FEA009D6CCD /* UserDefaultsTokenService.swift in Sources */,
@@ -886,6 +957,7 @@
 				A45BAE4125DC35F400F51D5E /* NetworkRequest.swift in Sources */,
 				A4A495BF25DC71C400636B66 /* MeResource.swift in Sources */,
 				A4A495C425DC71D300636B66 /* UserResponse.swift in Sources */,
+				A41C8FD2260020F600192BDD /* DeviceStatusResponse.swift in Sources */,
 				A48B650925F541B4009D6CCD /* AppConfig.swift in Sources */,
 				A421548425F5206A0094C1CB /* DashboardViewController.swift in Sources */,
 				A48B64D525F536E7009D6CCD /* AuthenticationService.swift in Sources */,

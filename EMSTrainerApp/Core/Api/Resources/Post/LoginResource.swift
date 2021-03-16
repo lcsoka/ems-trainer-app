@@ -10,4 +10,5 @@ import Foundation
 struct LoginResource: ApiResource {
     typealias ModelType = UserResponse
     let methodPath = "/auth/login"
+    var customUrl: String?
 }
