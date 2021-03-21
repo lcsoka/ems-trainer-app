@@ -13,6 +13,9 @@ private enum Constants {
 }
 @IBDesignable
 final class BorderTextField: UITextField {
+    
+    var textChanged :(String) -> () = { _ in }
+    
     // MARK: IBInspectables
     
     @IBInspectable var backgroundViewColor: UIColor = .clear {
@@ -101,6 +104,12 @@ final class BorderTextField: UITextField {
         //        label.frame = bounds.inset(by: textInsets)
     }
     
+    // MARK: - Public Methods
+    func bind(callback :@escaping (String) -> ()) {
+        self.textChanged = callback
+        self.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+    }
+    
     // MARK: - Private Methods
     private func setupUI() {
         borderStyle = .none
@@ -124,11 +133,15 @@ final class BorderTextField: UITextField {
         updateBorder()
     }
     
-    
     private func updateBorder() {
         let borderColor = isFirstResponder ? tintColor : .clear
         UIView.animate(withDuration: 0) {
             self.backgroundView.borderColor = borderColor!
         }
+    }
+    
+    @objc
+    private func textFieldDidChange(_ textField :UITextField) {
+        self.textChanged(textField.text!)
     }
 }

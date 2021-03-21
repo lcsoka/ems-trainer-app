@@ -10,6 +10,9 @@
 		01D23F4F54F8232C7BCB9286 /* Pods_EMSTrainerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC52599F908E9687880578C /* Pods_EMSTrainerAppTests.framework */; };
 		A406E48825F533790044E284 /* UserDefaultsUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A406E48725F533790044E284 /* UserDefaultsUserService.swift */; };
 		A406E49925F533AC0044E284 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A406E49825F533AC0044E284 /* UserService.swift */; };
+		A40A4EDF2607DABB00F07342 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4EDE2607DABB00F07342 /* RegistrationViewModel.swift */; };
+		A40A4EE52607DB4A00F07342 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4EE42607DB4A00F07342 /* FormViewModel.swift */; };
+		A40A4EEB2607DC4B00F07342 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4EEA2607DC4B00F07342 /* Dynamic.swift */; };
 		A40EE4BF26015BBD002E422B /* EMSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4BE26015BBD002E422B /* EMSClient.swift */; };
 		A40EE4CA26015D45002E422B /* EMSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4C926015D45002E422B /* EMSDelegate.swift */; };
 		A40EE4D026015EAA002E422B /* WebsocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4CF26015EAA002E422B /* WebsocketClient.swift */; };
@@ -129,6 +132,9 @@
 		8D652B352D4A608E1D5E6DD0 /* Pods-EMSTrainerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EMSTrainerAppTests.release.xcconfig"; path = "Target Support Files/Pods-EMSTrainerAppTests/Pods-EMSTrainerAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A406E48725F533790044E284 /* UserDefaultsUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUserService.swift; sourceTree = "<group>"; };
 		A406E49825F533AC0044E284 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		A40A4EDE2607DABB00F07342 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		A40A4EE42607DB4A00F07342 /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
+		A40A4EEA2607DC4B00F07342 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		A40EE4BE26015BBD002E422B /* EMSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSClient.swift; sourceTree = "<group>"; };
 		A40EE4C926015D45002E422B /* EMSDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSDelegate.swift; sourceTree = "<group>"; };
 		A40EE4CF26015EAA002E422B /* WebsocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketClient.swift; sourceTree = "<group>"; };
@@ -289,6 +295,30 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		A40A4EDC2607DAA300F07342 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A40A4EDE2607DABB00F07342 /* RegistrationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A40A4EE32607DB2C00F07342 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A40A4EE42607DB4A00F07342 /* FormViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A40A4EE92607DC3C00F07342 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A40A4EEA2607DC4B00F07342 /* Dynamic.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A40EE4BD26015BAE002E422B /* EMS */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,6 +445,7 @@
 			children = (
 				A421544A25F506490094C1CB /* Coordinators */,
 				A421546425F516CA0094C1CB /* ViewControllers */,
+				A40A4EDC2607DAA300F07342 /* ViewModels */,
 				A421545F25F516710094C1CB /* Authentication.storyboard */,
 			);
 			path = Authentication;
@@ -541,10 +572,12 @@
 				A47BB12D25E1B6250065023F /* Coordinator */,
 				A4FCAED125DDA5C700C9849C /* ErrorHandling */,
 				A421544025F502D10094C1CB /* Extensions */,
+				A40A4EE92607DC3C00F07342 /* Helpers */,
 				A41C8FB22600135600192BDD /* Network */,
 				A4A495A625DC50D500636B66 /* Models */,
 				A477971F25FFDD75006AF564 /* Router */,
 				A46337A025E083DE000B51F7 /* Services */,
+				A40A4EE32607DB2C00F07342 /* ViewModels */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1032,6 +1065,7 @@
 				A45BADF925DC2C6B00F51D5E /* AppDelegate.swift in Sources */,
 				A41C90112600A9D100192BDD /* WorkoutSetupViewModel.swift in Sources */,
 				A48B658F25F6D897009D6CCD /* RoundedView.swift in Sources */,
+				A40A4EE52607DB4A00F07342 /* FormViewModel.swift in Sources */,
 				A40EE4D026015EAA002E422B /* WebsocketClient.swift in Sources */,
 				A495801425E051B400923B7F /* ApiErrorResponse.swift in Sources */,
 				A4A3A37025FD1FAF000323CF /* WaveView.swift in Sources */,
@@ -1052,9 +1086,11 @@
 				A477972125FFDD86006AF564 /* Router.swift in Sources */,
 				A41C8FF726002C5300192BDD /* EMSDeviceType.swift in Sources */,
 				A406E48825F533790044E284 /* UserDefaultsUserService.swift in Sources */,
+				A40A4EEB2607DC4B00F07342 /* Dynamic.swift in Sources */,
 				A421545625F514D70094C1CB /* Container.swift in Sources */,
 				A41C8F982600060800192BDD /* AccountViewController.swift in Sources */,
 				A477972F25FFDE38006AF564 /* Presentable.swift in Sources */,
+				A40A4EDF2607DABB00F07342 /* RegistrationViewModel.swift in Sources */,
 				A46337A825E087A4000B51F7 /* RegisterData.swift in Sources */,
 				A406E49925F533AC0044E284 /* UserService.swift in Sources */,
 				A40EE4D526016075002E422B /* EMSChannel.swift in Sources */,

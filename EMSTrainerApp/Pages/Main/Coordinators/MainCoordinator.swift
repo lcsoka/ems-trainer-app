@@ -50,7 +50,9 @@ final class MainCoordinator: NavigationCoordinator {
     
     private func showAccount() {
         let vc = container.resolve(AccountViewController.self)!
+        vc.delegate = self
         vc.userService = self.userService
+        vc.auth = auth
 //        vc.modalPresentationStyle = .overCurrentContext
         navigationController.present(vc, animated: true)
     }
@@ -79,5 +81,11 @@ extension MainCoordinator: DashboardViewControllerDelegate {
     
     func userDidRequestWorkoutSetupPage() {
         showWorkoutSetup()
+    }
+}
+
+extension MainCoordinator: AccountViewControllerDelegate {
+    func userDidLogout() {
+        delegate?.mainCoordinatorFinish()
     }
 }

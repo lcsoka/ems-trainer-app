@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -174,29 +173,219 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfM-ru-erK">
-                                <rect key="frame" x="161.5" y="437.5" width="91.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9R-9n-HdA">
-                                <rect key="frame" x="154" y="458.5" width="106" height="30"/>
-                                <state key="normal" title="Successful Reg"/>
-                                <connections>
-                                    <action selector="onTestRegTap:" destination="FbP-ax-RQd" eventType="touchUpInside" id="rod-Zt-lAN"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hAA-BD-FED" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                <rect key="frame" x="37" y="88" width="340" height="284"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="97A-3R-LJp">
+                                        <rect key="frame" x="10" y="10" width="320" height="5339"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86a-0g-fdB">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="101.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70X-tl-cz8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="Gray300"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ahE-fR-0o1" customClass="BorderTextField" customModule="EMSTrainerApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="25.5" width="320" height="76"/>
+                                                        <color key="tintColor" name="Green500"/>
+                                                        <color key="textColor" name="Gray300"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" textContentType="email"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundViewColor">
+                                                                <color key="value" name="Gray600"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="70X-tl-cz8" firstAttribute="leading" secondItem="86a-0g-fdB" secondAttribute="leading" id="1ex-Fs-L43"/>
+                                                    <constraint firstItem="ahE-fR-0o1" firstAttribute="leading" secondItem="86a-0g-fdB" secondAttribute="leading" id="9lQ-AK-LTp"/>
+                                                    <constraint firstAttribute="trailing" secondItem="70X-tl-cz8" secondAttribute="trailing" id="E8U-AF-qE3"/>
+                                                    <constraint firstItem="ahE-fR-0o1" firstAttribute="top" secondItem="70X-tl-cz8" secondAttribute="bottom" constant="5" id="T18-H5-WjJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ahE-fR-0o1" secondAttribute="trailing" id="fwh-WJ-RCr"/>
+                                                    <constraint firstItem="70X-tl-cz8" firstAttribute="top" secondItem="86a-0g-fdB" secondAttribute="top" id="pXC-ai-MuJ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ahE-fR-0o1" secondAttribute="bottom" id="sAn-Ml-jxp"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bI-ZB-heH">
+                                                <rect key="frame" x="0.0" y="111.5" width="320" height="101.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEe-GS-Qd1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="Gray300"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2TB-dy-6B0" customClass="BorderTextField" customModule="EMSTrainerApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="25.5" width="320" height="76"/>
+                                                        <color key="tintColor" name="Green500"/>
+                                                        <color key="textColor" name="Gray300"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" textContentType="email"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundViewColor">
+                                                                <color key="value" name="Gray600"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="2TB-dy-6B0" firstAttribute="top" secondItem="hEe-GS-Qd1" secondAttribute="bottom" constant="5" id="1Km-9Y-U52"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2TB-dy-6B0" secondAttribute="trailing" id="51K-ui-ozq"/>
+                                                    <constraint firstItem="hEe-GS-Qd1" firstAttribute="leading" secondItem="3bI-ZB-heH" secondAttribute="leading" id="6f7-Wx-Fqg"/>
+                                                    <constraint firstItem="2TB-dy-6B0" firstAttribute="leading" secondItem="3bI-ZB-heH" secondAttribute="leading" id="EvH-jy-TWi"/>
+                                                    <constraint firstAttribute="bottom" secondItem="2TB-dy-6B0" secondAttribute="bottom" id="ZKr-j6-eWK"/>
+                                                    <constraint firstItem="hEe-GS-Qd1" firstAttribute="top" secondItem="3bI-ZB-heH" secondAttribute="top" id="csr-ls-CcK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hEe-GS-Qd1" secondAttribute="trailing" id="nPv-Cn-AJh"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OUs-o7-7Qe">
+                                                <rect key="frame" x="0.0" y="223" width="320" height="101.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfO-kZ-RS1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="Gray300"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aBu-vy-uEq" customClass="BorderTextField" customModule="EMSTrainerApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="25.5" width="320" height="41"/>
+                                                        <color key="tintColor" name="Green500"/>
+                                                        <color key="textColor" name="Gray300"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="send" secureTextEntry="YES" smartInsertDeleteType="no" textContentType="password"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundViewColor">
+                                                                <color key="value" name="Gray600"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="dfO-kZ-RS1" firstAttribute="leading" secondItem="OUs-o7-7Qe" secondAttribute="leading" id="DRN-Gm-XFf"/>
+                                                    <constraint firstItem="dfO-kZ-RS1" firstAttribute="top" secondItem="OUs-o7-7Qe" secondAttribute="top" id="O9y-Ar-MEm"/>
+                                                    <constraint firstItem="aBu-vy-uEq" firstAttribute="top" secondItem="dfO-kZ-RS1" secondAttribute="bottom" constant="5" id="Q2B-GE-CQr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="dfO-kZ-RS1" secondAttribute="trailing" id="ah4-Au-uXE"/>
+                                                    <constraint firstAttribute="bottom" secondItem="aBu-vy-uEq" secondAttribute="bottom" id="lrQ-ux-fEN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="aBu-vy-uEq" secondAttribute="trailing" id="mb7-r9-iDd"/>
+                                                    <constraint firstItem="aBu-vy-uEq" firstAttribute="leading" secondItem="OUs-o7-7Qe" secondAttribute="leading" id="nDT-hg-gSX"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" id="ka4-Tj-uTO">
+                                                <rect key="frame" x="0.0" y="30" width="320" height="4953.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Confirmation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12H-D2-xdM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="Gray300"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cMI-VN-TDe" customClass="BorderTextField" customModule="EMSTrainerApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="25.5" width="320" height="4928"/>
+                                                        <color key="tintColor" name="Green500"/>
+                                                        <color key="textColor" name="Gray300"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="send" secureTextEntry="YES" textContentType="password"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundViewColor">
+                                                                <color key="value" name="Gray600"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                                <viewLayoutGuide key="safeArea" id="npS-7Q-m2S"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="cMI-VN-TDe" secondAttribute="trailing" id="3Yk-uA-oyM"/>
+                                                    <constraint firstItem="cMI-VN-TDe" firstAttribute="top" secondItem="12H-D2-xdM" secondAttribute="bottom" constant="5" id="H2i-Yu-akd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="12H-D2-xdM" secondAttribute="trailing" id="K8M-Ud-q7W"/>
+                                                    <constraint firstItem="cMI-VN-TDe" firstAttribute="leading" secondItem="ka4-Tj-uTO" secondAttribute="leading" id="Wr7-CF-XJ4"/>
+                                                    <constraint firstAttribute="bottom" secondItem="cMI-VN-TDe" secondAttribute="bottom" id="naJ-k5-PGJ"/>
+                                                    <constraint firstItem="12H-D2-xdM" firstAttribute="leading" secondItem="ka4-Tj-uTO" secondAttribute="leading" id="o4m-FK-OAg"/>
+                                                    <constraint firstItem="12H-D2-xdM" firstAttribute="top" secondItem="ka4-Tj-uTO" secondAttribute="top" id="pb2-7m-GJy"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhG-kz-nwE" customClass="RoundedButton" customModule="EMSTrainerApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="5298" width="320" height="41"/>
+                                                <color key="backgroundColor" name="Green500"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                <state key="normal" title="Sign up">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onLoginTap:" destination="haj-Qm-k7N" eventType="touchUpInside" id="VN2-gV-qha"/>
+                                                    <action selector="onSignUpTap:" destination="FbP-ax-RQd" eventType="touchUpInside" id="nn1-Yz-4fS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="Gray700"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="97A-3R-LJp" secondAttribute="bottom" constant="10" id="OKh-nk-rYz"/>
+                                    <constraint firstItem="97A-3R-LJp" firstAttribute="top" secondItem="hAA-BD-FED" secondAttribute="top" constant="10" id="P9w-gz-Fat"/>
+                                    <constraint firstItem="97A-3R-LJp" firstAttribute="leading" secondItem="hAA-BD-FED" secondAttribute="leading" constant="10" id="ZDe-65-zdc"/>
+                                    <constraint firstAttribute="trailing" secondItem="97A-3R-LJp" secondAttribute="trailing" constant="10" id="Zyu-0s-PVe"/>
+                                    <constraint firstAttribute="width" constant="340" id="rHD-fF-bd4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EZA-wx-RjR"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Gray800"/>
                         <constraints>
-                            <constraint firstItem="Y9R-9n-HdA" firstAttribute="top" secondItem="UfM-ru-erK" secondAttribute="bottom" id="RmE-lt-c62"/>
-                            <constraint firstItem="UfM-ru-erK" firstAttribute="centerX" secondItem="JlJ-1T-UYK" secondAttribute="centerX" id="ZEe-Ma-bzO"/>
-                            <constraint firstItem="Y9R-9n-HdA" firstAttribute="centerX" secondItem="JlJ-1T-UYK" secondAttribute="centerX" id="ogk-Zp-8dE"/>
-                            <constraint firstItem="UfM-ru-erK" firstAttribute="centerY" secondItem="JlJ-1T-UYK" secondAttribute="centerY" id="psD-b3-4CP"/>
+                            <constraint firstItem="hAA-BD-FED" firstAttribute="top" secondItem="EZA-wx-RjR" secondAttribute="top" constant="10" id="NwU-0V-OZe"/>
+                            <constraint firstItem="hAA-BD-FED" firstAttribute="centerX" secondItem="JlJ-1T-UYK" secondAttribute="centerX" id="gzw-kK-18X"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailInput" destination="2TB-dy-6B0" id="ODf-Df-rvf"/>
+                        <outlet property="nameInput" destination="ahE-fR-0o1" id="LCc-sP-ToF"/>
+                        <outlet property="passwordConfirmationInput" destination="cMI-VN-TDe" id="3ma-U6-ShU"/>
+                        <outlet property="passwordInput" destination="aBu-vy-uEq" id="yPn-2D-hlY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgc-cd-8hO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -204,14 +393,29 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="2TB-dy-6B0">
+            <size key="intrinsicContentSize" width="320" height="41"/>
+        </designable>
         <designable name="2nI-YK-EtK">
-            <size key="intrinsicContentSize" width="33" height="34"/>
+            <size key="intrinsicContentSize" width="320" height="41"/>
         </designable>
         <designable name="XOc-ww-NEb">
             <size key="intrinsicContentSize" width="62" height="41"/>
         </designable>
+        <designable name="aBu-vy-uEq">
+            <size key="intrinsicContentSize" width="320" height="41"/>
+        </designable>
+        <designable name="ahE-fR-0o1">
+            <size key="intrinsicContentSize" width="320" height="41"/>
+        </designable>
+        <designable name="cMI-VN-TDe">
+            <size key="intrinsicContentSize" width="320" height="41"/>
+        </designable>
+        <designable name="yhG-kz-nwE">
+            <size key="intrinsicContentSize" width="78" height="41"/>
+        </designable>
         <designable name="z3f-Vi-Rt7">
-            <size key="intrinsicContentSize" width="33" height="34"/>
+            <size key="intrinsicContentSize" width="320" height="41"/>
         </designable>
     </designables>
     <color key="tintColor" name="Green500"/>
@@ -231,8 +435,5 @@
         <namedColor name="Green500">
             <color red="0.33300000429153442" green="0.7160000205039978" blue="0.5220000147819519" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

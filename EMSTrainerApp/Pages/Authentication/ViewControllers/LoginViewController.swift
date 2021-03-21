@@ -24,7 +24,7 @@ final class LoginViewController: UIViewController, AuthenticationStoryboardLodab
     @IBOutlet var ampSlider: UISlider!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.extendedLayoutIncludesOpaqueBars = true
         // Do any additional setup after loading the view.
     }
     

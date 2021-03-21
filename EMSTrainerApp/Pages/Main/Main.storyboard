@@ -243,24 +243,49 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fju-kO-rEd">
+                                <rect key="frame" x="186" y="841" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWh-G0-bBd">
+                                <rect key="frame" x="20" y="792" width="374" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="iEB-kT-EQp"/>
+                                </constraints>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" name="Green500"/>
+                                </state>
+                                <connections>
+                                    <action selector="onLogoutTap:" destination="tlZ-XO-Noe" eventType="touchUpInside" id="HW3-35-l4o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NFX-Lb-uxF"/>
                         <color key="backgroundColor" name="Gray800"/>
                         <constraints>
+                            <constraint firstItem="Fju-kO-rEd" firstAttribute="bottom" secondItem="NFX-Lb-uxF" secondAttribute="bottom" id="2P2-Pg-vCd"/>
                             <constraint firstItem="YS9-WU-2e1" firstAttribute="centerX" secondItem="D2c-Gc-4DL" secondAttribute="centerX" id="4js-HH-kQ0"/>
+                            <constraint firstItem="NFX-Lb-uxF" firstAttribute="trailing" secondItem="aWh-G0-bBd" secondAttribute="trailing" constant="20" id="7cP-Dn-KE0"/>
+                            <constraint firstItem="aWh-G0-bBd" firstAttribute="centerX" secondItem="D2c-Gc-4DL" secondAttribute="centerX" id="7f4-bW-k9K"/>
                             <constraint firstItem="YS9-WU-2e1" firstAttribute="top" secondItem="XpD-Bl-cgf" secondAttribute="bottom" constant="8" symbolic="YES" id="AZh-Xu-dR1"/>
                             <constraint firstItem="YIc-sS-TM1" firstAttribute="centerX" secondItem="D2c-Gc-4DL" secondAttribute="centerX" id="Gha-LO-Nk8"/>
                             <constraint firstItem="Vt6-aa-i1d" firstAttribute="leading" secondItem="NFX-Lb-uxF" secondAttribute="leading" id="Ruv-jj-h4F"/>
                             <constraint firstItem="YIc-sS-TM1" firstAttribute="top" secondItem="Vt6-aa-i1d" secondAttribute="bottom" constant="20" id="UuA-cL-vEN"/>
+                            <constraint firstItem="Fju-kO-rEd" firstAttribute="centerX" secondItem="D2c-Gc-4DL" secondAttribute="centerX" id="WkZ-Gi-YFF"/>
                             <constraint firstItem="XpD-Bl-cgf" firstAttribute="top" secondItem="YIc-sS-TM1" secondAttribute="bottom" constant="20" id="Zsz-vw-jGr"/>
                             <constraint firstItem="Vt6-aa-i1d" firstAttribute="trailing" secondItem="NFX-Lb-uxF" secondAttribute="trailing" id="jqI-yL-AFF"/>
                             <constraint firstItem="XpD-Bl-cgf" firstAttribute="centerX" secondItem="D2c-Gc-4DL" secondAttribute="centerX" id="oy9-oE-ZKw"/>
+                            <constraint firstItem="aWh-G0-bBd" firstAttribute="leading" secondItem="NFX-Lb-uxF" secondAttribute="leading" constant="20" id="qis-vy-56I"/>
                             <constraint firstItem="Vt6-aa-i1d" firstAttribute="top" secondItem="NFX-Lb-uxF" secondAttribute="top" id="sVY-MA-7ph"/>
+                            <constraint firstItem="Fju-kO-rEd" firstAttribute="top" secondItem="aWh-G0-bBd" secondAttribute="bottom" constant="8" symbolic="YES" id="yHb-vv-55h"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="lblEmail" destination="YS9-WU-2e1" id="k3C-bz-dvP"/>
                         <outlet property="lblName" destination="XpD-Bl-cgf" id="yTC-fn-M3Y"/>
+                        <outlet property="lblVersion" destination="Fju-kO-rEd" id="cue-jC-jJC"/>
                         <outlet property="navigationBar" destination="Vt6-aa-i1d" id="AKY-mb-Pum"/>
                     </connections>
                 </viewController>
