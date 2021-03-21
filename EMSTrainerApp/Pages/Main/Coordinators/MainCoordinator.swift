@@ -14,6 +14,7 @@ enum MainChildCoordinator {
     case account
     case workouts
     case workoutSetup
+    case workout
 }
 
 protocol MainCoordinatorDelegate: class {
@@ -41,7 +42,6 @@ final class MainCoordinator: NavigationCoordinator {
         let vc = container.resolve(DashboardViewController.self)!
         vc.authDelegate = self
         vc.delegate = self
-        vc.auth = auth
         vc.navigationItem.hidesBackButton = true
 
         // Remove previous view controllers from the stack
@@ -60,9 +60,17 @@ final class MainCoordinator: NavigationCoordinator {
     
     private func showWorkoutSetup() {
         let vc = container.resolve(WorkoutSetupViewController.self)!
+        vc.delegate = self
         let mdnsFinder = MDNSFinder(api: api)
         vc.finder = mdnsFinder
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    private func showWorkout(client: EMSClient) {
+        let vc = container.resolve(WorkoutViewController.self)!
+        vc.client = client
+        vc.modalPresentationStyle = .fullScreen
+        navigationController.present(vc, animated: true)
     }
 }
 
@@ -87,5 +95,11 @@ extension MainCoordinator: DashboardViewControllerDelegate {
 extension MainCoordinator: AccountViewControllerDelegate {
     func userDidLogout() {
         delegate?.mainCoordinatorFinish()
+    }
+}
+
+extension MainCoordinator: WorkoutSetupViewControllerDelegate {
+    func userRequestWorkoutPage(client: EMSClient) {
+     showWorkout(client: client)
     }
 }

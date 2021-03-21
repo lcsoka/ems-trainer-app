@@ -31,21 +31,15 @@ final class AuthenticationCoordinator: NavigationCoordinator {
     }
     
     func start() {
-        print("Before \(navigationController.viewControllers)")
-        
         let isNavigationStackEmpty = navigationController.viewControllers.isEmpty
         let vc = container.resolve(LoginViewController.self)!
-        vc.auth = container.resolve(AuthenticationService.self)!
         vc.delegate = self
         vc.authDelegate = self
         vc.navigationItem.hidesBackButton = true
-//        navigationController.setNavigationBarHidden(true, animated: true)
         navigationController.pushViewController(vc, animated: true)
-        
         if !isNavigationStackEmpty {
             let removed = navigationController.viewControllers.remove(at: 0)
         }
-        print("After \(navigationController.viewControllers)")
     }
     
     private func showLoginScreen() {

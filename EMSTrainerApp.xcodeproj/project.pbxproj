@@ -13,6 +13,8 @@
 		A40A4EDF2607DABB00F07342 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4EDE2607DABB00F07342 /* RegistrationViewModel.swift */; };
 		A40A4EE52607DB4A00F07342 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4EE42607DB4A00F07342 /* FormViewModel.swift */; };
 		A40A4EEB2607DC4B00F07342 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4EEA2607DC4B00F07342 /* Dynamic.swift */; };
+		A40A4EF02607E8F700F07342 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4EEF2607E8F700F07342 /* LoginViewModel.swift */; };
+		A40A4EF52608011100F07342 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4EF42608011100F07342 /* WorkoutViewController.swift */; };
 		A40EE4BF26015BBD002E422B /* EMSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4BE26015BBD002E422B /* EMSClient.swift */; };
 		A40EE4CA26015D45002E422B /* EMSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4C926015D45002E422B /* EMSDelegate.swift */; };
 		A40EE4D026015EAA002E422B /* WebsocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4CF26015EAA002E422B /* WebsocketClient.swift */; };
@@ -135,6 +137,8 @@
 		A40A4EDE2607DABB00F07342 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		A40A4EE42607DB4A00F07342 /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
 		A40A4EEA2607DC4B00F07342 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		A40A4EEF2607E8F700F07342 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A40A4EF42608011100F07342 /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		A40EE4BE26015BBD002E422B /* EMSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSClient.swift; sourceTree = "<group>"; };
 		A40EE4C926015D45002E422B /* EMSDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSDelegate.swift; sourceTree = "<group>"; };
 		A40EE4CF26015EAA002E422B /* WebsocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketClient.swift; sourceTree = "<group>"; };
@@ -299,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				A40A4EDE2607DABB00F07342 /* RegistrationViewModel.swift */,
+				A40A4EEF2607E8F700F07342 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 				A421548325F5206A0094C1CB /* DashboardViewController.swift */,
 				A41C8F972600060800192BDD /* AccountViewController.swift */,
 				A41C8FAD260011B600192BDD /* WorkoutSetupViewController.swift */,
+				A40A4EF42608011100F07342 /* WorkoutViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1079,6 +1085,7 @@
 				A463379C25E07E53000B51F7 /* Auth.swift in Sources */,
 				A495800F25E04C6500923B7F /* ErrorType.swift in Sources */,
 				A48B64E925F53A43009D6CCD /* ApiService.swift in Sources */,
+				A40A4EF52608011100F07342 /* WorkoutViewController.swift in Sources */,
 				A46337B225E08A58000B51F7 /* LogoutResource.swift in Sources */,
 				A4FCAED325DDA7F500C9849C /* AppError.swift in Sources */,
 				A40EE4BF26015BBD002E422B /* EMSClient.swift in Sources */,
@@ -1114,6 +1121,7 @@
 				A41C90162600AA4500192BDD /* Bundle.swift in Sources */,
 				A48B650325F53FEA009D6CCD /* UserDefaultsTokenService.swift in Sources */,
 				A45BADFB25DC2C6B00F51D5E /* SceneDelegate.swift in Sources */,
+				A40A4EF02607E8F700F07342 /* LoginViewModel.swift in Sources */,
 				A41C8F9325FFFA2700192BDD /* CustomViewProtocol.swift in Sources */,
 				A421547925F51F760094C1CB /* MainCoordinator.swift in Sources */,
 				A45BAE4125DC35F400F51D5E /* NetworkRequest.swift in Sources */,

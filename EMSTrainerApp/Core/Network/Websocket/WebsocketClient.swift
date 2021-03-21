@@ -95,7 +95,14 @@ class WebsocketClient: EMSClient {
     }
     
     func sendConfig() {
-        
+        for channel in channels {
+            let currentChannel = channel.value
+            setValue(for: channel.key, value: currentChannel.value)
+            setFreq(for: channel.key, value: currentChannel.freq)
+        }
+        setTime(self.time)
+        setPause(self.pause)
+        setMaster(0)
     }
     
     func connect() {
@@ -113,6 +120,7 @@ extension WebsocketClient: WebSocketDelegate {
         case .connected(_):
             // TODO: listeners
             self.connected = true
+            delegate?.onConnected()
             break
         case .disconnected(let reason, let code):
             print("websocket is disconnected: \(reason) with code: \(code)")

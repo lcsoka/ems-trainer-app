@@ -12,52 +12,62 @@ protocol LoginViewControllerDelegate: class {
 }
 
 final class LoginViewController: UIViewController, AuthenticationStoryboardLodable {
-
+    
     weak var authDelegate: AuthenticationDelegate?
     
     weak var delegate: LoginViewControllerDelegate?
     
-    var auth: AuthenticationService!
+    var viewModel: LoginViewModel! {
+        didSet {
+            viewModel.delegate = self
+        }
+    }
     
-    @IBOutlet var waveView: WaveView!
-    @IBOutlet var slider: UISlider!
-    @IBOutlet var ampSlider: UISlider!
+    @IBOutlet var emailInput: BorderTextField! {
+        didSet {
+            emailInput.bind { self.viewModel.email.value = $0 }
+        }
+    }
+    @IBOutlet var passwordInput: BorderTextField! {
+        didSet {
+            passwordInput.bind { self.viewModel.password.value = $0 }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.extendedLayoutIncludesOpaqueBars = true
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func showErrorAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
     }
-    */
+    
     @IBAction func onRegistrationButtonTap(_ sender: Any) {
         delegate?.userDidRequestRegistration()
     }
     
     @IBAction func onLoginTap(_ sender: Any) {
-        let loginData = LoginData(email: "lcsoka@inf.elte.hu", password: "eclick1122")
-        auth.login(email: loginData.email, password: loginData.password) { error in
-            if error != nil {
-                return
-            }
-            self.authDelegate?.onAuthenticationStateChanged(loggedIn: true)
+        if viewModel.isValid {
+            viewModel.login()
+        } else {
+            let errorMessage = viewModel.brokenRules[0].message
+            showErrorAlert(message: errorMessage)
         }
     }
-//    @IBAction func sliderChanged(_ sender: Any) {
-//        waveView.frequency =  CGFloat(slider.value)
-//        let delta = 1 - (CGFloat(slider.value) - 4) / 2
-//        let acc = 0.05 * delta
-//        waveView.speed = 0.1 - acc
-//    }
-//    @IBAction func ampChanged(_ sender: Any) {
-//        waveView.master = CGFloat(ampSlider.value)
-//    }
+    
+}
+
+extension LoginViewController: LoginViewModelDelegate {
+    func onSuccessfulLogin() {
+        self.authDelegate?.onAuthenticationStateChanged(loggedIn: true)
+    }
+    func onErrorLogin(error: AppError) {
+        if let apiError = error.messages[0] as? ApiErrorResponse.ApiError {
+            showErrorAlert(message: apiError.errorMessage)
+        }
+    }
 }

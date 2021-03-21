@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol WorkoutSetupViewControllerDelegate {
+    func userRequestWorkoutPage(client: EMSClient)
+}
+
 class WorkoutSetupViewController: UIViewController, MainStoryboardLodable {
     
     var finder: FinderProtocol?
@@ -23,6 +27,8 @@ class WorkoutSetupViewController: UIViewController, MainStoryboardLodable {
     }
     var devices: [DeviceHost] = []
     let deviceCellIdentifier = "DeviceRowCollectionViewCell"
+    
+    var delegate: WorkoutSetupViewControllerDelegate?
     
     @IBOutlet var trainingModeSelector: TrainingModeSelectorView!
     @IBOutlet var deviceLoaderIndicator: UIActivityIndicatorView!
@@ -83,9 +89,10 @@ class WorkoutSetupViewController: UIViewController, MainStoryboardLodable {
     }
     
     @IBAction func onStarWorkoutTap(_ sender: Any) {
+        // TODO: Maybe a service should do this?
         client = WebsocketClient(selectedDevice!)
         client!.setAllChannelData(selectedMode!.values)
-        client!.connect()
+        delegate?.userRequestWorkoutPage(client: client!)
     }
 }
 

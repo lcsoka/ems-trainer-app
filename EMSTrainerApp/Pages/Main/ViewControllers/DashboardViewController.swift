@@ -18,8 +18,6 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
     
     weak var delegate: DashboardViewControllerDelegate?
     
-    var auth: AuthenticationService!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,14 +32,8 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
         navigationItem.rightBarButtonItems = [statBtn]
     }
     
-    
     @objc func showAccount() {
         self.delegate?.userDidRequestAccountPage()
-    }
-    
-    @IBAction func onLogoutTap(_ sender: Any) {
-        auth.logout()
-        authDelegate?.onAuthenticationStateChanged(loggedIn: false)
     }
 
     @IBAction func onWorkoutSetupTap(_ sender: Any) {
