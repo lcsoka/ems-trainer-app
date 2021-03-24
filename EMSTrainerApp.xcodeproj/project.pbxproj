@@ -91,6 +91,8 @@
 		A4783CD3260BA3E60012E182 /* MockUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4783CD2260BA3E60012E182 /* MockUserService.swift */; };
 		A4783CDE260BDEC80012E182 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4783CDD260BDEC80012E182 /* LoginViewModelTests.swift */; };
 		A4783CE7260BE3D30012E182 /* SpyLoginViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4783CE6260BE3D30012E182 /* SpyLoginViewModelDelegate.swift */; };
+		A4783CEF260BEAFA0012E182 /* RegistrationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4783CEE260BEAFA0012E182 /* RegistrationViewModelTests.swift */; };
+		A4783CF7260BF5F00012E182 /* SpyRegistrationViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4783CF6260BF5F00012E182 /* SpyRegistrationViewModelDelegate.swift */; };
 		A47BB12F25E1B63B0065023F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47BB12E25E1B63B0065023F /* Coordinator.swift */; };
 		A48B64D525F536E7009D6CCD /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B64D425F536E7009D6CCD /* AuthenticationService.swift */; };
 		A48B64E925F53A43009D6CCD /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B64E825F53A43009D6CCD /* ApiService.swift */; };
@@ -227,6 +229,8 @@
 		A4783CD2260BA3E60012E182 /* MockUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserService.swift; sourceTree = "<group>"; };
 		A4783CDD260BDEC80012E182 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		A4783CE6260BE3D30012E182 /* SpyLoginViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyLoginViewModelDelegate.swift; sourceTree = "<group>"; };
+		A4783CEE260BEAFA0012E182 /* RegistrationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewModelTests.swift; path = EMSTrainerAppTests/RegistrationViewModelTests.swift; sourceTree = SOURCE_ROOT; };
+		A4783CF6260BF5F00012E182 /* SpyRegistrationViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyRegistrationViewModelDelegate.swift; sourceTree = "<group>"; };
 		A47BB12E25E1B63B0065023F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A48B64D425F536E7009D6CCD /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		A48B64E825F53A43009D6CCD /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
@@ -564,6 +568,7 @@
 				A4783CE5260BE3A80012E182 /* Spies */,
 				A46337BB25E113BD000B51F7 /* ApiRequestTests.swift */,
 				A4783CCD260BA3AC0012E182 /* AuthTests.swift */,
+				A4783CEE260BEAFA0012E182 /* RegistrationViewModelTests.swift */,
 				A4783CDD260BDEC80012E182 /* LoginViewModelTests.swift */,
 				A45BAE1125DC2C6D00F51D5E /* Info.plist */,
 			);
@@ -687,6 +692,7 @@
 			isa = PBXGroup;
 			children = (
 				A4783CE6260BE3D30012E182 /* SpyLoginViewModelDelegate.swift */,
+				A4783CF6260BF5F00012E182 /* SpyRegistrationViewModelDelegate.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -1176,6 +1182,7 @@
 			files = (
 				A4783CE7260BE3D30012E182 /* SpyLoginViewModelDelegate.swift in Sources */,
 				A4783CDE260BDEC80012E182 /* LoginViewModelTests.swift in Sources */,
+				A4783CEF260BEAFA0012E182 /* RegistrationViewModelTests.swift in Sources */,
 				A40A4F09260B855900F07342 /* MockResponse.swift in Sources */,
 				A40A4F0E260B85CD00F07342 /* MockRequest.swift in Sources */,
 				A48B650E25F55F33009D6CCD /* NetworkEngineMock.swift in Sources */,
@@ -1183,6 +1190,7 @@
 				A4783CD3260BA3E60012E182 /* MockUserService.swift in Sources */,
 				A40A4F04260B851100F07342 /* MockApiResource.swift in Sources */,
 				A40A4EFF260B843300F07342 /* MockTokenService.swift in Sources */,
+				A4783CF7260BF5F00012E182 /* SpyRegistrationViewModelDelegate.swift in Sources */,
 				A40A4F13260B8DC500F07342 /* MockApiResponseFactory.swift in Sources */,
 				A4783CCE260BA3AC0012E182 /* AuthTests.swift in Sources */,
 			);

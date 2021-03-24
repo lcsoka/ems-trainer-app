@@ -43,6 +43,8 @@ class LoginViewModelTests: XCTestCase {
         mockNetworkEngine = nil
         api = nil
         auth = nil
+        mockSuccessResponse = nil
+        mockErrorResponse = nil
     }
     
     // MARK: Validations
