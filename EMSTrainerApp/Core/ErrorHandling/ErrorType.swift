@@ -13,5 +13,6 @@ enum ErrorType {
     case validation
     case server
     case timeout
+    case decode
     case unknown
 }

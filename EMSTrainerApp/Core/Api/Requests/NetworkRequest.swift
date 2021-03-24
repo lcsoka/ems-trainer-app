@@ -27,7 +27,12 @@ extension NetworkRequest {
             if let data = data, let response = response as? HTTPURLResponse {
                     switch response.statusCode {
                     case 200...299:
-                        handleSuccess(self.decode(data))
+                        if let decoded = self.decode(data) {
+                            handleSuccess(decoded)
+                        } else {
+                            handleFailure(AppError(code: .decode, messages: ["Unable to process response."]))
+                        }
+                        break
                     case 400:
                         // Bad api request
                         handleFailure(AppError(code: .api, messages: self.decodeError(data) as! [Any]))
@@ -50,8 +55,10 @@ extension NetworkRequest {
                         handleFailure(AppError(code: .unknown, messages: ["Unknown server error."]))
                         break
                     default:
+                        handleFailure(AppError(code: .unknown, messages: ["Unknown error."]))
                         break
                     }
+                return
             }
             if let error = error as NSError?  {
                 if error.code == NSURLErrorTimedOut {
@@ -59,7 +66,9 @@ extension NetworkRequest {
                 } else {
                     handleFailure(AppError(code: .unknown, messages: ["Unknown error."]))
                 }
+                return
             }
+            handleFailure(AppError(code: .unknown, messages: ["Unknown error."]))
 //            guard data != nil else {
 //                handleFailure(nil)
 //                return

@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct ApiResponse<T: Decodable>: Decodable {
+struct ApiResponse<T: Codable>: Codable {
     let data: T
 }

@@ -15,6 +15,11 @@
 		A40A4EEB2607DC4B00F07342 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4EEA2607DC4B00F07342 /* Dynamic.swift */; };
 		A40A4EF02607E8F700F07342 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4EEF2607E8F700F07342 /* LoginViewModel.swift */; };
 		A40A4EF52608011100F07342 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4EF42608011100F07342 /* WorkoutViewController.swift */; };
+		A40A4EFF260B843300F07342 /* MockTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4EFE260B843300F07342 /* MockTokenService.swift */; };
+		A40A4F04260B851100F07342 /* MockApiResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4F03260B851100F07342 /* MockApiResource.swift */; };
+		A40A4F09260B855900F07342 /* MockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4F08260B855900F07342 /* MockResponse.swift */; };
+		A40A4F0E260B85CD00F07342 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4F0D260B85CD00F07342 /* MockRequest.swift */; };
+		A40A4F13260B8DC500F07342 /* MockApiResponseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4F12260B8DC500F07342 /* MockApiResponseFactory.swift */; };
 		A40EE4BF26015BBD002E422B /* EMSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4BE26015BBD002E422B /* EMSClient.swift */; };
 		A40EE4CA26015D45002E422B /* EMSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4C926015D45002E422B /* EMSDelegate.swift */; };
 		A40EE4D026015EAA002E422B /* WebsocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4CF26015EAA002E422B /* WebsocketClient.swift */; };
@@ -65,7 +70,6 @@
 		A45BAE0025DC2C6B00F51D5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45BADFE25DC2C6B00F51D5E /* Main.storyboard */; };
 		A45BAE0225DC2C6D00F51D5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A45BAE0125DC2C6D00F51D5E /* Assets.xcassets */; };
 		A45BAE0525DC2C6D00F51D5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45BAE0325DC2C6D00F51D5E /* LaunchScreen.storyboard */; };
-		A45BAE1025DC2C6D00F51D5E /* EMSTrainerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE0F25DC2C6D00F51D5E /* EMSTrainerAppTests.swift */; };
 		A45BAE1B25DC2C6D00F51D5E /* EMSTrainerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE1A25DC2C6D00F51D5E /* EMSTrainerAppUITests.swift */; };
 		A45BAE3925DC2DB600F51D5E /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE3825DC2DB600F51D5E /* Api.swift */; };
 		A45BAE4125DC35F400F51D5E /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE4025DC35F400F51D5E /* NetworkRequest.swift */; };
@@ -78,13 +82,13 @@
 		A46337B225E08A58000B51F7 /* LogoutResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337B125E08A58000B51F7 /* LogoutResource.swift */; };
 		A46337B725E08ADB000B51F7 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337B625E08ADB000B51F7 /* EmptyResponse.swift */; };
 		A46337BC25E113BE000B51F7 /* ApiRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337BB25E113BD000B51F7 /* ApiRequestTests.swift */; };
-		A46337CE25E11563000B51F7 /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337CD25E11563000B51F7 /* MockSession.swift */; };
-		A46337D325E115E3000B51F7 /* MockTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337D225E115E3000B51F7 /* MockTask.swift */; };
 		A46337D825E12246000B51F7 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337D725E12246000B51F7 /* NetworkEngine.swift */; };
 		A477972125FFDD86006AF564 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477972025FFDD86006AF564 /* Router.swift */; };
 		A477972925FFDD9D006AF564 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477972825FFDD9D006AF564 /* RouterProtocol.swift */; };
 		A477972F25FFDE38006AF564 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477972E25FFDE38006AF564 /* Presentable.swift */; };
 		A477973725FFDE65006AF564 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477973625FFDE64006AF564 /* UIViewController.swift */; };
+		A4783CCE260BA3AC0012E182 /* AuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4783CCD260BA3AC0012E182 /* AuthTests.swift */; };
+		A4783CD3260BA3E60012E182 /* MockUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4783CD2260BA3E60012E182 /* MockUserService.swift */; };
 		A47BB12F25E1B63B0065023F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47BB12E25E1B63B0065023F /* Coordinator.swift */; };
 		A48B64D525F536E7009D6CCD /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B64D425F536E7009D6CCD /* AuthenticationService.swift */; };
 		A48B64E925F53A43009D6CCD /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B64E825F53A43009D6CCD /* ApiService.swift */; };
@@ -139,6 +143,11 @@
 		A40A4EEA2607DC4B00F07342 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		A40A4EEF2607E8F700F07342 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A40A4EF42608011100F07342 /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
+		A40A4EFE260B843300F07342 /* MockTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTokenService.swift; sourceTree = "<group>"; };
+		A40A4F03260B851100F07342 /* MockApiResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiResource.swift; sourceTree = "<group>"; };
+		A40A4F08260B855900F07342 /* MockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponse.swift; sourceTree = "<group>"; };
+		A40A4F0D260B85CD00F07342 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
+		A40A4F12260B8DC500F07342 /* MockApiResponseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiResponseFactory.swift; sourceTree = "<group>"; };
 		A40EE4BE26015BBD002E422B /* EMSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSClient.swift; sourceTree = "<group>"; };
 		A40EE4C926015D45002E422B /* EMSDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSDelegate.swift; sourceTree = "<group>"; };
 		A40EE4CF26015EAA002E422B /* WebsocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketClient.swift; sourceTree = "<group>"; };
@@ -192,7 +201,6 @@
 		A45BAE0425DC2C6D00F51D5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A45BAE0625DC2C6D00F51D5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A45BAE0B25DC2C6D00F51D5E /* EMSTrainerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EMSTrainerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A45BAE0F25DC2C6D00F51D5E /* EMSTrainerAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSTrainerAppTests.swift; sourceTree = "<group>"; };
 		A45BAE1125DC2C6D00F51D5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A45BAE1625DC2C6D00F51D5E /* EMSTrainerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EMSTrainerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45BAE1A25DC2C6D00F51D5E /* EMSTrainerAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSTrainerAppUITests.swift; sourceTree = "<group>"; };
@@ -208,13 +216,13 @@
 		A46337B125E08A58000B51F7 /* LogoutResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResource.swift; sourceTree = "<group>"; };
 		A46337B625E08ADB000B51F7 /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
 		A46337BB25E113BD000B51F7 /* ApiRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestTests.swift; sourceTree = "<group>"; };
-		A46337CD25E11563000B51F7 /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
-		A46337D225E115E3000B51F7 /* MockTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTask.swift; sourceTree = "<group>"; };
 		A46337D725E12246000B51F7 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		A477972025FFDD86006AF564 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A477972825FFDD9D006AF564 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		A477972E25FFDE38006AF564 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 		A477973625FFDE64006AF564 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		A4783CCD260BA3AC0012E182 /* AuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTests.swift; sourceTree = "<group>"; };
+		A4783CD2260BA3E60012E182 /* MockUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserService.swift; sourceTree = "<group>"; };
 		A47BB12E25E1B63B0065023F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A48B64D425F536E7009D6CCD /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		A48B64E825F53A43009D6CCD /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
@@ -322,6 +330,15 @@
 				A40A4EEA2607DC4B00F07342 /* Dynamic.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A40A4F1D260B910300F07342 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A40A4EFE260B843300F07342 /* MockTokenService.swift */,
+				A4783CD2260BA3E60012E182 /* MockUserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A40EE4BD26015BAE002E422B /* EMS */ = {
@@ -538,9 +555,10 @@
 		A45BAE0E25DC2C6D00F51D5E /* EMSTrainerAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				A40A4F1D260B910300F07342 /* Services */,
 				A46337C025E1150E000B51F7 /* Api */,
 				A46337BB25E113BD000B51F7 /* ApiRequestTests.swift */,
-				A45BAE0F25DC2C6D00F51D5E /* EMSTrainerAppTests.swift */,
+				A4783CCD260BA3AC0012E182 /* AuthTests.swift */,
 				A45BAE1125DC2C6D00F51D5E /* Info.plist */,
 			);
 			path = EMSTrainerAppTests;
@@ -633,6 +651,10 @@
 			isa = PBXGroup;
 			children = (
 				A46337C125E11536000B51F7 /* Network */,
+				A40A4F03260B851100F07342 /* MockApiResource.swift */,
+				A40A4F08260B855900F07342 /* MockResponse.swift */,
+				A40A4F0D260B85CD00F07342 /* MockRequest.swift */,
+				A40A4F12260B8DC500F07342 /* MockApiResponseFactory.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -640,8 +662,6 @@
 		A46337C125E11536000B51F7 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				A46337CD25E11563000B51F7 /* MockSession.swift */,
-				A46337D225E115E3000B51F7 /* MockTask.swift */,
 				A48B650D25F55F33009D6CCD /* NetworkEngineMock.swift */,
 			);
 			path = Network;
@@ -1140,11 +1160,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A46337CE25E11563000B51F7 /* MockSession.swift in Sources */,
+				A40A4F09260B855900F07342 /* MockResponse.swift in Sources */,
+				A40A4F0E260B85CD00F07342 /* MockRequest.swift in Sources */,
 				A48B650E25F55F33009D6CCD /* NetworkEngineMock.swift in Sources */,
 				A46337BC25E113BE000B51F7 /* ApiRequestTests.swift in Sources */,
-				A46337D325E115E3000B51F7 /* MockTask.swift in Sources */,
-				A45BAE1025DC2C6D00F51D5E /* EMSTrainerAppTests.swift in Sources */,
+				A4783CD3260BA3E60012E182 /* MockUserService.swift in Sources */,
+				A40A4F04260B851100F07342 /* MockApiResource.swift in Sources */,
+				A40A4EFF260B843300F07342 /* MockTokenService.swift in Sources */,
+				A40A4F13260B8DC500F07342 /* MockApiResponseFactory.swift in Sources */,
+				A4783CCE260BA3AC0012E182 /* AuthTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

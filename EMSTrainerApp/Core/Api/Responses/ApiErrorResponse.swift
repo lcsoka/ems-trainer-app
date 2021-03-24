@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct ApiErrorResponse: Decodable {
+struct ApiErrorResponse: Codable {
     var errors: [ApiError]
-    struct ApiError: Decodable {
+    struct ApiError: Codable {
         var errorCode: String
         var errorMessage: String
         

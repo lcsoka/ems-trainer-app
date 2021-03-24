@@ -17,7 +17,3 @@ protocol Coordinator {
 protocol NavigationCoordinator: Coordinator {
     var navigationController: UINavigationController { get set }
 }
-
-protocol RouterCoordinator: Coordinator {
-    var router: RouterProtocol { get set }
-}
