@@ -68,6 +68,12 @@ extension LoginViewController: LoginViewModelDelegate {
     func onErrorLogin(error: AppError) {
         if let apiError = error.messages[0] as? ApiErrorResponse.ApiError {
             showErrorAlert(message: apiError.errorMessage)
+            return
+        }
+        
+        if let errorMessage = error.messages[0] as? String {
+            showErrorAlert(message: errorMessage)
+            return
         }
     }
 }
