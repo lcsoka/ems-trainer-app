@@ -40,7 +40,7 @@ class LoginViewModel: FormViewModel {
         }
         
         if password.value?.count == 0 {
-            self.brokenRules.append(BrokenRule(propertyName: "name", message: "Password cannot be empty."))
+            self.brokenRules.append(BrokenRule(propertyName: "password", message: "Password cannot be empty."))
         }
     }
     
