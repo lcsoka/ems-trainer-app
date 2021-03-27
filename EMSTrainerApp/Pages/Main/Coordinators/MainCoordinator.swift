@@ -61,8 +61,8 @@ final class MainCoordinator: NavigationCoordinator {
     private func showWorkoutSetup() {
         let vc = container.resolve(WorkoutSetupViewController.self)!
         vc.delegate = self
-        let mdnsFinder = MDNSFinder(api: api)
-        vc.finder = mdnsFinder
+        vc.viewModel.delegate = vc
+        vc.viewModel.finder = MDNSFinder(api: api)
         navigationController.pushViewController(vc, animated: true)
     }
     

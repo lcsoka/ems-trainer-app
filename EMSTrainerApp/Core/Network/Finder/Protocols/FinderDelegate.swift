@@ -9,4 +9,5 @@ import Foundation
 
 protocol FinderDelegate {
     func onDeviceFound(device: DeviceHost)
+    func onFinderStopped()
 }

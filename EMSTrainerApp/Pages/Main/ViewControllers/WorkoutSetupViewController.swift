@@ -13,19 +13,8 @@ protocol WorkoutSetupViewControllerDelegate {
 
 class WorkoutSetupViewController: UIViewController, MainStoryboardLodable {
     
-    var finder: FinderProtocol?
     var viewModel: WorkoutSetupViewModel!
-    var selectedMode: TrainingMode? {
-        didSet {
-            refreshView()
-        }
-    }
-    var selectedDevice: DeviceHost? {
-        didSet {
-            refreshView()
-        }
-    }
-    var devices: [DeviceHost] = []
+ 
     let deviceCellIdentifier = "DeviceRowCollectionViewCell"
     
     var delegate: WorkoutSetupViewControllerDelegate?
@@ -49,6 +38,11 @@ class WorkoutSetupViewController: UIViewController, MainStoryboardLodable {
         refreshView()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.stopSearch()
+    }
+    
     func setupUI() {
         title = "Workout"
         self.extendedLayoutIncludesOpaqueBars = true
@@ -60,20 +54,8 @@ class WorkoutSetupViewController: UIViewController, MainStoryboardLodable {
     }
     
     func setupDeviceFinder() {
-        finder?.delegate = self
-        search()
+        viewModel.search()
         deviceLoaderIndicator.startAnimating()
-    }
-    
-    func search() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            if self.devices.isEmpty {
-                self.search()
-            }
-        }
-        devices = []
-        collectionView.reloadData()
-        finder?.start()
     }
     
     func setupData() {
@@ -81,18 +63,14 @@ class WorkoutSetupViewController: UIViewController, MainStoryboardLodable {
     }
     
     func refreshView() {
-        btnStart.disabled = !canStartWorkout()
-    }
-    
-    func canStartWorkout() -> Bool {
-        return selectedMode != nil && selectedDevice != nil
+        btnStart.disabled = !viewModel.canStartWorkout()
     }
     
     @IBAction func onStarWorkoutTap(_ sender: Any) {
         // TODO: Maybe a service should do this?
-        client = WebsocketClient(selectedDevice!)
-        client!.setAllChannelData(selectedMode!.values)
-        delegate?.userRequestWorkoutPage(client: client!)
+//        client = WebsocketClient(selectedDevice!)
+//        client!.setAllChannelData(selectedMode!.values)
+//        delegate?.userRequestWorkoutPage(client: client!)
     }
 }
 
@@ -103,16 +81,16 @@ extension WorkoutSetupViewController: UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return devices.isEmpty ? 1 : devices.count
+        return viewModel.devices.isEmpty ? 1 : viewModel.devices.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if devices.isEmpty {
+        if viewModel.devices.isEmpty {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyCell", for: indexPath as IndexPath)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: deviceCellIdentifier, for: indexPath) as! DeviceRowCollectionViewCell
-            let device = devices[indexPath.row]
+            let device = viewModel.devices.map{$0.value.host}[indexPath.row]
             cell.device = device
             return cell
         }
@@ -122,8 +100,7 @@ extension WorkoutSetupViewController: UICollectionViewDataSource, UICollectionVi
         if let cell = collectionView.cellForItem(at: indexPath) as? DeviceRowCollectionViewCell {
             cell.roundedView.borderColor = UIColor(named: "Green500")!
             cell.roundedView.borderWidth = 2
-            selectedDevice = cell.device
-            
+            viewModel.selectedDevice = cell.device
         }
     }
     
@@ -135,7 +112,7 @@ extension WorkoutSetupViewController: UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if devices.isEmpty {
+        if viewModel.devices.isEmpty {
             return CGSize(width: collectionView.frame.width - 20, height: collectionView.frame.height - 20)
         } else {
             return CGSize(width: collectionView.frame.width - 20, height: 80)
@@ -145,16 +122,16 @@ extension WorkoutSetupViewController: UICollectionViewDataSource, UICollectionVi
 
 extension WorkoutSetupViewController: TrainingModeSelectorViewDelegate {
     func onTrainingModeSelected(_ mode: TrainingMode) {
-        selectedMode = mode
+        viewModel.selectedMode = mode
     }
 }
 
-extension WorkoutSetupViewController: FinderDelegate {
-    func onDeviceFound(device: DeviceHost) {
-        if !devices.contains(device) {
-            print(device)
-            devices.append(device)
-        }
+extension WorkoutSetupViewController: WorkoutSetupViewModelDelegate {
+    func onDataChange() {
+        refreshView()
+    }
+    
+    func onDeviceListRefresh() {
         collectionView.reloadData()
     }
 }

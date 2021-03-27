@@ -9,6 +9,7 @@ import UIKit
 
 class WorkoutViewController: UIViewController, MainStoryboardLodable {
 
+    @IBOutlet var waveView: WaveView!
     var client: EMSClient!
     
     override func viewDidLoad() {

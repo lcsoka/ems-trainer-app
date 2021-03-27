@@ -20,6 +20,8 @@
 		A40A4F09260B855900F07342 /* MockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4F08260B855900F07342 /* MockResponse.swift */; };
 		A40A4F0E260B85CD00F07342 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4F0D260B85CD00F07342 /* MockRequest.swift */; };
 		A40A4F13260B8DC500F07342 /* MockApiResponseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A4F12260B8DC500F07342 /* MockApiResponseFactory.swift */; };
+		A40E38E3260F8AED00104A59 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40E38E2260F8AED00104A59 /* Converter.swift */; };
+		A40E38E8260F8D9300104A59 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40E38E7260F8D9300104A59 /* WorkoutViewModel.swift */; };
 		A40EE4BF26015BBD002E422B /* EMSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4BE26015BBD002E422B /* EMSClient.swift */; };
 		A40EE4CA26015D45002E422B /* EMSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4C926015D45002E422B /* EMSDelegate.swift */; };
 		A40EE4D026015EAA002E422B /* WebsocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4CF26015EAA002E422B /* WebsocketClient.swift */; };
@@ -152,6 +154,8 @@
 		A40A4F08260B855900F07342 /* MockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponse.swift; sourceTree = "<group>"; };
 		A40A4F0D260B85CD00F07342 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
 		A40A4F12260B8DC500F07342 /* MockApiResponseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiResponseFactory.swift; sourceTree = "<group>"; };
+		A40E38E2260F8AED00104A59 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		A40E38E7260F8D9300104A59 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
 		A40EE4BE26015BBD002E422B /* EMSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSClient.swift; sourceTree = "<group>"; };
 		A40EE4C926015D45002E422B /* EMSDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSDelegate.swift; sourceTree = "<group>"; };
 		A40EE4CF26015EAA002E422B /* WebsocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketClient.swift; sourceTree = "<group>"; };
@@ -336,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				A40A4EEA2607DC4B00F07342 /* Dynamic.swift */,
+				A40E38E2260F8AED00104A59 /* Converter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				A41C90102600A9D100192BDD /* WorkoutSetupViewModel.swift */,
+				A40E38E7260F8D9300104A59 /* WorkoutViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1097,6 +1103,7 @@
 				A4335EBD260119D00098E79C /* DeviceRowCollectionViewCell.swift in Sources */,
 				A48B64FE25F53FB7009D6CCD /* TokenService.swift in Sources */,
 				A4FCAEB925DC8B4500C9849C /* LoginResource.swift in Sources */,
+				A40E38E3260F8AED00104A59 /* Converter.swift in Sources */,
 				A45BAE4C25DC3E1B00F51D5E /* ApiResource.swift in Sources */,
 				A421544225F503210094C1CB /* AppCoordinator.swift in Sources */,
 				A45BADFD25DC2C6B00F51D5E /* ViewController.swift in Sources */,
@@ -1164,6 +1171,7 @@
 				A40A4EF02607E8F700F07342 /* LoginViewModel.swift in Sources */,
 				A41C8F9325FFFA2700192BDD /* CustomViewProtocol.swift in Sources */,
 				A421547925F51F760094C1CB /* MainCoordinator.swift in Sources */,
+				A40E38E8260F8D9300104A59 /* WorkoutViewModel.swift in Sources */,
 				A45BAE4125DC35F400F51D5E /* NetworkRequest.swift in Sources */,
 				A4A495BF25DC71C400636B66 /* MeResource.swift in Sources */,
 				A4A495C425DC71D300636B66 /* UserResponse.swift in Sources */,

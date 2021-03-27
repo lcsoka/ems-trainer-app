@@ -23,6 +23,7 @@ class MDNSFinder:NSObject, FinderProtocol {
     
     func start() {
         stop()
+        services = []
         netServiceBrowser.searchForServices(ofType: "_http._tcp", inDomain: "")
     }
     
@@ -48,6 +49,7 @@ extension MDNSFinder: NetServiceBrowserDelegate, NetServiceDelegate {
             currentService.delegate = self
             currentService.resolve(withTimeout: 5)
         }
+        delegate?.onFinderStopped()
     }
     
     func netServiceDidResolveAddress(_ sender: NetService) {
