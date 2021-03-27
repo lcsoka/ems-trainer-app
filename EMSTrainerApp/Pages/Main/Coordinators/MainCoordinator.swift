@@ -66,9 +66,11 @@ final class MainCoordinator: NavigationCoordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    private func showWorkout(client: EMSClient) {
+    private func showWorkout(client: EMSClient, trainingMode: TrainingMode) {
         let vc = container.resolve(WorkoutViewController.self)!
-        vc.client = client
+        vc.viewModel.trainingMode = trainingMode
+        vc.viewModel.client = client
+        navigationController.navigationBar.backgroundColor = UIColor(named: "Gray700")
         vc.modalPresentationStyle = .fullScreen
         navigationController.present(vc, animated: true)
     }
@@ -99,7 +101,9 @@ extension MainCoordinator: AccountViewControllerDelegate {
 }
 
 extension MainCoordinator: WorkoutSetupViewControllerDelegate {
-    func userRequestWorkoutPage(client: EMSClient) {
-     showWorkout(client: client)
+    func userRequestWorkoutPage(device: DeviceHost, trainingMode: TrainingMode) {
+        let vc = container.resolve(WorkoutSetupViewController.self)!
+        let client = WebsocketClient(device)
+        showWorkout(client: client, trainingMode: trainingMode)
     }
 }

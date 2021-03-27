@@ -62,7 +62,7 @@ extension MDNSFinder: NetServiceBrowserDelegate, NetServiceDelegate {
             if getnameinfo((data as NSData).bytes.bindMemory(to: sockaddr.self, capacity: data.count), socklen_t(data.count),
                            &hostname, socklen_t(hostname.count), nil, 0, NI_NUMERICHOST) == 0 {
                 let ipAddress = String(cString: hostname)
-               print(ipAddress)
+//               print(ipAddress)
                 let resource = DeviceStatusResource(host: "http://\(ipAddress)")
                 self.api.get(resource, params: nil, onSuccess: { response in
                     if let status = response {

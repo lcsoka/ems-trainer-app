@@ -96,6 +96,7 @@
 		A4783CEF260BEAFA0012E182 /* RegistrationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4783CEE260BEAFA0012E182 /* RegistrationViewModelTests.swift */; };
 		A4783CF7260BF5F00012E182 /* SpyRegistrationViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4783CF6260BF5F00012E182 /* SpyRegistrationViewModelDelegate.swift */; };
 		A47BB12F25E1B63B0065023F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47BB12E25E1B63B0065023F /* Coordinator.swift */; };
+		A4898FBC260FE00B0027D4BC /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4898FBB260FE00B0027D4BC /* ProgressView.swift */; };
 		A48B64D525F536E7009D6CCD /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B64D425F536E7009D6CCD /* AuthenticationService.swift */; };
 		A48B64E925F53A43009D6CCD /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B64E825F53A43009D6CCD /* ApiService.swift */; };
 		A48B64FE25F53FB7009D6CCD /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B64FD25F53FB7009D6CCD /* TokenService.swift */; };
@@ -111,6 +112,7 @@
 		A4A495A825DC50E800636B66 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A495A725DC50E800636B66 /* User.swift */; };
 		A4A495BF25DC71C400636B66 /* MeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A495BE25DC71C400636B66 /* MeResource.swift */; };
 		A4A495C425DC71D300636B66 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A495C325DC71D300636B66 /* UserResponse.swift */; };
+		A4E5B8AC260FE9B900DBA784 /* EMSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B8AB260FE9B900DBA784 /* EMSTimer.swift */; };
 		A4FCAEB225DC8AE000C9849C /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCAEB125DC8AE000C9849C /* LoginData.swift */; };
 		A4FCAEB925DC8B4500C9849C /* LoginResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCAEB825DC8B4500C9849C /* LoginResource.swift */; };
 		A4FCAED325DDA7F500C9849C /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCAED225DDA7F500C9849C /* AppError.swift */; };
@@ -236,6 +238,7 @@
 		A4783CEE260BEAFA0012E182 /* RegistrationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewModelTests.swift; path = EMSTrainerAppTests/RegistrationViewModelTests.swift; sourceTree = SOURCE_ROOT; };
 		A4783CF6260BF5F00012E182 /* SpyRegistrationViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyRegistrationViewModelDelegate.swift; sourceTree = "<group>"; };
 		A47BB12E25E1B63B0065023F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A4898FBB260FE00B0027D4BC /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		A48B64D425F536E7009D6CCD /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		A48B64E825F53A43009D6CCD /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		A48B64FD25F53FB7009D6CCD /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
@@ -251,6 +254,7 @@
 		A4A495A725DC50E800636B66 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A4A495BE25DC71C400636B66 /* MeResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeResource.swift; sourceTree = "<group>"; };
 		A4A495C325DC71D300636B66 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		A4E5B8AB260FE9B900DBA784 /* EMSTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSTimer.swift; sourceTree = "<group>"; };
 		A4FCAEB125DC8AE000C9849C /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		A4FCAEB825DC8B4500C9849C /* LoginResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResource.swift; sourceTree = "<group>"; };
 		A4FCAED225DDA7F500C9849C /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -341,6 +345,7 @@
 			children = (
 				A40A4EEA2607DC4B00F07342 /* Dynamic.swift */,
 				A40E38E2260F8AED00104A59 /* Converter.swift */,
+				A4E5B8AB260FE9B900DBA784 /* EMSTimer.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -723,6 +728,14 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		A4898FC0260FE0560027D4BC /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				A4898FBB260FE00B0027D4BC /* ProgressView.swift */,
+			);
+			path = ProgressView;
+			sourceTree = "<group>";
+		};
 		A48B64D325F53681009D6CCD /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -763,6 +776,7 @@
 		A48B658D25F6D87F009D6CCD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A4898FC0260FE0560027D4BC /* ProgressView */,
 				A4335EB026010C8B0098E79C /* DeviceRow */,
 				A48B658E25F6D897009D6CCD /* RoundedView.swift */,
 				A48B659325F6DB0E009D6CCD /* BorderTextField.swift */,
@@ -1154,6 +1168,8 @@
 				A48B659925F6E4C9009D6CCD /* RoundedButton.swift in Sources */,
 				A46337D825E12246000B51F7 /* NetworkEngine.swift in Sources */,
 				A46337B725E08ADB000B51F7 /* EmptyResponse.swift in Sources */,
+				A4E5B8AC260FE9B900DBA784 /* EMSTimer.swift in Sources */,
+				A4898FBC260FE00B0027D4BC /* ProgressView.swift in Sources */,
 				A41C8FE72600270800192BDD /* DeviceApiResource.swift in Sources */,
 				A421544C25F506850094C1CB /* AuthenticationCoordinator.swift in Sources */,
 				A421545B25F515630094C1CB /* StoryboardLodable.swift in Sources */,

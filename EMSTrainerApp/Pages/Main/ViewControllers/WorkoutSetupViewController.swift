@@ -8,7 +8,7 @@
 import UIKit
 
 protocol WorkoutSetupViewControllerDelegate {
-    func userRequestWorkoutPage(client: EMSClient)
+    func userRequestWorkoutPage(device: DeviceHost, trainingMode: TrainingMode)
 }
 
 class WorkoutSetupViewController: UIViewController, MainStoryboardLodable {
@@ -25,8 +25,6 @@ class WorkoutSetupViewController: UIViewController, MainStoryboardLodable {
     @IBOutlet var collectionView: UICollectionView!
     
     @IBOutlet var btnStart: RoundedButton!
-    
-    var client: EMSClient?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +52,7 @@ class WorkoutSetupViewController: UIViewController, MainStoryboardLodable {
     }
     
     func setupDeviceFinder() {
-        viewModel.search()
+        viewModel.startSearch()
         deviceLoaderIndicator.startAnimating()
     }
     
@@ -67,10 +65,7 @@ class WorkoutSetupViewController: UIViewController, MainStoryboardLodable {
     }
     
     @IBAction func onStarWorkoutTap(_ sender: Any) {
-        // TODO: Maybe a service should do this?
-//        client = WebsocketClient(selectedDevice!)
-//        client!.setAllChannelData(selectedMode!.values)
-//        delegate?.userRequestWorkoutPage(client: client!)
+        delegate?.userRequestWorkoutPage(device: viewModel.selectedDevice!, trainingMode: viewModel.selectedMode!)
     }
 }
 
@@ -91,6 +86,7 @@ extension WorkoutSetupViewController: UICollectionViewDataSource, UICollectionVi
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: deviceCellIdentifier, for: indexPath) as! DeviceRowCollectionViewCell
             let device = viewModel.devices.map{$0.value.host}[indexPath.row]
+            cell.chosen = device == viewModel.selectedDevice
             cell.device = device
             return cell
         }
@@ -98,16 +94,15 @@ extension WorkoutSetupViewController: UICollectionViewDataSource, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? DeviceRowCollectionViewCell {
-            cell.roundedView.borderColor = UIColor(named: "Green500")!
-            cell.roundedView.borderWidth = 2
+//            cell.chosen = true
             viewModel.selectedDevice = cell.device
+            collectionView.reloadData()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? DeviceRowCollectionViewCell {
-            cell.roundedView.borderColor = .clear
-            cell.roundedView.borderWidth = 0
+//            cell.chosen = false
         }
     }
     

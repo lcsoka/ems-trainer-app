@@ -110,6 +110,7 @@ class WebsocketClient: EMSClient {
     }
     
     func close() {
+        self.connected = false
         self.wsClient.disconnect()
     }
 }
@@ -124,6 +125,7 @@ extension WebsocketClient: WebSocketDelegate {
             break
         case .disconnected(let reason, let code):
             print("websocket is disconnected: \(reason) with code: \(code)")
+            delegate?.onConnectionLost()
             self.connected = false
             break
         case .text(let text):

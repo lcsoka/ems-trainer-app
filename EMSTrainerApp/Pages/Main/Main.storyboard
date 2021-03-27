@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -452,69 +453,187 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dT-8a-hSd">
-                                <rect key="frame" x="191" y="832" width="32" height="30"/>
-                                <state key="normal" title="Stop">
-                                    <color key="titleColor" name="Green500"/>
-                                </state>
-                                <connections>
-                                    <action selector="onStopTapped:" destination="wLL-wG-cGQ" eventType="touchUpInside" id="i0J-3Y-dZh"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="45:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Dy-3V-Ha4">
-                                <rect key="frame" x="168" y="44" width="79" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYn-bB-gz1" customClass="WaveView" customModule="EMSTrainerApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="384" width="414" height="128"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebe-Qb-p2c">
+                                <rect key="frame" x="0.0" y="119" width="414" height="743"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEO-RC-vf8" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="374" height="168"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYn-bB-gz1" customClass="WaveView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="8" width="374" height="152"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layerCount">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="amplitude">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="frequency">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" name="Green500"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Gray700"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="168" id="7De-4G-cl2"/>
+                                            <constraint firstItem="SYn-bB-gz1" firstAttribute="centerY" secondItem="TEO-RC-vf8" secondAttribute="centerY" id="CQC-jc-Pm1"/>
+                                            <constraint firstAttribute="trailing" secondItem="SYn-bB-gz1" secondAttribute="trailing" id="Jna-hp-pK8"/>
+                                            <constraint firstAttribute="bottom" secondItem="SYn-bB-gz1" secondAttribute="bottom" constant="8" id="OAB-g1-ewC"/>
+                                            <constraint firstItem="SYn-bB-gz1" firstAttribute="top" secondItem="TEO-RC-vf8" secondAttribute="top" constant="8" id="kR4-LB-wHv"/>
+                                            <constraint firstItem="SYn-bB-gz1" firstAttribute="leading" secondItem="TEO-RC-vf8" secondAttribute="leading" id="ptm-Hh-8FO"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Og-ed-rAg">
+                                        <rect key="frame" x="0.0" y="643" width="414" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tc-uZ-OYM" customClass="RoundedButton" customModule="EMSTrainerApp" customModuleProvider="target">
+                                                <rect key="frame" x="177" y="20" width="60" height="60"/>
+                                                <color key="backgroundColor" name="Green500"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="2Tc-uZ-OYM" secondAttribute="height" multiplier="1:1" id="1oL-h8-fLB"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <imageReference key="image" image="play" catalog="system" symbolScale="large"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="Green500"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhg-y5-Fag">
+                                                <rect key="frame" x="360" y="35" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Gray700"/>
+                                        <constraints>
+                                            <constraint firstItem="2Tc-uZ-OYM" firstAttribute="centerY" secondItem="7Og-ed-rAg" secondAttribute="centerY" id="9zB-r3-sCD"/>
+                                            <constraint firstItem="2Tc-uZ-OYM" firstAttribute="centerX" secondItem="7Og-ed-rAg" secondAttribute="centerX" id="QDW-IV-PZ9"/>
+                                            <constraint firstAttribute="height" constant="100" id="UcC-mo-VSU"/>
+                                            <constraint firstItem="2Tc-uZ-OYM" firstAttribute="top" secondItem="7Og-ed-rAg" secondAttribute="top" constant="20" id="VIe-PO-TAw"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0tf-Ol-g9X" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="507" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="Gray800"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="nHg-Da-ih9"/>
+                                    <constraint firstItem="7Og-ed-rAg" firstAttribute="leading" secondItem="ebe-Qb-p2c" secondAttribute="leading" id="025-mb-mvC"/>
+                                    <constraint firstItem="TEO-RC-vf8" firstAttribute="leading" secondItem="ebe-Qb-p2c" secondAttribute="leading" constant="20" id="4eZ-yv-mbc"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Og-ed-rAg" secondAttribute="trailing" id="9EU-kq-3xC"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Og-ed-rAg" secondAttribute="bottom" id="dhm-O0-bSY"/>
+                                    <constraint firstAttribute="trailing" secondItem="TEO-RC-vf8" secondAttribute="trailing" constant="20" id="laa-vh-KO9"/>
+                                    <constraint firstItem="TEO-RC-vf8" firstAttribute="top" secondItem="ebe-Qb-p2c" secondAttribute="top" constant="20" id="vjK-kO-01m"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layerCount">
-                                        <integer key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="amplitude">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="frequency">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" name="Green500"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="speed">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYq-30-qqd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Dy-3V-Ha4">
+                                        <rect key="frame" x="8" y="8" width="79.5" height="33"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BG3-UA-Fjd">
+                                        <rect key="frame" x="8" y="41" width="75" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGR-bi-E39" customClass="ProgressView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="73" width="414" height="2"/>
+                                        <color key="backgroundColor" name="Gray600"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="Krz-Ff-xuc"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" name="Green500"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8M-qk-3fb">
+                                        <rect key="frame" x="326" y="8" width="80" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Master" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b54-sZ-d2p">
+                                        <rect key="frame" x="353" y="41.5" width="53" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="Gray700"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="1Lc-gk-lmZ"/>
+                                    <constraint firstItem="b54-sZ-d2p" firstAttribute="top" secondItem="Y8M-qk-3fb" secondAttribute="bottom" id="7y6-HL-mtc"/>
+                                    <constraint firstItem="b54-sZ-d2p" firstAttribute="centerX" secondItem="WYq-30-qqd" secondAttribute="centerX" constant="172.5" id="FhN-xN-J7c"/>
+                                    <constraint firstItem="2Dy-3V-Ha4" firstAttribute="top" secondItem="WYq-30-qqd" secondAttribute="top" constant="8" id="HGE-Oc-lbx"/>
+                                    <constraint firstItem="BG3-UA-Fjd" firstAttribute="top" secondItem="2Dy-3V-Ha4" secondAttribute="bottom" id="MSn-is-646"/>
+                                    <constraint firstItem="Y8M-qk-3fb" firstAttribute="centerX" secondItem="WYq-30-qqd" secondAttribute="centerX" constant="159" id="Ohk-vu-xHc"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y8M-qk-3fb" secondAttribute="trailing" constant="8" id="Wsg-uQ-9LW"/>
+                                    <constraint firstItem="Y8M-qk-3fb" firstAttribute="centerY" secondItem="WYq-30-qqd" secondAttribute="centerY" constant="-12.75" id="aVd-lF-ffd"/>
+                                    <constraint firstAttribute="trailing" secondItem="OGR-bi-E39" secondAttribute="trailing" id="e3x-fM-g6f"/>
+                                    <constraint firstItem="BG3-UA-Fjd" firstAttribute="leading" secondItem="WYq-30-qqd" secondAttribute="leading" constant="8" id="in1-9g-zc1"/>
+                                    <constraint firstItem="OGR-bi-E39" firstAttribute="leading" secondItem="WYq-30-qqd" secondAttribute="leading" id="lrN-xl-zts"/>
+                                    <constraint firstAttribute="bottom" secondItem="OGR-bi-E39" secondAttribute="bottom" id="pcp-MJ-LVS"/>
+                                    <constraint firstItem="Y8M-qk-3fb" firstAttribute="top" secondItem="WYq-30-qqd" secondAttribute="top" constant="8" id="pjc-BH-Fva"/>
+                                    <constraint firstItem="2Dy-3V-Ha4" firstAttribute="leading" secondItem="WYq-30-qqd" secondAttribute="leading" constant="8" id="rWc-ei-WE5"/>
+                                    <constraint firstAttribute="trailing" secondItem="b54-sZ-d2p" secondAttribute="trailing" constant="8" id="ubw-Ov-Mff"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ga9-bf-CtA"/>
-                        <color key="backgroundColor" name="Gray800"/>
+                        <color key="backgroundColor" name="Gray700"/>
                         <constraints>
-                            <constraint firstItem="6dT-8a-hSd" firstAttribute="centerX" secondItem="d3N-Uo-RTt" secondAttribute="centerX" id="5la-xn-DLm"/>
-                            <constraint firstItem="ga9-bf-CtA" firstAttribute="trailing" secondItem="SYn-bB-gz1" secondAttribute="trailing" id="9oc-d0-fVX"/>
-                            <constraint firstItem="SYn-bB-gz1" firstAttribute="leading" secondItem="ga9-bf-CtA" secondAttribute="leading" id="EyA-sY-Els"/>
-                            <constraint firstItem="SYn-bB-gz1" firstAttribute="centerY" secondItem="d3N-Uo-RTt" secondAttribute="centerY" id="JxO-Gb-UbG"/>
-                            <constraint firstItem="6dT-8a-hSd" firstAttribute="bottom" secondItem="ga9-bf-CtA" secondAttribute="bottom" id="sqZ-lf-Clp"/>
+                            <constraint firstItem="ebe-Qb-p2c" firstAttribute="leading" secondItem="ga9-bf-CtA" secondAttribute="leading" id="3Ga-za-0wq"/>
+                            <constraint firstItem="ebe-Qb-p2c" firstAttribute="top" secondItem="WYq-30-qqd" secondAttribute="bottom" id="43B-9V-XZ8"/>
+                            <constraint firstItem="ga9-bf-CtA" firstAttribute="bottom" secondItem="ebe-Qb-p2c" secondAttribute="bottom" id="6kI-qY-kxf"/>
+                            <constraint firstItem="ga9-bf-CtA" firstAttribute="trailing" secondItem="ebe-Qb-p2c" secondAttribute="trailing" id="Obk-Hz-94i"/>
+                            <constraint firstItem="WYq-30-qqd" firstAttribute="top" secondItem="ga9-bf-CtA" secondAttribute="top" id="POU-nw-BzS"/>
+                            <constraint firstItem="WYq-30-qqd" firstAttribute="leading" secondItem="ga9-bf-CtA" secondAttribute="leading" id="TkF-Da-F1p"/>
+                            <constraint firstItem="ga9-bf-CtA" firstAttribute="trailing" secondItem="WYq-30-qqd" secondAttribute="trailing" id="sGK-fm-stZ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lblTimeLeft" destination="2Dy-3V-Ha4" id="f9G-73-Mrh"/>
+                        <outlet property="progressView" destination="OGR-bi-E39" id="c16-G9-X6C"/>
                         <outlet property="waveView" destination="SYn-bB-gz1" id="bOm-j6-G7p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FwD-uF-8PV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1513" y="116"/>
+            <point key="canvasLocation" x="1511.5942028985507" y="115.84821428571428"/>
         </scene>
     </scenes>
     <designables>
+        <designable name="2Tc-uZ-OYM">
+            <size key="intrinsicContentSize" width="19" height="22"/>
+        </designable>
         <designable name="7my-ky-RkS">
             <size key="intrinsicContentSize" width="90" height="30"/>
         </designable>
@@ -523,6 +642,10 @@
         </designable>
     </designables>
     <resources>
+        <image name="play" catalog="system" width="120" height="128"/>
+        <namedColor name="Gray600">
+            <color red="0.30300000309944153" green="0.33300000429153442" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="Gray700">
             <color red="0.22400000691413879" green="0.25400000810623169" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

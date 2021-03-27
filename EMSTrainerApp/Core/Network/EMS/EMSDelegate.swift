@@ -10,6 +10,8 @@ import Foundation
 protocol EMSDelegate {
     func onConnected()
     
+    func onConnectionLost()
+    
     func onImpulseOn()
     
     func onImpulseOff()

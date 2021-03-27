@@ -14,6 +14,7 @@ protocol WorkoutSetupViewModelDelegate {
 
 struct DeviceRow {
     var found: Bool
+    var ttl: Int
     var host: DeviceHost
 }
 
@@ -21,6 +22,8 @@ final class WorkoutSetupViewModel {
     
     let trainingModes: [TrainingMode]
     var delegate: WorkoutSetupViewModelDelegate?
+    
+    private var searching = false
     
     var finder: FinderProtocol! {
         didSet {
@@ -45,15 +48,23 @@ final class WorkoutSetupViewModel {
         trainingModes = try! JSONDecoder().decode([TrainingMode].self, from: jsonData)
     }
     
-    func search() {
+    func startSearch() {
+        searching = true
+        search()
+    }
+    
+    private func search() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.search()
+            if self.searching {
+                self.search()
+            }
         }
         resetDeviceList()
         finder.start()
     }
     
     func stopSearch() {
+        searching = false
         finder.stop()
     }
     
@@ -62,22 +73,38 @@ final class WorkoutSetupViewModel {
     }
     
     private func resetDeviceList() {
-        devices.keys.forEach { devices[$0]!.found = false}
+        // Set all device row's found to false
+        // If TTL is greater than 0 then subtract one, if TTL is 0 then remove row
+        devices.keys.forEach { devices[$0]!.found = false; devices[$0]!.ttl > 0 ? devices[$0]!.ttl-=1 : removeDevice(for: $0)}
+    }
+    
+    private func removeNotFoundDevices() {
+        let notFound = self.devices.filter { !$0.value.found }
+        for disappeared in notFound {
+            self.removeDevice(for: disappeared.key)
+        }
+        delegate?.onDeviceListRefresh()
+    }
+    
+    private func removeDevice(for key: String) {
+        devices.removeValue(forKey: key)
+        delegate?.onDeviceListRefresh()
     }
 }
 
 extension WorkoutSetupViewModel: FinderDelegate {
     func onDeviceFound(device: DeviceHost) {
         let address = device.address
-        devices[address] = DeviceRow(found: true, host: device)
+        devices[address] = DeviceRow(found: true, ttl: 1, host: device)
+        if selectedDevice?.address == address {
+            selectedDevice = device
+        }
         delegate?.onDeviceListRefresh()
     }
     
     func onFinderStopped() {
-        let notFound = devices.filter { !$0.value.found }
-        for disappeared in notFound {
-            devices.removeValue(forKey: disappeared.key)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.removeNotFoundDevices()
         }
-        delegate?.onDeviceListRefresh()
     }
 }

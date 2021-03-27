@@ -24,6 +24,18 @@ class DeviceRowCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    var chosen: Bool = false {
+        didSet {
+            if chosen {
+                roundedView.borderColor = UIColor(named: "Green500")!
+                roundedView.borderWidth = 2
+            } else {
+                roundedView.borderColor = .clear
+                roundedView.borderWidth = 0
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

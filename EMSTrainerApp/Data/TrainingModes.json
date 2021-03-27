@@ -3,7 +3,7 @@
         "name":"Cardio",
         "description":"Text 1",
         "image":"cardio",
-        "length": 1800,
+        "length": 10,
         "values": {
             "value": 50,
             "freq": 40,

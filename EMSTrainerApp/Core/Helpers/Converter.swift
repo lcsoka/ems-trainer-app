@@ -15,4 +15,12 @@ class Converter {
     public static func valueToPercent(value: Float, minimum: Float, maximum: Float) -> Float {
         return (value - minimum) / (maximum - minimum) * 100
     }
+    
+    public static func secondsToTimeString(_ time: Int) -> String {
+        let mins = time / 60
+        let secs = time % 60
+        let minsStr: String = mins < 10 ? "0\(mins)" : "\(mins)"
+        let secsStr: String = secs < 10 ? "0\(secs)" : "\(secs)"
+        return "\(minsStr):\(secsStr)"
+    }
 }
