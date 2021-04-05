@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorkoutListItem" customModule="EMSTrainerApp" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="9a7-Uv-Frc"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="83"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHf-vo-hzo" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="430" height="83"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejd-Dc-Ex9" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
+                            <rect key="frame" x="10" y="10" width="63" height="63"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardio" translatesAutoresizingMaskIntoConstraints="NO" id="SOJ-6L-2gA">
+                                    <rect key="frame" x="10" y="10" width="43" height="43"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" name="Gray600"/>
+                            <constraints>
+                                <constraint firstItem="SOJ-6L-2gA" firstAttribute="centerX" secondItem="ejd-Dc-Ex9" secondAttribute="centerX" id="2hL-2L-EVP"/>
+                                <constraint firstAttribute="width" secondItem="ejd-Dc-Ex9" secondAttribute="height" multiplier="1:1" id="5ek-er-6x9"/>
+                                <constraint firstItem="SOJ-6L-2gA" firstAttribute="top" secondItem="ejd-Dc-Ex9" secondAttribute="top" constant="10" id="Mld-LI-H6V"/>
+                                <constraint firstItem="SOJ-6L-2gA" firstAttribute="centerY" secondItem="ejd-Dc-Ex9" secondAttribute="centerY" id="bh3-bR-ZuC"/>
+                                <constraint firstItem="SOJ-6L-2gA" firstAttribute="leading" secondItem="ejd-Dc-Ex9" secondAttribute="leading" constant="10" id="kMT-lr-FY0"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardio Workout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2H-Rd-4ZO">
+                            <rect key="frame" x="81" y="10" width="146.5" height="24"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35m 18s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ei-CF-XTX">
+                            <rect key="frame" x="81" y="43" width="92.5" height="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                            <color key="textColor" name="Green500"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021.04.01 15:24" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJG-fn-nc6">
+                            <rect key="frame" x="316" y="57" width="104" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" name="Gray300"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="Gray700"/>
+                    <constraints>
+                        <constraint firstItem="ejd-Dc-Ex9" firstAttribute="top" secondItem="tHf-vo-hzo" secondAttribute="top" constant="10" id="5FL-Fj-JQV"/>
+                        <constraint firstItem="e2H-Rd-4ZO" firstAttribute="top" secondItem="ejd-Dc-Ex9" secondAttribute="top" id="Px5-D1-BF8"/>
+                        <constraint firstItem="ejd-Dc-Ex9" firstAttribute="leading" secondItem="tHf-vo-hzo" secondAttribute="leading" constant="10" id="U9i-Ai-3F8"/>
+                        <constraint firstItem="GJG-fn-nc6" firstAttribute="bottom" secondItem="ejd-Dc-Ex9" secondAttribute="bottom" id="fKh-UN-wlD"/>
+                        <constraint firstAttribute="trailing" secondItem="GJG-fn-nc6" secondAttribute="trailing" constant="10" id="hHY-q9-Y7H"/>
+                        <constraint firstItem="5ei-CF-XTX" firstAttribute="bottom" secondItem="ejd-Dc-Ex9" secondAttribute="bottom" id="jmd-Qp-e9f"/>
+                        <constraint firstItem="ejd-Dc-Ex9" firstAttribute="centerY" secondItem="tHf-vo-hzo" secondAttribute="centerY" id="piA-KN-bNa"/>
+                        <constraint firstItem="e2H-Rd-4ZO" firstAttribute="leading" secondItem="ejd-Dc-Ex9" secondAttribute="trailing" constant="8" symbolic="YES" id="tdm-yF-9ZB"/>
+                        <constraint firstItem="5ei-CF-XTX" firstAttribute="leading" secondItem="ejd-Dc-Ex9" secondAttribute="trailing" constant="8" symbolic="YES" id="v8M-3c-0Pi"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="tHf-vo-hzo" secondAttribute="bottom" id="LM1-fJ-m25"/>
+                <constraint firstItem="tHf-vo-hzo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="has-rt-p8e"/>
+                <constraint firstItem="tHf-vo-hzo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="uuS-lX-do2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tHf-vo-hzo" secondAttribute="trailing" id="vUM-3I-Bne"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="133.33333333333334" y="-135.60267857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cardio" width="512" height="512"/>
+        <namedColor name="Gray300">
+            <color red="0.82400000095367432" green="0.83499997854232788" blue="0.85500001907348633" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Gray600">
+            <color red="0.30300000309944153" green="0.33300000429153442" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Gray700">
+            <color red="0.22400000691413879" green="0.25400000810623169" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Green500">
+            <color red="0.33300000429153442" green="0.7160000205039978" blue="0.5220000147819519" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

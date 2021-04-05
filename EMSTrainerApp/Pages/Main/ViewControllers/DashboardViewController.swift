@@ -18,11 +18,16 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
     
     weak var delegate: DashboardViewControllerDelegate?
     
+    @IBOutlet var workoutListView: WorkoutsList!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         setupUI()
+        
+        workoutListView.delegate = self
+        
     }
     
     func setupUI() {
@@ -40,4 +45,11 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
         self.delegate?.userDidRequestWorkoutSetupPage()
     }
     
+}
+
+extension DashboardViewController: WorkoutListDelegate {
+    func onItemsChanged() {
+        view.setNeedsLayout()
+        view.layoutIfNeeded()
+    }
 }

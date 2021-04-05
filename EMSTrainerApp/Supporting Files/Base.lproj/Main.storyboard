@@ -30,6 +30,11 @@
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lia-AM-apC"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eJV-bC-mKm" customClass="StatisticsView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                <rect key="frame" x="37" y="150" width="310" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -47,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197" y="98"/>
+            <point key="canvasLocation" x="-197.10144927536234" y="97.767857142857139"/>
         </scene>
     </scenes>
     <resources>

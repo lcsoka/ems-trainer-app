@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -13,26 +13,26 @@
             <objects>
                 <viewController storyboardIdentifier="Login" id="haj-Qm-k7N" customClass="LoginViewController" customModule="EMSTrainerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tde-uS-S4R">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GoR-m8-gPk" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
-                                <rect key="frame" x="37" y="272" width="340" height="324"/>
+                                <rect key="frame" x="44" y="272" width="340" height="324"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3ev-86-S4A">
                                         <rect key="frame" x="10" y="10" width="320" height="304"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pow-Z3-n4e">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="101.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="101.66666666666667"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcI-qH-6Kd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="55.666666666666664"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="Gray300"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z3f-Vi-Rt7" customClass="BorderTextField" customModule="EMSTrainerApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="60.5" width="320" height="41"/>
+                                                        <rect key="frame" x="0.0" y="60.666666666666686" width="320" height="41"/>
                                                         <color key="tintColor" name="Green500"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="41" id="KFy-xl-eRI"/>
@@ -65,16 +65,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjh-3D-xmT">
-                                                <rect key="frame" x="0.0" y="111.5" width="320" height="101.5"/>
+                                                <rect key="frame" x="0.0" y="111.66666666666669" width="320" height="101.33333333333331"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ce-fI-xj5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="55.333333333333336"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="Gray300"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2nI-YK-EtK" customClass="BorderTextField" customModule="EMSTrainerApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="60.5" width="320" height="41"/>
+                                                        <rect key="frame" x="0.0" y="60.333333333333314" width="320" height="41"/>
                                                         <color key="tintColor" name="Green500"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="41" id="uH7-tL-h45"/>
@@ -150,7 +150,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fet-RS-bT8">
-                                <rect key="frame" x="37" y="94" width="340" height="128"/>
+                                <rect key="frame" x="44" y="94" width="340" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="EVn-eQ-G0E"/>
                                     <constraint firstAttribute="width" constant="340" id="sln-N7-6SZ"/>
@@ -180,26 +180,26 @@
             <objects>
                 <viewController storyboardIdentifier="Registration" id="FbP-ax-RQd" customClass="RegistrationViewController" customModule="EMSTrainerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JlJ-1T-UYK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAA-BD-FED" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
-                                <rect key="frame" x="37" y="54" width="340" height="507"/>
+                                <rect key="frame" x="44" y="54" width="340" height="507"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="97A-3R-LJp">
                                         <rect key="frame" x="10" y="10" width="320" height="487"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86a-0g-fdB">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="101.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="101.66666666666667"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70X-tl-cz8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="55.666666666666664"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="Gray300"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ahE-fR-0o1" customClass="BorderTextField" customModule="EMSTrainerApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="60.5" width="320" height="41"/>
+                                                        <rect key="frame" x="0.0" y="60.666666666666671" width="320" height="41"/>
                                                         <color key="tintColor" name="Green500"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="41" id="QzC-Rg-L8c"/>
@@ -232,16 +232,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bI-ZB-heH">
-                                                <rect key="frame" x="0.0" y="111.5" width="320" height="101.5"/>
+                                                <rect key="frame" x="0.0" y="111.66666666666666" width="320" height="101.33333333333334"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEe-GS-Qd1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="55.333333333333336"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="Gray300"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2TB-dy-6B0" customClass="BorderTextField" customModule="EMSTrainerApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="60.5" width="320" height="41"/>
+                                                        <rect key="frame" x="0.0" y="60.333333333333343" width="320" height="41"/>
                                                         <color key="tintColor" name="Green500"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="41" id="D3p-N8-gHl"/>
@@ -274,16 +274,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUs-o7-7Qe">
-                                                <rect key="frame" x="0.0" y="223" width="320" height="101.5"/>
+                                                <rect key="frame" x="0.0" y="222.99999999999997" width="320" height="101.66666666666666"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfO-kZ-RS1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="55.666666666666664"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="Gray300"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aBu-vy-uEq" customClass="BorderTextField" customModule="EMSTrainerApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="60.5" width="320" height="41"/>
+                                                        <rect key="frame" x="0.0" y="60.666666666666686" width="320" height="41"/>
                                                         <color key="tintColor" name="Green500"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="41" id="HZc-0d-cVl"/>
@@ -316,16 +316,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2XN-Pg-aP1">
-                                                <rect key="frame" x="0.0" y="334.5" width="320" height="101.5"/>
+                                                <rect key="frame" x="0.0" y="334.66666666666669" width="320" height="101.33333333333331"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Confirmation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYr-GQ-Vhc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="55.333333333333336"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="Gray300"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uOt-Qg-LtK" customClass="BorderTextField" customModule="EMSTrainerApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="60.5" width="320" height="41"/>
+                                                        <rect key="frame" x="0.0" y="60.333333333333314" width="320" height="41"/>
                                                         <color key="tintColor" name="Green500"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="41" id="jnK-NE-waC"/>

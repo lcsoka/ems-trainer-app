@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorkoutList" customModule="EMSTrainerApp" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="f85-af-bsP" id="FIL-O3-oyV"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="KSP-3s-GXm"/>
+                <outlet property="stackView" destination="Rxo-K0-xf7" id="jR6-bn-Khb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="468" height="169"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f85-af-bsP">
+                    <rect key="frame" x="20" y="0.0" width="428" height="169"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rxo-K0-xf7">
+                            <rect key="frame" x="0.0" y="0.0" width="428" height="169"/>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Rxo-K0-xf7" secondAttribute="trailing" id="0lF-iH-VYz"/>
+                        <constraint firstItem="Rxo-K0-xf7" firstAttribute="top" secondItem="f85-af-bsP" secondAttribute="top" id="ftT-Z4-8s8"/>
+                        <constraint firstAttribute="bottom" secondItem="Rxo-K0-xf7" secondAttribute="bottom" id="jS8-Dq-H5s"/>
+                        <constraint firstItem="Rxo-K0-xf7" firstAttribute="leading" secondItem="f85-af-bsP" secondAttribute="leading" id="sv2-VB-HMi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="f85-af-bsP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Mbc-ot-ZkA"/>
+                <constraint firstItem="f85-af-bsP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="RAc-o2-Y6V"/>
+                <constraint firstAttribute="trailing" secondItem="f85-af-bsP" secondAttribute="trailing" constant="20" id="biP-8v-RdL"/>
+                <constraint firstAttribute="bottom" secondItem="f85-af-bsP" secondAttribute="bottom" id="i2H-1l-nfI"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="100.00000000000001" y="-112.83482142857142"/>
+        </view>
+    </objects>
+</document>

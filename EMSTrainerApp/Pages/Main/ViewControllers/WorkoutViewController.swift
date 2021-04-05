@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DrawerView
 
 class WorkoutViewController: UIViewController, MainStoryboardLodable {
 
@@ -14,6 +15,7 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
     @IBOutlet var progressView: ProgressView!
     @IBOutlet var channelContainer: UIView!
     @IBOutlet var channelCollection: UICollectionView!
+    @IBOutlet var drawerView: DrawerView!
     
     var viewModel: WorkoutViewModel!
     
@@ -29,17 +31,27 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
         channelCollection.delegate = self
         channelCollection.dataSource = self
         channelCollection.backgroundColor = .clear
+        setupDrawer()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
+        
+        drawerView.setConcealed(false, animated: true)
     }
     
     @IBAction func onStopTapped(_ sender: Any) {
         viewModel.startWorkout()
 //        viewModel.client.close()
 //        self.dismiss(animated: true)
+    }
+    
+    private func setupDrawer() {
+        drawerView.snapPositions = [.collapsed, .partiallyOpen, .open]
+        drawerView.insetAdjustmentBehavior = .automatic
+        drawerView.delegate = self
+        drawerView.position = .partiallyOpen
     }
     
     func onFrequencyChanged(value: Int) {
@@ -61,6 +73,11 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
     }
 }
 
+extension WorkoutViewController: DrawerViewDelegate {
+    
+}
+
+// MARK: CollectionView Delegates
 extension WorkoutViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1

@@ -30,7 +30,6 @@
 		A40EE4EB260165A5002E422B /* EMSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4EA260165A5002E422B /* EMSConfig.swift */; };
 		A40EE4F0260173A5002E422B /* EMSMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40EE4EF260173A5002E422B /* EMSMessage.swift */; };
 		A41C8F8925FFF7B600192BDD /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8F8825FFF7B600192BDD /* StatisticsView.swift */; };
-		A41C8F8E25FFF7C600192BDD /* StatisticsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41C8F8D25FFF7C600192BDD /* StatisticsView.xib */; };
 		A41C8F9325FFFA2700192BDD /* CustomViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8F9225FFFA2700192BDD /* CustomViewProtocol.swift */; };
 		A41C8F982600060800192BDD /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8F972600060800192BDD /* AccountViewController.swift */; };
 		A41C8FAE260011B600192BDD /* WorkoutSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41C8FAD260011B600192BDD /* WorkoutSetupViewController.swift */; };
@@ -61,17 +60,16 @@
 		A421546625F516E40094C1CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421546525F516E40094C1CB /* LoginViewController.swift */; };
 		A421547325F51AB40094C1CB /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421547225F51AB40094C1CB /* RegistrationViewController.swift */; };
 		A421547925F51F760094C1CB /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421547825F51F760094C1CB /* MainCoordinator.swift */; };
-		A421547F25F520430094C1CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A421547E25F520430094C1CB /* Main.storyboard */; };
 		A421548425F5206A0094C1CB /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421548325F5206A0094C1CB /* DashboardViewController.swift */; };
 		A421548A25F522500094C1CB /* AuthenticationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421548925F522500094C1CB /* AuthenticationDelegate.swift */; };
+		A42383832617810600248588 /* WorkoutsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42383822617810600248588 /* WorkoutsList.swift */; };
+		A42383882617811100248588 /* WorkoutsList.xib in Resources */ = {isa = PBXBuildFile; fileRef = A42383872617811100248588 /* WorkoutsList.xib */; };
 		A4335EBD260119D00098E79C /* DeviceRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4335EBB260119D00098E79C /* DeviceRowCollectionViewCell.swift */; };
 		A4335EBE260119D00098E79C /* DeviceRowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4335EBC260119D00098E79C /* DeviceRowCollectionViewCell.xib */; };
 		A45BADF925DC2C6B00F51D5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BADF825DC2C6B00F51D5E /* AppDelegate.swift */; };
 		A45BADFB25DC2C6B00F51D5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BADFA25DC2C6B00F51D5E /* SceneDelegate.swift */; };
 		A45BADFD25DC2C6B00F51D5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BADFC25DC2C6B00F51D5E /* ViewController.swift */; };
-		A45BAE0025DC2C6B00F51D5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45BADFE25DC2C6B00F51D5E /* Main.storyboard */; };
 		A45BAE0225DC2C6D00F51D5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A45BAE0125DC2C6D00F51D5E /* Assets.xcassets */; };
-		A45BAE0525DC2C6D00F51D5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45BAE0325DC2C6D00F51D5E /* LaunchScreen.storyboard */; };
 		A45BAE1B25DC2C6D00F51D5E /* EMSTrainerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE1A25DC2C6D00F51D5E /* EMSTrainerAppUITests.swift */; };
 		A45BAE3925DC2DB600F51D5E /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE3825DC2DB600F51D5E /* Api.swift */; };
 		A45BAE4125DC35F400F51D5E /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BAE4025DC35F400F51D5E /* NetworkRequest.swift */; };
@@ -108,10 +106,17 @@
 		A48B659925F6E4C9009D6CCD /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B659825F6E4C9009D6CCD /* RoundedButton.swift */; };
 		A495800F25E04C6500923B7F /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A495800E25E04C6500923B7F /* ErrorType.swift */; };
 		A495801425E051B400923B7F /* ApiErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A495801325E051B400923B7F /* ApiErrorResponse.swift */; };
+		A49D57BE261B2E7000E9E744 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A421547E25F520430094C1CB /* Main.storyboard */; };
 		A4A3A37025FD1FAF000323CF /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3A36F25FD1FAF000323CF /* WaveView.swift */; };
 		A4A495A825DC50E800636B66 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A495A725DC50E800636B66 /* User.swift */; };
 		A4A495BF25DC71C400636B66 /* MeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A495BE25DC71C400636B66 /* MeResource.swift */; };
 		A4A495C425DC71D300636B66 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A495C325DC71D300636B66 /* UserResponse.swift */; };
+		A4C17616261B39D700BFE12C /* StatisticsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C17615261B39D600BFE12C /* StatisticsView.xib */; };
+		A4DB5CBD261B6749003CBE05 /* NotEnoughDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DB5CBC261B6749003CBE05 /* NotEnoughDataView.xib */; };
+		A4DB5CC2261B6758003CBE05 /* NotEnoughDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB5CC1261B6758003CBE05 /* NotEnoughDataView.swift */; };
+		A4DB5CC7261B6A17003CBE05 /* WorkoutListItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DB5CC6261B6A17003CBE05 /* WorkoutListItem.xib */; };
+		A4DB5CCC261B6A23003CBE05 /* WorkoutListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB5CCB261B6A23003CBE05 /* WorkoutListItem.swift */; };
+		A4DB5CD1261B704E003CBE05 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB5CD0261B704E003CBE05 /* DashboardViewModel.swift */; };
 		A4E5B8AC260FE9B900DBA784 /* EMSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B8AB260FE9B900DBA784 /* EMSTimer.swift */; };
 		A4FCAEB225DC8AE000C9849C /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCAEB125DC8AE000C9849C /* LoginData.swift */; };
 		A4FCAEB925DC8B4500C9849C /* LoginResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCAEB825DC8B4500C9849C /* LoginResource.swift */; };
@@ -166,7 +171,6 @@
 		A40EE4EA260165A5002E422B /* EMSConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSConfig.swift; sourceTree = "<group>"; };
 		A40EE4EF260173A5002E422B /* EMSMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSMessage.swift; sourceTree = "<group>"; };
 		A41C8F8825FFF7B600192BDD /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
-		A41C8F8D25FFF7C600192BDD /* StatisticsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticsView.xib; sourceTree = "<group>"; };
 		A41C8F9225FFFA2700192BDD /* CustomViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewProtocol.swift; sourceTree = "<group>"; };
 		A41C8F972600060800192BDD /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		A41C8FAD260011B600192BDD /* WorkoutSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSetupViewController.swift; sourceTree = "<group>"; };
@@ -197,9 +201,11 @@
 		A421546525F516E40094C1CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A421547225F51AB40094C1CB /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A421547825F51F760094C1CB /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		A421547E25F520430094C1CB /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A421547E25F520430094C1CB /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = EMSTrainerApp/Pages/Main/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		A421548325F5206A0094C1CB /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		A421548925F522500094C1CB /* AuthenticationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDelegate.swift; sourceTree = "<group>"; };
+		A42383822617810600248588 /* WorkoutsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsList.swift; sourceTree = "<group>"; };
+		A42383872617811100248588 /* WorkoutsList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutsList.xib; sourceTree = "<group>"; };
 		A4335EBB260119D00098E79C /* DeviceRowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRowCollectionViewCell.swift; sourceTree = "<group>"; };
 		A4335EBC260119D00098E79C /* DeviceRowCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceRowCollectionViewCell.xib; sourceTree = "<group>"; };
 		A45BADF525DC2C6B00F51D5E /* EMSTrainerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMSTrainerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +260,12 @@
 		A4A495A725DC50E800636B66 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A4A495BE25DC71C400636B66 /* MeResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeResource.swift; sourceTree = "<group>"; };
 		A4A495C325DC71D300636B66 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		A4C17615261B39D600BFE12C /* StatisticsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatisticsView.xib; sourceTree = "<group>"; };
+		A4DB5CBC261B6749003CBE05 /* NotEnoughDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotEnoughDataView.xib; sourceTree = "<group>"; };
+		A4DB5CC1261B6758003CBE05 /* NotEnoughDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotEnoughDataView.swift; sourceTree = "<group>"; };
+		A4DB5CC6261B6A17003CBE05 /* WorkoutListItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutListItem.xib; sourceTree = "<group>"; };
+		A4DB5CCB261B6A23003CBE05 /* WorkoutListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListItem.swift; sourceTree = "<group>"; };
+		A4DB5CD0261B704E003CBE05 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		A4E5B8AB260FE9B900DBA784 /* EMSTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSTimer.swift; sourceTree = "<group>"; };
 		A4FCAEB125DC8AE000C9849C /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		A4FCAEB825DC8B4500C9849C /* LoginResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResource.swift; sourceTree = "<group>"; };
@@ -380,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				A41C8F8725FFF77600192BDD /* Statistics */,
+				A4238381261780EB00248588 /* WorkoutsList */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -387,8 +400,8 @@
 		A41C8F8725FFF77600192BDD /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				A4C17615261B39D600BFE12C /* StatisticsView.xib */,
 				A41C8F8825FFF7B600192BDD /* StatisticsView.swift */,
-				A41C8F8D25FFF7C600192BDD /* StatisticsView.xib */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -455,6 +468,7 @@
 			children = (
 				A41C90102600A9D100192BDD /* WorkoutSetupViewModel.swift */,
 				A40E38E7260F8D9300104A59 /* WorkoutViewModel.swift */,
+				A4DB5CD0261B704E003CBE05 /* DashboardViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -526,6 +540,19 @@
 				A40A4EF42608011100F07342 /* WorkoutViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A4238381261780EB00248588 /* WorkoutsList */ = {
+			isa = PBXGroup;
+			children = (
+				A42383822617810600248588 /* WorkoutsList.swift */,
+				A42383872617811100248588 /* WorkoutsList.xib */,
+				A4DB5CBC261B6749003CBE05 /* NotEnoughDataView.xib */,
+				A4DB5CC1261B6758003CBE05 /* NotEnoughDataView.swift */,
+				A4DB5CC6261B6A17003CBE05 /* WorkoutListItem.xib */,
+				A4DB5CCB261B6A23003CBE05 /* WorkoutListItem.swift */,
+			);
+			path = WorkoutsList;
 			sourceTree = "<group>";
 		};
 		A4335EB026010C8B0098E79C /* DeviceRow */ = {
@@ -977,15 +1004,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A421546025F516710094C1CB /* Authentication.storyboard in Resources */,
-				A421547F25F520430094C1CB /* Main.storyboard in Resources */,
 				A41C902C2600F14600192BDD /* TrainingModeSelectorView.xib in Resources */,
 				A41C90362600F7BA00192BDD /* TrainingModeOptionView.xib in Resources */,
+				A4C17616261B39D700BFE12C /* StatisticsView.xib in Resources */,
+				A4DB5CBD261B6749003CBE05 /* NotEnoughDataView.xib in Resources */,
 				A4335EBE260119D00098E79C /* DeviceRowCollectionViewCell.xib in Resources */,
 				A41C8FFD2600A56C00192BDD /* TrainingModes.json in Resources */,
-				A45BAE0525DC2C6D00F51D5E /* LaunchScreen.storyboard in Resources */,
-				A41C8F8E25FFF7C600192BDD /* StatisticsView.xib in Resources */,
+				A49D57BE261B2E7000E9E744 /* Main.storyboard in Resources */,
+				A42383882617811100248588 /* WorkoutsList.xib in Resources */,
+				A4DB5CC7261B6A17003CBE05 /* WorkoutListItem.xib in Resources */,
 				A45BAE0225DC2C6D00F51D5E /* Assets.xcassets in Resources */,
-				A45BAE0025DC2C6B00F51D5E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1128,6 +1156,7 @@
 				A421546625F516E40094C1CB /* LoginViewController.swift in Sources */,
 				A41C8FC32600150B00192BDD /* MDNSFinder.swift in Sources */,
 				A41C900B2600A8D100192BDD /* TrainingMode.swift in Sources */,
+				A4DB5CD1261B704E003CBE05 /* DashboardViewModel.swift in Sources */,
 				A41C90052600A87600192BDD /* EMSValues.swift in Sources */,
 				A45BADF925DC2C6B00F51D5E /* AppDelegate.swift in Sources */,
 				A41C90112600A9D100192BDD /* WorkoutSetupViewModel.swift in Sources */,
@@ -1156,6 +1185,7 @@
 				A406E48825F533790044E284 /* UserDefaultsUserService.swift in Sources */,
 				A40A4EEB2607DC4B00F07342 /* Dynamic.swift in Sources */,
 				A421545625F514D70094C1CB /* Container.swift in Sources */,
+				A4DB5CCC261B6A23003CBE05 /* WorkoutListItem.swift in Sources */,
 				A41C8F982600060800192BDD /* AccountViewController.swift in Sources */,
 				A477972F25FFDE38006AF564 /* Presentable.swift in Sources */,
 				A40A4EDF2607DABB00F07342 /* RegistrationViewModel.swift in Sources */,
@@ -1167,6 +1197,7 @@
 				A4A495A825DC50E800636B66 /* User.swift in Sources */,
 				A48B659925F6E4C9009D6CCD /* RoundedButton.swift in Sources */,
 				A46337D825E12246000B51F7 /* NetworkEngine.swift in Sources */,
+				A42383832617810600248588 /* WorkoutsList.swift in Sources */,
 				A46337B725E08ADB000B51F7 /* EmptyResponse.swift in Sources */,
 				A4E5B8AC260FE9B900DBA784 /* EMSTimer.swift in Sources */,
 				A4898FBC260FE00B0027D4BC /* ProgressView.swift in Sources */,
@@ -1174,6 +1205,7 @@
 				A421544C25F506850094C1CB /* AuthenticationCoordinator.swift in Sources */,
 				A421545B25F515630094C1CB /* StoryboardLodable.swift in Sources */,
 				A41C8FAE260011B600192BDD /* WorkoutSetupViewController.swift in Sources */,
+				A4DB5CC2261B6758003CBE05 /* NotEnoughDataView.swift in Sources */,
 				A41C90312600F7B000192BDD /* TrainingModeOptionView.swift in Sources */,
 				A421547325F51AB40094C1CB /* RegistrationViewController.swift in Sources */,
 				A48B659425F6DB0E009D6CCD /* BorderTextField.swift in Sources */,

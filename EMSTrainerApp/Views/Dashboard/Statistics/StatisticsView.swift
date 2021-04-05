@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class StatisticsView: UIView, CustomViewProtocol {
     
     @IBOutlet var contentView: UIView!
@@ -19,5 +20,9 @@ class StatisticsView: UIView, CustomViewProtocol {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit(for: "StatisticsView")
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: frame.width, height: 125)
     }
 }
