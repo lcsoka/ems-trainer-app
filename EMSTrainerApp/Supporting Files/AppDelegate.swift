@@ -55,6 +55,7 @@ extension AppDelegate {
         // viewmodels
         container.autoregister(LoginViewModel.self, initializer: LoginViewModel.init)
         container.autoregister(RegistrationViewModel.self, initializer: RegistrationViewModel.init)
+        container.autoregister(DashboardViewModel.self, initializer: DashboardViewModel.init)
         container.autoregister(WorkoutSetupViewModel.self, initializer: WorkoutSetupViewModel.init)
         container.autoregister(WorkoutViewModel.self, initializer: WorkoutViewModel.init)
         
@@ -68,7 +69,7 @@ extension AppDelegate {
         }
         
         container.registerViewController(DashboardViewController.self) {r, c in
-            
+            c.viewModel = r~>
         }
         
         container.registerViewController(AccountViewController.self) {r, c in

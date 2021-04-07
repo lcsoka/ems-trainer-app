@@ -8,5 +8,15 @@
 import Foundation
 
 final class DashboardViewModel {
+    var api: ApiService!
+    var trainingsProvider: TrainingsProvider
+    init(api: ApiService) {
+        self.api = api
+        trainingsProvider = TrainingsProvider(api: api)
+        print("model ready")
+    }
     
+    func test() {
+        trainingsProvider.fetchTrainings()
+    }
 }

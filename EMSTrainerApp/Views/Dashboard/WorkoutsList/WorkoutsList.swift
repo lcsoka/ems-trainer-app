@@ -44,7 +44,7 @@ class WorkoutsList: UIView, CustomViewProtocol {
         commonInit(for: "WorkoutsList")
         setupView()
     }
-    
+
     private func setupView() {
         
         for view in stackView.subviews {

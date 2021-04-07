@@ -18,6 +18,8 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
     
     weak var delegate: DashboardViewControllerDelegate?
     
+    var viewModel: DashboardViewModel!
+    
     @IBOutlet var workoutListView: WorkoutsList!
     
     override func viewDidLoad() {
@@ -27,7 +29,7 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
         setupUI()
         
         workoutListView.delegate = self
-        
+        viewModel.test()
     }
     
     func setupUI() {

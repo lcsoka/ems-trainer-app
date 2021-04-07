@@ -10,6 +10,6 @@ import Foundation
 struct MeResource: ApiResource {
     var customUrl: String?
     
-    typealias ModelType = UserResponse
+    typealias ModelType = MeResponse
     let methodPath = "/me"
 }

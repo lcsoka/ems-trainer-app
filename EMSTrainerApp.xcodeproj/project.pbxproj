@@ -118,6 +118,16 @@
 		A4DB5CCC261B6A23003CBE05 /* WorkoutListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB5CCB261B6A23003CBE05 /* WorkoutListItem.swift */; };
 		A4DB5CD1261B704E003CBE05 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB5CD0261B704E003CBE05 /* DashboardViewModel.swift */; };
 		A4E5B8AC260FE9B900DBA784 /* EMSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B8AB260FE9B900DBA784 /* EMSTimer.swift */; };
+		A4F755F4261E29B100133E80 /* DictionaryConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F755F3261E29B100133E80 /* DictionaryConvertable.swift */; };
+		A4FBBC31261CD0AB00B8CE81 /* EMSCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4FBBC2F261CD0AB00B8CE81 /* EMSCoreData.xcdatamodeld */; };
+		A4FBBC6F261CEDCA00B8CE81 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FBBC6E261CEDCA00B8CE81 /* Training.swift */; };
+		A4FBBC75261CEDED00B8CE81 /* TrainingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FBBC74261CEDED00B8CE81 /* TrainingValue.swift */; };
+		A4FBBC7B261CF8DC00B8CE81 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FBBC7A261CF8DC00B8CE81 /* CoreDataStack.swift */; };
+		A4FBBC86261D08DE00B8CE81 /* TrainingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FBBC85261D08DE00B8CE81 /* TrainingsProvider.swift */; };
+		A4FBBC8B261D0A6B00B8CE81 /* TrainingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FBBC8A261D0A6B00B8CE81 /* TrainingsResponse.swift */; };
+		A4FBBC95261E064900B8CE81 /* MeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FBBC94261E064800B8CE81 /* MeResponse.swift */; };
+		A4FBBC9A261E068D00B8CE81 /* TrainingJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FBBC99261E068D00B8CE81 /* TrainingJSON.swift */; };
+		A4FBBC9F261E0E2300B8CE81 /* TrainingValueJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FBBC9E261E0E2300B8CE81 /* TrainingValueJSON.swift */; };
 		A4FCAEB225DC8AE000C9849C /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCAEB125DC8AE000C9849C /* LoginData.swift */; };
 		A4FCAEB925DC8B4500C9849C /* LoginResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCAEB825DC8B4500C9849C /* LoginResource.swift */; };
 		A4FCAED325DDA7F500C9849C /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCAED225DDA7F500C9849C /* AppError.swift */; };
@@ -267,6 +277,16 @@
 		A4DB5CCB261B6A23003CBE05 /* WorkoutListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListItem.swift; sourceTree = "<group>"; };
 		A4DB5CD0261B704E003CBE05 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		A4E5B8AB260FE9B900DBA784 /* EMSTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSTimer.swift; sourceTree = "<group>"; };
+		A4F755F3261E29B100133E80 /* DictionaryConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryConvertable.swift; sourceTree = "<group>"; };
+		A4FBBC30261CD0AB00B8CE81 /* EMSCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EMSCoreData.xcdatamodel; sourceTree = "<group>"; };
+		A4FBBC6E261CEDCA00B8CE81 /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
+		A4FBBC74261CEDED00B8CE81 /* TrainingValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingValue.swift; sourceTree = "<group>"; };
+		A4FBBC7A261CF8DC00B8CE81 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		A4FBBC85261D08DE00B8CE81 /* TrainingsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingsProvider.swift; sourceTree = "<group>"; };
+		A4FBBC8A261D0A6B00B8CE81 /* TrainingsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingsResponse.swift; sourceTree = "<group>"; };
+		A4FBBC94261E064800B8CE81 /* MeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeResponse.swift; sourceTree = "<group>"; };
+		A4FBBC99261E068D00B8CE81 /* TrainingJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingJSON.swift; sourceTree = "<group>"; };
+		A4FBBC9E261E0E2300B8CE81 /* TrainingValueJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingValueJSON.swift; sourceTree = "<group>"; };
 		A4FCAEB125DC8AE000C9849C /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		A4FCAEB825DC8B4500C9849C /* LoginResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResource.swift; sourceTree = "<group>"; };
 		A4FCAED225DDA7F500C9849C /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -358,6 +378,7 @@
 				A40A4EEA2607DC4B00F07342 /* Dynamic.swift */,
 				A40E38E2260F8AED00104A59 /* Converter.swift */,
 				A4E5B8AB260FE9B900DBA784 /* EMSTimer.swift */,
+				A4F755F3261E29B100133E80 /* DictionaryConvertable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -458,6 +479,8 @@
 		A41C90092600A8C400192BDD /* Training */ = {
 			isa = PBXGroup;
 			children = (
+				A4FBBC90261D0C7B00B8CE81 /* JSON */,
+				A4FBBC8F261D0C7600B8CE81 /* Database */,
 				A41C900A2600A8D100192BDD /* TrainingMode.swift */,
 			);
 			path = Training;
@@ -632,6 +655,7 @@
 				A45BAE0125DC2C6D00F51D5E /* Assets.xcassets */,
 				A45BAE0325DC2C6D00F51D5E /* LaunchScreen.storyboard */,
 				A45BAE0625DC2C6D00F51D5E /* Info.plist */,
+				A4FBBC2F261CD0AB00B8CE81 /* EMSCoreData.xcdatamodeld */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -643,6 +667,7 @@
 				A45BAE3725DC2DA000F51D5E /* Api */,
 				A48B650725F5419D009D6CCD /* Config */,
 				A47BB12D25E1B6250065023F /* Coordinator */,
+				A4FBBC79261CF8CD00B8CE81 /* Database */,
 				A4FCAED125DDA5C700C9849C /* ErrorHandling */,
 				A421544025F502D10094C1CB /* Extensions */,
 				A40A4EE92607DC3C00F07342 /* Helpers */,
@@ -843,6 +868,8 @@
 				A495801325E051B400923B7F /* ApiErrorResponse.swift */,
 				A46337B625E08ADB000B51F7 /* EmptyResponse.swift */,
 				A41C8FD1260020F600192BDD /* DeviceStatusResponse.swift */,
+				A4FBBC8A261D0A6B00B8CE81 /* TrainingsResponse.swift */,
+				A4FBBC94261E064800B8CE81 /* MeResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -856,6 +883,41 @@
 				A41C8FE1260026F200192BDD /* DeviceApiRequest.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		A4FBBC79261CF8CD00B8CE81 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				A4FBBC84261D08BE00B8CE81 /* Providers */,
+				A4FBBC7A261CF8DC00B8CE81 /* CoreDataStack.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		A4FBBC84261D08BE00B8CE81 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				A4FBBC85261D08DE00B8CE81 /* TrainingsProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		A4FBBC8F261D0C7600B8CE81 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				A4FBBC6E261CEDCA00B8CE81 /* Training.swift */,
+				A4FBBC74261CEDED00B8CE81 /* TrainingValue.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		A4FBBC90261D0C7B00B8CE81 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				A4FBBC99261E068D00B8CE81 /* TrainingJSON.swift */,
+				A4FBBC9E261E0E2300B8CE81 /* TrainingValueJSON.swift */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		A4FCAEB025DC8ACE00C9849C /* RequestData */ = {
@@ -1143,6 +1205,7 @@
 			files = (
 				A40EE4DD26016103002E422B /* ChannelData.swift in Sources */,
 				A4335EBD260119D00098E79C /* DeviceRowCollectionViewCell.swift in Sources */,
+				A4FBBC86261D08DE00B8CE81 /* TrainingsProvider.swift in Sources */,
 				A48B64FE25F53FB7009D6CCD /* TokenService.swift in Sources */,
 				A4FCAEB925DC8B4500C9849C /* LoginResource.swift in Sources */,
 				A40E38E3260F8AED00104A59 /* Converter.swift in Sources */,
@@ -1153,6 +1216,7 @@
 				A41C8FB42600144900192BDD /* FinderProtocol.swift in Sources */,
 				A477972925FFDD9D006AF564 /* RouterProtocol.swift in Sources */,
 				A421548A25F522500094C1CB /* AuthenticationDelegate.swift in Sources */,
+				A4FBBC95261E064900B8CE81 /* MeResponse.swift in Sources */,
 				A421546625F516E40094C1CB /* LoginViewController.swift in Sources */,
 				A41C8FC32600150B00192BDD /* MDNSFinder.swift in Sources */,
 				A41C900B2600A8D100192BDD /* TrainingMode.swift in Sources */,
@@ -1174,6 +1238,7 @@
 				A45BAE3925DC2DB600F51D5E /* Api.swift in Sources */,
 				A463379C25E07E53000B51F7 /* Auth.swift in Sources */,
 				A495800F25E04C6500923B7F /* ErrorType.swift in Sources */,
+				A4FBBC9A261E068D00B8CE81 /* TrainingJSON.swift in Sources */,
 				A48B64E925F53A43009D6CCD /* ApiService.swift in Sources */,
 				A40A4EF52608011100F07342 /* WorkoutViewController.swift in Sources */,
 				A46337B225E08A58000B51F7 /* LogoutResource.swift in Sources */,
@@ -1190,10 +1255,13 @@
 				A477972F25FFDE38006AF564 /* Presentable.swift in Sources */,
 				A40A4EDF2607DABB00F07342 /* RegistrationViewModel.swift in Sources */,
 				A46337A825E087A4000B51F7 /* RegisterData.swift in Sources */,
+				A4FBBC75261CEDED00B8CE81 /* TrainingValue.swift in Sources */,
 				A406E49925F533AC0044E284 /* UserService.swift in Sources */,
 				A40EE4D526016075002E422B /* EMSChannel.swift in Sources */,
 				A41C8FCD2600208C00192BDD /* DeviceStatusResource.swift in Sources */,
+				A4FBBC8B261D0A6B00B8CE81 /* TrainingsResponse.swift in Sources */,
 				A41C90242600F11700192BDD /* TrainingModeSelectorView.swift in Sources */,
+				A4FBBC7B261CF8DC00B8CE81 /* CoreDataStack.swift in Sources */,
 				A4A495A825DC50E800636B66 /* User.swift in Sources */,
 				A48B659925F6E4C9009D6CCD /* RoundedButton.swift in Sources */,
 				A46337D825E12246000B51F7 /* NetworkEngine.swift in Sources */,
@@ -1220,6 +1288,9 @@
 				A41C8F9325FFFA2700192BDD /* CustomViewProtocol.swift in Sources */,
 				A421547925F51F760094C1CB /* MainCoordinator.swift in Sources */,
 				A40E38E8260F8D9300104A59 /* WorkoutViewModel.swift in Sources */,
+				A4FBBC6F261CEDCA00B8CE81 /* Training.swift in Sources */,
+				A4F755F4261E29B100133E80 /* DictionaryConvertable.swift in Sources */,
+				A4FBBC9F261E0E2300B8CE81 /* TrainingValueJSON.swift in Sources */,
 				A45BAE4125DC35F400F51D5E /* NetworkRequest.swift in Sources */,
 				A4A495BF25DC71C400636B66 /* MeResource.swift in Sources */,
 				A4A495C425DC71D300636B66 /* UserResponse.swift in Sources */,
@@ -1227,6 +1298,7 @@
 				A40EE4CA26015D45002E422B /* EMSDelegate.swift in Sources */,
 				A48B650925F541B4009D6CCD /* AppConfig.swift in Sources */,
 				A421548425F5206A0094C1CB /* DashboardViewController.swift in Sources */,
+				A4FBBC31261CD0AB00B8CE81 /* EMSCoreData.xcdatamodeld in Sources */,
 				A48B64D525F536E7009D6CCD /* AuthenticationService.swift in Sources */,
 				A40EE4EB260165A5002E422B /* EMSConfig.swift in Sources */,
 			);
@@ -1583,6 +1655,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A4FBBC2F261CD0AB00B8CE81 /* EMSCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A4FBBC30261CD0AB00B8CE81 /* EMSCoreData.xcdatamodel */,
+			);
+			currentVersion = A4FBBC30261CD0AB00B8CE81 /* EMSCoreData.xcdatamodel */;
+			path = EMSCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A45BADED25DC2C6B00F51D5E /* Project object */;
 }
