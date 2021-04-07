@@ -119,6 +119,7 @@
 		A4DB5CD1261B704E003CBE05 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB5CD0261B704E003CBE05 /* DashboardViewModel.swift */; };
 		A4E5B8AC260FE9B900DBA784 /* EMSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B8AB260FE9B900DBA784 /* EMSTimer.swift */; };
 		A4F755F4261E29B100133E80 /* DictionaryConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F755F3261E29B100133E80 /* DictionaryConvertable.swift */; };
+		A4F755FD261E72E400133E80 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F755FC261E72E400133E80 /* Int.swift */; };
 		A4FBBC31261CD0AB00B8CE81 /* EMSCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4FBBC2F261CD0AB00B8CE81 /* EMSCoreData.xcdatamodeld */; };
 		A4FBBC6F261CEDCA00B8CE81 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FBBC6E261CEDCA00B8CE81 /* Training.swift */; };
 		A4FBBC75261CEDED00B8CE81 /* TrainingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FBBC74261CEDED00B8CE81 /* TrainingValue.swift */; };
@@ -278,6 +279,7 @@
 		A4DB5CD0261B704E003CBE05 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		A4E5B8AB260FE9B900DBA784 /* EMSTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSTimer.swift; sourceTree = "<group>"; };
 		A4F755F3261E29B100133E80 /* DictionaryConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryConvertable.swift; sourceTree = "<group>"; };
+		A4F755FC261E72E400133E80 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		A4FBBC30261CD0AB00B8CE81 /* EMSCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EMSCoreData.xcdatamodel; sourceTree = "<group>"; };
 		A4FBBC6E261CEDCA00B8CE81 /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
 		A4FBBC74261CEDED00B8CE81 /* TrainingValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingValue.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 				A421545A25F515630094C1CB /* StoryboardLodable.swift */,
 				A477973625FFDE64006AF564 /* UIViewController.swift */,
 				A41C90152600AA4500192BDD /* Bundle.swift */,
+				A4F755FC261E72E400133E80 /* Int.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1254,6 +1257,7 @@
 				A41C8F982600060800192BDD /* AccountViewController.swift in Sources */,
 				A477972F25FFDE38006AF564 /* Presentable.swift in Sources */,
 				A40A4EDF2607DABB00F07342 /* RegistrationViewModel.swift in Sources */,
+				A4F755FD261E72E400133E80 /* Int.swift in Sources */,
 				A46337A825E087A4000B51F7 /* RegisterData.swift in Sources */,
 				A4FBBC75261CEDED00B8CE81 /* TrainingValue.swift in Sources */,
 				A406E49925F533AC0044E284 /* UserService.swift in Sources */,

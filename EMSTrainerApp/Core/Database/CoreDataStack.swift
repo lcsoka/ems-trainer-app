@@ -26,6 +26,7 @@ class CoreDataStack {
         
         mainContext = persistentContainer.viewContext
         backgroundContext = persistentContainer.newBackgroundContext()
+//        backgroundContext.mergePolicy = NSMergePolicy(merge: .mergeByPropertyObjectTrumpMergePolicyType)
     }
 
 }

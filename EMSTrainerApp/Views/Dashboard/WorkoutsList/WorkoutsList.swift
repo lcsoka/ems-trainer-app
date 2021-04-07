@@ -23,7 +23,7 @@ class WorkoutsList: UIView, CustomViewProtocol {
     
     var delegate: WorkoutListDelegate?
     
-    private var items: [Int] = [] {
+    var items: [Training] = [] {
         didSet {
             UIView.animate(withDuration: 0.2, animations: {
                 self.invalidateIntrinsicContentSize()
@@ -59,6 +59,7 @@ class WorkoutsList: UIView, CustomViewProtocol {
         } else {
             for item in items {
                 let view = WorkoutListItem()
+                view.workout = item
                 stackView.addArrangedSubview(view)
             }
         }

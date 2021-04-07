@@ -7,6 +7,11 @@
         <attribute name="offline" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="trainingMode" optional="YES" attributeType="String"/>
         <relationship name="trainingValues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrainingValue" inverseName="training" inverseEntity="TrainingValue"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="TrainingValue" representedClassName=".TrainingValue" syncable="YES" codeGenerationType="category">
         <attribute name="master" optional="YES" attributeType="Integer 32" minValueString="0" maxValueString="100" defaultValueString="0" usesScalarValueType="YES"/>

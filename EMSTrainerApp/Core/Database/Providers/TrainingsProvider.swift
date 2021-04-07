@@ -17,6 +17,9 @@ public class TrainingsProvider {
     let backgroundcontext: NSManagedObjectContext
     let mainContext: NSManagedObjectContext
     
+    // MARK: - NSFetchedResultsController
+    weak var fetchedResultsControllerDelegate: NSFetchedResultsControllerDelegate?
+    
     // MARK: - Init
     init(api: ApiService, mainContext: NSManagedObjectContext = CoreDataStack.shared.mainContext,
          backgroundContext: NSManagedObjectContext = CoreDataStack.shared.backgroundContext) {
@@ -26,75 +29,84 @@ public class TrainingsProvider {
     }
     
     func fetchTrainings() {
-        
-        mainContext.performAndWait {
-            do {
-                let trainings = try mainContext.fetch(Training.fetchRequest()) as! [Training]
-                for training in trainings {
-                    
-                    print(training.trainingValues?.allObjects)
-                }
-            } catch let error {
-                print("Failed to fetch: \(error)")
-            }
-        }
+//
+//        mainContext.performAndWait {
+//            do {
+//                let trainings = try mainContext.fetch(Training.fetchRequest()) as! [Training]
+//                for training in trainings {
+//
+//                    print(training.trainingValues?.allObjects)
+//                }
+//            } catch let error {
+//                print("Failed to fetch: \(error)")
+//            }
+//        }
         
         //
         
-//                api.get(MeResource(), params: nil, onSuccess: { response in
-//                    if let trainings = response?.trainings {
-//                        self.importTrainings(from:trainings)
-//                    }
-//                }, onError: { error in
-//
-//                })
+        api.get(MeResource(), params: nil, onSuccess: { response in
+            if let trainings = response?.trainings {
+                // Just in case order them by id
+                self.importTrainings(from:trainings.sorted(by:{$0.id < $1.id}))
+            }
+        }, onError: { error in
+            
+        })
     }
     
     
     private func importTrainings(from trainings: [TrainingJSON]) {
-        for training in trainings {
-            if let trainingObject = insertTraining(from: training) {
-                let objectID = trainingObject.objectID
-                for value in training.values {
-                    insertTrainingValue(from: value, for: objectID)
-                }
+        let trainingIds = trainings.map { $0.id }
+
+        let fetchRequest = NSFetchRequest<Training>(entityName: "Training")
+        fetchRequest.predicate = NSPredicate(format:"id IN %@", trainingIds)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+
+        var trainingObjects: [Training] = []
+        
+        // Fetch existing trainings
+        self.mainContext.performAndWait {
+            do {
+                trainingObjects = try mainContext.fetch(fetchRequest)
+            } catch let error {
+                print("Couldn't fetch trainings. \(error.localizedDescription)")
             }
-        }
-    }
-    
-    private func insertTraining(from json: TrainingJSON ) -> Training? {
-        var training: Training?
-        self.backgroundcontext.performAndWait {
-            let trainingObject = Training(context: self.backgroundcontext)
-            // Set up data
-            trainingObject.id = Int32(json.id)
-            trainingObject.length = Int32(json.length)
-            trainingObject.trainingMode = json.trainingMode
-            trainingObject.createdAt = json.createdAt
-            
-            training = trainingObject
-            
-            try? backgroundcontext.save()
-        }
-        return training
-    }
-    
-    private func insertTrainingValue(from json: TrainingValueJSON, for objectID: NSManagedObjectID) -> TrainingValue? {
-        var trainingValue: TrainingValue?
-        self.backgroundcontext.performAndWait {
-            let trainingValueObject = TrainingValue(context: self.backgroundcontext)
-            
-            trainingValueObject.timestamp = Int32(json.timestamp)
-            trainingValueObject.master = Int32(json.master)
-            
-            if let training = backgroundcontext.object(with: objectID) as? Training {
-                trainingValueObject.training = training
-            }
-            
-            trainingValue = trainingValueObject
-            try? backgroundcontext.save()
         }
         
-        return trainingValue
+        self.backgroundcontext.performAndWait {
+            for i in 0..<trainings.count {
+                var trainingObject: Training
+                
+                if i <= trainingObjects.count - 1 {
+                    // Existing training
+                    trainingObject = backgroundcontext.object(with: trainingObjects[i].objectID) as! Training
+                    let trainingValues = trainingObject.trainingValues?.allObjects as! [TrainingValue]
+                    for item in trainingValues.sorted(by: {$0.timestamp < $1.timestamp}).enumerated() {
+                        let trainingValue = trainings[i].values[item.offset]
+                        let trainingValueObject = item.element
+                        trainingValueObject.timestamp = Int32(trainingValue.timestamp)
+                        trainingValueObject.master = Int32(trainingValue.master)
+                    }
+                } else {
+                    // New training
+                    trainingObject = Training(context: self.backgroundcontext)
+                    // Add training values
+                    for trainingValue in trainings[i].values {
+                        let trainingValueObject = TrainingValue(context: self.backgroundcontext)
+                        trainingValueObject.timestamp = Int32(trainingValue.timestamp)
+                        trainingValueObject.master = Int32(trainingValue.master)
+                        trainingValueObject.training = trainingObject
+                    }
+                }
+                
+                // Set up data
+                trainingObject.id = Int32(trainings[i].id)
+                trainingObject.length = Int32(trainings[i].length)
+                trainingObject.trainingMode = trainings[i].trainingMode
+                trainingObject.createdAt = trainings[i].createdAt
+            }
+            try? backgroundcontext.save()
+        }
     }
+    
 }

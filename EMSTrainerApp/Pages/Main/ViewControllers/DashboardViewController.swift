@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 protocol DashboardViewControllerDelegate: class {
     func userDidRequestAccountPage()
@@ -13,6 +14,8 @@ protocol DashboardViewControllerDelegate: class {
 }
 
 class DashboardViewController: UIViewController, MainStoryboardLodable {
+    
+    var initial = true
     
     weak var authDelegate: AuthenticationDelegate?
     
@@ -29,7 +32,21 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
         setupUI()
         
         workoutListView.delegate = self
-        viewModel.test()
+        viewModel.fetchedLastThreeWorkoutsController.delegate = self
+        
+        if let workouts = viewModel.fetchedLastThreeWorkoutsController.fetchedObjects {
+            workoutListView.items = workouts
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !initial {
+            viewModel.refresh()
+        }
+        
+        initial = false
     }
     
     func setupUI() {
@@ -53,5 +70,19 @@ extension DashboardViewController: WorkoutListDelegate {
     func onItemsChanged() {
         view.setNeedsLayout()
         view.layoutIfNeeded()
+    }
+}
+
+extension DashboardViewController: NSFetchedResultsControllerDelegate {
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        print("Workouts changed update lol")
+        }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        print("Workouts changed")
+        if let workouts = viewModel.fetchedLastThreeWorkoutsController.fetchedObjects {
+            workoutListView.items = workouts
+        }
     }
 }
