@@ -23,6 +23,13 @@ final class LoginViewController: UIViewController, AuthenticationStoryboardLodab
         }
     }
     
+    private lazy var spinner: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .whiteLarge)
+        indicator.color = .gray
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
+    
     @IBOutlet var emailInput: BorderTextField! {
         didSet {
             emailInput.bind { self.viewModel.email.value = $0 }
@@ -32,6 +39,37 @@ final class LoginViewController: UIViewController, AuthenticationStoryboardLodab
         didSet {
             passwordInput.bind { self.viewModel.password.value = $0 }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if spinner.superview == nil, let superView = view {
+            superView.addSubview(spinner)
+            superView.bringSubviewToFront(spinner)
+            spinner.translatesAutoresizingMaskIntoConstraints = false
+            spinner.centerXAnchor.constraint(equalTo: superView.centerXAnchor).isActive = true
+            spinner.centerYAnchor.constraint(equalTo: superView.centerYAnchor).isActive = true
+        }
+    }
+    
+    /**
+     Enters  busy UI.
+     Ensures the buttons can't be pressed again when the app is busy.
+     */
+    private func enterBusyUI() {
+        navigationItem.rightBarButtonItem?.isEnabled = false
+        navigationItem.leftBarButtonItem?.isEnabled = false
+        spinner.startAnimating()
+    }
+
+    /**
+     Exits busy UI.
+     */
+    private func exitBusyUI() {
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
+        self.navigationItem.leftBarButtonItem?.isEnabled = true
+        self.spinner.stopAnimating()
     }
     
     override func viewDidLoad() {
@@ -52,8 +90,10 @@ final class LoginViewController: UIViewController, AuthenticationStoryboardLodab
     
     @IBAction func onLoginTap(_ sender: Any) {
         if viewModel.isValid {
+            enterBusyUI()
             viewModel.login()
         } else {
+            exitBusyUI()
             let errorMessage = viewModel.brokenRules[0].message
             showErrorAlert(message: errorMessage)
         }
@@ -63,9 +103,11 @@ final class LoginViewController: UIViewController, AuthenticationStoryboardLodab
 
 extension LoginViewController: LoginViewModelDelegate {
     func onSuccessfulLogin() {
+        exitBusyUI()
         self.authDelegate?.onAuthenticationStateChanged(loggedIn: true)
     }
     func onErrorLogin(error: AppError) {
+        exitBusyUI()
         if let apiError = error.messages[0] as? ApiErrorResponse.ApiError {
             showErrorAlert(message: apiError.errorMessage)
             return

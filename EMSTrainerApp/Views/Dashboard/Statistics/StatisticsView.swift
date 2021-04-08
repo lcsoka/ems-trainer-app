@@ -17,9 +17,12 @@ class StatisticsView: UIView, CustomViewProtocol {
     var workouts: [Training]! {
         didSet {
             lblWorkoutCount.text = "\(workouts.count)"
-            
+            if workouts.count > 0 {
             let avgTime = Int(workouts.map{$0.length}.reduce(.zero, +)) / workouts.count
             lblAvgTime.text = avgTime.toTimeString()
+            } else {
+                lblAvgTime.text = "N/A"
+            }
         }
     }
     
