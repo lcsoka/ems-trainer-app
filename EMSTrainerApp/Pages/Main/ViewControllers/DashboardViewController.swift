@@ -10,6 +10,7 @@ import CoreData
 
 protocol DashboardViewControllerDelegate: class {
     func userDidRequestAccountPage()
+    func userDidRequestWorkoutListPage()
     func userDidRequestWorkoutSetupPage()
 }
 
@@ -25,6 +26,7 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
     
     @IBOutlet var statisticsView: StatisticsView!
     @IBOutlet var workoutListView: WorkoutsList!
+    @IBOutlet var btnShowWorkoutList: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,10 +65,20 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
         self.delegate?.userDidRequestWorkoutSetupPage()
     }
     
+    @IBAction func onShowMoreWorkoutTap(_ sender: Any) {
+        self.delegate?.userDidRequestWorkoutListPage()
+    }
+    
     private func setUpViews() {
         if let workouts = viewModel.fetchAllWorkouts.fetchedObjects {
             workoutListView.items = Array(workouts.prefix(3))
             statisticsView.workouts = workouts
+            
+            if workouts.count > 0 {
+                btnShowWorkoutList.isHidden = false
+            } else {
+                btnShowWorkoutList.isHidden = true
+            }
         }
     }
     

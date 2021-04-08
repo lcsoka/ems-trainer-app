@@ -25,11 +25,11 @@ class WorkoutsList: UIView, CustomViewProtocol {
     
     var items: [Training] = [] {
         didSet {
-            UIView.animate(withDuration: 0.2, animations: {
+//            UIView.animate(withDuration: 0.2, animations: {
                 self.invalidateIntrinsicContentSize()
                 self.setupView()
                 self.delegate?.onItemsChanged()
-            })
+//            })
         }
     }
     

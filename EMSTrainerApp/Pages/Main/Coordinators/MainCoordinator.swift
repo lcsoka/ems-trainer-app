@@ -57,6 +57,12 @@ final class MainCoordinator: NavigationCoordinator {
         navigationController.present(vc, animated: true)
     }
     
+    private func showWorkoutList() {
+        let vc = container.resolve(WorkoutListViewController.self)!
+        
+        navigationController.pushViewController(vc, animated: true)
+        
+    }
     
     private func showWorkoutSetup() {
         let vc = container.resolve(WorkoutSetupViewController.self)!
@@ -87,6 +93,10 @@ extension MainCoordinator: AuthenticationDelegate {
 extension MainCoordinator: DashboardViewControllerDelegate {
     func userDidRequestAccountPage() {
         showAccount()
+    }
+    
+    func userDidRequestWorkoutListPage() {
+        showWorkoutList()
     }
     
     func userDidRequestWorkoutSetupPage() {

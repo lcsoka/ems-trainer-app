@@ -120,6 +120,8 @@
 		A4E5B8AC260FE9B900DBA784 /* EMSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B8AB260FE9B900DBA784 /* EMSTimer.swift */; };
 		A4F755F4261E29B100133E80 /* DictionaryConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F755F3261E29B100133E80 /* DictionaryConvertable.swift */; };
 		A4F755FD261E72E400133E80 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F755FC261E72E400133E80 /* Int.swift */; };
+		A4F75603261FA20B00133E80 /* WorkoutListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F75602261FA20B00133E80 /* WorkoutListViewController.swift */; };
+		A4F7560B261FA33000133E80 /* WorkoutListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7560A261FA33000133E80 /* WorkoutListViewModel.swift */; };
 		A4FBBC31261CD0AB00B8CE81 /* EMSCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4FBBC2F261CD0AB00B8CE81 /* EMSCoreData.xcdatamodeld */; };
 		A4FBBC6F261CEDCA00B8CE81 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FBBC6E261CEDCA00B8CE81 /* Training.swift */; };
 		A4FBBC75261CEDED00B8CE81 /* TrainingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FBBC74261CEDED00B8CE81 /* TrainingValue.swift */; };
@@ -280,6 +282,8 @@
 		A4E5B8AB260FE9B900DBA784 /* EMSTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSTimer.swift; sourceTree = "<group>"; };
 		A4F755F3261E29B100133E80 /* DictionaryConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryConvertable.swift; sourceTree = "<group>"; };
 		A4F755FC261E72E400133E80 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		A4F75602261FA20B00133E80 /* WorkoutListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListViewController.swift; sourceTree = "<group>"; };
+		A4F7560A261FA33000133E80 /* WorkoutListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListViewModel.swift; sourceTree = "<group>"; };
 		A4FBBC30261CD0AB00B8CE81 /* EMSCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EMSCoreData.xcdatamodel; sourceTree = "<group>"; };
 		A4FBBC6E261CEDCA00B8CE81 /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
 		A4FBBC74261CEDED00B8CE81 /* TrainingValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingValue.swift; sourceTree = "<group>"; };
@@ -494,6 +498,7 @@
 				A41C90102600A9D100192BDD /* WorkoutSetupViewModel.swift */,
 				A40E38E7260F8D9300104A59 /* WorkoutViewModel.swift */,
 				A4DB5CD0261B704E003CBE05 /* DashboardViewModel.swift */,
+				A4F7560A261FA33000133E80 /* WorkoutListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -564,6 +569,7 @@
 				A41C8F972600060800192BDD /* AccountViewController.swift */,
 				A41C8FAD260011B600192BDD /* WorkoutSetupViewController.swift */,
 				A40A4EF42608011100F07342 /* WorkoutViewController.swift */,
+				A4F75602261FA20B00133E80 /* WorkoutListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1230,6 +1236,7 @@
 				A48B658F25F6D897009D6CCD /* RoundedView.swift in Sources */,
 				A40A4EE52607DB4A00F07342 /* FormViewModel.swift in Sources */,
 				A40EE4D026015EAA002E422B /* WebsocketClient.swift in Sources */,
+				A4F75603261FA20B00133E80 /* WorkoutListViewController.swift in Sources */,
 				A495801425E051B400923B7F /* ApiErrorResponse.swift in Sources */,
 				A4A3A37025FD1FAF000323CF /* WaveView.swift in Sources */,
 				A46337AD25E08811000B51F7 /* RegisterResource.swift in Sources */,
@@ -1266,6 +1273,7 @@
 				A4FBBC8B261D0A6B00B8CE81 /* TrainingsResponse.swift in Sources */,
 				A41C90242600F11700192BDD /* TrainingModeSelectorView.swift in Sources */,
 				A4FBBC7B261CF8DC00B8CE81 /* CoreDataStack.swift in Sources */,
+				A4F7560B261FA33000133E80 /* WorkoutListViewModel.swift in Sources */,
 				A4A495A825DC50E800636B66 /* User.swift in Sources */,
 				A48B659925F6E4C9009D6CCD /* RoundedButton.swift in Sources */,
 				A46337D825E12246000B51F7 /* NetworkEngine.swift in Sources */,
