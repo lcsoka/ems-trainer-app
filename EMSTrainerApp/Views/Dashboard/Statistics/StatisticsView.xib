@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StatisticsView" customModule="EMSTrainerApp" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="RMm-sb-WbF"/>
+                <outlet property="lblAvgTime" destination="dlz-NH-uGt" id="m5N-bK-W7I"/>
+                <outlet property="lblWorkoutCount" destination="wo2-Bo-W0P" id="FtW-Hg-FpD"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

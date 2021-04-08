@@ -123,6 +123,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="statisticsView" destination="eAa-GQ-tjX" id="re9-7s-fb1"/>
                         <outlet property="workoutListView" destination="9Jq-s4-Sjb" id="jNT-aB-69k"/>
                     </connections>
                 </viewController>

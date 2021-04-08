@@ -10,53 +10,23 @@ import CoreData
 
 public class TrainingsProvider {
     
-    // MARK: - Api
-    private let api: ApiService
-    
     // MARK: - Contexts
     let backgroundcontext: NSManagedObjectContext
     let mainContext: NSManagedObjectContext
     
-    // MARK: - NSFetchedResultsController
-    weak var fetchedResultsControllerDelegate: NSFetchedResultsControllerDelegate?
-    
     // MARK: - Init
-    init(api: ApiService, mainContext: NSManagedObjectContext = CoreDataStack.shared.mainContext,
+    init(mainContext: NSManagedObjectContext = CoreDataStack.shared.mainContext,
          backgroundContext: NSManagedObjectContext = CoreDataStack.shared.backgroundContext) {
-        self.api = api
         self.mainContext = mainContext
         self.backgroundcontext = backgroundContext
     }
-    
-    func fetchTrainings() {
-//
-//        mainContext.performAndWait {
-//            do {
-//                let trainings = try mainContext.fetch(Training.fetchRequest()) as! [Training]
-//                for training in trainings {
-//
-//                    print(training.trainingValues?.allObjects)
-//                }
-//            } catch let error {
-//                print("Failed to fetch: \(error)")
-//            }
-//        }
         
-        //
+    func importTrainings(from trainings: [TrainingJSON]) {
+        // Just in case order them by id
+        let sortedTrainings = trainings.sorted(by:{$0.id < $1.id})
         
-        api.get(MeResource(), params: nil, onSuccess: { response in
-            if let trainings = response?.trainings {
-                // Just in case order them by id
-                self.importTrainings(from:trainings.sorted(by:{$0.id < $1.id}))
-            }
-        }, onError: { error in
-            
-        })
-    }
-    
-    
-    private func importTrainings(from trainings: [TrainingJSON]) {
-        let trainingIds = trainings.map { $0.id }
+        // Get an array of the ids
+        let trainingIds = sortedTrainings.map { $0.id }
 
         let fetchRequest = NSFetchRequest<Training>(entityName: "Training")
         fetchRequest.predicate = NSPredicate(format:"id IN %@", trainingIds)
@@ -74,7 +44,7 @@ public class TrainingsProvider {
         }
         
         self.backgroundcontext.performAndWait {
-            for i in 0..<trainings.count {
+            for i in 0..<sortedTrainings.count {
                 var trainingObject: Training
                 
                 if i <= trainingObjects.count - 1 {
@@ -82,7 +52,7 @@ public class TrainingsProvider {
                     trainingObject = backgroundcontext.object(with: trainingObjects[i].objectID) as! Training
                     let trainingValues = trainingObject.trainingValues?.allObjects as! [TrainingValue]
                     for item in trainingValues.sorted(by: {$0.timestamp < $1.timestamp}).enumerated() {
-                        let trainingValue = trainings[i].values[item.offset]
+                        let trainingValue = sortedTrainings[i].values[item.offset]
                         let trainingValueObject = item.element
                         trainingValueObject.timestamp = Int32(trainingValue.timestamp)
                         trainingValueObject.master = Int32(trainingValue.master)
@@ -91,7 +61,7 @@ public class TrainingsProvider {
                     // New training
                     trainingObject = Training(context: self.backgroundcontext)
                     // Add training values
-                    for trainingValue in trainings[i].values {
+                    for trainingValue in sortedTrainings[i].values {
                         let trainingValueObject = TrainingValue(context: self.backgroundcontext)
                         trainingValueObject.timestamp = Int32(trainingValue.timestamp)
                         trainingValueObject.master = Int32(trainingValue.master)
@@ -100,13 +70,28 @@ public class TrainingsProvider {
                 }
                 
                 // Set up data
-                trainingObject.id = Int32(trainings[i].id)
-                trainingObject.length = Int32(trainings[i].length)
-                trainingObject.trainingMode = trainings[i].trainingMode
-                trainingObject.createdAt = trainings[i].createdAt
+                trainingObject.id = Int32(sortedTrainings[i].id)
+                trainingObject.length = Int32(sortedTrainings[i].length)
+                trainingObject.trainingMode = sortedTrainings[i].trainingMode
+                trainingObject.createdAt = sortedTrainings[i].createdAt
             }
             try? backgroundcontext.save()
         }
+        
+        // Should reset cache after successful insert
+        mainContext.reset()
     }
     
+    func deleteAll() {
+        backgroundcontext.perform {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Training")
+            let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+            batchDeleteRequest.resultType = .resultTypeCount
+            
+            // Execute the batch insert
+            if let batchDeleteResult = try? self.backgroundcontext.execute(batchDeleteRequest) as? NSBatchDeleteResult,
+                batchDeleteResult.result != nil {
+            }
+        }
+    }
 }

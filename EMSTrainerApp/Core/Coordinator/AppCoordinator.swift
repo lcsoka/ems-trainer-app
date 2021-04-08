@@ -72,6 +72,11 @@ extension AppCoordinator: AuthenticationCoordinatorDelegate {
 
 extension AppCoordinator: MainCoordinatorDelegate {
     func mainCoordinatorFinish() {
+        
+        // Delete Core Data
+        let trainingsProvider = container.resolve(TrainingsProvider.self)
+        trainingsProvider?.deleteAll()
+        
         childCoordinators[.main] = nil
         showAuthentication()
     }

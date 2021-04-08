@@ -23,6 +23,7 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
     
     var viewModel: DashboardViewModel!
     
+    @IBOutlet var statisticsView: StatisticsView!
     @IBOutlet var workoutListView: WorkoutsList!
     
     override func viewDidLoad() {
@@ -32,11 +33,9 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
         setupUI()
         
         workoutListView.delegate = self
-        viewModel.fetchedLastThreeWorkoutsController.delegate = self
+        viewModel.fetchAllWorkouts.delegate = self
         
-        if let workouts = viewModel.fetchedLastThreeWorkoutsController.fetchedObjects {
-            workoutListView.items = workouts
-        }
+        setUpViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +63,13 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
         self.delegate?.userDidRequestWorkoutSetupPage()
     }
     
+    private func setUpViews() {
+        if let workouts = viewModel.fetchAllWorkouts.fetchedObjects {
+            workoutListView.items = Array(workouts.prefix(3))
+            statisticsView.workouts = workouts
+        }
+    }
+    
 }
 
 extension DashboardViewController: WorkoutListDelegate {
@@ -73,16 +79,8 @@ extension DashboardViewController: WorkoutListDelegate {
     }
 }
 
-extension DashboardViewController: NSFetchedResultsControllerDelegate {
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        print("Workouts changed update lol")
-        }
-    
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        print("Workouts changed")
-        if let workouts = viewModel.fetchedLastThreeWorkoutsController.fetchedObjects {
-            workoutListView.items = workouts
-        }
+extension DashboardViewController: NSFetchedResultsControllerDelegate { 
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChangeContentWith snapshot: NSDiffableDataSourceSnapshotReference) {
+        setUpViews()
     }
 }

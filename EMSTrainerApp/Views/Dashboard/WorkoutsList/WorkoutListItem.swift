@@ -16,7 +16,7 @@ class WorkoutListItem: UIView, CustomViewProtocol {
     
     var workout: Training! {
         didSet {
-            lblType.text = "\(workout.trainingMode!.capitalized) Workout \(workout.id)"
+            lblType.text = "\(workout.trainingMode!.capitalized) Workout"
             lblLength.text = Int(workout.length).toTimeString()
             let formatter = DateFormatter()
             formatter.dateStyle = .long

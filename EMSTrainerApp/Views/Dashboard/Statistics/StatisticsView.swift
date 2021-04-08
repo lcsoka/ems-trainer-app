@@ -11,6 +11,17 @@ import UIKit
 class StatisticsView: UIView, CustomViewProtocol {
     
     @IBOutlet var contentView: UIView!
+    @IBOutlet var lblWorkoutCount: UILabel!
+    @IBOutlet var lblAvgTime: UILabel!
+    
+    var workouts: [Training]! {
+        didSet {
+            lblWorkoutCount.text = "\(workouts.count)"
+            
+            let avgTime = Int(workouts.map{$0.length}.reduce(.zero, +)) / workouts.count
+            lblAvgTime.text = avgTime.toTimeString()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
