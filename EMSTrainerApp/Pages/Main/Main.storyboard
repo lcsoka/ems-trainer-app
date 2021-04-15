@@ -209,6 +209,12 @@
                                     <action selector="onLogoutTap:" destination="tlZ-XO-Noe" eventType="touchUpInside" id="HW3-35-l4o"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ems_logo" translatesAutoresizingMaskIntoConstraints="NO" id="LBy-C3-uyB">
+                                <rect key="frame" x="20" y="440" width="374" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="6Xy-uI-h8x"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NFX-Lb-uxF"/>
                         <color key="backgroundColor" name="Gray800"/>
@@ -218,11 +224,14 @@
                             <constraint firstItem="NFX-Lb-uxF" firstAttribute="trailing" secondItem="aWh-G0-bBd" secondAttribute="trailing" constant="20" id="7cP-Dn-KE0"/>
                             <constraint firstItem="aWh-G0-bBd" firstAttribute="centerX" secondItem="D2c-Gc-4DL" secondAttribute="centerX" id="7f4-bW-k9K"/>
                             <constraint firstItem="YS9-WU-2e1" firstAttribute="top" secondItem="XpD-Bl-cgf" secondAttribute="bottom" constant="8" symbolic="YES" id="AZh-Xu-dR1"/>
+                            <constraint firstItem="LBy-C3-uyB" firstAttribute="top" secondItem="YS9-WU-2e1" secondAttribute="bottom" constant="150" id="Eia-H9-INI"/>
                             <constraint firstItem="YIc-sS-TM1" firstAttribute="centerX" secondItem="D2c-Gc-4DL" secondAttribute="centerX" id="Gha-LO-Nk8"/>
+                            <constraint firstItem="LBy-C3-uyB" firstAttribute="leading" secondItem="NFX-Lb-uxF" secondAttribute="leading" constant="20" id="QdZ-2w-003"/>
                             <constraint firstItem="Vt6-aa-i1d" firstAttribute="leading" secondItem="NFX-Lb-uxF" secondAttribute="leading" id="Ruv-jj-h4F"/>
                             <constraint firstItem="YIc-sS-TM1" firstAttribute="top" secondItem="Vt6-aa-i1d" secondAttribute="bottom" constant="20" id="UuA-cL-vEN"/>
                             <constraint firstItem="Fju-kO-rEd" firstAttribute="centerX" secondItem="D2c-Gc-4DL" secondAttribute="centerX" id="WkZ-Gi-YFF"/>
                             <constraint firstItem="XpD-Bl-cgf" firstAttribute="top" secondItem="YIc-sS-TM1" secondAttribute="bottom" constant="20" id="Zsz-vw-jGr"/>
+                            <constraint firstItem="NFX-Lb-uxF" firstAttribute="trailing" secondItem="LBy-C3-uyB" secondAttribute="trailing" constant="20" id="iKQ-tj-D0Y"/>
                             <constraint firstItem="Vt6-aa-i1d" firstAttribute="trailing" secondItem="NFX-Lb-uxF" secondAttribute="trailing" id="jqI-yL-AFF"/>
                             <constraint firstItem="XpD-Bl-cgf" firstAttribute="centerX" secondItem="D2c-Gc-4DL" secondAttribute="centerX" id="oy9-oE-ZKw"/>
                             <constraint firstItem="aWh-G0-bBd" firstAttribute="leading" secondItem="NFX-Lb-uxF" secondAttribute="leading" constant="20" id="qis-vy-56I"/>
@@ -744,8 +753,15 @@
         <designable name="8AF-8j-KYI">
             <size key="intrinsicContentSize" width="93" height="30"/>
         </designable>
+        <designable name="9Jq-s4-Sjb">
+            <size key="intrinsicContentSize" width="414" height="85"/>
+        </designable>
+        <designable name="eAa-GQ-tjX">
+            <size key="intrinsicContentSize" width="414" height="125"/>
+        </designable>
     </designables>
     <resources>
+        <image name="ems_logo" width="1000" height="500"/>
         <image name="play" catalog="system" width="120" height="128"/>
         <namedColor name="Gray600">
             <color red="0.30300000309944153" green="0.33300000429153442" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -754,10 +770,10 @@
             <color red="0.22400000691413879" green="0.25400000810623169" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Gray800">
-            <color red="0.12999999523162842" green="0.15999999642372131" blue="0.21199999749660492" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.12941176470588234" green="0.16078431372549018" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Green500">
-            <color red="0.33300000429153442" green="0.7160000205039978" blue="0.5220000147819519" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.33333333333333331" green="0.71764705882352942" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

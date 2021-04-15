@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GoR-m8-gPk" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
-                                <rect key="frame" x="44" y="272" width="340" height="324"/>
+                                <rect key="frame" x="44" y="314" width="340" height="324"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3ev-86-S4A">
                                         <rect key="frame" x="10" y="10" width="320" height="304"/>
@@ -149,20 +149,21 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fet-RS-bT8">
-                                <rect key="frame" x="44" y="94" width="340" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ems_logo" translatesAutoresizingMaskIntoConstraints="NO" id="fet-RS-bT8">
+                                <rect key="frame" x="20" y="64" width="388" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="EVn-eQ-G0E"/>
-                                    <constraint firstAttribute="width" constant="340" id="sln-N7-6SZ"/>
+                                    <constraint firstAttribute="height" constant="200" id="EVn-eQ-G0E"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AoJ-ig-enU"/>
                         <color key="backgroundColor" name="Gray800"/>
                         <constraints>
+                            <constraint firstItem="fet-RS-bT8" firstAttribute="leading" secondItem="Tde-uS-S4R" secondAttribute="leading" constant="20" id="Qe7-Dp-d9b"/>
+                            <constraint firstAttribute="trailing" secondItem="fet-RS-bT8" secondAttribute="trailing" constant="20" id="esx-uf-UuG"/>
                             <constraint firstItem="GoR-m8-gPk" firstAttribute="centerX" secondItem="Tde-uS-S4R" secondAttribute="centerX" id="n6Q-nq-QpZ"/>
                             <constraint firstItem="fet-RS-bT8" firstAttribute="centerX" secondItem="Tde-uS-S4R" secondAttribute="centerX" id="tR0-pd-x1H"/>
-                            <constraint firstItem="fet-RS-bT8" firstAttribute="top" secondItem="AoJ-ig-enU" secondAttribute="top" constant="50" id="vab-sR-n4C"/>
+                            <constraint firstItem="fet-RS-bT8" firstAttribute="top" secondItem="AoJ-ig-enU" secondAttribute="top" constant="20" id="vab-sR-n4C"/>
                             <constraint firstItem="GoR-m8-gPk" firstAttribute="top" secondItem="fet-RS-bT8" secondAttribute="bottom" constant="50" id="wx6-un-ZWf"/>
                         </constraints>
                     </view>
@@ -440,6 +441,7 @@
     </designables>
     <color key="tintColor" name="Green500"/>
     <resources>
+        <image name="ems_logo" width="1000" height="500"/>
         <namedColor name="Gray300">
             <color red="0.82400000095367432" green="0.83499997854232788" blue="0.85500001907348633" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -450,10 +452,10 @@
             <color red="0.22400000691413879" green="0.25400000810623169" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Gray800">
-            <color red="0.12999999523162842" green="0.15999999642372131" blue="0.21199999749660492" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.12941176470588234" green="0.16078431372549018" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Green500">
-            <color red="0.33300000429153442" green="0.7160000205039978" blue="0.5220000147819519" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.33333333333333331" green="0.71764705882352942" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
