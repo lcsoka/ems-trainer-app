@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeviceFinderView" customModule="EMSTrainerApp" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="yie-cw-LHw" id="5n4-PE-2jw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="442" height="337"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hs3-59-AfG" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="442" height="337"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yie-cw-LHw">
+                            <rect key="frame" x="0.0" y="0.0" width="442" height="337"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EkN-gp-0Qw">
+                                <size key="itemSize" width="422" height="100"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                            </collectionViewFlowLayout>
+                            <cells/>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" name="Gray700"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="yie-cw-LHw" secondAttribute="trailing" id="E5k-TC-guT"/>
+                        <constraint firstAttribute="bottom" secondItem="yie-cw-LHw" secondAttribute="bottom" id="FZo-K5-ws8"/>
+                        <constraint firstItem="yie-cw-LHw" firstAttribute="leading" secondItem="Hs3-59-AfG" secondAttribute="leading" id="KSi-WE-wp9"/>
+                        <constraint firstItem="yie-cw-LHw" firstAttribute="top" secondItem="Hs3-59-AfG" secondAttribute="top" id="dLF-ZQ-Kqi"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Hs3-59-AfG" secondAttribute="trailing" id="3cG-Mk-Qx0"/>
+                <constraint firstItem="Hs3-59-AfG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8Dc-cj-Yw9"/>
+                <constraint firstAttribute="bottom" secondItem="Hs3-59-AfG" secondAttribute="bottom" id="OPe-ax-Kfb"/>
+                <constraint firstItem="Hs3-59-AfG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Q1D-VE-ujf"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="13.043478260869566" y="-56.584821428571423"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Gray700">
+            <color red="0.22400000691413879" green="0.25400000810623169" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

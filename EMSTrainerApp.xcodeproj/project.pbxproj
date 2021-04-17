@@ -64,6 +64,9 @@
 		A421548A25F522500094C1CB /* AuthenticationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421548925F522500094C1CB /* AuthenticationDelegate.swift */; };
 		A42383832617810600248588 /* WorkoutsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42383822617810600248588 /* WorkoutsList.swift */; };
 		A42383882617811100248588 /* WorkoutsList.xib in Resources */ = {isa = PBXBuildFile; fileRef = A42383872617811100248588 /* WorkoutsList.xib */; };
+		A4285D44262B3B8F001BB304 /* DeviceFinderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4285D43262B3B8F001BB304 /* DeviceFinderView.xib */; };
+		A4285D49262B3BA3001BB304 /* DeviceFinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4285D48262B3BA3001BB304 /* DeviceFinderView.swift */; };
+		A4285D4E262B3E0E001BB304 /* FinderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4285D4D262B3E0E001BB304 /* FinderViewModel.swift */; };
 		A4335EBD260119D00098E79C /* DeviceRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4335EBB260119D00098E79C /* DeviceRowCollectionViewCell.swift */; };
 		A4335EBE260119D00098E79C /* DeviceRowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4335EBC260119D00098E79C /* DeviceRowCollectionViewCell.xib */; };
 		A45BADF925DC2C6B00F51D5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BADF825DC2C6B00F51D5E /* AppDelegate.swift */; };
@@ -111,6 +114,8 @@
 		A4A495A825DC50E800636B66 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A495A725DC50E800636B66 /* User.swift */; };
 		A4A495BF25DC71C400636B66 /* MeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A495BE25DC71C400636B66 /* MeResource.swift */; };
 		A4A495C425DC71D300636B66 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A495C325DC71D300636B66 /* UserResponse.swift */; };
+		A4B80BCE262B45BB00FCAB82 /* EmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B80BCC262B45BB00FCAB82 /* EmptyCollectionViewCell.swift */; };
+		A4B80BCF262B45BB00FCAB82 /* EmptyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4B80BCD262B45BB00FCAB82 /* EmptyCollectionViewCell.xib */; };
 		A4C17616261B39D700BFE12C /* StatisticsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C17615261B39D600BFE12C /* StatisticsView.xib */; };
 		A4DB5CBD261B6749003CBE05 /* NotEnoughDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DB5CBC261B6749003CBE05 /* NotEnoughDataView.xib */; };
 		A4DB5CC2261B6758003CBE05 /* NotEnoughDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB5CC1261B6758003CBE05 /* NotEnoughDataView.swift */; };
@@ -219,6 +224,9 @@
 		A421548925F522500094C1CB /* AuthenticationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDelegate.swift; sourceTree = "<group>"; };
 		A42383822617810600248588 /* WorkoutsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsList.swift; sourceTree = "<group>"; };
 		A42383872617811100248588 /* WorkoutsList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutsList.xib; sourceTree = "<group>"; };
+		A4285D43262B3B8F001BB304 /* DeviceFinderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceFinderView.xib; sourceTree = "<group>"; };
+		A4285D48262B3BA3001BB304 /* DeviceFinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFinderView.swift; sourceTree = "<group>"; };
+		A4285D4D262B3E0E001BB304 /* FinderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderViewModel.swift; sourceTree = "<group>"; };
 		A4335EBB260119D00098E79C /* DeviceRowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRowCollectionViewCell.swift; sourceTree = "<group>"; };
 		A4335EBC260119D00098E79C /* DeviceRowCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceRowCollectionViewCell.xib; sourceTree = "<group>"; };
 		A45BADF525DC2C6B00F51D5E /* EMSTrainerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMSTrainerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,6 +281,8 @@
 		A4A495A725DC50E800636B66 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A4A495BE25DC71C400636B66 /* MeResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeResource.swift; sourceTree = "<group>"; };
 		A4A495C325DC71D300636B66 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		A4B80BCC262B45BB00FCAB82 /* EmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewCell.swift; sourceTree = "<group>"; };
+		A4B80BCD262B45BB00FCAB82 /* EmptyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCollectionViewCell.xib; sourceTree = "<group>"; };
 		A4C17615261B39D600BFE12C /* StatisticsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatisticsView.xib; sourceTree = "<group>"; };
 		A4DB5CBC261B6749003CBE05 /* NotEnoughDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotEnoughDataView.xib; sourceTree = "<group>"; };
 		A4DB5CC1261B6758003CBE05 /* NotEnoughDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotEnoughDataView.swift; sourceTree = "<group>"; };
@@ -374,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				A40A4EE42607DB4A00F07342 /* FormViewModel.swift */,
+				A4285D4D262B3E0E001BB304 /* FinderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -455,6 +466,7 @@
 		A41C8FC1260014FA00192BDD /* Finder */ = {
 			isa = PBXGroup;
 			children = (
+				A4285D52262B403A001BB304 /* ViewModel */,
 				A41C8FBB260014A200192BDD /* Protocols */,
 				A41C8FC22600150B00192BDD /* MDNSFinder.swift */,
 			);
@@ -585,6 +597,24 @@
 				A4DB5CCB261B6A23003CBE05 /* WorkoutListItem.swift */,
 			);
 			path = WorkoutsList;
+			sourceTree = "<group>";
+		};
+		A4285D42262B3B78001BB304 /* DeviceFinderView */ = {
+			isa = PBXGroup;
+			children = (
+				A4285D43262B3B8F001BB304 /* DeviceFinderView.xib */,
+				A4285D48262B3BA3001BB304 /* DeviceFinderView.swift */,
+				A4B80BCC262B45BB00FCAB82 /* EmptyCollectionViewCell.swift */,
+				A4B80BCD262B45BB00FCAB82 /* EmptyCollectionViewCell.xib */,
+			);
+			path = DeviceFinderView;
+			sourceTree = "<group>";
+		};
+		A4285D52262B403A001BB304 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		A4335EB026010C8B0098E79C /* DeviceRow */ = {
@@ -837,6 +867,7 @@
 		A48B658D25F6D87F009D6CCD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A4285D42262B3B78001BB304 /* DeviceFinderView */,
 				A4898FC0260FE0560027D4BC /* ProgressView */,
 				A4335EB026010C8B0098E79C /* DeviceRow */,
 				A48B658E25F6D897009D6CCD /* RoundedView.swift */,
@@ -1080,8 +1111,10 @@
 				A4C17616261B39D700BFE12C /* StatisticsView.xib in Resources */,
 				A4DB5CBD261B6749003CBE05 /* NotEnoughDataView.xib in Resources */,
 				A4335EBE260119D00098E79C /* DeviceRowCollectionViewCell.xib in Resources */,
+				A4B80BCF262B45BB00FCAB82 /* EmptyCollectionViewCell.xib in Resources */,
 				A41C8FFD2600A56C00192BDD /* TrainingModes.json in Resources */,
 				A49D57BE261B2E7000E9E744 /* Main.storyboard in Resources */,
+				A4285D44262B3B8F001BB304 /* DeviceFinderView.xib in Resources */,
 				A42383882617811100248588 /* WorkoutsList.xib in Resources */,
 				A4DB5CC7261B6A17003CBE05 /* WorkoutListItem.xib in Resources */,
 				A45BAE0225DC2C6D00F51D5E /* Assets.xcassets in Resources */,
@@ -1236,6 +1269,7 @@
 				A48B658F25F6D897009D6CCD /* RoundedView.swift in Sources */,
 				A40A4EE52607DB4A00F07342 /* FormViewModel.swift in Sources */,
 				A40EE4D026015EAA002E422B /* WebsocketClient.swift in Sources */,
+				A4285D49262B3BA3001BB304 /* DeviceFinderView.swift in Sources */,
 				A4F75603261FA20B00133E80 /* WorkoutListViewController.swift in Sources */,
 				A495801425E051B400923B7F /* ApiErrorResponse.swift in Sources */,
 				A4A3A37025FD1FAF000323CF /* WaveView.swift in Sources */,
@@ -1297,10 +1331,12 @@
 				A48B650325F53FEA009D6CCD /* UserDefaultsTokenService.swift in Sources */,
 				A45BADFB25DC2C6B00F51D5E /* SceneDelegate.swift in Sources */,
 				A40A4EF02607E8F700F07342 /* LoginViewModel.swift in Sources */,
+				A4B80BCE262B45BB00FCAB82 /* EmptyCollectionViewCell.swift in Sources */,
 				A41C8F9325FFFA2700192BDD /* CustomViewProtocol.swift in Sources */,
 				A421547925F51F760094C1CB /* MainCoordinator.swift in Sources */,
 				A40E38E8260F8D9300104A59 /* WorkoutViewModel.swift in Sources */,
 				A4FBBC6F261CEDCA00B8CE81 /* Training.swift in Sources */,
+				A4285D4E262B3E0E001BB304 /* FinderViewModel.swift in Sources */,
 				A4F755F4261E29B100133E80 /* DictionaryConvertable.swift in Sources */,
 				A4FBBC9F261E0E2300B8CE81 /* TrainingValueJSON.swift in Sources */,
 				A45BAE4125DC35F400F51D5E /* NetworkRequest.swift in Sources */,

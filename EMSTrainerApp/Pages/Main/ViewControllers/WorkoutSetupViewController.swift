@@ -23,6 +23,7 @@ class WorkoutSetupViewController: UIViewController, MainStoryboardLodable {
     @IBOutlet var deviceLoaderIndicator: UIActivityIndicatorView!
     @IBOutlet var stackView: UIStackView!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var deviceFinderView: DeviceFinderView!
     
     @IBOutlet var btnStart: RoundedButton!
     
@@ -44,10 +45,7 @@ class WorkoutSetupViewController: UIViewController, MainStoryboardLodable {
     func setupUI() {
         title = "Workout"
         self.extendedLayoutIncludesOpaqueBars = true
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib.init(nibName: deviceCellIdentifier, bundle: nil), forCellWithReuseIdentifier: deviceCellIdentifier)
-        collectionView.backgroundColor = .clear
+        deviceFinderView.viewModel = viewModel
         trainingModeSelector.delegate = self
     }
     
@@ -69,64 +67,21 @@ class WorkoutSetupViewController: UIViewController, MainStoryboardLodable {
     }
 }
 
-extension WorkoutSetupViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.devices.isEmpty ? 1 : viewModel.devices.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if viewModel.devices.isEmpty {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyCell", for: indexPath as IndexPath)
-            return cell
-        } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: deviceCellIdentifier, for: indexPath) as! DeviceRowCollectionViewCell
-            let device = viewModel.devices.map{$0.value.host}[indexPath.row]
-            cell.chosen = device == viewModel.selectedDevice
-            cell.device = device
-            return cell
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) as? DeviceRowCollectionViewCell {
-//            cell.chosen = true
-            viewModel.selectedDevice = cell.device
-            collectionView.reloadData()
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) as? DeviceRowCollectionViewCell {
-//            cell.chosen = false
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if viewModel.devices.isEmpty {
-            return CGSize(width: collectionView.frame.width - 20, height: collectionView.frame.height - 20)
-        } else {
-            return CGSize(width: collectionView.frame.width - 20, height: 80)
-        }
-    }
-}
-
+// MARK: TrainingModeSelectorViewDelegate
 extension WorkoutSetupViewController: TrainingModeSelectorViewDelegate {
     func onTrainingModeSelected(_ mode: TrainingMode) {
         viewModel.selectedMode = mode
     }
 }
-
+// MARK: WorkoutSetupViewModelDelegate
 extension WorkoutSetupViewController: WorkoutSetupViewModelDelegate {
     func onDataChange() {
         refreshView()
     }
-    
+}
+// MARK: FinderViewModelDelegate
+extension WorkoutSetupViewController: FinderViewModelDelegate {
     func onDeviceListRefresh() {
-        collectionView.reloadData()
+        deviceFinderView.reloadData()
     }
 }

@@ -11,6 +11,7 @@ protocol WorkoutViewModelDelegate {
     func onMasterChanged(value: Int)
     func onChannelChanged(channel: ChannelData)
     func onTimeTick()
+    func askForReconnect()
 }
 class WorkoutViewModel {
     var client: EMSClient! {
@@ -83,7 +84,9 @@ extension WorkoutViewModel: EMSDelegate {
     }
     
     func onConnectionLost() {
-        
+        // Pause training
+        self.pauseWorkout()
+        self.delegate?.askForReconnect()
     }
     
     func onBatteryChanged(_ percentage: Int) {
