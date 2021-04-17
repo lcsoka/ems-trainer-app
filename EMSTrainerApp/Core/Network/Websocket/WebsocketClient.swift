@@ -56,6 +56,12 @@ class WebsocketClient: EMSClient {
         }
     }
     
+    func setAllChannelData(time: Int, pause: Int, channels: [Int : ChannelData]) {
+        self.time = time
+        self.pause = pause
+        self.channels = channels
+    }
+    
     func setChannelData(for channel: Int, value: Int, frequency: Int) {
         
     }

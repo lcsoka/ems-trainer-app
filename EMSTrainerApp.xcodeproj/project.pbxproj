@@ -67,6 +67,7 @@
 		A4285D44262B3B8F001BB304 /* DeviceFinderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4285D43262B3B8F001BB304 /* DeviceFinderView.xib */; };
 		A4285D49262B3BA3001BB304 /* DeviceFinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4285D48262B3BA3001BB304 /* DeviceFinderView.swift */; };
 		A4285D4E262B3E0E001BB304 /* FinderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4285D4D262B3E0E001BB304 /* FinderViewModel.swift */; };
+		A42C0FF1262B5FC90063AAC1 /* DeviceFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42C0FF0262B5FC90063AAC1 /* DeviceFinderViewController.swift */; };
 		A4335EBD260119D00098E79C /* DeviceRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4335EBB260119D00098E79C /* DeviceRowCollectionViewCell.swift */; };
 		A4335EBE260119D00098E79C /* DeviceRowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4335EBC260119D00098E79C /* DeviceRowCollectionViewCell.xib */; };
 		A45BADF925DC2C6B00F51D5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BADF825DC2C6B00F51D5E /* AppDelegate.swift */; };
@@ -227,6 +228,7 @@
 		A4285D43262B3B8F001BB304 /* DeviceFinderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceFinderView.xib; sourceTree = "<group>"; };
 		A4285D48262B3BA3001BB304 /* DeviceFinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFinderView.swift; sourceTree = "<group>"; };
 		A4285D4D262B3E0E001BB304 /* FinderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderViewModel.swift; sourceTree = "<group>"; };
+		A42C0FF0262B5FC90063AAC1 /* DeviceFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFinderViewController.swift; sourceTree = "<group>"; };
 		A4335EBB260119D00098E79C /* DeviceRowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRowCollectionViewCell.swift; sourceTree = "<group>"; };
 		A4335EBC260119D00098E79C /* DeviceRowCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceRowCollectionViewCell.xib; sourceTree = "<group>"; };
 		A45BADF525DC2C6B00F51D5E /* EMSTrainerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMSTrainerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -577,10 +579,10 @@
 		A421547D25F520340094C1CB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A42C0FEC262B5F940063AAC1 /* Workout */,
 				A421548325F5206A0094C1CB /* DashboardViewController.swift */,
 				A41C8F972600060800192BDD /* AccountViewController.swift */,
 				A41C8FAD260011B600192BDD /* WorkoutSetupViewController.swift */,
-				A40A4EF42608011100F07342 /* WorkoutViewController.swift */,
 				A4F75602261FA20B00133E80 /* WorkoutListViewController.swift */,
 			);
 			path = ViewControllers;
@@ -615,6 +617,15 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A42C0FEC262B5F940063AAC1 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				A40A4EF42608011100F07342 /* WorkoutViewController.swift */,
+				A42C0FF0262B5FC90063AAC1 /* DeviceFinderViewController.swift */,
+			);
+			path = Workout;
 			sourceTree = "<group>";
 		};
 		A4335EB026010C8B0098E79C /* DeviceRow */ = {
@@ -1296,6 +1307,7 @@
 				A421545625F514D70094C1CB /* Container.swift in Sources */,
 				A4DB5CCC261B6A23003CBE05 /* WorkoutListItem.swift in Sources */,
 				A41C8F982600060800192BDD /* AccountViewController.swift in Sources */,
+				A42C0FF1262B5FC90063AAC1 /* DeviceFinderViewController.swift in Sources */,
 				A477972F25FFDE38006AF564 /* Presentable.swift in Sources */,
 				A40A4EDF2607DABB00F07342 /* RegistrationViewModel.swift in Sources */,
 				A4F755FD261E72E400133E80 /* Int.swift in Sources */,

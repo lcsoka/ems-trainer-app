@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol DeviceFinderViewDelegate {
+    func onDeviceSelected()
+}
+
 @IBDesignable
 class DeviceFinderView: UIView, CustomViewProtocol {
 
@@ -16,6 +20,7 @@ class DeviceFinderView: UIView, CustomViewProtocol {
     let emptyCellIdentifier = "EmptyCollectionViewCell"
     
     var viewModel: FinderViewModel?
+    var delegate: DeviceFinderViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -77,6 +82,7 @@ extension DeviceFinderView: UICollectionViewDataSource, UICollectionViewDelegate
         if let cell = collectionView.cellForItem(at: indexPath) as? DeviceRowCollectionViewCell {
             viewModel!.selectedDevice = cell.device
             collectionView.reloadData()
+            delegate?.onDeviceSelected()
         }
     }
     

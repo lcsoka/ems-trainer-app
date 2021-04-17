@@ -8,6 +8,11 @@
 import UIKit
 import DrawerView
 
+protocol WorkoutViewControllerDelegate {
+    func onShowDeviceFinder(from: WorkoutViewController)
+    func onReconnect(with: DeviceHost, from: WorkoutViewController)
+}
+
 class WorkoutViewController: UIViewController, MainStoryboardLodable {
 
     @IBOutlet var lblTimeLeft: UILabel!
@@ -19,6 +24,8 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
     
     var viewModel: WorkoutViewModel!
     
+    var delegate: WorkoutViewControllerDelegate?
+    
     private var minWaveFreq: Float = 4
     private var maxWaveFreq: Float = 6
     
@@ -26,7 +33,6 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.client.connect()
         updateTime(time: viewModel.timeLeft)
         channelCollection.delegate = self
         channelCollection.dataSource = self
@@ -71,6 +77,10 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
         let timeLeft = Converter.secondsToTimeString(time)
         lblTimeLeft.text = timeLeft
     }
+    
+    func showDeviceFinder() {
+        delegate?.onShowDeviceFinder(from: self)
+    }
 }
 
 extension WorkoutViewController: DrawerViewDelegate {
@@ -112,9 +122,19 @@ extension WorkoutViewController: WorkoutViewModelDelegate {
     func askForReconnect() {
         let alert = UIAlertController(title: "Device disconnected", message: "The connection was lost to the device. Do you want to try to reconnect?", preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+            self.showDeviceFinder()
+        }))
+        
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
 
         self.present(alert, animated: true)
+    }
+}
+
+
+extension WorkoutViewController: DeviceFinderViewControllerDelegate {
+    func onConnectDevice(device: DeviceHost) {
+        delegate?.onReconnect(with: device, from: self)
     }
 }

@@ -94,5 +94,8 @@ extension AppDelegate {
             c.viewModel = r~>
         }
         
+        container.registerViewController(DeviceFinderViewController.self) {r, c in
+            
+        }
     }
 }

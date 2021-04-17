@@ -74,6 +74,7 @@ final class MainCoordinator: NavigationCoordinator {
     
     private func showWorkout(client: EMSClient, trainingMode: TrainingMode) {
         let vc = container.resolve(WorkoutViewController.self)!
+        vc.delegate = self
         vc.viewModel.trainingMode = trainingMode
         vc.viewModel.client = client
         navigationController.navigationBar.backgroundColor = UIColor(named: "Gray700")
@@ -115,5 +116,23 @@ extension MainCoordinator: WorkoutSetupViewControllerDelegate {
         let vc = container.resolve(WorkoutSetupViewController.self)!
         let client = WebsocketClient(device)
         showWorkout(client: client, trainingMode: trainingMode)
+    }
+}
+
+extension MainCoordinator: WorkoutViewControllerDelegate {
+    func onShowDeviceFinder(from: WorkoutViewController) {
+        let vc = container.resolve(DeviceFinderViewController.self)!
+        vc.delegate = from
+    
+        let viewModel = FinderViewModel()
+        viewModel.finder = MDNSFinder(api: api)
+        vc.viewModel = viewModel
+        vc.modalPresentationStyle = .overFullScreen
+        from.present(vc, animated: true, completion: nil)
+    }
+    
+    func onReconnect(with: DeviceHost, from: WorkoutViewController) {
+        let client = WebsocketClient(with)
+        from.viewModel.client = client
     }
 }

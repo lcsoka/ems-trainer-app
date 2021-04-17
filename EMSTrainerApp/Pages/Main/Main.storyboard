@@ -675,6 +675,7 @@
                         <outlet property="lblTimeLeft" destination="2Dy-3V-Ha4" id="f9G-73-Mrh"/>
                         <outlet property="progressView" destination="OGR-bi-E39" id="c16-G9-X6C"/>
                         <outlet property="waveView" destination="SYn-bB-gz1" id="bOm-j6-G7p"/>
+                        <segue destination="7rM-7c-7rK" kind="presentation" identifier="deviceFinderModal" destinationCreationSelector="deviceFinderModal" modalPresentationStyle="overFullScreen" id="6nu-gT-tLi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FwD-uF-8PV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -699,25 +700,103 @@
             </objects>
             <point key="canvasLocation" x="2784" y="116"/>
         </scene>
-        <!--View Controller-->
+        <!--Device Finder View Controller-->
         <scene sceneID="bQQ-dG-2g1">
             <objects>
-                <viewController id="7rM-7c-7rK" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GlD-55-sGR">
+                <viewController storyboardIdentifier="DeviceFinder" id="7rM-7c-7rK" customClass="DeviceFinderViewController" customModule="EMSTrainerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GlD-55-sGR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="292-UB-XJz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYS-xc-kZ3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ylP-5M-tJD">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cW-bQ-CKu" customClass="DeviceFinderView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="298" width="374" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="5ev-zY-FbK"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Dkc-Cq-iJi">
+                                <rect key="frame" x="20" y="606" width="374" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40M-qF-M52" customClass="RoundedButton" customModule="EMSTrainerApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="44"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" name="Green500"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="Green500"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onCancelTap:" destination="7rM-7c-7rK" eventType="touchUpInside" id="thY-Oh-9SP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KC-DW-NMY" customClass="RoundedButton" customModule="EMSTrainerApp" customModuleProvider="target">
+                                        <rect key="frame" x="197" y="0.0" width="177" height="44"/>
+                                        <color key="backgroundColor" name="Green500"/>
+                                        <state key="normal" title="Connect">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onConnectTap:" destination="7rM-7c-7rK" eventType="touchUpInside" id="cpI-ej-CMI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4pS-F0-NVF"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dkc-Cq-iJi" firstAttribute="leading" secondItem="GlD-55-sGR" secondAttribute="leading" constant="20" id="2OS-1a-ZPZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Dkc-Cq-iJi" secondAttribute="trailing" constant="20" id="FrT-TO-dBo"/>
+                            <constraint firstAttribute="trailing" secondItem="9cW-bQ-CKu" secondAttribute="trailing" constant="20" id="HKe-oL-d5N"/>
+                            <constraint firstItem="9cW-bQ-CKu" firstAttribute="leading" secondItem="GlD-55-sGR" secondAttribute="leading" constant="20" id="JIw-68-Hpd"/>
+                            <constraint firstAttribute="trailing" secondItem="wYS-xc-kZ3" secondAttribute="trailing" id="Pqa-Wk-OGx"/>
+                            <constraint firstItem="wYS-xc-kZ3" firstAttribute="leading" secondItem="GlD-55-sGR" secondAttribute="leading" id="QED-Ag-fWT"/>
+                            <constraint firstItem="Dkc-Cq-iJi" firstAttribute="top" secondItem="9cW-bQ-CKu" secondAttribute="bottom" constant="8" symbolic="YES" id="aYD-GM-hE6"/>
+                            <constraint firstItem="wYS-xc-kZ3" firstAttribute="bottom" secondItem="GlD-55-sGR" secondAttribute="bottom" id="bzv-ZQ-aIk"/>
+                            <constraint firstItem="9cW-bQ-CKu" firstAttribute="centerX" secondItem="GlD-55-sGR" secondAttribute="centerX" id="d4Y-m8-Ylm"/>
+                            <constraint firstItem="wYS-xc-kZ3" firstAttribute="top" secondItem="GlD-55-sGR" secondAttribute="top" id="dkn-aH-xt3"/>
+                            <constraint firstItem="9cW-bQ-CKu" firstAttribute="centerY" secondItem="GlD-55-sGR" secondAttribute="centerY" id="tZ7-fG-7nE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="connectButton" destination="9KC-DW-NMY" id="62V-6x-Pc4"/>
+                        <outlet property="deviceFinderView" destination="9cW-bQ-CKu" id="32L-hg-wQ2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3NU-6b-R1u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3446" y="116"/>
+            <point key="canvasLocation" x="3479.7101449275365" y="115.84821428571428"/>
         </scene>
     </scenes>
     <designables>
         <designable name="2Tc-uZ-OYM">
             <size key="intrinsicContentSize" width="19" height="22"/>
+        </designable>
+        <designable name="40M-qF-M52">
+            <size key="intrinsicContentSize" width="48" height="30"/>
         </designable>
         <designable name="7my-ky-RkS">
             <size key="intrinsicContentSize" width="90" height="30"/>
@@ -727,6 +806,12 @@
         </designable>
         <designable name="9Jq-s4-Sjb">
             <size key="intrinsicContentSize" width="414" height="85"/>
+        </designable>
+        <designable name="9KC-DW-NMY">
+            <size key="intrinsicContentSize" width="59" height="30"/>
+        </designable>
+        <designable name="9cW-bQ-CKu">
+            <size key="intrinsicContentSize" width="374" height="300"/>
         </designable>
         <designable name="eAa-GQ-tjX">
             <size key="intrinsicContentSize" width="414" height="125"/>

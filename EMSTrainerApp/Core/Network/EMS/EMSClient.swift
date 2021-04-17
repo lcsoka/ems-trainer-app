@@ -26,6 +26,8 @@ protocol EMSClient {
     
     func setAllChannelData(_ data: EMSValues)
     
+    func setAllChannelData(time: Int, pause: Int, channels: [Int : ChannelData])
+    
     func setChannelData(for channel: Int, value: Int, frequency: Int)
     
     func setValue(for channel: Int, value: Int)
