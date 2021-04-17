@@ -731,6 +731,9 @@
         <designable name="eAa-GQ-tjX">
             <size key="intrinsicContentSize" width="414" height="125"/>
         </designable>
+        <designable name="y8Z-IH-jVq">
+            <size key="intrinsicContentSize" width="374" height="300"/>
+        </designable>
     </designables>
     <resources>
         <image name="ems_logo" width="1000" height="500"/>

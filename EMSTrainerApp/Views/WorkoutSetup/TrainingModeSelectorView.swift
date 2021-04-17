@@ -11,6 +11,7 @@ protocol TrainingModeSelectorViewDelegate {
     func onTrainingModeSelected(_ mode: TrainingMode)
 }
 
+@IBDesignable
 class TrainingModeSelectorView: UIView, CustomViewProtocol {
     @IBOutlet var contentView: UIView!
     @IBOutlet var stackView: UIStackView!

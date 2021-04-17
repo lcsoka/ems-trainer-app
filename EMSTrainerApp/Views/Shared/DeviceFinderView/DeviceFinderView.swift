@@ -15,7 +15,7 @@ class DeviceFinderView: UIView, CustomViewProtocol {
     let deviceCellIdentifier = "DeviceRowCollectionViewCell"
     let emptyCellIdentifier = "EmptyCollectionViewCell"
     
-    var viewModel: FinderViewModel!
+    var viewModel: FinderViewModel?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,8 +33,8 @@ class DeviceFinderView: UIView, CustomViewProtocol {
     private func setupView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib.init(nibName: deviceCellIdentifier, bundle: nil), forCellWithReuseIdentifier: deviceCellIdentifier)
-        collectionView.register(UINib.init(nibName: emptyCellIdentifier, bundle: nil), forCellWithReuseIdentifier: emptyCellIdentifier)
+        collectionView.register(UINib(nibName: deviceCellIdentifier, bundle: Bundle(for: DeviceRowCollectionViewCell.self)), forCellWithReuseIdentifier: deviceCellIdentifier)
+        collectionView.register(UINib(nibName: emptyCellIdentifier, bundle: Bundle(for: EmptyCollectionViewCell.self)), forCellWithReuseIdentifier: emptyCellIdentifier)
         collectionView.backgroundColor = .clear
     }
     
@@ -42,6 +42,9 @@ class DeviceFinderView: UIView, CustomViewProtocol {
         collectionView.reloadData()
     }
     
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: contentView.frame.width, height: 300)
+    }
 }
 
 extension DeviceFinderView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -50,17 +53,21 @@ extension DeviceFinderView: UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.devices.isEmpty ? 1 : viewModel.devices.count
+        if viewModel == nil {
+            return 1
+        } else {
+            return viewModel!.devices.isEmpty ? 1 : viewModel!.devices.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if viewModel.devices.isEmpty {
+        if viewModel == nil || viewModel!.devices.isEmpty {
             let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: emptyCellIdentifier, for: indexPath as IndexPath) as! EmptyCollectionViewCell
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: deviceCellIdentifier, for: indexPath) as! DeviceRowCollectionViewCell
-            let device = viewModel.devices.map{$0.value.host}[indexPath.row]
-            cell.chosen = device == viewModel.selectedDevice
+            let device = viewModel!.devices.map{$0.value.host}[indexPath.row]
+            cell.chosen = device == viewModel!.selectedDevice
             cell.device = device
             return cell
         }
@@ -68,7 +75,7 @@ extension DeviceFinderView: UICollectionViewDataSource, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? DeviceRowCollectionViewCell {
-            viewModel.selectedDevice = cell.device
+            viewModel!.selectedDevice = cell.device
             collectionView.reloadData()
         }
     }
@@ -80,7 +87,7 @@ extension DeviceFinderView: UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if viewModel.devices.isEmpty {
+        if viewModel == nil || viewModel!.devices.isEmpty {
             return CGSize(width: collectionView.frame.width - 20, height: collectionView.frame.height - 20)
         } else {
             return CGSize(width: collectionView.frame.width - 20, height: 80)
