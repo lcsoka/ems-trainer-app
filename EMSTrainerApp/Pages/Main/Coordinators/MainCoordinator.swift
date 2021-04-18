@@ -146,8 +146,8 @@ extension MainCoordinator: WorkoutViewControllerDelegate {
     }
     
     func onWorkoutEnded(from: WorkoutViewController) {
+        navigationController.popViewController(animated: false)
         from.dismiss(animated: true)
-        navigationController.popViewController(animated: true)
         navigationController.navigationBar.backgroundColor = UIColor(named: "Gray800")
     }
 }

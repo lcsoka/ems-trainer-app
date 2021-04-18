@@ -183,6 +183,12 @@ class WorkoutViewModel {
     
     var trainingsProvider: TrainingsProvider
     
+    var shouldSaveWorkout: Bool {
+        get {
+            return workoutTime >= 60
+        }
+    }
+    
     // MARK: Init
     init(api: ApiService, trainingsProvider: TrainingsProvider) {
         self.api = api
@@ -295,17 +301,20 @@ class WorkoutViewModel {
         }
         
         workoutEnded = true
-        print("workout ended")
         
-        let timestamp = Int((Date().timeIntervalSince1970))
-        
-        api.post(CreateTrainingResource(), data: CreateTrainingData(length: workoutTime, trainingMode: trainingMode.name.lowercased(), trainingValues: trainingValues.map({$0.value}), date: timestamp), onSuccess: { response in
-            if let trainings = response?.trainings {
-                self.trainingsProvider.importTrainings(from:trainings)
+        if shouldSaveWorkout {
+            let timestamp = Int((Date().timeIntervalSince1970))
+            
+            api.post(CreateTrainingResource(), data: CreateTrainingData(length: workoutTime, trainingMode: trainingMode.name.lowercased(), trainingValues: trainingValues.map({$0.value}), date: timestamp), onSuccess: { response in
+                if let trainings = response?.trainings {
+                    self.trainingsProvider.importTrainings(from:trainings)
+                    self.delegate?.onWorkoutEnd()
+                }
+            }){ error in
+                // TODO: Save training data offline
                 self.delegate?.onWorkoutEnd()
             }
-        }){ error in
-            // TODO: Save training data offline
+        } else {
             self.delegate?.onWorkoutEnd()
         }
     }
