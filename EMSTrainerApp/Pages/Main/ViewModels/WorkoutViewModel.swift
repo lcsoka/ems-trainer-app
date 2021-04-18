@@ -17,6 +17,12 @@ protocol WorkoutViewModelDelegate {
     func shouldUpdateView()
     func onBatteryChange(percent: Int)
 }
+
+protocol WorkoutViewModelModalDelegate {
+    func onChannelChanged(channel: Int)
+    func onFrequencyChanged(channel: Int)
+}
+
 class WorkoutViewModel {
     
     // MARK: Properties
@@ -135,10 +141,14 @@ class WorkoutViewModel {
     var disconnected = false
     
     var delegate: WorkoutViewModelDelegate?
+
+    var modalDelegate: WorkoutViewModelModalDelegate?
     
     var valueChangerTimer: EMSTimer!
     
     var valueChangerChannel: Int? = nil
+    
+    var isFreqChange = false
     
     var valueChangerTargetValue = 0
     
@@ -214,19 +224,27 @@ class WorkoutViewModel {
         overallTimer.stop()
     }
     
-    func startIncreaseMaster() {
+    func startChangingMaster(increase: Bool = true) {
         valueChangerChannel = nil
-        valueChangerTargetValue = 100
+        valueChangerTargetValue = increase ? 100 : 0
         startValueChangerTimer()
     }
     
-    func startDecreaseMaster() {
-        valueChangerChannel = nil
-        valueChangerTargetValue = 0
+    func startChangingChannelValue(channel: Int, increase: Bool = true) {
+        isFreqChange = false
+        valueChangerChannel = channel
+        valueChangerTargetValue = increase ? 100 : 0
         startValueChangerTimer()
     }
     
-    func startValueChangerTimer() {
+    func startChangingChannelFreq(channel: Int, increase: Bool = true) {
+        isFreqChange = true
+        valueChangerChannel = channel
+        valueChangerTargetValue = increase ? 100 : 0
+        startValueChangerTimer()
+    }
+    
+    private func startValueChangerTimer() {
         if valueChangerTimer == nil {
             valueChangerTimer = EMSTimer(rate: 0.1, delegate: self)
         }
@@ -273,13 +291,51 @@ extension WorkoutViewModel: EMSTimerDelegate {
                 // We are changing the master value
                 
                 if master <= valueChangerTargetValue {
-                    master = master + 1
+                    if master != valueChangerTargetValue {
+                        master = master + 1
+                    }
                 } else {
-                    master = master - 1
+                    if master != valueChangerTargetValue {
+                        master = master - 1
+                    }
                 }
                 
             } else {
-                // We are changeing channel Value
+                if isFreqChange {
+                    // We are changeing channel frequency
+                    var freq = channels[valueChangerChannel!]!.freq
+                    
+                    if freq <= valueChangerTargetValue {
+                        if freq != valueChangerTargetValue {
+                            freq = freq + 5
+                        }
+                    } else {
+                        if freq != valueChangerTargetValue {
+                            freq = freq - 5
+                        }
+                    }
+                    
+                    client.setFreq(for: valueChangerChannel!, value: freq)
+                    modalDelegate?.onFrequencyChanged(channel: valueChangerChannel!)
+                } else {
+                    // We are changeing channel Value
+                    var value = channels[valueChangerChannel!]!.value
+                    
+                    if value <= valueChangerTargetValue {
+                        if value != valueChangerTargetValue {
+                            value = value + 1
+                        }
+                    } else {
+                        if value != valueChangerTargetValue {
+                            value = value - 1
+                        }
+                    }
+                    
+                    client.setValue(for: valueChangerChannel!, value: value)
+                    modalDelegate?.onChannelChanged(channel: valueChangerChannel!)
+                }
+                // Get channels from the client object
+                channels = client.channels
             }
         }
     }

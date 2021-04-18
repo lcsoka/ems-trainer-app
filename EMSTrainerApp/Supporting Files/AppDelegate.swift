@@ -97,5 +97,10 @@ extension AppDelegate {
         container.registerViewController(DeviceFinderViewController.self) {r, c in
             
         }
+        
+        container.registerViewController(ChannelSettingsViewController.self) {r, c in
+            
+        }
+        
     }
 }

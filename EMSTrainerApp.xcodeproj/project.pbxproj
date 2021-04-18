@@ -128,6 +128,7 @@
 		A4DB5CC7261B6A17003CBE05 /* WorkoutListItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DB5CC6261B6A17003CBE05 /* WorkoutListItem.xib */; };
 		A4DB5CCC261B6A23003CBE05 /* WorkoutListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB5CCB261B6A23003CBE05 /* WorkoutListItem.swift */; };
 		A4DB5CD1261B704E003CBE05 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB5CD0261B704E003CBE05 /* DashboardViewModel.swift */; };
+		A4E4C68F262C78F000B1011C /* ChannelSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E4C68E262C78F000B1011C /* ChannelSettingsViewController.swift */; };
 		A4E5B8AC260FE9B900DBA784 /* EMSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B8AB260FE9B900DBA784 /* EMSTimer.swift */; };
 		A4F755F4261E29B100133E80 /* DictionaryConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F755F3261E29B100133E80 /* DictionaryConvertable.swift */; };
 		A4F755FD261E72E400133E80 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F755FC261E72E400133E80 /* Int.swift */; };
@@ -301,6 +302,7 @@
 		A4DB5CC6261B6A17003CBE05 /* WorkoutListItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutListItem.xib; sourceTree = "<group>"; };
 		A4DB5CCB261B6A23003CBE05 /* WorkoutListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListItem.swift; sourceTree = "<group>"; };
 		A4DB5CD0261B704E003CBE05 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		A4E4C68E262C78F000B1011C /* ChannelSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelSettingsViewController.swift; sourceTree = "<group>"; };
 		A4E5B8AB260FE9B900DBA784 /* EMSTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSTimer.swift; sourceTree = "<group>"; };
 		A4F755F3261E29B100133E80 /* DictionaryConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryConvertable.swift; sourceTree = "<group>"; };
 		A4F755FC261E72E400133E80 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
@@ -635,6 +637,7 @@
 			children = (
 				A40A4EF42608011100F07342 /* WorkoutViewController.swift */,
 				A42C0FF0262B5FC90063AAC1 /* DeviceFinderViewController.swift */,
+				A4E4C68E262C78F000B1011C /* ChannelSettingsViewController.swift */,
 			);
 			path = Workout;
 			sourceTree = "<group>";
@@ -1305,6 +1308,7 @@
 				A48B658F25F6D897009D6CCD /* RoundedView.swift in Sources */,
 				A40A4EE52607DB4A00F07342 /* FormViewModel.swift in Sources */,
 				A40EE4D026015EAA002E422B /* WebsocketClient.swift in Sources */,
+				A4E4C68F262C78F000B1011C /* ChannelSettingsViewController.swift in Sources */,
 				A4285D49262B3BA3001BB304 /* DeviceFinderView.swift in Sources */,
 				A4F75603261FA20B00133E80 /* WorkoutListViewController.swift in Sources */,
 				A495801425E051B400923B7F /* ApiErrorResponse.swift in Sources */,

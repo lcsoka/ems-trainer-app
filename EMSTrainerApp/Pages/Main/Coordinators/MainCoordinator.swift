@@ -135,4 +135,13 @@ extension MainCoordinator: WorkoutViewControllerDelegate {
         let client = WebsocketClient(with)
         from.viewModel.client = client
     }
+    
+    func onShowChannelSettings(from: WorkoutViewController, channel: Int) {
+        let vc = container.resolve(ChannelSettingsViewController.self)!
+        vc.viewModel = from.viewModel
+        vc.channelIndex = channel
+        
+        vc.modalPresentationStyle = .overFullScreen
+        from.present(vc, animated: true, completion: nil)
+    }
 }

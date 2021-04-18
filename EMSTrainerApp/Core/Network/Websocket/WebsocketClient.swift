@@ -67,10 +67,12 @@ class WebsocketClient: EMSClient {
     }
     
     func setValue(for channel: Int, value: Int) {
+        channels[channel]?.value = value
         sendMessage(for: channel, message: .setChannelValue, value: value)
     }
     
     func setFreq(for channel: Int, value: Int) {
+        channels[channel]?.freq = value
         sendMessage(for: channel, message: .setChannelFreq, value: value)
     }
     

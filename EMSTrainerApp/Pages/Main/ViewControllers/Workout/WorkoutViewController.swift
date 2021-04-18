@@ -9,6 +9,7 @@ import UIKit
 
 protocol WorkoutViewControllerDelegate {
     func onShowDeviceFinder(from: WorkoutViewController)
+    func onShowChannelSettings(from: WorkoutViewController, channel: Int)
     func onReconnect(with: DeviceHost, from: WorkoutViewController)
 }
 
@@ -115,7 +116,7 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
     // MARK: Handle Increaser Button events
     
     @IBAction func startTouchingMasterIncreaser(_ sender: Any) {
-        viewModel.startIncreaseMaster()
+        viewModel.startChangingMaster()
     }
     
     @IBAction func stopTouchingMasterIncreaserInside(_ sender: Any) {
@@ -132,7 +133,7 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
     
     // MARK: Handle Decreaser Button events
     @IBAction func startTouchingMasterDecreaser(_ sender: Any) {
-        viewModel.startDecreaseMaster()
+        viewModel.startChangingMaster(increase: false)
     }
     @IBAction func stopTouchingMasterDecreaserInside(_ sender: Any) {
         viewModel.stopValueChangerTimer()
@@ -185,6 +186,12 @@ extension WorkoutViewController: UICollectionViewDataSource, UICollectionViewDel
                 cell.isUserInteractionEnabled = true
             }
             return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            delegate?.onShowChannelSettings(from: self, channel: indexPath.row)
         }
     }
     
