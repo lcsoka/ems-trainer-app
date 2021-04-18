@@ -3,12 +3,12 @@
         "name":"Cardio",
         "description":"Text 1",
         "image":"cardio",
-        "length": 10,
+        "length": 1000,
         "values": {
             "value": 50,
             "freq": 40,
-            "time": 5,
-            "pause": 1
+            "time": 3,
+            "pause": 3
         }
     },
     {

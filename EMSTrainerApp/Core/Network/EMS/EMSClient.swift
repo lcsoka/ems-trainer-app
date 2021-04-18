@@ -40,6 +40,10 @@ protocol EMSClient {
     
     func sendConfig()
     
+    func sendImpulseOn()
+    
+    func sendImpulseOff()
+    
     func connect()
     
     func close()

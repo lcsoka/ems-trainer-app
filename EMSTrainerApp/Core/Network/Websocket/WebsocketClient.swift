@@ -111,6 +111,14 @@ class WebsocketClient: EMSClient {
         setMaster(0)
     }
     
+    func sendImpulseOn() {
+        sendMessage(message: .setImpulseOn)
+    }
+    
+    func sendImpulseOff() {
+        sendMessage(message: .setImpulseOff)
+    }
+    
     func connect() {
         self.wsClient.connect()
     }
@@ -136,7 +144,32 @@ extension WebsocketClient: WebSocketDelegate {
             break
         case .text(let text):
             // TODO: process messages
-            print(text)
+//            print(text)
+            let commands = text.split(separator: " ").map({Int($0)})
+            if let cmd = EMSMessage(rawValue: (commands[0])!) {
+                switch(cmd) {
+                case .setMasterValue:
+                    break
+                case .setChannelValue:
+                    break
+                case .setChannelFreq:
+                    break
+                case .setImpulseOn:
+                    delegate?.onImpulseOn()
+                    break
+                case .setImpulseOff:
+                    delegate?.onImpulseOff()
+                    break
+                case .setImpuleTime:
+                    break
+                case .setImpulsePause:
+                    break
+                case .getBattery:
+                    delegate?.onBatteryChanged(commands[1]!)
+                    break
+                }
+            }
+            
             break
         default:
             break

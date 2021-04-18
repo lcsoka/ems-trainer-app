@@ -16,11 +16,13 @@ protocol WorkoutViewControllerDelegate {
 class WorkoutViewController: UIViewController, MainStoryboardLodable {
 
     @IBOutlet var lblTimeLeft: UILabel!
+    @IBOutlet var lblMaster: UILabel!
     @IBOutlet var waveView: WaveView!
     @IBOutlet var progressView: ProgressView!
     @IBOutlet var channelContainer: UIView!
     @IBOutlet var channelCollection: UICollectionView!
     @IBOutlet var drawerView: DrawerView!
+    @IBOutlet var btnStartPause: RoundedButton!
     
     var viewModel: WorkoutViewModel!
     
@@ -34,16 +36,16 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateTime(time: viewModel.timeLeft)
-        channelCollection.delegate = self
-        channelCollection.dataSource = self
-        channelCollection.backgroundColor = .clear
+//        channelCollection.delegate = self
+//        channelCollection.dataSource = self
+//        channelCollection.backgroundColor = .clear
         setupDrawer()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        
+        waveView.master = CGFloat(viewModel.master)
         drawerView.setConcealed(false, animated: true)
     }
     
@@ -70,7 +72,8 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
     }
     
     func onMasterChanged(value: Int) {
-        waveView.master = CGFloat(value) / 100
+        lblMaster.text = "\(value)%"
+        updateWaveMaster()
     }
     
     private func updateTime(time: Int) {
@@ -78,8 +81,28 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
         lblTimeLeft.text = timeLeft
     }
     
+    private func updateWaveMaster() {
+        waveView.master = (viewModel.impulseOn ? 1 : 0 ) * CGFloat(viewModel.master) / 100
+    }
+    
     func showDeviceFinder() {
         delegate?.onShowDeviceFinder(from: self)
+    }
+    
+    @IBAction func masterSliderChanged(_ sender: UISlider) {
+        let newValue = Int(sender.value)
+
+        if viewModel.master != newValue{
+            viewModel.master = Int(sender.value)
+        }
+    }
+    
+    @IBAction func startPausePressed(_ sender: Any) {
+        if !viewModel.started || viewModel.paused {
+            viewModel.startWorkout(fromUser: true)
+        } else {
+            viewModel.pauseWorkout(fromUser: true)
+        }
     }
 }
 
@@ -129,6 +152,22 @@ extension WorkoutViewController: WorkoutViewModelDelegate {
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
 
         self.present(alert, animated: true)
+    }
+    
+    func onWorkoutStatusChanged() {
+        var label = "START"
+        
+        if viewModel.started {
+            if !viewModel.paused {
+                label = "PAUSE"
+            }
+        }
+        
+        btnStartPause.setTitle(label, for: .normal)
+    }
+    
+    func onImpulseChanged() {
+        updateWaveMaster()
     }
 }
 

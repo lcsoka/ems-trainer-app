@@ -72,7 +72,17 @@ class WaveView: UIView {
     public var speed: CGFloat = 0.1
     
     
-    public var master: CGFloat = 1.0
+    public var master: CGFloat = 1.0 {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    
+    private var fakeMaster: CGFloat = 0.0 {
+        didSet {
+//            setNeedsLayout()
+        }
+    }
     
     public private(set) var animating = false
     
@@ -152,6 +162,18 @@ class WaveView: UIView {
         phase = (phase + CGFloat.pi * speed)
             .truncatingRemainder(dividingBy: 2 * CGFloat.pi)
         
+        if fakeMaster <= master {
+            fakeMaster = fakeMaster + 0.02
+        }
+        
+        if fakeMaster > master {
+            fakeMaster = fakeMaster - 0.02
+            
+            if fakeMaster <= 0.001 {
+                fakeMaster = 0
+            }
+        }
+        
         for i in 0..<shapeLayers.count {
             let shapeLayer = shapeLayers[i]
             let wave = waves[i]
@@ -189,7 +211,7 @@ class WaveView: UIView {
         
         for i in stride(from: 0, to: Int(width), by: 2) {
             let x = ((CGFloat(i) - centerX) / scale )
-            let y = attenuationFunction(x: x, factor: 8) *  waveFunction(x: x, amplitude: wave.amplitude * master, spatialFrequency: frequency, timeCoordinate: phase) * height / 2 + centerY
+            let y = attenuationFunction(x: x, factor: 8) *  waveFunction(x: x, amplitude: wave.amplitude * fakeMaster, spatialFrequency: frequency, timeCoordinate: phase) * height / 2 + centerY
             path.addLine(to: CGPoint(x: CGFloat(i), y: y))
         }
         return path

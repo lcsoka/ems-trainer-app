@@ -10,14 +10,14 @@ import Foundation
 protocol WorkoutViewModelDelegate {
     func onMasterChanged(value: Int)
     func onChannelChanged(channel: ChannelData)
+    func onWorkoutStatusChanged()
     func onTimeTick()
+    func onImpulseChanged()
     func askForReconnect()
 }
 class WorkoutViewModel {
     
     // MARK: Properties
-    
-    private var isFirstClient = true
     
     /**
      EMS client which is used to communicate with the device
@@ -51,8 +51,16 @@ class WorkoutViewModel {
     var master: Int = 0 {
         didSet {
             delegate?.onMasterChanged(value: master)
+            client.setMaster(master)
+            
+            if !started {
+                savedMaster = master
+            }
+            
         }
     }
+    
+    var savedMaster: Int = 0
     
     /**
     Impulse time in seconds
@@ -97,6 +105,18 @@ class WorkoutViewModel {
         }
     }
     
+    /**
+    Workout was started
+     */
+    var started = false
+    
+    /**
+     Workout currently paused
+     */
+    var paused = false
+    
+    var impulseOn = false
+    
     var delegate: WorkoutViewModelDelegate?
     
     var api: ApiService!
@@ -112,24 +132,41 @@ class WorkoutViewModel {
         }
     }
     
-    func startWorkout() {
+    func startWorkout(fromUser: Bool = false) {
+        started = true
+        paused = false
+        
+        if fromUser {
+            master = savedMaster
+        }
+        
         if timer == nil {
             timer = EMSTimer(rate: 1, delegate: self)
         }
         timer.start()
+        client.sendImpulseOn()
+        delegate?.onWorkoutStatusChanged()
     }
     
-    func pauseWorkout() {
-        timer?.stop()
+    func pauseWorkout(fromUser: Bool = false) {
+        paused = true
         
-        if client.isConnected {
-            client.setMaster(0)
+        if fromUser {
+            savedMaster = master
         }
+        
+        timer?.stop()
+        if client.isConnected {
+            master = 0
+        }
+        client.sendImpulseOff()
+        delegate?.onWorkoutStatusChanged()
     }
     
     func stopWorkout() {
         self.pauseWorkout()
         // TODO: Save workout and exit
+        delegate?.onWorkoutStatusChanged()
     }
 }
 
@@ -157,14 +194,16 @@ extension WorkoutViewModel: EMSDelegate {
     }
     
     func onBatteryChanged(_ percentage: Int) {
-        
+        print("BATTERY \(percentage)")
     }
     
     func onImpulseOn() {
-        
+        impulseOn = true
+        delegate?.onImpulseChanged()
     }
     
     func onImpulseOff() {
-        
+        impulseOn = false
+        delegate?.onImpulseChanged()
     }
 }
