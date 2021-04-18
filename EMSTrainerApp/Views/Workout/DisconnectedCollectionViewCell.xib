@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DisconnectedCollectionViewCell" customModule="EMSTrainerApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="363" height="68"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="363" height="68"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFe-sp-aqA" customClass="RoundedButton" customModule="EMSTrainerApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="363" height="68"/>
+                        <color key="backgroundColor" name="Green500"/>
+                        <state key="normal" title="Reconnect">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="onReconnectTap:" destination="gTV-IL-0wX" eventType="touchUpInside" id="nQb-VY-g9j"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="fFe-sp-aqA" secondAttribute="bottom" id="6h5-5R-K7c"/>
+                <constraint firstItem="fFe-sp-aqA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MHW-JZ-Hm5"/>
+                <constraint firstItem="fFe-sp-aqA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bFG-7f-6Jq"/>
+                <constraint firstAttribute="trailing" secondItem="fFe-sp-aqA" secondAttribute="trailing" id="qaK-a2-Y84"/>
+            </constraints>
+            <size key="customSize" width="363" height="68"/>
+            <point key="canvasLocation" x="287.68115942028987" y="129.91071428571428"/>
+        </collectionViewCell>
+    </objects>
+    <designables>
+        <designable name="fFe-sp-aqA">
+            <size key="intrinsicContentSize" width="74" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="Green500">
+            <color red="0.33300000429153442" green="0.71799999475479126" blue="0.5220000147819519" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

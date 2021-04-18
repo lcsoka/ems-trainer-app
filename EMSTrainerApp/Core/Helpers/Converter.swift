@@ -23,4 +23,12 @@ class Converter {
         let secsStr: String = secs < 10 ? "0\(secs)" : "\(secs)"
         return "\(minsStr):\(secsStr)"
     }
+    
+    public static func freqPercentToValue(percent: Float) -> Float {
+        return Converter.percentToValue(percent: percent, minimum: 5, maximum: 100, jump: 5)
+    }
+    
+    public static func freqValueToPercent(value: Float) -> Float {
+        return Converter.valueToPercent(value: value, minimum: 5, maximum: 100)
+    }
 }

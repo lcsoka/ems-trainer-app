@@ -70,6 +70,11 @@
 		A42C0FF1262B5FC90063AAC1 /* DeviceFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42C0FF0262B5FC90063AAC1 /* DeviceFinderViewController.swift */; };
 		A4335EBD260119D00098E79C /* DeviceRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4335EBB260119D00098E79C /* DeviceRowCollectionViewCell.swift */; };
 		A4335EBE260119D00098E79C /* DeviceRowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4335EBC260119D00098E79C /* DeviceRowCollectionViewCell.xib */; };
+		A43F2A8C262C47CE0026BEE7 /* DisconnectedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F2A8A262C47CE0026BEE7 /* DisconnectedCollectionViewCell.swift */; };
+		A43F2A8D262C47CE0026BEE7 /* DisconnectedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A43F2A8B262C47CE0026BEE7 /* DisconnectedCollectionViewCell.xib */; };
+		A43F2A96262C4D9E0026BEE7 /* ChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F2A94262C4D9E0026BEE7 /* ChannelCollectionViewCell.swift */; };
+		A43F2A97262C4D9E0026BEE7 /* ChannelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A43F2A95262C4D9E0026BEE7 /* ChannelCollectionViewCell.xib */; };
+		A43F2A9C262C4FDC0026BEE7 /* EMSChannelMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F2A9B262C4FDC0026BEE7 /* EMSChannelMap.swift */; };
 		A45BADF925DC2C6B00F51D5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BADF825DC2C6B00F51D5E /* AppDelegate.swift */; };
 		A45BADFB25DC2C6B00F51D5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BADFA25DC2C6B00F51D5E /* SceneDelegate.swift */; };
 		A45BADFD25DC2C6B00F51D5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BADFC25DC2C6B00F51D5E /* ViewController.swift */; };
@@ -231,6 +236,11 @@
 		A42C0FF0262B5FC90063AAC1 /* DeviceFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFinderViewController.swift; sourceTree = "<group>"; };
 		A4335EBB260119D00098E79C /* DeviceRowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRowCollectionViewCell.swift; sourceTree = "<group>"; };
 		A4335EBC260119D00098E79C /* DeviceRowCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceRowCollectionViewCell.xib; sourceTree = "<group>"; };
+		A43F2A8A262C47CE0026BEE7 /* DisconnectedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectedCollectionViewCell.swift; sourceTree = "<group>"; };
+		A43F2A8B262C47CE0026BEE7 /* DisconnectedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisconnectedCollectionViewCell.xib; sourceTree = "<group>"; };
+		A43F2A94262C4D9E0026BEE7 /* ChannelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCollectionViewCell.swift; sourceTree = "<group>"; };
+		A43F2A95262C4D9E0026BEE7 /* ChannelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelCollectionViewCell.xib; sourceTree = "<group>"; };
+		A43F2A9B262C4FDC0026BEE7 /* EMSChannelMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSChannelMap.swift; sourceTree = "<group>"; };
 		A45BADF525DC2C6B00F51D5E /* EMSTrainerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMSTrainerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45BADF825DC2C6B00F51D5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A45BADFA25DC2C6B00F51D5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -398,6 +408,7 @@
 				A40E38E2260F8AED00104A59 /* Converter.swift */,
 				A4E5B8AB260FE9B900DBA784 /* EMSTimer.swift */,
 				A4F755F3261E29B100133E80 /* DictionaryConvertable.swift */,
+				A43F2A9B262C4FDC0026BEE7 /* EMSChannelMap.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -637,6 +648,17 @@
 			path = DeviceRow;
 			sourceTree = "<group>";
 		};
+		A43F2A89262C47AD0026BEE7 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				A43F2A8A262C47CE0026BEE7 /* DisconnectedCollectionViewCell.swift */,
+				A43F2A8B262C47CE0026BEE7 /* DisconnectedCollectionViewCell.xib */,
+				A43F2A94262C4D9E0026BEE7 /* ChannelCollectionViewCell.swift */,
+				A43F2A95262C4D9E0026BEE7 /* ChannelCollectionViewCell.xib */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
 		A45BADEC25DC2C6B00F51D5E = {
 			isa = PBXGroup;
 			children = (
@@ -867,6 +889,7 @@
 		A48B658C25F6D877009D6CCD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A43F2A89262C47AD0026BEE7 /* Workout */,
 				A41C901A2600F0DD00192BDD /* WorkoutSetup */,
 				A41C8F8625FFF76400192BDD /* Dashboard */,
 				A48B658D25F6D87F009D6CCD /* Shared */,
@@ -1117,6 +1140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A421546025F516710094C1CB /* Authentication.storyboard in Resources */,
+				A43F2A8D262C47CE0026BEE7 /* DisconnectedCollectionViewCell.xib in Resources */,
 				A41C902C2600F14600192BDD /* TrainingModeSelectorView.xib in Resources */,
 				A41C90362600F7BA00192BDD /* TrainingModeOptionView.xib in Resources */,
 				A4C17616261B39D700BFE12C /* StatisticsView.xib in Resources */,
@@ -1126,6 +1150,7 @@
 				A41C8FFD2600A56C00192BDD /* TrainingModes.json in Resources */,
 				A49D57BE261B2E7000E9E744 /* Main.storyboard in Resources */,
 				A4285D44262B3B8F001BB304 /* DeviceFinderView.xib in Resources */,
+				A43F2A97262C4D9E0026BEE7 /* ChannelCollectionViewCell.xib in Resources */,
 				A42383882617811100248588 /* WorkoutsList.xib in Resources */,
 				A4DB5CC7261B6A17003CBE05 /* WorkoutListItem.xib in Resources */,
 				A45BAE0225DC2C6D00F51D5E /* Assets.xcassets in Resources */,
@@ -1290,6 +1315,7 @@
 				A41C8FE2260026F200192BDD /* DeviceApiRequest.swift in Sources */,
 				A40EE4F0260173A5002E422B /* EMSMessage.swift in Sources */,
 				A47BB12F25E1B63B0065023F /* Coordinator.swift in Sources */,
+				A43F2A9C262C4FDC0026BEE7 /* EMSChannelMap.swift in Sources */,
 				A45BAE3925DC2DB600F51D5E /* Api.swift in Sources */,
 				A463379C25E07E53000B51F7 /* Auth.swift in Sources */,
 				A495800F25E04C6500923B7F /* ErrorType.swift in Sources */,
@@ -1302,6 +1328,7 @@
 				A4FCAEB225DC8AE000C9849C /* LoginData.swift in Sources */,
 				A477972125FFDD86006AF564 /* Router.swift in Sources */,
 				A41C8FF726002C5300192BDD /* EMSDeviceType.swift in Sources */,
+				A43F2A96262C4D9E0026BEE7 /* ChannelCollectionViewCell.swift in Sources */,
 				A406E48825F533790044E284 /* UserDefaultsUserService.swift in Sources */,
 				A40A4EEB2607DC4B00F07342 /* Dynamic.swift in Sources */,
 				A421545625F514D70094C1CB /* Container.swift in Sources */,
@@ -1335,6 +1362,7 @@
 				A41C90312600F7B000192BDD /* TrainingModeOptionView.swift in Sources */,
 				A421547325F51AB40094C1CB /* RegistrationViewController.swift in Sources */,
 				A48B659425F6DB0E009D6CCD /* BorderTextField.swift in Sources */,
+				A43F2A8C262C47CE0026BEE7 /* DisconnectedCollectionViewCell.swift in Sources */,
 				A41C8FF226002B9300192BDD /* DeviceHost.swift in Sources */,
 				A41C8FBD260014DE00192BDD /* FinderDelegate.swift in Sources */,
 				A41C8F8925FFF7B600192BDD /* StatisticsView.swift in Sources */,

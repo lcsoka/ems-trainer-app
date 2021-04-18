@@ -43,7 +43,7 @@ final class LoginViewController: UIViewController, AuthenticationStoryboardLodab
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         if spinner.superview == nil, let superView = view {
             superView.addSubview(spinner)
             superView.bringSubviewToFront(spinner)
@@ -51,6 +51,11 @@ final class LoginViewController: UIViewController, AuthenticationStoryboardLodab
             spinner.centerXAnchor.constraint(equalTo: superView.centerXAnchor).isActive = true
             spinner.centerYAnchor.constraint(equalTo: superView.centerYAnchor).isActive = true
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     /**
@@ -75,8 +80,23 @@ final class LoginViewController: UIViewController, AuthenticationStoryboardLodab
     override func viewDidLoad() {
         super.viewDidLoad()
         self.extendedLayoutIncludesOpaqueBars = true
-        // Do any additional setup after loading the view.
-    }
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+     }
+
+     @objc func keyboardWillShow(notification: NSNotification) {
+         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+             if self.view.frame.origin.y == 0 {
+                 self.view.frame.origin.y -= keyboardSize.height / 3
+             }
+         }
+     }
+
+     @objc func keyboardWillHide(notification: NSNotification) {
+         if self.view.frame.origin.y != 0 {
+             self.view.frame.origin.y = 0
+         }
+     }
     
     private func showErrorAlert(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)

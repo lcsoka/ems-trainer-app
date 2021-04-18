@@ -21,6 +21,7 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
     @IBOutlet var progressView: ProgressView!
     @IBOutlet var channelContainer: UIView!
     @IBOutlet var channelCollection: UICollectionView!
+    @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var drawerView: DrawerView!
     @IBOutlet var btnStartPause: RoundedButton!
     
@@ -31,14 +32,20 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
     private var minWaveFreq: Float = 4
     private var maxWaveFreq: Float = 6
     
-    private var reuseIdentifier = "channelCell"
+    private var reuseIdentifier = "testCell"
+    private let disconnectedCellIdentifier = "DisconnectedCollectionViewCell"
+    private let channelCellIdentifier = "ChannelCollectionViewCell"
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateTime(time: viewModel.timeLeft)
-//        channelCollection.delegate = self
-//        channelCollection.dataSource = self
-//        channelCollection.backgroundColor = .clear
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = .clear
+        
+        collectionView.register(UINib(nibName: disconnectedCellIdentifier, bundle: Bundle(for: DisconnectedCollectionViewCell.self)), forCellWithReuseIdentifier: disconnectedCellIdentifier)
+        
+        collectionView.register(UINib(nibName: channelCellIdentifier, bundle: Bundle(for: ChannelCollectionViewCell.self)), forCellWithReuseIdentifier: channelCellIdentifier)
         setupDrawer()
     }
     
@@ -104,6 +111,39 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
             viewModel.pauseWorkout(fromUser: true)
         }
     }
+    
+    // MARK: Handle Increaser Button events
+    
+    @IBAction func startTouchingMasterIncreaser(_ sender: Any) {
+        viewModel.startIncreaseMaster()
+    }
+    
+    @IBAction func stopTouchingMasterIncreaserInside(_ sender: Any) {
+        viewModel.stopValueChangerTimer()
+    }
+    
+    @IBAction func stopTouchingMasterIncreaserOutside(_ sender: Any) {
+        viewModel.stopValueChangerTimer()
+    }
+    
+    @IBAction func cancelTouchingMasterIncreaser(_ sender: Any) {
+        viewModel.stopValueChangerTimer()
+    }
+    
+    // MARK: Handle Decreaser Button events
+    @IBAction func startTouchingMasterDecreaser(_ sender: Any) {
+        viewModel.startDecreaseMaster()
+    }
+    @IBAction func stopTouchingMasterDecreaserInside(_ sender: Any) {
+        viewModel.stopValueChangerTimer()
+    }
+    @IBAction func stopTouchingMasterDecreaserOutside(_ sender: Any) {
+        viewModel.stopValueChangerTimer()
+    }
+    @IBAction func cancelTouchingMasterDecreaser(_ sender: Any) {
+        viewModel.stopValueChangerTimer()
+    }
+    
 }
 
 extension WorkoutViewController: DrawerViewDelegate {
@@ -113,25 +153,54 @@ extension WorkoutViewController: DrawerViewDelegate {
 // MARK: CollectionView Delegates
 extension WorkoutViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-        
+        if section == 0 {
+            // View for the reconnect button
+            return viewModel.disconnected ? 1 : 0
+        } else {
+            // Views for the channels
+            return viewModel.channels.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,for: indexPath)
-
-        return cell
+        
+        if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: disconnectedCellIdentifier, for: indexPath) as! DisconnectedCollectionViewCell
+            cell.delegate = self
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: channelCellIdentifier,for: indexPath) as! ChannelCollectionViewCell
+            
+            let channelIndex = indexPath.row
+            let channelData = viewModel.channels[channelIndex]
+            
+            cell.index = channelIndex
+            cell.data = channelData!
+            
+            if viewModel.disconnected {
+                cell.alpha = 0.5
+                cell.isUserInteractionEnabled = false
+            } else {
+                cell.alpha = 1
+                cell.isUserInteractionEnabled = true
+            }
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: channelCollection.frame.height - 20, height: channelCollection.frame.height - 20)
+        if indexPath.section == 0 {
+            return CGSize(width: collectionView.frame.width, height: 40)
+        } else {
+            return CGSize(width: collectionView.frame.width / 2 - 5, height: 80)
+        }
     }
 }
-
+// MARK: WorkoutViewModelDelegate
 extension WorkoutViewController: WorkoutViewModelDelegate {
     func onChannelChanged(channel: ChannelData) {
 
@@ -169,11 +238,21 @@ extension WorkoutViewController: WorkoutViewModelDelegate {
     func onImpulseChanged() {
         updateWaveMaster()
     }
+    
+    func shouldUpdateView() {
+        collectionView.reloadData()
+    }
 }
 
-
+// MARK: DeviceFinderViewControllerDelegate
 extension WorkoutViewController: DeviceFinderViewControllerDelegate {
     func onConnectDevice(device: DeviceHost) {
         delegate?.onReconnect(with: device, from: self)
+    }
+}
+
+extension WorkoutViewController: DisconnectedCollectionViewCellDelegate {
+    func onReconnectTap() {
+        self.showDeviceFinder()
     }
 }

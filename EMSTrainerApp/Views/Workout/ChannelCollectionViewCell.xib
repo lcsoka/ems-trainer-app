@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ChannelCollectionViewCell" customModule="EMSTrainerApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="180" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="180" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OiC-e8-5Ch" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channel name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="moX-LR-qw2">
+                                <rect key="frame" x="8" y="8" width="116" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" name="Gray800"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="right" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zfu-ax-oAW">
+                                <rect key="frame" x="98.5" y="44" width="73.5" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="cVS-NY-eWh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="29"/>
+                                <color key="textColor" name="Gray800"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BuQ-qN-Gva">
+                                <rect key="frame" x="89.5" y="0.0" width="1" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="IBn-Il-hQO"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55 Hz" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxd-j6-VHu">
+                                <rect key="frame" x="8" y="51.5" width="81.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="Gray800"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="Green500"/>
+                        <constraints>
+                            <constraint firstItem="BuQ-qN-Gva" firstAttribute="top" secondItem="OiC-e8-5Ch" secondAttribute="top" id="0bX-2S-YCn"/>
+                            <constraint firstAttribute="trailing" secondItem="zfu-ax-oAW" secondAttribute="trailing" constant="8" id="1nm-A3-Qmw"/>
+                            <constraint firstItem="moX-LR-qw2" firstAttribute="top" secondItem="OiC-e8-5Ch" secondAttribute="top" constant="8" id="287-5R-ubt"/>
+                            <constraint firstItem="BuQ-qN-Gva" firstAttribute="centerX" secondItem="OiC-e8-5Ch" secondAttribute="centerX" id="9hJ-D2-9bD"/>
+                            <constraint firstItem="BuQ-qN-Gva" firstAttribute="leading" secondItem="gxd-j6-VHu" secondAttribute="trailing" id="Bel-QF-UrZ"/>
+                            <constraint firstAttribute="bottom" secondItem="BuQ-qN-Gva" secondAttribute="bottom" id="Gkz-Qm-Dz4"/>
+                            <constraint firstAttribute="bottom" secondItem="gxd-j6-VHu" secondAttribute="bottom" constant="8" id="Mgt-QR-dg9"/>
+                            <constraint firstAttribute="bottom" secondItem="zfu-ax-oAW" secondAttribute="bottom" constant="8" id="Rr8-LE-dY5"/>
+                            <constraint firstItem="moX-LR-qw2" firstAttribute="leading" secondItem="OiC-e8-5Ch" secondAttribute="leading" constant="8" id="cK2-7U-w17"/>
+                            <constraint firstItem="gxd-j6-VHu" firstAttribute="leading" secondItem="OiC-e8-5Ch" secondAttribute="leading" constant="8" id="e3c-CT-yY6"/>
+                            <constraint firstItem="zfu-ax-oAW" firstAttribute="leading" secondItem="BuQ-qN-Gva" secondAttribute="trailing" constant="8" id="jpy-4f-d50"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="OiC-e8-5Ch" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="4oz-EZ-HgK"/>
+                <constraint firstAttribute="trailing" secondItem="OiC-e8-5Ch" secondAttribute="trailing" id="bL9-66-JHi"/>
+                <constraint firstAttribute="bottom" secondItem="OiC-e8-5Ch" secondAttribute="bottom" id="hk6-ML-oWS"/>
+                <constraint firstItem="OiC-e8-5Ch" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="k4y-d6-8je"/>
+            </constraints>
+            <size key="customSize" width="180" height="80"/>
+            <connections>
+                <outlet property="lblChannelFreq" destination="gxd-j6-VHu" id="sHh-wH-BVw"/>
+                <outlet property="lblChannelName" destination="moX-LR-qw2" id="1nj-bm-cdq"/>
+                <outlet property="lblChannelValue" destination="zfu-ax-oAW" id="M63-pY-DrO"/>
+            </connections>
+            <point key="canvasLocation" x="197.10144927536234" y="133.92857142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Gray800">
+            <color red="0.1289999932050705" green="0.16099999845027924" blue="0.21199999749660492" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Green500">
+            <color red="0.33300000429153442" green="0.71799999475479126" blue="0.5220000147819519" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

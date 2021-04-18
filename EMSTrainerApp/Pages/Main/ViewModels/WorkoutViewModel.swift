@@ -14,6 +14,7 @@ protocol WorkoutViewModelDelegate {
     func onTimeTick()
     func onImpulseChanged()
     func askForReconnect()
+    func shouldUpdateView()
 }
 class WorkoutViewModel {
     
@@ -50,6 +51,15 @@ class WorkoutViewModel {
      */
     var master: Int = 0 {
         didSet {
+            
+            if master < 0 {
+                master = 0
+            }
+            
+            if master > 100 {
+                master = 100
+            }
+            
             delegate?.onMasterChanged(value: master)
             client.setMaster(master)
             
@@ -117,9 +127,19 @@ class WorkoutViewModel {
     
     var impulseOn = false
     
+    var disconnected = false
+    
     var delegate: WorkoutViewModelDelegate?
     
+    var valueChangerTimer: EMSTimer!
+    
+    var valueChangerChannel: Int? = nil
+    
+    var valueChangerTargetValue = 0
+    
     var api: ApiService!
+    
+    var trainingValues: [Int:TrainingValueJSON] = [:]
     
     // MARK: Init
     init(api: ApiService) {
@@ -168,29 +188,78 @@ class WorkoutViewModel {
         // TODO: Save workout and exit
         delegate?.onWorkoutStatusChanged()
     }
+    
+    func startIncreaseMaster() {
+        valueChangerChannel = nil
+        valueChangerTargetValue = 100
+        startValueChangerTimer()
+    }
+    
+    func startDecreaseMaster() {
+        valueChangerChannel = nil
+        valueChangerTargetValue = 0
+        startValueChangerTimer()
+    }
+    
+    func startValueChangerTimer() {
+        if valueChangerTimer == nil {
+            valueChangerTimer = EMSTimer(rate: 0.1, delegate: self)
+        }
+        
+        valueChangerTimer.start()
+    }
+    
+    func stopValueChangerTimer() {
+        valueChangerTimer?.stop()
+        
+        if valueChangerChannel == nil {
+            // Save master value for this timestamp
+            let trainingValue = TrainingValueJSON(timestamp: workoutTime, master: master)
+            trainingValues[workoutTime] = trainingValue
+        }
+    }
 }
 
 // MARK: EMSTimerDelegate
 extension WorkoutViewModel: EMSTimerDelegate {
     func onTick(_ timer: EMSTimer) {
-        if workoutTime < trainingMode.length{
-            workoutTime += 1
+        if self.timer != nil && timer == self.timer {
+            if workoutTime < trainingMode.length{
+                workoutTime += 1
+            }
+            delegate?.onTimeTick()
+        } else if timer == valueChangerTimer {
+            if valueChangerChannel == nil {
+                // We are changing the master value
+                
+                if master <= valueChangerTargetValue {
+                    master = master + 1
+                } else {
+                    master = master - 1
+                }
+                
+            } else {
+                // We are changeing channel Value
+            }
         }
-        delegate?.onTimeTick()
     }
 }
 
 // MARK: EMSDelegate
 extension WorkoutViewModel: EMSDelegate {
     func onConnected() {
+        self.disconnected = false
         print("websocket connected")
         client.sendConfig()
+        self.delegate?.shouldUpdateView()
     }
     
     func onConnectionLost() {
         // Pause training
+        self.disconnected = true
         self.pauseWorkout()
         self.delegate?.askForReconnect()
+        self.delegate?.shouldUpdateView()
     }
     
     func onBatteryChanged(_ percentage: Int) {
