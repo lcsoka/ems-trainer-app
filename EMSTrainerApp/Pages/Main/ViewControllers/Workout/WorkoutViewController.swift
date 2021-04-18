@@ -11,6 +11,7 @@ protocol WorkoutViewControllerDelegate {
     func onShowDeviceFinder(from: WorkoutViewController)
     func onShowChannelSettings(from: WorkoutViewController, channel: Int)
     func onReconnect(with: DeviceHost, from: WorkoutViewController)
+    func onWorkoutEnded(from: WorkoutViewController)
 }
 
 class WorkoutViewController: UIViewController, MainStoryboardLodable {
@@ -59,15 +60,6 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
         lblBattery.isHidden = true
     }
     
-    func onFrequencyChanged(value: Int) {
-        let freqPercent = Converter.valueToPercent(value: Float(value), minimum: 5, maximum: 100)
-        let waveFreq = Converter.percentToValue(percent: freqPercent, minimum: minWaveFreq, maximum: maxWaveFreq, jump: 0.1)
-        waveView.frequency = CGFloat(waveFreq)
-        let delta = 1 - (CGFloat(waveFreq) - CGFloat(minWaveFreq)) / 2
-        let acc = 0.05 * delta
-        waveView.speed = 0.1 - acc
-    }
-    
     func onMasterChanged(value: Int) {
         lblMaster.text = "\(value)%"
         updateWaveMaster()
@@ -111,6 +103,18 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
         } else {
             viewModel.pauseWorkout(fromUser: true)
         }
+    }
+    @IBAction func stopPressed(_ sender: Any) {
+        viewModel.pauseWorkout()
+        let alert = UIAlertController(title: "Stop workout", message: "Do you want to stop the workout?", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+            self.viewModel.stopWorkout()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
     }
     
     // MARK: Handle Increaser Button events
@@ -205,8 +209,10 @@ extension WorkoutViewController: UICollectionViewDataSource, UICollectionViewDel
 }
 // MARK: WorkoutViewModelDelegate
 extension WorkoutViewController: WorkoutViewModelDelegate {
-    func onChannelChanged(channel: ChannelData) {
-
+    
+    func onChannelChanged(channel: Int) {
+        let indexPath = IndexPath(row: channel, section: 1)
+        collectionView.reloadItems(at: [indexPath])
     }
     
     func onTimeTick() {
@@ -256,6 +262,10 @@ extension WorkoutViewController: WorkoutViewModelDelegate {
     func onBatteryChange(percent: Int) {
         lblBattery.isHidden = false
         lblBattery.text = "\(percent)%"
+    }
+    
+    func onWorkoutEnd() {
+        delegate?.onWorkoutEnded(from: self)
     }
 }
 

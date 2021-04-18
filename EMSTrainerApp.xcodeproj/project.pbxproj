@@ -102,6 +102,8 @@
 		A4783CE7260BE3D30012E182 /* SpyLoginViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4783CE6260BE3D30012E182 /* SpyLoginViewModelDelegate.swift */; };
 		A4783CEF260BEAFA0012E182 /* RegistrationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4783CEE260BEAFA0012E182 /* RegistrationViewModelTests.swift */; };
 		A4783CF7260BF5F00012E182 /* SpyRegistrationViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4783CF6260BF5F00012E182 /* SpyRegistrationViewModelDelegate.swift */; };
+		A47B450F262CCB0100A706E4 /* CreateTrainingResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47B450E262CCB0100A706E4 /* CreateTrainingResource.swift */; };
+		A47B4514262CCDA800A706E4 /* CreateTrainingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47B4513262CCDA800A706E4 /* CreateTrainingData.swift */; };
 		A47BB12F25E1B63B0065023F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47BB12E25E1B63B0065023F /* Coordinator.swift */; };
 		A4898FBC260FE00B0027D4BC /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4898FBB260FE00B0027D4BC /* ProgressView.swift */; };
 		A48B64D525F536E7009D6CCD /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B64D425F536E7009D6CCD /* AuthenticationService.swift */; };
@@ -277,6 +279,8 @@
 		A4783CE6260BE3D30012E182 /* SpyLoginViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyLoginViewModelDelegate.swift; sourceTree = "<group>"; };
 		A4783CEE260BEAFA0012E182 /* RegistrationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewModelTests.swift; path = EMSTrainerAppTests/RegistrationViewModelTests.swift; sourceTree = SOURCE_ROOT; };
 		A4783CF6260BF5F00012E182 /* SpyRegistrationViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyRegistrationViewModelDelegate.swift; sourceTree = "<group>"; };
+		A47B450E262CCB0100A706E4 /* CreateTrainingResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTrainingResource.swift; sourceTree = "<group>"; };
+		A47B4513262CCDA800A706E4 /* CreateTrainingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTrainingData.swift; sourceTree = "<group>"; };
 		A47BB12E25E1B63B0065023F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A4898FBB260FE00B0027D4BC /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		A48B64D425F536E7009D6CCD /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
@@ -1002,6 +1006,7 @@
 			children = (
 				A4FCAEB125DC8AE000C9849C /* LoginData.swift */,
 				A46337A725E087A4000B51F7 /* RegisterData.swift */,
+				A47B4513262CCDA800A706E4 /* CreateTrainingData.swift */,
 			);
 			path = RequestData;
 			sourceTree = "<group>";
@@ -1021,6 +1026,7 @@
 			children = (
 				A4FCAEB825DC8B4500C9849C /* LoginResource.swift */,
 				A46337AC25E08811000B51F7 /* RegisterResource.swift */,
+				A47B450E262CCB0100A706E4 /* CreateTrainingResource.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -1320,9 +1326,11 @@
 				A40EE4F0260173A5002E422B /* EMSMessage.swift in Sources */,
 				A47BB12F25E1B63B0065023F /* Coordinator.swift in Sources */,
 				A43F2A9C262C4FDC0026BEE7 /* EMSChannelMap.swift in Sources */,
+				A47B4514262CCDA800A706E4 /* CreateTrainingData.swift in Sources */,
 				A45BAE3925DC2DB600F51D5E /* Api.swift in Sources */,
 				A463379C25E07E53000B51F7 /* Auth.swift in Sources */,
 				A495800F25E04C6500923B7F /* ErrorType.swift in Sources */,
+				A47B450F262CCB0100A706E4 /* CreateTrainingResource.swift in Sources */,
 				A4FBBC9A261E068D00B8CE81 /* TrainingJSON.swift in Sources */,
 				A48B64E925F53A43009D6CCD /* ApiService.swift in Sources */,
 				A40A4EF52608011100F07342 /* WorkoutViewController.swift in Sources */,

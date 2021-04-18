@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Training" representedClassName=".Training" syncable="YES" codeGenerationType="category">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="length" optional="YES" attributeType="Integer 32" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="offline" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
@@ -19,7 +20,7 @@
         <relationship name="training" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Training" inverseName="trainingValues" inverseEntity="Training"/>
     </entity>
     <elements>
-        <element name="Training" positionX="119.642822265625" positionY="-13.14169311523438" width="128" height="133"/>
+        <element name="Training" positionX="119.642822265625" positionY="-13.14169311523438" width="128" height="134"/>
         <element name="TrainingValue" positionX="-54" positionY="18" width="128" height="88"/>
     </elements>
 </model>

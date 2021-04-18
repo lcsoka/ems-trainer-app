@@ -74,6 +74,7 @@ public class TrainingsProvider {
                 trainingObject.length = Int32(sortedTrainings[i].length)
                 trainingObject.trainingMode = sortedTrainings[i].trainingMode
                 trainingObject.createdAt = sortedTrainings[i].createdAt
+                trainingObject.date = sortedTrainings[i].date
             }
             try? backgroundcontext.save()
         }

@@ -100,7 +100,7 @@ class ChannelSettingsViewController: UIViewController, MainStoryboardLodable {
 }
 
 extension ChannelSettingsViewController: WorkoutViewModelModalDelegate {
-    func onChannelChanged(channel: Int) {
+    func onChannelValueChanged(channel: Int) {
        updateStrenth(channel: channel)
     }
     

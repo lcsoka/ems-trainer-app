@@ -9,17 +9,18 @@ import Foundation
 
 protocol WorkoutViewModelDelegate {
     func onMasterChanged(value: Int)
-    func onChannelChanged(channel: ChannelData)
+    func onChannelChanged(channel: Int)
     func onWorkoutStatusChanged()
     func onTimeTick()
     func onImpulseChanged()
     func askForReconnect()
     func shouldUpdateView()
     func onBatteryChange(percent: Int)
+    func onWorkoutEnd()
 }
 
 protocol WorkoutViewModelModalDelegate {
-    func onChannelChanged(channel: Int)
+    func onChannelValueChanged(channel: Int)
     func onFrequencyChanged(channel: Int)
 }
 
@@ -80,22 +81,22 @@ class WorkoutViewModel {
     var savedMaster: Int = 0
     
     /**
-    Impulse time in seconds
+     Impulse time in seconds
      */
     var impulseTime = 0
     
     /**
-    Impulse pause in seconds
+     Impulse pause in seconds
      */
     var impulsePause = 0
     
     /**
-    Channel values
+     Channel values
      */
     var channels: [Int : ChannelData] = [:]
     
     /**
-    The progress of the workout based of the total time
+     The progress of the workout based of the total time
      */
     var progress: Float  {
         get {
@@ -104,12 +105,12 @@ class WorkoutViewModel {
     }
     
     /**
-    Timer used for counting workout time while the training is running
+     Timer used for counting workout time while the training is running
      */
     var workoutTimer: EMSTimer!
     
     /**
-    Total time spent in workout, while not paused
+     Total time spent in workout, while not paused
      */
     var workoutTime: Int = 0
     
@@ -127,7 +128,7 @@ class WorkoutViewModel {
     }
     
     /**
-    Workout was started
+     Workout was started
      */
     var started = false
     
@@ -141,7 +142,7 @@ class WorkoutViewModel {
     var disconnected = false
     
     var delegate: WorkoutViewModelDelegate?
-
+    
     var modalDelegate: WorkoutViewModelModalDelegate?
     
     var valueChangerTimer: EMSTimer!
@@ -155,7 +156,7 @@ class WorkoutViewModel {
     var api: ApiService!
     
     var trainingValues: [Int:TrainingValueJSON] = [:]
-        
+    
     var impulseCounter = 1
     
     var impulseTimeLeft: Int {
@@ -172,9 +173,20 @@ class WorkoutViewModel {
      */
     var manualStart = false
     
+    var workoutEnded = false
+    
+    var canChangeValues: Bool {
+        get {
+            return workoutEnded ? false : true
+        }
+    }
+    
+    var trainingsProvider: TrainingsProvider
+    
     // MARK: Init
-    init(api: ApiService) {
+    init(api: ApiService, trainingsProvider: TrainingsProvider) {
         self.api = api
+        self.trainingsProvider = trainingsProvider
         overallTimer = EMSTimer(rate: 1, delegate: self)
         overallTimer.start()
     }
@@ -190,12 +202,17 @@ class WorkoutViewModel {
         paused = false
         manualStart = true
         
+        if workoutEnded {
+            return
+        }
+        
         if fromUser {
             master = savedMaster
         }
         
         if workoutTimer == nil {
             workoutTimer = EMSTimer(rate: 1, delegate: self)
+            saveTrainingValue()
         }
         workoutTimer.start()
         client.sendImpulseOn()
@@ -204,6 +221,10 @@ class WorkoutViewModel {
     
     func pauseWorkout(fromUser: Bool = false) {
         paused = true
+        
+        if workoutEnded {
+            return
+        }
         
         if fromUser {
             savedMaster = master
@@ -222,6 +243,8 @@ class WorkoutViewModel {
         // TODO: Save workout and exit
         delegate?.onWorkoutStatusChanged()
         overallTimer.stop()
+        workoutTimer?.stop()
+        onWorkoutEnded()
     }
     
     func startChangingMaster(increase: Bool = true) {
@@ -244,6 +267,11 @@ class WorkoutViewModel {
         startValueChangerTimer()
     }
     
+    private func saveTrainingValue() {
+        let trainingValue = TrainingValueJSON(timestamp: workoutTime, master: master)
+        trainingValues[workoutTime] = trainingValue
+    }
+    
     private func startValueChangerTimer() {
         if valueChangerTimer == nil {
             valueChangerTimer = EMSTimer(rate: 0.1, delegate: self)
@@ -257,8 +285,28 @@ class WorkoutViewModel {
         
         if valueChangerChannel == nil {
             // Save master value for this timestamp
-            let trainingValue = TrainingValueJSON(timestamp: workoutTime, master: master)
-            trainingValues[workoutTime] = trainingValue
+            saveTrainingValue()
+        }
+    }
+    
+    func onWorkoutEnded() {
+        guard workoutEnded == false else {
+            return
+        }
+        
+        workoutEnded = true
+        print("workout ended")
+        
+        let timestamp = Int((Date().timeIntervalSince1970))
+        
+        api.post(CreateTrainingResource(), data: CreateTrainingData(length: workoutTime, trainingMode: trainingMode.name.lowercased(), trainingValues: trainingValues.map({$0.value}), date: timestamp), onSuccess: { response in
+            if let trainings = response?.trainings {
+                self.trainingsProvider.importTrainings(from:trainings)
+                self.delegate?.onWorkoutEnd()
+            }
+        }){ error in
+            // TODO: Save training data offline
+            self.delegate?.onWorkoutEnd()
         }
     }
 }
@@ -280,6 +328,8 @@ extension WorkoutViewModel: EMSTimerDelegate {
         if workoutTimer != nil && timer == workoutTimer {
             if workoutTime < trainingMode.length {
                 workoutTime += 1
+            } else {
+                stopWorkout()
             }
             impulseCounter += 1
             delegate?.onTimeTick()
@@ -287,55 +337,56 @@ extension WorkoutViewModel: EMSTimerDelegate {
         }
         
         if timer == valueChangerTimer {
-            if valueChangerChannel == nil {
-                // We are changing the master value
-                
-                if master <= valueChangerTargetValue {
-                    if master != valueChangerTargetValue {
-                        master = master + 1
-                    }
-                } else {
-                    if master != valueChangerTargetValue {
-                        master = master - 1
-                    }
-                }
-                
-            } else {
-                if isFreqChange {
-                    // We are changeing channel frequency
-                    var freq = channels[valueChangerChannel!]!.freq
-                    
-                    if freq <= valueChangerTargetValue {
-                        if freq != valueChangerTargetValue {
-                            freq = freq + 5
+            if canChangeValues {
+                if valueChangerChannel == nil {
+                    // We are changing the master value
+                    if master <= valueChangerTargetValue {
+                        if master != valueChangerTargetValue {
+                            master = master + 1
                         }
                     } else {
-                        if freq != valueChangerTargetValue {
-                            freq = freq - 5
+                        if master != valueChangerTargetValue {
+                            master = master - 1
                         }
                     }
-                    
-                    client.setFreq(for: valueChangerChannel!, value: freq)
-                    modalDelegate?.onFrequencyChanged(channel: valueChangerChannel!)
                 } else {
-                    // We are changeing channel Value
-                    var value = channels[valueChangerChannel!]!.value
-                    
-                    if value <= valueChangerTargetValue {
-                        if value != valueChangerTargetValue {
-                            value = value + 1
+                    if isFreqChange {
+                        // We are changeing channel frequency
+                        var freq = channels[valueChangerChannel!]!.freq
+                        
+                        if freq <= valueChangerTargetValue {
+                            if freq != valueChangerTargetValue {
+                                freq = freq + 5
+                            }
+                        } else {
+                            if freq != valueChangerTargetValue {
+                                freq = freq - 5
+                            }
                         }
+                        
+                        client.setFreq(for: valueChangerChannel!, value: freq)
+                        modalDelegate?.onFrequencyChanged(channel: valueChangerChannel!)
                     } else {
-                        if value != valueChangerTargetValue {
-                            value = value - 1
+                        // We are changeing channel Value
+                        var value = channels[valueChangerChannel!]!.value
+                        
+                        if value <= valueChangerTargetValue {
+                            if value != valueChangerTargetValue {
+                                value = value + 1
+                            }
+                        } else {
+                            if value != valueChangerTargetValue {
+                                value = value - 1
+                            }
                         }
+                        
+                        client.setValue(for: valueChangerChannel!, value: value)
+                        modalDelegate?.onChannelValueChanged(channel: valueChangerChannel!)
                     }
-                    
-                    client.setValue(for: valueChangerChannel!, value: value)
-                    modalDelegate?.onChannelChanged(channel: valueChangerChannel!)
+                    // Get channels from the client object
+                    channels = client.channels
+                    delegate?.onChannelChanged(channel: valueChangerChannel!)
                 }
-                // Get channels from the client object
-                channels = client.channels
             }
         }
     }

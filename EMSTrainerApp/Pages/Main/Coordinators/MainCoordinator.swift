@@ -144,4 +144,10 @@ extension MainCoordinator: WorkoutViewControllerDelegate {
         vc.modalPresentationStyle = .overFullScreen
         from.present(vc, animated: true, completion: nil)
     }
+    
+    func onWorkoutEnded(from: WorkoutViewController) {
+        from.dismiss(animated: true)
+        navigationController.popViewController(animated: true)
+        navigationController.navigationBar.backgroundColor = UIColor(named: "Gray800")
+    }
 }

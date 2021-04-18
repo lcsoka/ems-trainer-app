@@ -15,7 +15,7 @@ class WorkoutListViewModel {
     lazy var fetchAllWorkouts: NSFetchedResultsController<Training> = {
         // Create a fetch request for the Training entity sorted by created date.
         let fetchRequest = NSFetchRequest<Training>(entityName: "Training")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         
         // Create a fetched results controller and set its fetch request, context, and delegate.
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest,

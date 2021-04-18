@@ -557,6 +557,9 @@
                                                                 <real key="value" value="30"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="stopPressed:" destination="wLL-wG-cGQ" eventType="touchUpInside" id="2f0-wE-1c1"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -898,7 +901,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdX-Rn-hek">
-                                                <rect key="frame" x="100" y="8" width="49" height="48"/>
+                                                <rect key="frame" x="8" y="8" width="49" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="NdX-Rn-hek" secondAttribute="height" constant="1" id="Qvs-mh-wSo"/>
                                                 </constraints>
@@ -920,7 +923,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SE-46-XQE">
-                                                <rect key="frame" x="200" y="8" width="49" height="48"/>
+                                                <rect key="frame" x="291" y="8" width="49" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="3SE-46-XQE" secondAttribute="height" constant="1" id="qPK-5z-78u"/>
                                                 </constraints>
@@ -979,6 +982,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="eXq-h3-2lJ"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="gvn-Yp-pf4" secondAttribute="trailing" id="5iH-GJ-w2S"/>
                             <constraint firstItem="gvn-Yp-pf4" firstAttribute="centerY" secondItem="4Tt-T4-0RC" secondAttribute="centerY" id="9wU-1y-ftm"/>

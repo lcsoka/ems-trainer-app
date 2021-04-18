@@ -11,11 +11,12 @@ struct TrainingJSON: Codable {
     var id: Int
     var length: Int
     var createdAt: Date
+    var date: Date
     var trainingMode: String
     var values: [TrainingValueJSON]
     
     enum CodingKeys: String, CodingKey {
-        case id, length
+        case id, length, date
         case createdAt = "created_at"
         case trainingMode = "training_mode"
         case trainingValues = "training_values"
@@ -39,11 +40,18 @@ struct TrainingJSON: Codable {
         length = try jsonValues.decode(Int.self, forKey: .length)
         trainingMode = try jsonValues.decode(String.self, forKey: .trainingMode)
         
-        let isoDate = try jsonValues.decode(String.self, forKey: .createdAt)
-        if let realDate = isoDateFormatter.date(from: isoDate) {
+        let isoCreatedDate = try jsonValues.decode(String.self, forKey: .createdAt)
+        if let realDate = isoDateFormatter.date(from: isoCreatedDate) {
             createdAt = realDate
         } else {
             createdAt = Date()
+        }
+        
+        let isoDate = try jsonValues.decode(String.self, forKey: .date)
+        if let realDate = isoDateFormatter.date(from: isoDate) {
+            date = realDate
+        } else {
+            date = Date()
         }
         
         do {
@@ -61,6 +69,7 @@ struct TrainingJSON: Codable {
         try container.encode(id, forKey: .id)
         try container.encode(length, forKey: .length)
         try container.encode(createdAt, forKey: .createdAt)
+        try container.encode(date, forKey: .date)
         try container.encode(trainingMode, forKey: .trainingMode)
         
         var additionalInfo = container.nestedContainer(keyedBy: AdditionalInfoKeys.self, forKey: .trainingValues)

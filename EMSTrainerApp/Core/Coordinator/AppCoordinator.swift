@@ -26,7 +26,7 @@ final class AppCoordinator: Coordinator {
         self.container = container
         auth = container.resolve(AuthenticationService.self)
         navigationController = UINavigationController()
-        navigationController.navigationBar.isTranslucent = true
+        navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.backgroundColor = UIColor(named: "Gray800")
         navigationController.navigationBar.barTintColor = UIColor(named: "Gray800")
         navigationController.navigationBar.tintColor = UIColor(named: "Green500")
