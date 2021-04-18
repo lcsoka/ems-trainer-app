@@ -449,13 +449,52 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdN-29-jfM" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                                <rect key="frame" x="356" y="117" width="32" height="33"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6A-0z-UhM">
+                                                        <rect key="frame" x="8" y="8" width="16" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" name="Green500"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Z6A-0z-UhM" secondAttribute="trailing" constant="8" id="3bx-R6-JF0"/>
+                                                    <constraint firstItem="Z6A-0z-UhM" firstAttribute="leading" secondItem="FdN-29-jfM" secondAttribute="leading" constant="8" id="3kP-zf-A7c"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Z6A-0z-UhM" secondAttribute="bottom" constant="8" id="5YW-O9-MPW"/>
+                                                    <constraint firstItem="Z6A-0z-UhM" firstAttribute="top" secondItem="FdN-29-jfM" secondAttribute="top" constant="8" id="ZVk-pE-fiI"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="battery.100" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fKy-pG-DdL">
+                                                <rect key="frame" x="351" y="11.666666666666668" width="29" height="13.666666666666663"/>
+                                                <color key="tintColor" name="Green500"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EH5-pO-U2L">
+                                                <rect key="frame" x="309.33333333333331" y="9.6666666666666572" width="36.666666666666686" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" name="Green500"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="SYn-bB-gz1" firstAttribute="centerY" secondItem="TEO-RC-vf8" secondAttribute="centerY" id="CQC-jc-Pm1"/>
                                             <constraint firstAttribute="trailing" secondItem="SYn-bB-gz1" secondAttribute="trailing" id="Jna-hp-pK8"/>
+                                            <constraint firstItem="EH5-pO-U2L" firstAttribute="centerY" secondItem="fKy-pG-DdL" secondAttribute="centerY" id="LmF-qN-g2D"/>
                                             <constraint firstAttribute="bottom" secondItem="SYn-bB-gz1" secondAttribute="bottom" constant="8" id="OAB-g1-ewC"/>
                                             <constraint firstAttribute="width" secondItem="TEO-RC-vf8" secondAttribute="height" multiplier="194:75" id="POY-6t-ezQ"/>
+                                            <constraint firstItem="fKy-pG-DdL" firstAttribute="leading" secondItem="EH5-pO-U2L" secondAttribute="trailing" constant="5" id="SiV-uW-ASY"/>
+                                            <constraint firstAttribute="trailing" secondItem="FdN-29-jfM" secondAttribute="trailing" id="Xab-qM-pYg"/>
+                                            <constraint firstAttribute="trailing" secondItem="fKy-pG-DdL" secondAttribute="trailing" constant="8" id="i37-qo-pH6"/>
                                             <constraint firstItem="SYn-bB-gz1" firstAttribute="top" secondItem="TEO-RC-vf8" secondAttribute="top" constant="8" id="kR4-LB-wHv"/>
+                                            <constraint firstAttribute="bottom" secondItem="FdN-29-jfM" secondAttribute="bottom" id="l2d-r2-VzF"/>
+                                            <constraint firstItem="fKy-pG-DdL" firstAttribute="top" secondItem="TEO-RC-vf8" secondAttribute="top" constant="8" id="l3R-Kf-NdC"/>
                                             <constraint firstItem="SYn-bB-gz1" firstAttribute="leading" secondItem="TEO-RC-vf8" secondAttribute="leading" id="ptm-Hh-8FO"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -692,7 +731,9 @@
                     <connections>
                         <outlet property="btnStartPause" destination="5Yb-er-IsF" id="1oE-JM-UZW"/>
                         <outlet property="collectionView" destination="gKh-Wf-9eT" id="KwQ-pW-NXM"/>
-                        <outlet property="drawerView" destination="avK-8E-R0u" id="sxl-4d-FQy"/>
+                        <outlet property="impulseLeftView" destination="FdN-29-jfM" id="PLQ-jH-xOv"/>
+                        <outlet property="lblBattery" destination="EH5-pO-U2L" id="PX2-dR-1l3"/>
+                        <outlet property="lblImpulseLeft" destination="Z6A-0z-UhM" id="Nl4-bo-e5K"/>
                         <outlet property="lblMaster" destination="Y8M-qk-3fb" id="7my-MK-vhZ"/>
                         <outlet property="lblTimeLeft" destination="2Dy-3V-Ha4" id="f9G-73-Mrh"/>
                         <outlet property="progressView" destination="OGR-bi-E39" id="c16-G9-X6C"/>
@@ -701,24 +742,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FwD-uF-8PV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="avK-8E-R0u" customClass="DrawerView" customModule="DrawerView">
-                    <rect key="frame" x="0.0" y="0.0" width="413" height="372"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0b-tx-umS">
-                            <rect key="frame" x="186" y="175.66666666666666" width="41" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <viewLayoutGuide key="safeArea" id="8Y6-qx-0AF"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstItem="J0b-tx-umS" firstAttribute="centerX" secondItem="avK-8E-R0u" secondAttribute="centerX" id="CN8-Xf-jHV"/>
-                        <constraint firstItem="J0b-tx-umS" firstAttribute="centerY" secondItem="avK-8E-R0u" secondAttribute="centerY" id="snh-tW-STR"/>
-                    </constraints>
-                </view>
             </objects>
             <point key="canvasLocation" x="2781.3084112149531" y="114.68682505399569"/>
         </scene>
@@ -853,6 +876,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="battery.100" catalog="system" width="128" height="61"/>
         <image name="ems_logo" width="1000" height="500"/>
         <image name="minus" catalog="system" width="128" height="24"/>
         <image name="plus" catalog="system" width="128" height="113"/>

@@ -15,6 +15,7 @@ protocol WorkoutViewModelDelegate {
     func onImpulseChanged()
     func askForReconnect()
     func shouldUpdateView()
+    func onBatteryChange(percent: Int)
 }
 class WorkoutViewModel {
     
@@ -97,14 +98,18 @@ class WorkoutViewModel {
     }
     
     /**
-    Timer used for keeping time
+    Timer used for counting workout time while the training is running
      */
-    var timer: EMSTimer!
+    var workoutTimer: EMSTimer!
     
     /**
     Total time spent in workout, while not paused
      */
     var workoutTime: Int = 0
+    
+    var overallTimer: EMSTimer!
+    
+    var overallTime = 0
     
     /**
      Seconds left from the workout
@@ -140,10 +145,28 @@ class WorkoutViewModel {
     var api: ApiService!
     
     var trainingValues: [Int:TrainingValueJSON] = [:]
+        
+    var impulseCounter = 1
+    
+    var impulseTimeLeft: Int {
+        if impulseOn {
+            return (impulseTime - impulseCounter) + 1
+        } else {
+            return (impulsePause - impulseCounter) + 1
+        }
+    }
+    
+    /**
+     This variable is used to set if the impulse was sent manually
+     It happens when when the user presses the start button.
+     */
+    var manualStart = false
     
     // MARK: Init
     init(api: ApiService) {
         self.api = api
+        overallTimer = EMSTimer(rate: 1, delegate: self)
+        overallTimer.start()
     }
     
     func connect() {
@@ -155,15 +178,16 @@ class WorkoutViewModel {
     func startWorkout(fromUser: Bool = false) {
         started = true
         paused = false
+        manualStart = true
         
         if fromUser {
             master = savedMaster
         }
         
-        if timer == nil {
-            timer = EMSTimer(rate: 1, delegate: self)
+        if workoutTimer == nil {
+            workoutTimer = EMSTimer(rate: 1, delegate: self)
         }
-        timer.start()
+        workoutTimer.start()
         client.sendImpulseOn()
         delegate?.onWorkoutStatusChanged()
     }
@@ -175,7 +199,7 @@ class WorkoutViewModel {
             savedMaster = master
         }
         
-        timer?.stop()
+        workoutTimer?.stop()
         if client.isConnected {
             master = 0
         }
@@ -187,6 +211,7 @@ class WorkoutViewModel {
         self.pauseWorkout()
         // TODO: Save workout and exit
         delegate?.onWorkoutStatusChanged()
+        overallTimer.stop()
     }
     
     func startIncreaseMaster() {
@@ -223,12 +248,27 @@ class WorkoutViewModel {
 // MARK: EMSTimerDelegate
 extension WorkoutViewModel: EMSTimerDelegate {
     func onTick(_ timer: EMSTimer) {
-        if self.timer != nil && timer == self.timer {
-            if workoutTime < trainingMode.length{
+        
+        if timer == overallTimer{
+            overallTime += 1
+            if overallTime % 5 == 0 {
+                if client != nil && client.isConnected {
+                    client.getBattery()
+                }
+            }
+            return
+        }
+        
+        if workoutTimer != nil && timer == workoutTimer {
+            if workoutTime < trainingMode.length {
                 workoutTime += 1
             }
+            impulseCounter += 1
             delegate?.onTimeTick()
-        } else if timer == valueChangerTimer {
+            return
+        }
+        
+        if timer == valueChangerTimer {
             if valueChangerChannel == nil {
                 // We are changing the master value
                 
@@ -251,6 +291,7 @@ extension WorkoutViewModel: EMSDelegate {
         self.disconnected = false
         print("websocket connected")
         client.sendConfig()
+        client.getBattery()
         self.delegate?.shouldUpdateView()
     }
     
@@ -263,16 +304,23 @@ extension WorkoutViewModel: EMSDelegate {
     }
     
     func onBatteryChanged(_ percentage: Int) {
-        print("BATTERY \(percentage)")
+        delegate?.onBatteryChange(percent: percentage)
     }
     
     func onImpulseOn() {
         impulseOn = true
+        impulseCounter = 0
+        
+        if manualStart {
+            manualStart = false
+            impulseCounter = 1
+        }
         delegate?.onImpulseChanged()
     }
     
     func onImpulseOff() {
         impulseOn = false
+        impulseCounter = 0
         delegate?.onImpulseChanged()
     }
 }

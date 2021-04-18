@@ -119,6 +119,10 @@ class WebsocketClient: EMSClient {
         sendMessage(message: .setImpulseOff)
     }
     
+    func getBattery(){
+        sendMessage(message: .getBattery)
+    }
+    
     func connect() {
         self.wsClient.connect()
     }

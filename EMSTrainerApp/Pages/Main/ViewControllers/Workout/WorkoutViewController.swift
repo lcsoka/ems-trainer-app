@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import DrawerView
 
 protocol WorkoutViewControllerDelegate {
     func onShowDeviceFinder(from: WorkoutViewController)
@@ -22,8 +21,10 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
     @IBOutlet var channelContainer: UIView!
     @IBOutlet var channelCollection: UICollectionView!
     @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var drawerView: DrawerView!
     @IBOutlet var btnStartPause: RoundedButton!
+    @IBOutlet var impulseLeftView: RoundedView!
+    @IBOutlet var lblImpulseLeft: UILabel!
+    @IBOutlet var lblBattery: UILabel!
     
     var viewModel: WorkoutViewModel!
     
@@ -46,27 +47,15 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
         collectionView.register(UINib(nibName: disconnectedCellIdentifier, bundle: Bundle(for: DisconnectedCollectionViewCell.self)), forCellWithReuseIdentifier: disconnectedCellIdentifier)
         
         collectionView.register(UINib(nibName: channelCellIdentifier, bundle: Bundle(for: ChannelCollectionViewCell.self)), forCellWithReuseIdentifier: channelCellIdentifier)
-        setupDrawer()
+    
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
         waveView.master = CGFloat(viewModel.master)
-        drawerView.setConcealed(false, animated: true)
-    }
-    
-    @IBAction func onStopTapped(_ sender: Any) {
-        viewModel.startWorkout()
-//        viewModel.client.close()
-//        self.dismiss(animated: true)
-    }
-    
-    private func setupDrawer() {
-        drawerView.snapPositions = [.collapsed, .partiallyOpen, .open]
-        drawerView.insetAdjustmentBehavior = .automatic
-        drawerView.delegate = self
-        drawerView.position = .partiallyOpen
+        impulseLeftView.isHidden = true
+        lblBattery.isHidden = true
     }
     
     func onFrequencyChanged(value: Int) {
@@ -94,6 +83,17 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
     
     func showDeviceFinder() {
         delegate?.onShowDeviceFinder(from: self)
+    }
+    
+    func updateImpulseCounter() {
+        
+        if viewModel.impulseOn {
+            lblImpulseLeft.textColor = UIColor.init(named: "Green500")
+        } else {
+            lblImpulseLeft.textColor = UIColor.init(named: "Green300")
+        }
+        
+        lblImpulseLeft.text = "\(viewModel.impulseTimeLeft)s"
     }
     
     @IBAction func masterSliderChanged(_ sender: UISlider) {
@@ -143,10 +143,6 @@ class WorkoutViewController: UIViewController, MainStoryboardLodable {
     @IBAction func cancelTouchingMasterDecreaser(_ sender: Any) {
         viewModel.stopValueChangerTimer()
     }
-    
-}
-
-extension WorkoutViewController: DrawerViewDelegate {
     
 }
 
@@ -209,6 +205,7 @@ extension WorkoutViewController: WorkoutViewModelDelegate {
     func onTimeTick() {
         self.updateTime(time: viewModel.timeLeft)
         progressView.progress = CGFloat(viewModel.progress)
+        updateImpulseCounter()
     }
     
     func askForReconnect() {
@@ -237,10 +234,21 @@ extension WorkoutViewController: WorkoutViewModelDelegate {
     
     func onImpulseChanged() {
         updateWaveMaster()
+        if viewModel.paused {
+            impulseLeftView.isHidden = true
+        } else {
+            impulseLeftView.isHidden = false
+        }
+        updateImpulseCounter()
     }
     
     func shouldUpdateView() {
         collectionView.reloadData()
+    }
+    
+    func onBatteryChange(percent: Int) {
+        lblBattery.isHidden = false
+        lblBattery.text = "\(percent)%"
     }
 }
 

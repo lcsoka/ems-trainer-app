@@ -44,6 +44,8 @@ protocol EMSClient {
     
     func sendImpulseOff()
     
+    func getBattery()
+    
     func connect()
     
     func close()
