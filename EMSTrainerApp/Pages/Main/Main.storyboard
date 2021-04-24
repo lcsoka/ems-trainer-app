@@ -304,7 +304,7 @@
                                 <rect key="frame" x="0.0" y="44" width="428" height="882"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eB7-hU-A3w">
-                                        <rect key="frame" x="0.0" y="0.0" width="428" height="202"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="468"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rqJ-w4-DJe">
                                                 <rect key="frame" x="0.0" y="0.0" width="428" height="96"/>
@@ -412,6 +412,38 @@
                                                     <constraint firstAttribute="trailing" secondItem="Rf9-WP-6qa" secondAttribute="trailing" constant="20" id="ue7-nF-Fay"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeH-VT-uF9">
+                                                <rect key="frame" x="0.0" y="212" width="428" height="256"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1L-0P-zrp" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="0.0" width="388" height="256"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2m-H1-C1q" customClass="LineChartView" customModule="Charts">
+                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="256"/>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="Gray700"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="G2m-H1-C1q" secondAttribute="trailing" id="Egh-fF-SB0"/>
+                                                            <constraint firstItem="G2m-H1-C1q" firstAttribute="leading" secondItem="Q1L-0P-zrp" secondAttribute="leading" id="Tho-DP-cDK"/>
+                                                            <constraint firstAttribute="bottom" secondItem="G2m-H1-C1q" secondAttribute="bottom" id="Ue1-xt-ra6"/>
+                                                            <constraint firstItem="G2m-H1-C1q" firstAttribute="top" secondItem="Q1L-0P-zrp" secondAttribute="top" id="eQa-aN-aZv"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Q1L-0P-zrp" secondAttribute="trailing" constant="20" id="7MS-jj-7Ug"/>
+                                                    <constraint firstAttribute="height" constant="256" id="C6C-Zn-PmH"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Q1L-0P-zrp" secondAttribute="bottom" id="dvi-tV-EIz"/>
+                                                    <constraint firstItem="Q1L-0P-zrp" firstAttribute="leading" secondItem="zeH-VT-uF9" secondAttribute="leading" constant="20" id="o6n-cg-s3y"/>
+                                                    <constraint firstItem="Q1L-0P-zrp" firstAttribute="top" secondItem="zeH-VT-uF9" secondAttribute="top" id="zk8-qj-5m8"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -439,6 +471,7 @@
                         <outlet property="lblWorkoutInterval" destination="Lko-kv-nKF" id="aaI-eL-JIc"/>
                         <outlet property="lblWorkoutLength" destination="tX9-ue-QFf" id="Qjv-95-YZl"/>
                         <outlet property="lblWorkoutType" destination="FYb-bL-tx3" id="yBF-e6-mWM"/>
+                        <outlet property="lineChartView" destination="G2m-H1-C1q" id="L0d-zB-fMq"/>
                         <outlet property="workoutImage" destination="otq-R3-Ksw" id="JDc-6Q-ojT"/>
                     </connections>
                 </viewController>
