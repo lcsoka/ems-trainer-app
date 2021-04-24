@@ -8,9 +8,15 @@
 import UIKit
 import CoreData
 
+protocol WorkoutListViewControllerDelegate {
+    func userDidRequestWorkoutDetailsPage(workout: Training)
+}
+
 class WorkoutListViewController: UITableViewController, MainStoryboardLodable {
     
     var viewModel: WorkoutListViewModel!
+
+    var delegate: WorkoutListViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +56,12 @@ extension WorkoutListViewController {
         
         cell.workout = workout
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let workout = viewModel.fetchAllWorkouts.fetchedObjects?[indexPath.row] {
+            delegate?.userDidRequestWorkoutDetailsPage(workout: workout)
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -59,7 +59,7 @@ final class MainCoordinator: NavigationCoordinator {
     
     private func showWorkoutList() {
         let vc = container.resolve(WorkoutListViewController.self)!
-        
+        vc.delegate = self
         navigationController.pushViewController(vc, animated: true)     
     }
     
@@ -81,6 +81,12 @@ final class MainCoordinator: NavigationCoordinator {
         vc.modalPresentationStyle = .fullScreen
         navigationController.present(vc, animated: true)
     }
+    
+    private func showWorkoutDetails(workout: Training) {
+        let vc = container.resolve(WorkoutDetailsViewController.self)!
+        vc.viewModel.workout = workout
+        navigationController.pushViewController(vc, animated: true)
+    }
 }
 
 extension MainCoordinator: AuthenticationDelegate {
@@ -91,7 +97,7 @@ extension MainCoordinator: AuthenticationDelegate {
     }
 }
 
-extension MainCoordinator: DashboardViewControllerDelegate {
+extension MainCoordinator: DashboardViewControllerDelegate, WorkoutListViewControllerDelegate {
     func userDidRequestAccountPage() {
         showAccount()
     }
@@ -102,6 +108,10 @@ extension MainCoordinator: DashboardViewControllerDelegate {
     
     func userDidRequestWorkoutSetupPage() {
         showWorkoutSetup()
+    }
+    
+    func userDidRequestWorkoutDetailsPage(workout: Training) {
+        showWorkoutDetails(workout: workout)
     }
 }
 

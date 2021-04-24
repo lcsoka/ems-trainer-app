@@ -9,7 +9,7 @@ target 'EMSTrainerApp' do
   pod 'Swinject', '2.7.0'
   pod 'SwinjectAutoregistration', '2.7.0'
   pod 'Starscream'
-  pod 'DrawerView'
+  pod 'Charts'
 
   target 'EMSTrainerAppTests' do
     inherit! :search_paths

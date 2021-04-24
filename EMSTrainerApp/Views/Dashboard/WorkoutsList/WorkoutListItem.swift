@@ -20,7 +20,7 @@ class WorkoutListItem: UIView, CustomViewProtocol {
             lblLength.text = Int(workout.length).toTimeString()
             let formatter = DateFormatter()
             formatter.dateStyle = .long
-            lblDate.text = formatter.string(from: workout.createdAt!)
+            lblDate.text = formatter.string(from: workout.date!)
             
             if let image = UIImage(named: workout.trainingMode!) {
                 imageType.image = image

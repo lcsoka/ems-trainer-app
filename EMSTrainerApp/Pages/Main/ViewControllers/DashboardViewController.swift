@@ -12,6 +12,7 @@ protocol DashboardViewControllerDelegate: class {
     func userDidRequestAccountPage()
     func userDidRequestWorkoutListPage()
     func userDidRequestWorkoutSetupPage()
+    func userDidRequestWorkoutDetailsPage(workout: Training)
 }
 
 class DashboardViewController: UIViewController, MainStoryboardLodable {
@@ -88,6 +89,10 @@ extension DashboardViewController: WorkoutListDelegate {
     func onItemsChanged() {
         view.setNeedsLayout()
         view.layoutIfNeeded()
+    }
+    
+    func onItemSelected(workout: Training) {
+        delegate?.userDidRequestWorkoutDetailsPage(workout: workout)
     }
 }
 

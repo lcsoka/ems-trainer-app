@@ -9,6 +9,11 @@ import UIKit
 
 protocol WorkoutListDelegate {
     func onItemsChanged()
+    func onItemSelected(workout: Training)
+}
+
+class WorkoutTapGesture: UITapGestureRecognizer {
+    var workout: Training!
 }
 
 @IBDesignable
@@ -60,9 +65,19 @@ class WorkoutsList: UIView, CustomViewProtocol {
             for item in items {
                 let view = WorkoutListItem()
                 view.workout = item
+                
+                let tap = WorkoutTapGesture(target: self, action: #selector(self.handleTap(_:)))
+                tap.workout = item
+                
+                view.addGestureRecognizer(tap)
+                
                 stackView.addArrangedSubview(view)
             }
         }
+    }
+    
+    @objc private func handleTap(_ sender: WorkoutTapGesture) {
+        delegate?.onItemSelected(workout: sender.workout)
     }
     
     override var intrinsicContentSize: CGSize {

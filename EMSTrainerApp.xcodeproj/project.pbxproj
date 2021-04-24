@@ -92,6 +92,8 @@
 		A46337B725E08ADB000B51F7 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337B625E08ADB000B51F7 /* EmptyResponse.swift */; };
 		A46337BC25E113BE000B51F7 /* ApiRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337BB25E113BD000B51F7 /* ApiRequestTests.swift */; };
 		A46337D825E12246000B51F7 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337D725E12246000B51F7 /* NetworkEngine.swift */; };
+		A475D5CF2634A3C300594857 /* WorkoutDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475D5CE2634A3C300594857 /* WorkoutDetailsViewController.swift */; };
+		A475D5D52634A3E700594857 /* WorkoutDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475D5D42634A3E700594857 /* WorkoutDetailsViewModel.swift */; };
 		A477972125FFDD86006AF564 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477972025FFDD86006AF564 /* Router.swift */; };
 		A477972925FFDD9D006AF564 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477972825FFDD9D006AF564 /* RouterProtocol.swift */; };
 		A477972F25FFDE38006AF564 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477972E25FFDE38006AF564 /* Presentable.swift */; };
@@ -269,6 +271,8 @@
 		A46337B625E08ADB000B51F7 /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
 		A46337BB25E113BD000B51F7 /* ApiRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestTests.swift; sourceTree = "<group>"; };
 		A46337D725E12246000B51F7 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
+		A475D5CE2634A3C300594857 /* WorkoutDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailsViewController.swift; sourceTree = "<group>"; };
+		A475D5D42634A3E700594857 /* WorkoutDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailsViewModel.swift; sourceTree = "<group>"; };
 		A477972025FFDD86006AF564 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A477972825FFDD9D006AF564 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		A477972E25FFDE38006AF564 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
@@ -530,6 +534,7 @@
 				A40E38E7260F8D9300104A59 /* WorkoutViewModel.swift */,
 				A4DB5CD0261B704E003CBE05 /* DashboardViewModel.swift */,
 				A4F7560A261FA33000133E80 /* WorkoutListViewModel.swift */,
+				A475D5D42634A3E700594857 /* WorkoutDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -601,6 +606,7 @@
 				A41C8F972600060800192BDD /* AccountViewController.swift */,
 				A41C8FAD260011B600192BDD /* WorkoutSetupViewController.swift */,
 				A4F75602261FA20B00133E80 /* WorkoutListViewController.swift */,
+				A475D5CE2634A3C300594857 /* WorkoutDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1355,6 +1361,7 @@
 				A406E49925F533AC0044E284 /* UserService.swift in Sources */,
 				A40EE4D526016075002E422B /* EMSChannel.swift in Sources */,
 				A41C8FCD2600208C00192BDD /* DeviceStatusResource.swift in Sources */,
+				A475D5D52634A3E700594857 /* WorkoutDetailsViewModel.swift in Sources */,
 				A4FBBC8B261D0A6B00B8CE81 /* TrainingsResponse.swift in Sources */,
 				A41C90242600F11700192BDD /* TrainingModeSelectorView.swift in Sources */,
 				A4FBBC7B261CF8DC00B8CE81 /* CoreDataStack.swift in Sources */,
@@ -1387,6 +1394,7 @@
 				A41C8F9325FFFA2700192BDD /* CustomViewProtocol.swift in Sources */,
 				A421547925F51F760094C1CB /* MainCoordinator.swift in Sources */,
 				A40E38E8260F8D9300104A59 /* WorkoutViewModel.swift in Sources */,
+				A475D5CF2634A3C300594857 /* WorkoutDetailsViewController.swift in Sources */,
 				A4FBBC6F261CEDCA00B8CE81 /* Training.swift in Sources */,
 				A4285D4E262B3E0E001BB304 /* FinderViewModel.swift in Sources */,
 				A4F755F4261E29B100133E80 /* DictionaryConvertable.swift in Sources */,
