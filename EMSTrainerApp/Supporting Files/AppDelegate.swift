@@ -40,6 +40,7 @@ extension AppDelegate {
         // services
         container.autoregister(UserService.self, initializer: UserDefaultsUserService.init).inObjectScope(ObjectScope.container)
         container.autoregister(TokenService.self, initializer: UserDefaultsTokenService.init).inObjectScope(ObjectScope.container)
+        container.autoregister(AchievementsService.self, initializer: UserDefaultsAchievementsService.init).inObjectScope(ObjectScope.container)
         
         container.register(DeviceApi.self) { r in
             let api = DeviceApi(engine: URLSession(configuration: .default, delegate: nil, delegateQueue: .main))

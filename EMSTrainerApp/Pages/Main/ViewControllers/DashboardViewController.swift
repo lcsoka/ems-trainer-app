@@ -28,6 +28,7 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
     @IBOutlet var statisticsView: StatisticsView!
     @IBOutlet var workoutListView: WorkoutsList!
     @IBOutlet var btnShowWorkoutList: UIButton!
+    @IBOutlet var achievementsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +82,11 @@ class DashboardViewController: UIViewController, MainStoryboardLodable {
                 btnShowWorkoutList.isHidden = true
             }
         }
+        
+        achievementsCollectionView.delegate = self
+        achievementsCollectionView.dataSource = self
+        achievementsCollectionView.backgroundColor = .clear
+        achievementsCollectionView.reloadData()
     }
     
 }
@@ -100,4 +106,44 @@ extension DashboardViewController: NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChangeContentWith snapshot: NSDiffableDataSourceSnapshotReference) {
         setUpViews()
     }
+}
+
+extension DashboardViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.achievementTypes.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "achievementType", for: indexPath as IndexPath) as! AchievementCell
+        
+        
+        
+        let type = viewModel.achievementTypes[indexPath.row]
+        cell.image.image = UIImage(named: type.image)
+        cell.lblName.text = type.name
+        
+        if viewModel.hasAchievement(type: type.className) {
+            cell.image.alpha = 1
+        } else {
+            cell.image.alpha = 0.5
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (collectionView.frame.width - 40) / 3, height: collectionView.frame.height - 20)
+        
+    }
+}
+
+class AchievementCell: UICollectionViewCell {
+    @IBOutlet var image: UIImageView!
+    @IBOutlet var lblName: UILabel!
+    
 }

@@ -65,7 +65,8 @@ class WorkoutsList: UIView, CustomViewProtocol {
             for item in items {
                 let view = WorkoutListItem()
                 view.workout = item
-                
+                let heightConstraint = NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: CGFloat(itemHeight))
+                view.addConstraint(heightConstraint)
                 let tap = WorkoutTapGesture(target: self, action: #selector(self.handleTap(_:)))
                 tap.workout = item
                 

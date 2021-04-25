@@ -21,8 +21,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQv-Co-rG2">
                                 <rect key="frame" x="0.0" y="44" width="428" height="794"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h6P-3G-KKa">
-                                        <rect key="frame" x="0.0" y="0.0" width="428" height="340"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h6P-3G-KKa">
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="530"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAa-GQ-tjX" customClass="StatisticsView" customModule="EMSTrainerApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="428" height="125"/>
@@ -66,7 +66,7 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xm-cG-2bO">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xm-cG-2bO">
                                                         <rect key="frame" x="331" y="10" width="77" height="30"/>
                                                         <state key="normal" title="Show More">
                                                             <color key="titleColor" name="Green500"/>
@@ -79,6 +79,100 @@
                                                     <constraint firstAttribute="trailing" secondItem="5Xm-cG-2bO" secondAttribute="trailing" constant="20" id="x3u-cd-4GG"/>
                                                     <constraint firstAttribute="bottom" secondItem="LmY-w1-aSC" secondAttribute="bottom" id="xJz-JC-C05"/>
                                                     <constraint firstItem="5Xm-cG-2bO" firstAttribute="centerY" secondItem="LmY-w1-aSC" secondAttribute="centerY" id="y5v-Qe-Pkd"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Hg-H3-xWd">
+                                                <rect key="frame" x="0.0" y="350" width="428" height="180"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="foB-Jq-ZOM" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="0.0" width="388" height="180"/>
+                                                        <subviews>
+                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CQH-Su-lrl">
+                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="180"/>
+                                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JTA-hW-W7d">
+                                                                    <size key="itemSize" width="128" height="180"/>
+                                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                                                                </collectionViewFlowLayout>
+                                                                <cells>
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="achievementType" id="weU-dq-L3m" customClass="AchievementCell" customModule="EMSTrainerApp" customModuleProvider="target">
+                                                                        <rect key="frame" x="10" y="10" width="128" height="180"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OQW-Oz-sRx">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="180"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                            <subviews>
+                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCN-aa-74k" customClass="RoundedView" customModule="EMSTrainerApp" customModuleProvider="target">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                                    <subviews>
+                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2LJ-a6-Tg7">
+                                                                                            <rect key="frame" x="10" y="10" width="108" height="108"/>
+                                                                                            <constraints>
+                                                                                                <constraint firstAttribute="width" secondItem="2LJ-a6-Tg7" secondAttribute="height" id="i7h-wW-AM1"/>
+                                                                                            </constraints>
+                                                                                        </imageView>
+                                                                                    </subviews>
+                                                                                    <color key="backgroundColor" name="Gray600"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstItem="2LJ-a6-Tg7" firstAttribute="centerX" secondItem="cCN-aa-74k" secondAttribute="centerX" id="YN5-zu-H65"/>
+                                                                                        <constraint firstItem="2LJ-a6-Tg7" firstAttribute="centerY" secondItem="cCN-aa-74k" secondAttribute="centerY" id="Ykz-us-bSi"/>
+                                                                                        <constraint firstItem="2LJ-a6-Tg7" firstAttribute="top" secondItem="cCN-aa-74k" secondAttribute="top" constant="10" id="eKl-3S-ELQ"/>
+                                                                                        <constraint firstItem="2LJ-a6-Tg7" firstAttribute="leading" secondItem="cCN-aa-74k" secondAttribute="leading" constant="10" id="h0q-i3-QZo"/>
+                                                                                        <constraint firstAttribute="width" secondItem="cCN-aa-74k" secondAttribute="height" multiplier="1:1" id="hem-mD-xWC"/>
+                                                                                    </constraints>
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                            <real key="value" value="10"/>
+                                                                                        </userDefinedRuntimeAttribute>
+                                                                                    </userDefinedRuntimeAttributes>
+                                                                                </view>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1P5-8b-OR5">
+                                                                                    <rect key="frame" x="0.0" y="136" width="128" height="14.333333333333343"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                            </subviews>
+                                                                            <constraints>
+                                                                                <constraint firstItem="cCN-aa-74k" firstAttribute="leading" secondItem="OQW-Oz-sRx" secondAttribute="leading" id="4WW-gu-KDY"/>
+                                                                                <constraint firstItem="cCN-aa-74k" firstAttribute="top" secondItem="OQW-Oz-sRx" secondAttribute="top" id="5rD-p9-8QF"/>
+                                                                                <constraint firstItem="1P5-8b-OR5" firstAttribute="leading" secondItem="OQW-Oz-sRx" secondAttribute="leading" id="JyC-Gx-1YB"/>
+                                                                                <constraint firstItem="1P5-8b-OR5" firstAttribute="centerX" secondItem="OQW-Oz-sRx" secondAttribute="centerX" id="dlB-qR-kb3"/>
+                                                                                <constraint firstItem="1P5-8b-OR5" firstAttribute="top" secondItem="cCN-aa-74k" secondAttribute="bottom" constant="8" symbolic="YES" id="puZ-Lj-QxL"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="cCN-aa-74k" secondAttribute="trailing" id="q7z-rW-ZVW"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="1P5-8b-OR5" secondAttribute="trailing" id="tME-j5-4R6"/>
+                                                                            </constraints>
+                                                                        </collectionViewCellContentView>
+                                                                        <size key="customSize" width="128" height="180"/>
+                                                                        <connections>
+                                                                            <outlet property="image" destination="2LJ-a6-Tg7" id="kkq-z5-GNr"/>
+                                                                            <outlet property="lblName" destination="1P5-8b-OR5" id="RPr-Db-kdC"/>
+                                                                        </connections>
+                                                                    </collectionViewCell>
+                                                                </cells>
+                                                            </collectionView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="Gray700"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="CQH-Su-lrl" secondAttribute="trailing" id="GN3-nh-qiL"/>
+                                                            <constraint firstItem="CQH-Su-lrl" firstAttribute="leading" secondItem="foB-Jq-ZOM" secondAttribute="leading" id="b71-N6-v8n"/>
+                                                            <constraint firstAttribute="bottom" secondItem="CQH-Su-lrl" secondAttribute="bottom" id="nNw-o3-gwh"/>
+                                                            <constraint firstItem="CQH-Su-lrl" firstAttribute="top" secondItem="foB-Jq-ZOM" secondAttribute="top" id="ozm-hl-cK2"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="180" id="ILi-Hn-yQb"/>
+                                                    <constraint firstAttribute="bottom" secondItem="foB-Jq-ZOM" secondAttribute="bottom" id="ORj-9X-iZS"/>
+                                                    <constraint firstItem="foB-Jq-ZOM" firstAttribute="top" secondItem="9Hg-H3-xWd" secondAttribute="top" id="j4C-To-D9d"/>
+                                                    <constraint firstAttribute="trailing" secondItem="foB-Jq-ZOM" secondAttribute="trailing" constant="20" id="u2i-cg-BoZ"/>
+                                                    <constraint firstItem="foB-Jq-ZOM" firstAttribute="leading" secondItem="9Hg-H3-xWd" secondAttribute="leading" constant="20" id="yQl-qt-sbh"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -125,6 +219,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="achievementsCollectionView" destination="CQH-Su-lrl" id="Sia-0W-Ao5"/>
                         <outlet property="btnShowWorkoutList" destination="oKa-1z-or7" id="bbf-vc-jrR"/>
                         <outlet property="statisticsView" destination="eAa-GQ-tjX" id="re9-7s-fb1"/>
                         <outlet property="workoutListView" destination="9Jq-s4-Sjb" id="jNT-aB-69k"/>
@@ -132,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhL-vx-xib" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-426.08695652173918" y="115.84821428571428"/>
+            <point key="canvasLocation" x="-426.1682242990654" y="115.33477321814256"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="2GR-A4-g4r">

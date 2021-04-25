@@ -11,7 +11,9 @@ import CoreData
 final class DashboardViewModel {
     var api: ApiService!
     var trainingsProvider: TrainingsProvider
-
+    var achievementsService: AchievementsService
+    var achievementTypes: [AchievementType] = []
+    var achievements: [Achievement] = []
     lazy var fetchAllWorkouts: NSFetchedResultsController<Training> = {
         // Create a fetch request for the Training entity sorted by created date.
         let fetchRequest = NSFetchRequest<Training>(entityName: "Training")
@@ -32,9 +34,17 @@ final class DashboardViewModel {
     }()
     
     
-    init(api: ApiService, trainingsProvider: TrainingsProvider) {
+    init(api: ApiService, trainingsProvider: TrainingsProvider, achievementsService: AchievementsService) {
         self.api = api
         self.trainingsProvider = trainingsProvider
+        self.achievementsService = achievementsService
+        
+        let jsonData = Bundle.main.loadFile(filename: "AchievementTypes.json")!
+        achievementTypes = try! JSONDecoder().decode([AchievementType].self, from: jsonData)
+        
+        if let achievements = achievementsService.achievements {
+            self.achievements = achievements
+        }
         
         // Fetch trainings
         self.refresh()
@@ -46,6 +56,12 @@ final class DashboardViewModel {
                 self.trainingsProvider.importTrainings(from:trainings)
                 completion()
             }
+            
+            if let achievements = response?.achievements {
+                self.achievementsService.achievements = achievements
+                self.achievements = achievements
+            }
+            
         }, onError: { error in
             
         })
@@ -61,4 +77,7 @@ final class DashboardViewModel {
         }
     }
     
+    func hasAchievement(type: String) -> Bool {
+        return achievements.filter{$0.className == type}.count > 0
+    }
 }

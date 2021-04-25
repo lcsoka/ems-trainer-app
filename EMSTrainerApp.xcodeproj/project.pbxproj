@@ -94,6 +94,11 @@
 		A46337D825E12246000B51F7 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46337D725E12246000B51F7 /* NetworkEngine.swift */; };
 		A475D5CF2634A3C300594857 /* WorkoutDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475D5CE2634A3C300594857 /* WorkoutDetailsViewController.swift */; };
 		A475D5D52634A3E700594857 /* WorkoutDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475D5D42634A3E700594857 /* WorkoutDetailsViewModel.swift */; };
+		A475D5DB2634D14300594857 /* AchievementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475D5DA2634D14300594857 /* AchievementType.swift */; };
+		A475D5E02634D17400594857 /* AchievementsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475D5DF2634D17400594857 /* AchievementsService.swift */; };
+		A475D5E52634D23100594857 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475D5E42634D23100594857 /* Achievement.swift */; };
+		A475D5EA2634D36300594857 /* UserDefaultsAchievementsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475D5E92634D36300594857 /* UserDefaultsAchievementsService.swift */; };
+		A475D5EE2634DC8100594857 /* AchievementTypes.json in Resources */ = {isa = PBXBuildFile; fileRef = A475D5D92634D05B00594857 /* AchievementTypes.json */; };
 		A477972125FFDD86006AF564 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477972025FFDD86006AF564 /* Router.swift */; };
 		A477972925FFDD9D006AF564 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477972825FFDD9D006AF564 /* RouterProtocol.swift */; };
 		A477972F25FFDE38006AF564 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477972E25FFDE38006AF564 /* Presentable.swift */; };
@@ -273,6 +278,11 @@
 		A46337D725E12246000B51F7 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		A475D5CE2634A3C300594857 /* WorkoutDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailsViewController.swift; sourceTree = "<group>"; };
 		A475D5D42634A3E700594857 /* WorkoutDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailsViewModel.swift; sourceTree = "<group>"; };
+		A475D5D92634D05B00594857 /* AchievementTypes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AchievementTypes.json; sourceTree = "<group>"; };
+		A475D5DA2634D14300594857 /* AchievementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementType.swift; sourceTree = "<group>"; };
+		A475D5DF2634D17400594857 /* AchievementsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsService.swift; sourceTree = "<group>"; };
+		A475D5E42634D23100594857 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		A475D5E92634D36300594857 /* UserDefaultsAchievementsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsAchievementsService.swift; sourceTree = "<group>"; };
 		A477972025FFDD86006AF564 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A477972825FFDD9D006AF564 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		A477972E25FFDE38006AF564 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
@@ -389,6 +399,7 @@
 			children = (
 				A406E49825F533AC0044E284 /* UserService.swift */,
 				A48B64FD25F53FB7009D6CCD /* TokenService.swift */,
+				A475D5DF2634D17400594857 /* AchievementsService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -513,6 +524,7 @@
 			isa = PBXGroup;
 			children = (
 				A41C8FFC2600A56C00192BDD /* TrainingModes.json */,
+				A475D5D92634D05B00594857 /* AchievementTypes.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -523,6 +535,8 @@
 				A4FBBC90261D0C7B00B8CE81 /* JSON */,
 				A4FBBC8F261D0C7600B8CE81 /* Database */,
 				A41C900A2600A8D100192BDD /* TrainingMode.swift */,
+				A475D5DA2634D14300594857 /* AchievementType.swift */,
+				A475D5E42634D23100594857 /* Achievement.swift */,
 			);
 			path = Training;
 			sourceTree = "<group>";
@@ -802,6 +816,7 @@
 				A406E49425F5339D0044E284 /* Protocols */,
 				A406E48725F533790044E284 /* UserDefaultsUserService.swift */,
 				A48B650225F53FEA009D6CCD /* UserDefaultsTokenService.swift */,
+				A475D5E92634D36300594857 /* UserDefaultsAchievementsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1154,6 +1169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A475D5EE2634DC8100594857 /* AchievementTypes.json in Resources */,
 				A421546025F516710094C1CB /* Authentication.storyboard in Resources */,
 				A43F2A8D262C47CE0026BEE7 /* DisconnectedCollectionViewCell.xib in Resources */,
 				A41C902C2600F14600192BDD /* TrainingModeSelectorView.xib in Resources */,
@@ -1305,6 +1321,7 @@
 				A45BAE4C25DC3E1B00F51D5E /* ApiResource.swift in Sources */,
 				A421544225F503210094C1CB /* AppCoordinator.swift in Sources */,
 				A45BADFD25DC2C6B00F51D5E /* ViewController.swift in Sources */,
+				A475D5DB2634D14300594857 /* AchievementType.swift in Sources */,
 				A41C8FEC260028A000192BDD /* DeviceApi.swift in Sources */,
 				A41C8FB42600144900192BDD /* FinderProtocol.swift in Sources */,
 				A477972925FFDD9D006AF564 /* RouterProtocol.swift in Sources */,
@@ -1329,6 +1346,7 @@
 				A477973725FFDE65006AF564 /* UIViewController.swift in Sources */,
 				A45BAE4725DC3DF600F51D5E /* ApiRequest.swift in Sources */,
 				A41C8FE2260026F200192BDD /* DeviceApiRequest.swift in Sources */,
+				A475D5EA2634D36300594857 /* UserDefaultsAchievementsService.swift in Sources */,
 				A40EE4F0260173A5002E422B /* EMSMessage.swift in Sources */,
 				A47BB12F25E1B63B0065023F /* Coordinator.swift in Sources */,
 				A43F2A9C262C4FDC0026BEE7 /* EMSChannelMap.swift in Sources */,
@@ -1357,6 +1375,7 @@
 				A40A4EDF2607DABB00F07342 /* RegistrationViewModel.swift in Sources */,
 				A4F755FD261E72E400133E80 /* Int.swift in Sources */,
 				A46337A825E087A4000B51F7 /* RegisterData.swift in Sources */,
+				A475D5E02634D17400594857 /* AchievementsService.swift in Sources */,
 				A4FBBC75261CEDED00B8CE81 /* TrainingValue.swift in Sources */,
 				A406E49925F533AC0044E284 /* UserService.swift in Sources */,
 				A40EE4D526016075002E422B /* EMSChannel.swift in Sources */,
@@ -1391,6 +1410,7 @@
 				A45BADFB25DC2C6B00F51D5E /* SceneDelegate.swift in Sources */,
 				A40A4EF02607E8F700F07342 /* LoginViewModel.swift in Sources */,
 				A4B80BCE262B45BB00FCAB82 /* EmptyCollectionViewCell.swift in Sources */,
+				A475D5E52634D23100594857 /* Achievement.swift in Sources */,
 				A41C8F9325FFFA2700192BDD /* CustomViewProtocol.swift in Sources */,
 				A421547925F51F760094C1CB /* MainCoordinator.swift in Sources */,
 				A40E38E8260F8D9300104A59 /* WorkoutViewModel.swift in Sources */,

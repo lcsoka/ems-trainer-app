@@ -10,4 +10,5 @@ import Foundation
 struct MeResponse: Codable {
     var user: User
     var trainings: [TrainingJSON]
+    var achievements: [Achievement]
 }

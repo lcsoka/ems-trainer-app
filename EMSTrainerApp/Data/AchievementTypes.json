@@ -1,0 +1,20 @@
+[
+    {
+        "name":"First Cardio Training",
+        "description": "Complete your first Cardio training!",
+        "className": "FirstCardioTraining",
+        "image": "award_cardio"
+    },
+    {
+        "name":"First Strength Training",
+        "description": "Complete your first Strength training!",
+        "className": "FirstStrengthTraining",
+        "image": "award_strength"
+    },
+    {
+        "name":"First Massage Training",
+        "description": "Complete your first Massage training!",
+        "className": "FirstMassageTraining",
+        "image": "award_massage"
+    }
+]
