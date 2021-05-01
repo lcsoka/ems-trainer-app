@@ -302,6 +302,7 @@ class WorkoutViewModel {
         
         workoutEnded = true
         
+        client?.close()
         if shouldSaveWorkout {
             let timestamp = Int((Date().timeIntervalSince1970))
             

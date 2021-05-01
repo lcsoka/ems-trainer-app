@@ -177,8 +177,13 @@ extension WebsocketClient: WebSocketDelegate {
             }
             
             break
+        case .reconnectSuggested(let reconnect):
+            print("pls")
+            break
         default:
+            
             break
         }
     }
+    
 }

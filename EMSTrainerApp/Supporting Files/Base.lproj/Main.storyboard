@@ -55,6 +55,11 @@
             <point key="canvasLocation" x="-197.10144927536234" y="97.767857142857139"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="eJV-bC-mKm">
+            <size key="intrinsicContentSize" width="310" height="125"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
