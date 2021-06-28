@@ -54,15 +54,20 @@ extension MDNSFinder: NetServiceBrowserDelegate, NetServiceDelegate {
     
     func netServiceDidResolveAddress(_ sender: NetService) {
         if let addresses = sender.addresses, addresses.count > 0 {
-            var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
+            decodeAddress(addresses: sender.addresses, index: 0)
+        }
+    }
+    
+    func decodeAddress(addresses: [Data]?, index: Int) {
+        guard let data = addresses?[index] else { return }
+        
+        var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
+        
+        if getnameinfo((data as NSData).bytes.bindMemory(to: sockaddr.self, capacity: data.count), socklen_t(data.count),
+                       &hostname, socklen_t(hostname.count), nil, 0, NI_NUMERICHOST) == 0 {
+            let ipAddress = String(cString: hostname)
             
-            // The first address should be enough for us
-            guard let data = sender.addresses?.first else { return }
-            
-            if getnameinfo((data as NSData).bytes.bindMemory(to: sockaddr.self, capacity: data.count), socklen_t(data.count),
-                           &hostname, socklen_t(hostname.count), nil, 0, NI_NUMERICHOST) == 0 {
-                let ipAddress = String(cString: hostname)
-//               print(ipAddress)
+            if ipAddress.isIPv4() {
                 let resource = DeviceStatusResource(host: "http://\(ipAddress)")
                 self.api.get(resource, params: nil, onSuccess: { response in
                     if let status = response {
@@ -71,7 +76,12 @@ extension MDNSFinder: NetServiceBrowserDelegate, NetServiceDelegate {
                 }) { _ in
                     
                 }
+            } else {
+                if addresses!.count > index {
+                    decodeAddress(addresses: addresses, index: index + 1)
+                }
             }
         }
     }
+    
 }

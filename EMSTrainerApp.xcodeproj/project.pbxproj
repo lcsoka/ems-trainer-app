@@ -75,6 +75,7 @@
 		A43F2A96262C4D9E0026BEE7 /* ChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F2A94262C4D9E0026BEE7 /* ChannelCollectionViewCell.swift */; };
 		A43F2A97262C4D9E0026BEE7 /* ChannelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A43F2A95262C4D9E0026BEE7 /* ChannelCollectionViewCell.xib */; };
 		A43F2A9C262C4FDC0026BEE7 /* EMSChannelMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F2A9B262C4FDC0026BEE7 /* EMSChannelMap.swift */; };
+		A4461554267CC5560016CCFD /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4461553267CC5560016CCFD /* String.swift */; };
 		A45BADF925DC2C6B00F51D5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BADF825DC2C6B00F51D5E /* AppDelegate.swift */; };
 		A45BADFB25DC2C6B00F51D5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BADFA25DC2C6B00F51D5E /* SceneDelegate.swift */; };
 		A45BADFD25DC2C6B00F51D5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45BADFC25DC2C6B00F51D5E /* ViewController.swift */; };
@@ -251,6 +252,7 @@
 		A43F2A94262C4D9E0026BEE7 /* ChannelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCollectionViewCell.swift; sourceTree = "<group>"; };
 		A43F2A95262C4D9E0026BEE7 /* ChannelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelCollectionViewCell.xib; sourceTree = "<group>"; };
 		A43F2A9B262C4FDC0026BEE7 /* EMSChannelMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMSChannelMap.swift; sourceTree = "<group>"; };
+		A4461553267CC5560016CCFD /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A45BADF525DC2C6B00F51D5E /* EMSTrainerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMSTrainerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45BADF825DC2C6B00F51D5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A45BADFA25DC2C6B00F51D5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -572,6 +574,7 @@
 				A477973625FFDE64006AF564 /* UIViewController.swift */,
 				A41C90152600AA4500192BDD /* Bundle.swift */,
 				A4F755FC261E72E400133E80 /* Int.swift */,
+				A4461553267CC5560016CCFD /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1356,6 +1359,7 @@
 				A495800F25E04C6500923B7F /* ErrorType.swift in Sources */,
 				A47B450F262CCB0100A706E4 /* CreateTrainingResource.swift in Sources */,
 				A4FBBC9A261E068D00B8CE81 /* TrainingJSON.swift in Sources */,
+				A4461554267CC5560016CCFD /* String.swift in Sources */,
 				A48B64E925F53A43009D6CCD /* ApiService.swift in Sources */,
 				A40A4EF52608011100F07342 /* WorkoutViewController.swift in Sources */,
 				A46337B225E08A58000B51F7 /* LogoutResource.swift in Sources */,
